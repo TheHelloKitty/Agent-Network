@@ -1,7 +1,13 @@
 import os
 import json
 import requests
-from upload_post import UploadPostClient
+
+# Safe import for upload_post
+try:
+    from upload_post import UploadPostClient
+except ImportError:
+    UploadPostClient = None
+
 from coinbase.rest import RESTClient
 
 # 1. READ CREDENTIALS & ENVIRONMENT VARIABLES
@@ -18,7 +24,7 @@ headers = {
 }
 
 # Initialize Third-Party Clients
-social_client = UploadPostClient(api_key=social_api_key) if social_api_key else None
+social_client = UploadPostClient(api_key=social_api_key) if (UploadPostClient and social_api_key) else None
 
 cb_client = None
 if cb_key and cb_secret:
