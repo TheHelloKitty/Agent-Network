@@ -1,41 +1,30 @@
-def post_to_x(text_content):
-    if not client_id or not client_secret:
-        return "Skipped (Missing X Secrets)"
-    
-    try:
-        token_url = "https://api.x.com/2/oauth2/token"
-        auth_data = {
-            "grant_type": "client_credentials",
-            "client_id": client_id,
-            "client_secret": client_secret,
-            "client_type": "public"
-        }
-        headers = {
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
-        response = requests.post(token_url, data=auth_data, headers=headers)
-        
-        if response.status_code != 200:
-            return f"Auth Failed: {response.text}"
-            
-        token_json = response.json()
-        access_token = token_json.get("access_token")
-        
-        if not access_token:
-            return "Auth Failed: No access token returned"
-            
-        tweet_url = "https://api.x.com/2/tweets"
-        tweet_headers = {
-            "Authorization": f"Bearer {access_token}",
-            "Content-Type": "application/json"
-        }
-        payload = {"text": text_content}
-        
-        tweet_response = requests.post(tweet_url, headers=tweet_headers, json=payload)
-        if tweet_response.status_code == 201:
-            return "Successfully Posted Live!"
-        else:
-            return f"Post Failed: {tweet_response.status_code} - {tweet_response.text}"
-            
-    except Exception as e:
-        return f"Error: {str(e)}"
+import time
+import logging
+
+# Configure logging for audit trails
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - [AGENT-GOVERNANCE] - %(levelname)s - %(message)s')
+
+class AgentNetworkGovernor:
+    def __init__(self, max_steps_per_task=15, daily_token_budget=500000):
+        self.max_steps = max_steps_per_task
+        self.token_budget = daily_token_budget
+        self.current_tokens_used = 0
+        self.step_counter = 0
+
+    def check_circuit_breaker(self, current_step: int, task_name: str):
+        """Trips the circuit breaker if an agent loop exceeds safe execution steps."""
+        if current_step >= self.max_steps:
+            logging.error(f"CIRCUIT BREAKER TRIPPED: Task '{task_name}' exceeded maximum allowed steps ({self.max_steps}). Forcing shutdown of current pipeline.")
+            raise RuntimeError(f"Infinite loop detected in task: {task_name}. Execution halted by safety governance.")
+        return True
+
+    def track_token_usage(self, tokens_consumed: int):
+        """Monitors and restricts daily token burn across the active swarm."""
+        self.current_tokens_used += tokens_consumed
+        if self.current_tokens_used > self.token_budget:
+            logging.critical(f"TOKEN BUDGET EXHAUSTED: Swarm consumed {self.current_tokens_used} tokens, breaching the limit of {self.token_budget}.")
+            raise PermissionError("Daily token budget reached. Swarm execution throttled.")
+        return self.current_tokens_used
+
+# Initialize the global governor for the swarm
+swarm_governor = AgentNetworkGovernor(max_steps_per_task=15, daily_token_budget=500000)
