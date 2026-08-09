@@ -85,7 +85,6 @@ def spawn_next_generation():
     return cumulative_swarm
 
 def get_api_key():
-    """Checks multiple possible environment variable names for the API key."""
     for key_name in ["OPENROUTER_API_KEY", "OPEN_ROUTER_KEY", "API_KEY", "TOGETHER"]:
         val = os.environ.get(key_name)
         if val:
@@ -120,18 +119,35 @@ def call_free_llm(prompt_text):
     except Exception as e:
         return f"[Error connecting to endpoint: {str(e)}]"
 
+def gather_blackboard_context():
+    """Reads previous agent summaries from swarm memory to pass as shared context."""
+    existing_agents, _ = load_existing_swarm()
+    if not existing_agents:
+        return "No prior collaborative history yet."
+    
+    # Grab a sample of up to 5 prior agents to keep context concise
+    sample_prior = random.sample(existing_agents, min(len(existing_agents), 5))
+    context_str = "Prior Swarm Activity & Artifacts on the Blackboard:\n"
+    for agent in sample_prior:
+        context_str += f"- [{agent['agent_id']}] Pen Name: {agent['pen_name']} | Niche: {agent['assigned_niche']} | Tone: {agent['tone']}\n"
+    return context_str
+
 def execute_product_pipeline_concurrently(agents):
-    print(f"--- Executing Concurrent LLM Content Generation for {len(agents)} Agents ---")
+    print(f"--- Executing Concurrent Blackboard-Integrated Content Generation for {len(agents)} Agents ---")
     os.makedirs("agent_outputs", exist_ok=True)
+    
+    shared_blackboard = gather_blackboard_context()
     
     def process_single_agent(agent):
         file_path = f"agent_outputs/{agent['agent_id']}_product.md"
         
+        # Inject the shared blackboard memory into the prompt so agents build on past work
         prompt = (
             f"You are a professional writer named {agent['pen_name']}. "
             f"Your niche is {agent['assigned_niche']}. "
-            f"Your personality is {agent['personality']} and your writing tone is {agent['tone']}. "
-            f"Write a short introductory sample, outline, or chapter piece matching your persona."
+            f"Your personality is {agent['personality']} and your writing tone is {agent['tone']}.\n\n"
+            f"Here is the shared network blackboard containing prior agent work:\n{shared_blackboard}\n\n"
+            f"Review what previous generations have worked on, and write your own expanded contribution, continuation, or critique building directly upon this shared context."
         )
         
         generated_content = call_free_llm(prompt)
@@ -141,22 +157,27 @@ def execute_product_pipeline_concurrently(agents):
         content += f"**Personality:** {agent['personality']}\n"
         content += f"**Tone:** {agent['tone']}\n"
         content += f"**Profile / Quirks:** {agent['physical_profile']}\n\n"
-        content += "## Generated Content / Chapter\n"
+        content += "## Blackboard Evolution / Content\n"
         content += f"{generated_content}\n"
         
         with open(file_path, "w") as file:
             file.write(content)
         return agent['agent_id']
 
+    # Filter to process the current generation's agents concurrently
+    current_gen_agents = [a for a in agents if a.get('generation') == agents[-1].get('generation')]
+    if not current_gen_agents:
+        current_gen_agents = agents
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-        futures = [executor.submit(process_single_agent, agent) for agent in agents]
+        futures = [executor.submit(process_single_agent, agent) for agent in current_gen_agents]
         concurrent.futures.wait(futures)
             
-    print(f"SUCCESS: All active agents completed live content generation.")
+    print(f"SUCCESS: Blackboard synchronization and execution complete.")
 
 # --- MAIN SWARM EXECUTION LOOP ---
 step_count = 0
-task_identifier = "Free_LLM_Agent_Pipeline"
+task_identifier = "Blackboard_Agent_Pipeline"
 task_completed = False
 
 while not task_completed:
