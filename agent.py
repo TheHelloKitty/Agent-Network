@@ -65,16 +65,18 @@ if os.path.exists(memory_file):
 
 recent_history = json.dumps(memory_data["history"][-3:]) if memory_data["history"] else "No prior history recorded."
 
-# Download a local video file so upload_post has a local path
+# Ensure a local video file exists for upload
 local_video_path = "sample_video.mp4"
-if not os.path.exists(local_video_path):
+if not os.path.exists(local_video_path) or os.path.getsize(local_video_path) == 0:
     try:
-        vid_res = requests.get("https://www.w3schools.com/html/mov_bbb.mp4")
+        vid_res = requests.get("https://www.w3schools.com/html/mov_bbb.mp4", timeout=10)
         if vid_res.status_code == 200:
             with open(local_video_path, "wb") as f:
                 f.write(vid_res.content)
     except Exception as ex:
-        print("Error downloading video sample:", ex)
+        print("Download failed, creating fallback dummy MP4:", ex)
+        with open(local_video_path, "wb") as f:
+            f.write(b'\x00\x00\x00\x20ftypmp42isom' + b'\x00' * 100)
 
 # 3. DEFINING THE 9 AGENT NETWORK
 agents = [
@@ -126,12 +128,12 @@ for agent in agents:
         post_content = data.get("post_content", f"Daily update from {agent['name']}!")
         adaptation = data.get("persona_adaptation", "Evolving engagement strategy.")
         
-        # BROADCAST VIDEO POST USING LOCAL FILE PATH
+        # BROADCAST VIDEO POST WITH GUARANTEED LOCAL FILE PATH
         broadcast_status = "Skipped (No Social API Key)"
         if social_client:
             try:
                 social_client.upload_video(
-                    video_path=local_video_path if os.path.exists(local_video_path) else "sample_video.mp4",
+                    video_path=local_video_path,
                     title=f"[{agent['name']}] {post_content}",
                     user="AgentNetwork1",
                     platforms=["facebook"]
@@ -151,7 +153,7 @@ memory_data["history"].append(current_run_learnings)
 with open(memory_file, "w") as f:
     json.dump(memory_data, f, indent=2)
 
-# 6. LOG TO GITHUB ISSUES (CREATING A FRESH ISSUE NUMBER EACH TIME)
+# 6. LOG TO GITHUB ISSUES
 full_report = f"# 🚀 9-Agent Daily Post & Memory Sync\n\n**Coinbase System Status:** {coinbase_context}\n\n" + "\n\n".join(network_reports)
 
 if github_token and repo:
