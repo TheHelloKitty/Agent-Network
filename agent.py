@@ -7,22 +7,16 @@ try:
 except ImportError:
     UploadPostClient = None
 
-# Import Coinbase AgentKit / CDP modules
+# Import Coinbase CDP modules
 try:
-    from coinbase_agentkit import AgentKit, CdpWalletProvider, CdpWalletProviderConfig
+    from cdp import Cdp, Wallet
     CDP_AVAILABLE = True
 except ImportError:
-    try:
-        from cdp import Cdp, Wallet
-        CDP_AVAILABLE = True
-    except ImportError:
-        CDP_AVAILABLE = False
+    CDP_AVAILABLE = False
 
 # 1. READ CREDENTIALS & ENVIRONMENT VARIABLES
 api_key = (os.getenv("OPENROUTER_API_KEY") or "").strip()
 social_api_key = (os.getenv("UPLOAD_POST_API_KEY") or "").strip().replace("\\n", "").replace("\n", "").replace("\r", "")
-cdp_api_key_name = (os.getenv("CDP_API_KEY_NAME") or "").strip()
-cdp_api_private_key = (os.getenv("CDP_API_KEY_PRIVATE_KEY") or os.getenv("CDP_API_SECRET_KEY") or "").strip().replace("\\n", "\n")
 github_token = (os.getenv("GITHUB_TOKEN") or "").strip()
 repo = (os.getenv("GITHUB_REPOSITORY") or "").strip()
 
@@ -33,28 +27,17 @@ headers = {
 
 social_client = UploadPostClient(api_key=social_api_key) if (UploadPostClient and social_api_key) else None
 
-# Initialize Coinbase CDP Wallet Context
-cdp_context = "CDP AgentKit not active or credentials missing."
-if CDP_AVAILABLE and cdp_api_key_name and cdp_api_private_key:
+# Initialize Coinbase CDP Wallet Context via uploaded JSON file
+cdp_context = "CDP SDK not active (cdp_api_key.json missing)."
+json_key_path = "cdp_api_key.json"
+
+if CDP_AVAILABLE and os.path.exists(json_key_path):
     try:
-        # Initialize via AgentKit CdpWalletProvider config if available
-        config = CdpWalletProviderConfig(
-            api_key_id=cdp_api_key_name,
-            api_key_secret=cdp_api_private_key,
-            network_id="base-sepolia"
-        )
-        wallet_provider = CdpWalletProvider(config)
-        agent_kit = AgentKit.from_wallet_provider(wallet_provider)
-        cdp_context = f"Active CDP AgentKit Connected | Network: Base-Sepolia | Ready for On-Chain Action"
+        Cdp.configure_from_json(json_key_path)
+        wallet = Wallet.create()
+        cdp_context = f"Active CDP Wallet Address: {wallet.get_address().getId()} | Network: Base-Sepolia | Configured via JSON"
     except Exception as e:
-        try:
-            # Fallback direct configuration
-            from cdp import Cdp, Wallet
-            Cdp.configure(cdp_api_key_name, cdp_api_private_key)
-            wallet = Wallet.create()
-            cdp_context = f"Active CDP Wallet Address: {wallet.get_address().getId()} | Network: Base-Sepolia"
-        except Exception as inner_e:
-            cdp_context = f"CDP Connection Error: {e} / {inner_e}"
+        cdp_context = f"CDP JSON Configuration Error: {e}"
 
 # 2. LOAD PERSISTENT MEMORY
 memory_file = "memory.json"
