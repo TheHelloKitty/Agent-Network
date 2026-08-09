@@ -2,8 +2,15 @@ name: Run Agent Network
 
 on:
   workflow_dispatch:
+    inputs:
+      prompt:
+        description: 'Custom prompt for Kairo'
+        required: false
+        default: 'Provide quick strategic advice for today.'
   schedule:
     - cron: '0 12 * * *'
+
+permissions: write-all
 
 jobs:
   run-script:
@@ -15,7 +22,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.x'
 
       - name: Install dependencies
         run: pip install requests
@@ -23,4 +30,6 @@ jobs:
       - name: Execute Agent Script
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          USER_PROMPT: ${{ github.event.inputs.prompt || 'Daily scheduled check-in and task review.' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python agent.py
