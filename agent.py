@@ -27,24 +27,15 @@ headers = {
 
 social_client = UploadPostClient(api_key=social_api_key) if (UploadPostClient and social_api_key) else None
 
-# Initialize Coinbase CDP Wallet Context from config files
-cdp_context = "CDP SDK not active (credentials file missing)."
-for config_file in ["cdp_config.json", "cdp_api_key.json"]:
-    if CDP_AVAILABLE and os.path.exists(config_file):
-        try:
-            with open(config_file, "r") as f:
-                cfg = json.load(f)
-            # Support both direct key pairs and nested json structures
-            key_name = cfg.get("api_key_name") or cfg.get("name")
-            private_key = cfg.get("api_key_private_key") or cfg.get("privateKey") or cfg.get("private_key")
-            
-            if key_name and private_key:
-                Cdp.configure(key_name, private_key)
-                wallet = Wallet.create()
-                cdp_context = f"Active CDP Wallet Address: {wallet.get_address().getId()} | Network: Base-Sepolia | Connected via {config_file}"
-                break
-        except Exception as e:
-            cdp_context = f"CDP Configuration Error in {config_file}: {e}"
+# Initialize Coinbase CDP Wallet Context directly
+cdp_context = "CDP SDK not available."
+if CDP_AVAILABLE:
+    try:
+        Cdp.configure("955d09f4-d942-4272-89dc-5799d8d5c0bd", "T7FSym8hkHNYlfQWAUFzvlPi/HtjJllsF9BsE3QcPvXysaL1Gm/OopzgPa2NABll001B+TjivSK/eXQLP4kg==")
+        wallet = Wallet.create()
+        cdp_context = f"Active CDP Wallet Address: {wallet.get_address().getId()} | Network: Base-Sepolia | Connected Successfully"
+    except Exception as e:
+        cdp_context = f"CDP Configuration Error: {e}"
 
 # 2. LOAD PERSISTENT MEMORY
 memory_file = "memory.json"
