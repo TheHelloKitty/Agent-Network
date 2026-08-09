@@ -1,22 +1,40 @@
-# Initialize your step count and completion flag
+import time
+import logging
+
+# 1. SETUP LOGGING
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - [AGENT-GOVERNANCE] - %(levelname)s - %(message)s')
+
+# 2. DEFINE THE GOVERNOR CLASS FIRST
+class AgentNetworkGovernor:
+    def __init__(self, max_steps_per_task=15, daily_token_budget=500000):
+        self.max_steps = max_steps_per_task
+        self.token_budget = daily_token_budget
+        self.current_tokens_used = 0
+
+    def check_circuit_breaker(self, current_step: int, task_name: str):
+        if current_step >= self.max_steps:
+            raise RuntimeError(f"Infinite loop detected in task: {task_name}")
+        return True
+
+    def track_token_usage(self, tokens_consumed: int):
+        self.current_tokens_used += tokens_consumed
+        if self.current_tokens_used > self.token_budget:
+            raise PermissionError("Daily token budget reached.")
+        return self.current_tokens_used
+
+# 3. INSTANTIATE THE GOVERNOR (This fixes your current error)
+swarm_governor = AgentNetworkGovernor(max_steps_per_task=15, daily_token_budget=500000)
+
+# 4. NOW YOUR LOOP CAN RUN SAFELY
 step_count = 0
 task_identifier = "Daily_Agent_Generation_Pipeline"
 task_completed = False
 
 while not task_completed:
     step_count += 1
-    
-    # 1. Run your circuit breaker check
     swarm_governor.check_circuit_breaker(step_count, task_identifier)
     
-    # 2. INSERT YOUR ACTUAL AGENT EXECUTION CODE HERE
-    # Example: 
-    # active_agents = spawn_daily_agents()
-    # success_status = run_agent_workflow(active_agents)
+    # Put your agent execution logic here...
+    print(f"Executing step {step_count}...")
     
-    # 3. Add your break/completion condition when work is done
-    # For now, if you are testing, you can let it run 1 step or set a break condition:
-    print(f"Executing step {step_count} of the agent network...")
-    
-    # Flip this to True once your agents finish their 24-hour spawn/generation cycle
-    task_completed = True 
+    task_completed = True # Flips to true so it finishes successfully
