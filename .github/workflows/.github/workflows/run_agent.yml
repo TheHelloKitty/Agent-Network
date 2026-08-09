@@ -33,3 +33,11 @@ jobs:
           USER_PROMPT: ${{ github.event.inputs.prompt || 'Daily scheduled check-in and task review.' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python agent.py
+
+      - name: Commit & Push Memory Update
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add memory.json
+          git commit -m "Auto-update agent memory state" || echo "No memory changes to commit"
+          git push
