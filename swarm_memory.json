@@ -1,5 +1,5 @@
 {
-    "current_generation": 3,
+    "current_generation": 4,
     "all_agents": [
         {
             "agent_id": "Gen2_Agent_1",
@@ -179,6 +179,96 @@
             "personality": "Whimsical & Energetic",
             "tone": "Suspenseful",
             "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen4_Agent_1",
+            "generation": 4,
+            "pen_name": "Operator-766",
+            "assigned_niche": "Fitness Planners",
+            "personality": "Bold & Provocative",
+            "tone": "Pragmatic",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen4_Agent_2",
+            "generation": 4,
+            "pen_name": "Operator-121",
+            "assigned_niche": "Fitness Planners",
+            "personality": "Cynical & Direct",
+            "tone": "Authoritative",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen4_Agent_3",
+            "generation": 4,
+            "pen_name": "Operator-402",
+            "assigned_niche": "Real Estate Email Templates",
+            "personality": "Methodical & Analytical",
+            "tone": "Poetic",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen4_Agent_4",
+            "generation": 4,
+            "pen_name": "Operator-441",
+            "assigned_niche": "Cozy Mystery Outlines",
+            "personality": "Bold & Provocative",
+            "tone": "Authoritative",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen4_Agent_5",
+            "generation": 4,
+            "pen_name": "Operator-749",
+            "assigned_niche": "Real Estate Email Templates",
+            "personality": "Methodical & Analytical",
+            "tone": "Poetic",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen4_Agent_6",
+            "generation": 4,
+            "pen_name": "Operator-881",
+            "assigned_niche": "SaaS Marketing Funnels",
+            "personality": "Bold & Provocative",
+            "tone": "Suspenseful",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen4_Agent_7",
+            "generation": 4,
+            "pen_name": "Operator-816",
+            "assigned_niche": "Sci-Fi Short Stories",
+            "personality": "Whimsical & Energetic",
+            "tone": "Humorous",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen4_Agent_8",
+            "generation": 4,
+            "pen_name": "Operator-379",
+            "assigned_niche": "Cozy Mystery Outlines",
+            "personality": "Bold & Provocative",
+            "tone": "Suspenseful",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen4_Agent_9",
+            "generation": 4,
+            "pen_name": "Operator-764",
+            "assigned_niche": "Fitness Planners",
+            "personality": "Cynical & Direct",
+            "tone": "Authoritative",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
             "status": "Active"
         }
     ]
