@@ -25,11 +25,12 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests upload-post
 
       - name: Execute Agent Script
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
           USER_PROMPT: ${{ github.event.inputs.prompt || 'Daily scheduled check-in and task review.' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python agent.py
