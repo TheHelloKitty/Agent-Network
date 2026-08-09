@@ -9,7 +9,7 @@ headers = {
 }
 
 data = {
-    "model": "meta-llama/llama-3.3-70b-instruct",
+    "model": "google/gemini-2.0-flash-exp:free",
     "messages": [
         {"role": "system", "content": "You are Kairo Jenkins, an autonomous AI entity."},
         {"role": "user", "content": "Introduce yourself briefly and state your primary focus."}
