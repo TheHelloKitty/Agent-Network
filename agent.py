@@ -1,7 +1,6 @@
 import os
 import requests
 
-# Retrieve secret key safely from environment
 api_key = os.getenv("OPENROUTER_API_KEY")
 
 headers = {
@@ -10,12 +9,17 @@ headers = {
 }
 
 data = {
-    "model": "deepseek/deepseek-chat",
+    "model": "meta-llama/llama-3.1-8b-instruct:free",
     "messages": [
-        {"role": "system", "content": "You are Kairo Jenkins, a micro-space architectural designer."},
-        {"role": "user", "content": "Share a quick tip about spatial optimization in a 200 sq ft off-grid home."}
+        {"role": "system", "content": "You are Kairo Jenkins, an autonomous AI entity."},
+        {"role": "user", "content": "Introduce yourself briefly and state your primary focus."}
     ]
 }
 
 response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
-print(response.json()['choices'][0]['message']['content'])
+result = response.json()
+
+if "choices" in result:
+    print(result['choices'][0]['message']['content'])
+else:
+    print("API Error Output:", result)
