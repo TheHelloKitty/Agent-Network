@@ -1,19 +1,12 @@
-name: Run Agent Network
+name: run-script
 
 on:
   workflow_dispatch:
-    inputs:
-      prompt:
-        description: 'Custom prompt for Kairo'
-        required: false
-        default: 'Provide quick strategic advice for today.'
   schedule:
-    - cron: '15 3,11,19 * * *'
-
-permissions: write-all
+    - cron: '0 0 * * *'
 
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -22,25 +15,25 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install requests upload-post coinbase-advanced-py
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Execute Agent Script
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
-          COINBASE_API_KEY: ${{ secrets.COINBASE_API_KEY }}
-          COINBASE_API_SECRET: ${{ secrets.COINBASE_API_SECRET }}
-          USER_PROMPT: ${{ github.event.inputs.prompt || 'Daily scheduled check-in and task review.' }}
+          CDP_API_KEY_NAME: ${{ secrets.CDP_API_KEY_NAME }}
+          CDP_API_SECRET_KEY: ${{ secrets.CDP_API_SECRET_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: python agent.py
 
       - name: Commit & Push Memory Update
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]"
-          git add memory.json
-          git commit -m "Auto-update agent memory state" || echo "No memory changes to commit"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update agent memory and state"
+          file_pattern: memory.json
