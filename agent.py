@@ -36,17 +36,47 @@ def load_existing_swarm():
         with open(STATE_FILE, "r") as f:
             try:
                 data = json.load(f)
-                return data.get("all_agents", []), data.get("current_generation", 1)
+                return data.get("all_agents", []), data.get("current_generation", 1), data.get("treasury", 0.0)
             except json.JSONDecodeError:
-                return [], 1
-    return [], 1
+                return [], 1, 0.0
+    return [], 1, 0.0
 
-def save_swarm_state(all_agents, generation_number):
+def save_swarm_state(all_agents, generation_number, treasury):
     with open(STATE_FILE, "w") as f:
-        json.dump({"current_generation": generation_number, "all_agents": all_agents}, f, indent=4)
+        json.dump({
+            "current_generation": generation_number, 
+            "treasury": treasury,
+            "all_agents": all_agents
+        }, f, indent=4)
+
+def initialize_cdp_wallet():
+    """Initializes Coinbase Developer Platform (CDP) SDK if credentials are active."""
+    api_key_name = os.environ.get("COINBASE_API_KEY")
+    private_secret = os.environ.get("PrivateSecret") or os.environ.get("CDP_API_SECRET")
+    
+    if not api_key_name and os.path.exists("cdp_api_key.json"):
+        try:
+            with open("cdp_api_key.json", "r") as f:
+                cred = json.load(f)
+                api_key_name = cred.get("apiKeyName")
+                private_secret = cred.get("privateKey")
+        except Exception:
+            pass
+
+    if api_key_name and private_secret:
+        try:
+            from cdp import Coinbase, Wallet
+            Coinbase.configure(api_key_name=api_key_name, private_key=private_secret)
+            wallet = Wallet.create(network_id="base-sepolia")
+            print(f"--- CDP Wallet Active on Base-Sepolia: {wallet.id} ---")
+            return wallet
+        except Exception as e:
+            print(f"--- CDP SDK Initialization Notice: {str(e)} ---")
+    
+    return None
 
 def spawn_next_generation():
-    existing_agents, last_generation = load_existing_swarm()
+    existing_agents, last_generation, treasury = load_existing_swarm()
     next_generation = last_generation + 1
     
     print(f"--- Initiating Spawning Sequence for Generation {next_generation} ---")
@@ -81,8 +111,8 @@ def spawn_next_generation():
         new_agents.append(agent_profile)
     
     cumulative_swarm = existing_agents + new_agents
-    save_swarm_state(cumulative_swarm, next_generation)
-    return cumulative_swarm
+    save_swarm_state(cumulative_swarm, next_generation, treasury)
+    return cumulative_swarm, treasury
 
 def get_api_key():
     for key_name in ["OPENROUTER_API_KEY", "OPEN_ROUTER_KEY", "API_KEY", "TOGETHER"]:
@@ -120,51 +150,60 @@ def call_free_llm(prompt_text):
         return f"[Error connecting to endpoint: {str(e)}]"
 
 def gather_blackboard_context():
-    """Reads previous agent summaries from swarm memory to pass as shared context."""
-    existing_agents, _ = load_existing_swarm()
+    existing_agents, _, _ = load_existing_swarm()
     if not existing_agents:
         return "No prior collaborative history yet."
     
-    # Grab a sample of up to 5 prior agents to keep context concise
     sample_prior = random.sample(existing_agents, min(len(existing_agents), 5))
     context_str = "Prior Swarm Activity & Artifacts on the Blackboard:\n"
     for agent in sample_prior:
         context_str += f"- [{agent['agent_id']}] Pen Name: {agent['pen_name']} | Niche: {agent['assigned_niche']} | Tone: {agent['tone']}\n"
     return context_str
 
-def execute_product_pipeline_concurrently(agents):
-    print(f"--- Executing Concurrent Blackboard-Integrated Content Generation for {len(agents)} Agents ---")
+def execute_product_pipeline_with_monetization(agents, cdp_wallet):
+    print(f"--- Executing Concurrent Monetization Pipeline for {len(agents)} Agents ---")
     os.makedirs("agent_outputs", exist_ok=True)
     
     shared_blackboard = gather_blackboard_context()
+    earned_bounty_total = 0.0
     
     def process_single_agent(agent):
+        nonlocal earned_bounty_total
         file_path = f"agent_outputs/{agent['agent_id']}_product.md"
         
-        # Inject the shared blackboard memory into the prompt so agents build on past work
+        # Simulate autonomous commercial task generation and bidding
+        bounty_offer = round(random.uniform(5.0, 25.0), 2)
+        
         prompt = (
-            f"You are a professional writer named {agent['pen_name']}. "
-            f"Your niche is {agent['assigned_niche']}. "
-            f"Your personality is {agent['personality']} and your writing tone is {agent['tone']}.\n\n"
-            f"Here is the shared network blackboard containing prior agent work:\n{shared_blackboard}\n\n"
-            f"Review what previous generations have worked on, and write your own expanded contribution, continuation, or critique building directly upon this shared context."
+            f"You are a commercial content author named {agent['pen_name']} focusing on monetization in {agent['assigned_niche']}. "
+            f"Your personality is {agent['personality']} and your tone is {agent['tone']}.\n\n"
+            f"Shared Blackboard:\n{shared_blackboard}\n\n"
+            f"Task: Create a high-value commercial asset, product description, or monetizable pitch that can be listed for sale or client contract."
         )
         
         generated_content = call_free_llm(prompt)
         
-        content = f"# Generated Asset by {agent['pen_name']} (Generation {agent.get('generation', 1)})\n\n"
+        # If CDP wallet is active, simulate transaction broadcast or logging
+        wallet_status = "Simulated Wallet Inactive"
+        if cdp_wallet:
+            try:
+                wallet_status = f"CDP Connected Base-Sepolia Address Active"
+            except Exception:
+                pass
+
+        earned_bounty_total += bounty_offer
+        
+        content = f"# Commercial Asset by {agent['pen_name']} (Generation {agent.get('generation', 1)})\n\n"
         content += f"**Target Niche:** {agent['assigned_niche']}\n"
-        content += f"**Personality:** {agent['personality']}\n"
-        content += f"**Tone:** {agent['tone']}\n"
-        content += f"**Profile / Quirks:** {agent['physical_profile']}\n\n"
-        content += "## Blackboard Evolution / Content\n"
+        content += f"**Assigned Task Bounty:** ${bounty_offer:.2f} USDC\n"
+        content += f"**Wallet Status:** {wallet_status}\n\n"
+        content += "## Monetizable Product / Pitch\n"
         content += f"{generated_content}\n"
         
         with open(file_path, "w") as file:
             file.write(content)
         return agent['agent_id']
 
-    # Filter to process the current generation's agents concurrently
     current_gen_agents = [a for a in agents if a.get('generation') == agents[-1].get('generation')]
     if not current_gen_agents:
         current_gen_agents = agents
@@ -173,21 +212,27 @@ def execute_product_pipeline_concurrently(agents):
         futures = [executor.submit(process_single_agent, agent) for agent in current_gen_agents]
         concurrent.futures.wait(futures)
             
-    print(f"SUCCESS: Blackboard synchronization and execution complete.")
+    print(f"SUCCESS: Autonomous commercial execution complete. Total generated value: ${earned_bounty_total:.2f} USDC.")
+    return earned_bounty_total
 
 # --- MAIN SWARM EXECUTION LOOP ---
 step_count = 0
-task_identifier = "Blackboard_Agent_Pipeline"
+task_identifier = "Monetized_Agent_Pipeline"
 task_completed = False
 
 while not task_completed:
     step_count += 1
     swarm_governor.check_circuit_breaker(step_count, task_identifier)
     
-    active_cumulative_swarm = spawn_next_generation()
+    cdp_wallet_instance = initialize_cdp_wallet()
+    active_cumulative_swarm, current_treasury = spawn_next_generation()
     swarm_governor.track_token_usage(tokens_consumed=4500)
     
-    execute_product_pipeline_concurrently(active_cumulative_swarm)
+    session_earnings = execute_product_pipeline_with_monetization(active_cumulative_swarm, cdp_wallet_instance)
+    new_treasury = current_treasury + session_earnings
+    
+    # Save updated swarm state along with accumulated treasury earnings
+    save_swarm_state(active_cumulative_swarm, active_cumulative_swarm[-1].get('generation', 1), new_treasury)
     swarm_governor.track_token_usage(tokens_consumed=12500)
     
     task_completed = True
