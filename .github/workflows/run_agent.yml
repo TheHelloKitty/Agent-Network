@@ -27,7 +27,7 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
           CDP_API_KEY_NAME: ${{ secrets.CDP_API_KEY_NAME }}
-          CDP_API_SECRET_KEY: ${{ secrets.CDP_API_SECRET_KEY }}
+          CDP_API_KEY_PRIVATE_KEY: ${{ secrets.CDP_API_KEY_PRIVATE_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python agent.py
