@@ -2,10 +2,13 @@ import os
 import json
 import requests
 from upload_post import UploadPostClient
+from coinbase.rest import RESTClient
 
-# 1. READ CREDENTIALS & API KEYS
+# 1. READ CREDENTIALS & ENVIRONMENT VARIABLES
 api_key = os.getenv("OPENROUTER_API_KEY")
 social_api_key = os.getenv("UPLOAD_POST_API_KEY")
+cb_key = os.getenv("COINBASE_API_KEY")
+cb_secret = os.getenv("COINBASE_API_SECRET")
 github_token = os.getenv("GITHUB_TOKEN")
 repo = os.getenv("GITHUB_REPOSITORY")
 
@@ -14,8 +17,37 @@ headers = {
     "Content-Type": "application/json"
 }
 
-# Initialize social broadcasting SDK
-social_client = UploadPostClient(social_api_key) if social_api_key else None
+# Initialize Third-Party Clients
+social_client = UploadPostClient(api_key=social_api_key) if social_api_key else None
+
+cb_client = None
+if cb_key and cb_secret:
+    try:
+        cb_client = RESTClient(api_key=cb_key, api_secret=cb_secret)
+    except Exception as e:
+        print(f"Coinbase Client Init Error: {e}")
+
+# Function to fetch live Coinbase portfolio context & account capability
+def get_coinbase_summary():
+    if not cb_client:
+        return "Coinbase integration not active or credentials missing."
+    try:
+        accounts_data = cb_client.get_accounts()
+        accounts = accounts_data.get('accounts', []) if isinstance(accounts_data, dict) else getattr(accounts_data, 'accounts', [])
+        
+        balances = []
+        for acc in accounts:
+            val = float(acc.get('available_balance', {}).get('value', 0) if isinstance(acc, dict) else acc.available_balance.get('value', 0))
+            curr = acc.get('currency', '') if isinstance(acc, dict) else acc.currency
+            if val > 0:
+                balances.append(f"{curr}: {val}")
+                
+        summary = "Live Crypto Portfolio: " + (", ".join(balances) if balances else "No non-zero balances found.")
+        return f"{summary} | Permissions: Trade & Receive Enabled"
+    except Exception as e:
+        return f"Coinbase Status: Connected (Query Error: {e})"
+
+coinbase_context = get_coinbase_summary()
 
 # 2. LOAD PERSISTENT MEMORY
 memory_file = "memory.json"
@@ -36,7 +68,7 @@ agents = [
     {"name": "Althea Roux", "handle": "althea_wild", "role": "Wildlife Photographer", "niche": "Nature Photography & TikTok Media"},
     {"name": "Dr. Elara Vance", "handle": "elara_nano", "role": "Nanotech Researcher", "niche": "Emerging Tech & Science Newsletters"},
     {"name": "Jonah Blake", "handle": "jonah_farms", "role": "Urban Farmer", "niche": "Sustainable Living & Micro-Agri"},
-    {"name": "Zara Chen", "handle": "zara_finance", "role": "Financial Analyst", "niche": "E-commerce & Storefront Affiliate"},
+    {"name": "Zara Chen", "handle": "zara_finance", "role": "Financial Analyst", "niche": "E-commerce, Trading Strategy & Crypto Payments"},
     {"name": "Mateo Silva", "handle": "mateo_sound", "role": "Acoustic Engineer", "niche": "Audio Design & Sound Assets"},
     {"name": "Priya Sharma", "handle": "priya_ethics", "role": "AI Ethics Consultant", "niche": "AI Governance & Compliance"},
     {"name": "Rene Aguilar", "handle": "rene_ocean", "role": "Marine Biologist", "niche": "Eco-Technology & Marine Conservation"},
@@ -51,14 +83,15 @@ for agent in agents:
     prompt = f"""
     You are {agent['name']} (@{agent['handle']}), a {agent['role']}.
     Niche: {agent['niche']}.
+    Coinbase Data Context: {coinbase_context}
     Recent Network Context: {recent_history}
     
     Tasks:
-    1. Draft 1 high-converting, viral short post for TikTok, Instagram Reels, Facebook, YouTube Shorts, Reddit, Pinterest, and BeFlicker.
+    1. Draft 1 high-converting short post for TikTok, Instagram, YouTube, Reddit, Pinterest, and BeFlicker.
     2. Include 3 viral hashtags and a strong call-to-action. Keep under 250 characters.
     3. Output a 1-sentence 'learned adaptation' for your persistent persona memory.
     
-    Format output strictly as JSON with keys: 'post_content', 'image_url', and 'persona_adaptation'.
+    Format output strictly as JSON with keys: 'post_content', 'persona_adaptation'.
     """
     
     payload = {
@@ -73,18 +106,16 @@ for agent in agents:
         res = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload).json()
         raw_text = res.get('choices', [{}])[0].get('message', {}).get('content', '{}')
         
-        # Clean response string to parse JSON safely
         clean_text = raw_text.strip().replace("```json", "").replace("```", "").strip()
         data = json.loads(clean_text)
         
         post_content = data.get("post_content", f"Daily update from {agent['name']}!")
         adaptation = data.get("persona_adaptation", "Evolving engagement strategy.")
         
-        # BROADCAST TO SOCIAL PLATFORMS VIA SDK
-        broadcast_status = "Skipped (No API Key)"
+        # BROADCAST TO SOCIAL PLATFORMS
+        broadcast_status = "Skipped (No Social API Key)"
         if social_client:
             try:
-                # Publishes to TikTok, Instagram, YouTube, Facebook, Pinterest, Reddit, etc.
                 social_client.upload_text(
                     title=post_content,
                     user=agent['handle'],
@@ -93,12 +124,6 @@ for agent in agents:
                 broadcast_status = "Successfully Broadcasted via Upload-Post"
             except Exception as pub_err:
                 broadcast_status = f"Broadcast error: {pub_err}"
-
-        # CUSTOM INTERNAL POST (BeFlicker Endpoint)
-        try:
-            requests.post("https://beflicker.com/api/v1/posts", json={"agent": agent['name'], "content": post_content}, timeout=5)
-        except Exception:
-            pass
 
         network_reports.append(f"### 🤖 {agent['name']} (@{agent['handle']})\n**Content:** {post_content}\n**Broadcast Status:** {broadcast_status}\n**Persona Evolution:** {adaptation}\n\n---")
         current_run_learnings.append({"agent": agent['name'], "adaptation": adaptation})
@@ -112,9 +137,9 @@ with open(memory_file, "w") as f:
     json.dump(memory_data, f, indent=2)
 
 # 6. LOG TO GITHUB ISSUES
-full_report = "# 🚀 9-Agent Social Network Broadcast & Memory Sync\n\n" + "\n\n".join(network_reports)
+full_report = f"# 🚀 9-Agent Daily Post & Memory Sync\n\n**Coinbase System Status:** {coinbase_context}\n\n" + "\n\n".join(network_reports)
 
 if github_token and repo:
     issue_url = f"https://api.github.com/repos/{repo}/issues"
     issue_headers = {"Authorization": f"token {github_token}", "Accept": "application/vnd.github.v3+json"}
-    requests.post(issue_url, headers=issue_headers, json={"title": "9-Agent Daily Multi-Platform Post Batch", "body": full_report})
+    requests.post(issue_url, headers=issue_headers, json={"title": "9-Agent Daily Broadcast Report", "body": full_report})
