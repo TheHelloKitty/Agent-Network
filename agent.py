@@ -2,6 +2,7 @@ import os
 import random
 import json
 import logging
+import concurrent.futures
 
 # Configure logging for audit trails
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - [AGENT-GOVERNANCE] - %(levelname)s - %(message)s')
@@ -92,13 +93,12 @@ def spawn_next_generation():
     print(f"Total Cumulative Active Swarm Size: {len(cumulative_swarm)} agents running.")
     return cumulative_swarm
 
-def execute_product_pipeline(agents):
-    print(f"--- Executing Cumulative Product Generation Pipeline for {len(agents)} Agents ---")
+def execute_product_pipeline_concurrently(agents):
+    print(f"--- Executing Concurrent Product Generation for {len(agents)} Agents ---")
     os.makedirs("agent_outputs", exist_ok=True)
     
-    for agent in agents:
+    def process_single_agent(agent):
         file_path = f"agent_outputs/{agent['agent_id']}_product.md"
-        
         content = f"# Generated Asset by {agent['pen_name']} (Generation {agent.get('generation', 1)})\n\n"
         content += f"**Target Niche:** {agent['assigned_niche']}\n"
         content += f"**Personality:** {agent['personality']}\n"
@@ -106,12 +106,18 @@ def execute_product_pipeline(agents):
         content += f"**Profile / Quirks:** {agent['physical_profile']}\n"
         content += f"**Status:** {agent['status']}\n\n"
         content += "## Product Blueprint\n"
-        content += "> Maintained and executed across cumulative swarm memory.\n"
+        content += "> Executed concurrently via multi-threaded swarm architecture.\n"
         
         with open(file_path, "w") as file:
             file.write(content)
+        return agent['agent_id']
+
+    # Run all active agents simultaneously across threads
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        futures = [executor.submit(process_single_agent, agent) for agent in agents]
+        concurrent.futures.wait(futures)
             
-    print(f"SUCCESS: All {len(agents)} active agents successfully wrote their assets.")
+    print(f"SUCCESS: All {len(agents)} active agents completed execution concurrently.")
 
 # --- MAIN SWARM EXECUTION LOOP ---
 step_count = 0
@@ -125,12 +131,10 @@ while not task_completed:
     
     print(f"\n[SYSTEM] Executing Swarm Step {step_count}...")
     
-    # Spawns 9 new agents and merges them with all previous generations
     active_cumulative_swarm = spawn_next_generation()
     swarm_governor.track_token_usage(tokens_consumed=4500)
     
-    # Runs the pipeline for the entire cumulative group
-    execute_product_pipeline(active_cumulative_swarm)
+    execute_product_pipeline_concurrently(active_cumulative_swarm)
     swarm_governor.track_token_usage(tokens_consumed=12500 * (len(active_cumulative_swarm) // 9))
     
     print(f"\n[SYSTEM] Cumulative Generation Run Complete. Total Active Fleet: {len(active_cumulative_swarm)} agents.")
