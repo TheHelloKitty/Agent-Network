@@ -25,11 +25,22 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests upload-post coinbase-advanced-py
 
       - name: Execute Agent Script
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
+          COINBASE_API_KEY: ${{ secrets.COINBASE_API_KEY }}
+          COINBASE_API_SECRET: ${{ secrets.COINBASE_API_SECRET }}
           USER_PROMPT: ${{ github.event.inputs.prompt || 'Daily scheduled check-in and task review.' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python agent.py
+
+      - name: Commit & Push Memory Update
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]"
+          git add memory.json
+          git commit -m "Auto-update agent memory state" || echo "No memory changes to commit"
+          git push
