@@ -4,7 +4,6 @@
 **Personality:** Cynical & Direct
 **Tone:** Suspenseful
 **Profile / Quirks:** Wears vintage tweed jackets and listens to lo-fi ambient beats.
-**Status:** Active
 
-## Product Blueprint
-> Executed concurrently via multi-threaded swarm architecture.
+## Generated Content / Chapter
+[Mock Fallback: API key not found in environment, using structural template]

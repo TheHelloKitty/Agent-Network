@@ -1,8 +1,8 @@
-# Generated Asset by Operator-785 (Generation 2)
+# Generated Asset by Operator-578 (Generation 3)
 
-**Target Niche:** Cozy Mystery Outlines
-**Personality:** Cynical & Direct
-**Tone:** Pragmatic
+**Target Niche:** B2B Supply Chain Workflows
+**Personality:** Warm & Conversational
+**Tone:** Authoritative
 **Profile / Quirks:** Keeps an organized desk with stacked index cards and a mechanical pencil collection.
 
 ## Generated Content / Chapter

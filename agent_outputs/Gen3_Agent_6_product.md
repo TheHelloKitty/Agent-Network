@@ -1,8 +1,8 @@
-# Generated Asset by Operator-785 (Generation 2)
+# Generated Asset by Operator-395 (Generation 3)
 
-**Target Niche:** Cozy Mystery Outlines
-**Personality:** Cynical & Direct
-**Tone:** Pragmatic
+**Target Niche:** SaaS Marketing Funnels
+**Personality:** Bold & Provocative
+**Tone:** Humorous
 **Profile / Quirks:** Keeps an organized desk with stacked index cards and a mechanical pencil collection.
 
 ## Generated Content / Chapter
