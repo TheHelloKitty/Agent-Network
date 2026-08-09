@@ -3,14 +3,12 @@ def post_to_x(text_content):
         return "Skipped (Missing X Secrets)"
     
     try:
-        # Request OAuth 2.0 Token from X with credentials in data payload
+        # Request OAuth 2.0 Token from X using HTTP Basic Auth for credentials
         token_url = "https://api.x.com/2/oauth2/token"
         auth_data = {
-            "grant_type": "client_credentials",
-            "client_id": client_id,
-            "client_secret": client_secret
+            "grant_type": "client_credentials"
         }
-        response = requests.post(token_url, data=auth_data)
+        response = requests.post(token_url, data=auth_data, auth=(client_id, client_secret))
         
         if response.status_code != 200:
             return f"Auth Failed: {response.text}"
