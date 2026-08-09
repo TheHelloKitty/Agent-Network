@@ -118,14 +118,14 @@ for agent in agents:
         post_content = data.get("post_content", f"Daily update from {agent['name']}!")
         adaptation = data.get("persona_adaptation", "Evolving engagement strategy.")
         
-        # BROADCAST VIDEO POST TO SOCIAL PLATFORMS
+        # BROADCAST VIDEO POST VIA MAIN_PROFILE
         broadcast_status = "Skipped (No Social API Key)"
         if social_client:
             try:
                 social_client.upload_video(
                     video_path=DEFAULT_VIDEO_URL,
-                    title=post_content,
-                    user=agent['handle'],
+                    title=f"[{agent['name']}] {post_content}",
+                    user="main_profile",
                     platforms=["tiktok", "instagram", "youtube", "pinterest", "facebook"]
                 )
                 broadcast_status = "Successfully Broadcasted Video via Upload-Post"
