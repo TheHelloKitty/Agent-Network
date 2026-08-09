@@ -5,15 +5,10 @@ def post_to_x(text_content):
     try:
         token_url = "https://api.x.com/2/oauth2/token"
         auth_data = {
-            "grant_type": "client_credentials",
-            "client_id": client_id,
-            "client_secret": client_secret,
-            "client_type": "public"
+            "grant_type": "client_credentials"
         }
-        headers = {
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
-        response = requests.post(token_url, data=auth_data, headers=headers)
+        # Use HTTP Basic Auth for credentials as required by X API
+        response = requests.post(token_url, data=auth_data, auth=(client_id, client_secret))
         
         if response.status_code != 200:
             return f"Auth Failed: {response.text}"
