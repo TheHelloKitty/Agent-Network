@@ -1,5 +1,6 @@
 import os
 import random
+import json
 import logging
 
 # Configure logging for audit trails
@@ -27,8 +28,31 @@ class AgentNetworkGovernor:
 # Initialize the global governor
 swarm_governor = AgentNetworkGovernor(max_steps_per_task=15, daily_token_budget=500000)
 
-def spawn_next_generation(generation_number=2):
-    print(f"--- Initiating Spawning Sequence for Generation {generation_number} ---")
+STATE_FILE = "swarm_memory.json"
+
+def load_existing_swarm():
+    """Loads all previously running agents from persistent memory."""
+    if os.path.exists(STATE_FILE):
+        with open(STATE_FILE, "r") as f:
+            try:
+                data = json.load(f)
+                return data.get("all_agents", []), data.get("current_generation", 1)
+            except json.JSONDecodeError:
+                return [], 1
+    return [], 1
+
+def save_swarm_state(all_agents, generation_number):
+    """Saves the cumulative active swarm state back to persistent storage."""
+    with open(STATE_FILE, "w") as f:
+        json.dump({"current_generation": generation_number, "all_agents": all_agents}, f, indent=4)
+
+def spawn_next_generation():
+    """Loads existing agents, increments generation, spawns 9 new ones, and accumulates them."""
+    existing_agents, last_generation = load_existing_swarm()
+    next_generation = last_generation + 1
+    
+    print(f"--- Initiating Spawning Sequence for Generation {next_generation} ---")
+    print(f"Loaded {len(existing_agents)} active agents from previous generations.")
     
     niches = [
         "Children's Books", "B2B Supply Chain Workflows", "Cozy Mystery Outlines", 
@@ -49,42 +73,49 @@ def spawn_next_generation(generation_number=2):
     new_agents = []
     for i in range(1, 10):
         agent_profile = {
-            "agent_id": f"Gen{generation_number}_Agent_{i}",
+            "agent_id": f"Gen{next_generation}_Agent_{i}",
+            "generation": next_generation,
             "pen_name": f"Operator-{random.randint(100, 999)}",
             "assigned_niche": random.choice(niches),
             "personality": random.choice(personalities),
             "tone": random.choice(tones),
             "physical_profile": random.choice(physical_traits),
-            "status": "Awaiting Execution"
+            "status": "Active"
         }
         new_agents.append(agent_profile)
-        print(f"Spawned: {agent_profile['pen_name']} | Niche: {agent_profile['assigned_niche']} | Persona: {agent_profile['personality']}")
-        
-    return new_agents
+        print(f"Spawned & Added: {agent_profile['agent_id']} ({agent_profile['pen_name']}) | Niche: {agent_profile['assigned_niche']}")
+    
+    # Combine historical agents with the newly spawned generation
+    cumulative_swarm = existing_agents + new_agents
+    save_swarm_state(cumulative_swarm, next_generation)
+    
+    print(f"Total Cumulative Active Swarm Size: {len(cumulative_swarm)} agents running.")
+    return cumulative_swarm
 
 def execute_product_pipeline(agents):
-    print("--- Executing Product Generation Pipeline ---")
+    print(f"--- Executing Cumulative Product Generation Pipeline for {len(agents)} Agents ---")
     os.makedirs("agent_outputs", exist_ok=True)
     
     for agent in agents:
         file_path = f"agent_outputs/{agent['agent_id']}_product.md"
         
-        content = f"# Generated Asset by {agent['pen_name']}\n\n"
+        content = f"# Generated Asset by {agent['pen_name']} (Generation {agent.get('generation', 1)})\n\n"
         content += f"**Target Niche:** {agent['assigned_niche']}\n"
         content += f"**Personality:** {agent['personality']}\n"
         content += f"**Tone:** {agent['tone']}\n"
-        content += f"**Profile / Quirks:** {agent['physical_profile']}\n\n"
+        content += f"**Profile / Quirks:** {agent['physical_profile']}\n"
+        content += f"**Status:** {agent['status']}\n\n"
         content += "## Product Blueprint\n"
-        content += "> Created automatically with distinct persona governance.\n"
+        content += "> Maintained and executed across cumulative swarm memory.\n"
         
         with open(file_path, "w") as file:
             file.write(content)
             
-        print(f"SUCCESS: {agent['pen_name']} generated asset -> {file_path}")
+    print(f"SUCCESS: All {len(agents)} active agents successfully wrote their assets.")
 
 # --- MAIN SWARM EXECUTION LOOP ---
 step_count = 0
-task_identifier = "Daily_Agent_Generation_Pipeline"
+task_identifier = "Cumulative_Agent_Generation_Pipeline"
 task_completed = False
 
 while not task_completed:
@@ -94,11 +125,13 @@ while not task_completed:
     
     print(f"\n[SYSTEM] Executing Swarm Step {step_count}...")
     
-    active_swarm = spawn_next_generation(generation_number=2)
+    # Spawns 9 new agents and merges them with all previous generations
+    active_cumulative_swarm = spawn_next_generation()
     swarm_governor.track_token_usage(tokens_consumed=4500)
     
-    execute_product_pipeline(active_swarm)
-    swarm_governor.track_token_usage(tokens_consumed=12500)
+    # Runs the pipeline for the entire cumulative group
+    execute_product_pipeline(active_cumulative_swarm)
+    swarm_governor.track_token_usage(tokens_consumed=12500 * (len(active_cumulative_swarm) // 9))
     
-    print("\n[SYSTEM] Daily Generation and Execution Complete.")
+    print(f"\n[SYSTEM] Cumulative Generation Run Complete. Total Active Fleet: {len(active_cumulative_swarm)} agents.")
     task_completed = True
