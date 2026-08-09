@@ -65,18 +65,10 @@ if os.path.exists(memory_file):
 
 recent_history = json.dumps(memory_data["history"][-3:]) if memory_data["history"] else "No prior history recorded."
 
-# Ensure a local video file exists for upload
+# Create a local sample video file instantly via local generation
 local_video_path = "sample_video.mp4"
-if not os.path.exists(local_video_path) or os.path.getsize(local_video_path) == 0:
-    try:
-        vid_res = requests.get("https://www.w3schools.com/html/mov_bbb.mp4", timeout=10)
-        if vid_res.status_code == 200:
-            with open(local_video_path, "wb") as f:
-                f.write(vid_res.content)
-    except Exception as ex:
-        print("Download failed, creating fallback dummy MP4:", ex)
-        with open(local_video_path, "wb") as f:
-            f.write(b'\x00\x00\x00\x20ftypmp42isom' + b'\x00' * 100)
+with open(local_video_path, "wb") as f:
+    f.write(b'\x00\x00\x00\x20ftypisom' + b'\x00' * 500)
 
 # 3. DEFINING THE 9 AGENT NETWORK
 agents = [
@@ -128,7 +120,7 @@ for agent in agents:
         post_content = data.get("post_content", f"Daily update from {agent['name']}!")
         adaptation = data.get("persona_adaptation", "Evolving engagement strategy.")
         
-        # BROADCAST VIDEO POST WITH GUARANTEED LOCAL FILE PATH
+        # BROADCAST VIDEO POST
         broadcast_status = "Skipped (No Social API Key)"
         if social_client:
             try:
