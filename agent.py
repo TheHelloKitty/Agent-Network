@@ -1,11 +1,10 @@
-        # BROADCAST VIDEO POST TO FACEBOOK
+        # BROADCAST VIDEO POST TO FACEBOOK (NO USER PARAMETER)
         broadcast_status = "Skipped (No Social API Key)"
         if social_client:
             try:
                 social_client.upload_video(
                     video_path=DEFAULT_VIDEO_URL,
                     title=f"[{agent['name']}] {post_content}",
-                    user="agentnetwork1",  # Exactly matches your Upload-Post username
                     platforms=["facebook"]
                 )
                 broadcast_status = "Successfully Broadcasted Video via Upload-Post"
