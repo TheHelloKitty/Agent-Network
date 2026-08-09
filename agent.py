@@ -86,7 +86,6 @@ def spawn_next_generation():
         new_agents.append(agent_profile)
         print(f"Spawned & Added: {agent_profile['agent_id']} ({agent_profile['pen_name']}) | Niche: {agent_profile['assigned_niche']}")
     
-    # Combine historical agents with the newly spawned generation
     cumulative_swarm = existing_agents + new_agents
     save_swarm_state(cumulative_swarm, next_generation)
     
@@ -112,7 +111,6 @@ def execute_product_pipeline_concurrently(agents):
             file.write(content)
         return agent['agent_id']
 
-    # Run all active agents simultaneously across threads
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         futures = [executor.submit(process_single_agent, agent) for agent in agents]
         concurrent.futures.wait(futures)
