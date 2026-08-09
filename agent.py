@@ -17,6 +17,11 @@ except ImportError:
 # 1. READ CREDENTIALS & ENVIRONMENT VARIABLES
 api_key = (os.getenv("OPENROUTER_API_KEY") or "").strip()
 social_api_key = (os.getenv("UPLOAD_POST_API_KEY") or "").strip().replace("\\n", "").replace("\n", "").replace("\r", "")
+cdp_api_key_name = (os.getenv("CDP_API_KEY_NAME") or "").strip()
+cdp_api_private_key = (os.getenv("CDP_API_KEY_PRIVATE_KEY") or os.getenv("CDP_API_SECRET_KEY") or "").strip()
+if "\\n" in cdp_api_private_key and "\n" not in cdp_api_private_key:
+    cdp_api_private_key = cdp_api_private_key.replace("\\n", "\n")
+
 github_token = (os.getenv("GITHUB_TOKEN") or "").strip()
 repo = (os.getenv("GITHUB_REPOSITORY") or "").strip()
 
@@ -27,17 +32,15 @@ headers = {
 
 social_client = UploadPostClient(api_key=social_api_key) if (UploadPostClient and social_api_key) else None
 
-# Initialize Coinbase CDP Wallet Context via uploaded JSON file
-cdp_context = "CDP SDK not active (cdp_api_key.json missing)."
-json_key_path = "cdp_api_key.json"
-
-if CDP_AVAILABLE and os.path.exists(json_key_path):
+# Initialize Coinbase CDP Wallet Context via Secrets
+cdp_context = "CDP SDK not active (credentials missing)."
+if CDP_AVAILABLE and cdp_api_key_name and cdp_api_private_key:
     try:
-        Cdp.configure_from_json(json_key_path)
+        Cdp.configure(cdp_api_key_name, cdp_api_private_key)
         wallet = Wallet.create()
-        cdp_context = f"Active CDP Wallet Address: {wallet.get_address().getId()} | Network: Base-Sepolia | Configured via JSON"
+        cdp_context = f"Active CDP Wallet Address: {wallet.get_address().getId()} | Network: Base-Sepolia | Connected via Secrets"
     except Exception as e:
-        cdp_context = f"CDP JSON Configuration Error: {e}"
+        cdp_context = f"CDP Configuration Error: {e}"
 
 # 2. LOAD PERSISTENT MEMORY
 memory_file = "memory.json"
