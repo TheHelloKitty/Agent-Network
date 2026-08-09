@@ -2,7 +2,6 @@ import os
 import json
 import requests
 
-# Safe import for upload_post
 try:
     from upload_post import UploadPostClient
 except ImportError:
@@ -11,19 +10,18 @@ except ImportError:
 from coinbase.rest import RESTClient
 
 # 1. READ CREDENTIALS & ENVIRONMENT VARIABLES
-api_key = os.getenv("OPENROUTER_API_KEY")
-social_api_key = os.getenv("UPLOAD_POST_API_KEY")
-cb_key = os.getenv("COINBASE_API_KEY")
-cb_secret = os.getenv("COINBASE_API_SECRET")
-github_token = os.getenv("GITHUB_TOKEN")
-repo = os.getenv("GITHUB_REPOSITORY")
+api_key = (os.getenv("OPENROUTER_API_KEY") or "").strip()
+social_api_key = (os.getenv("UPLOAD_POST_API_KEY") or "").strip().replace("\\n", "").replace("\n", "").replace("\r", "")
+cb_key = (os.getenv("COINBASE_API_KEY") or "").strip()
+cb_secret = (os.getenv("COINBASE_API_SECRET") or "").strip()
+github_token = (os.getenv("GITHUB_TOKEN") or "").strip()
+repo = (os.getenv("GITHUB_REPOSITORY") or "").strip()
 
 headers = {
     "Authorization": f"Bearer {api_key}",
     "Content-Type": "application/json"
 }
 
-# Initialize Third-Party Clients
 social_client = UploadPostClient(api_key=social_api_key) if (UploadPostClient and social_api_key) else None
 
 cb_client = None
@@ -33,7 +31,6 @@ if cb_key and cb_secret:
     except Exception as e:
         print(f"Coinbase Client Init Error: {e}")
 
-# Function to fetch live Coinbase portfolio context & account capability
 def get_coinbase_summary():
     if not cb_client:
         return "Coinbase integration not active or credentials missing."
@@ -68,6 +65,9 @@ if os.path.exists(memory_file):
 
 recent_history = json.dumps(memory_data["history"][-3:]) if memory_data["history"] else "No prior history recorded."
 
+# Default public vertical background video for posts
+DEFAULT_VIDEO_URL = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+
 # 3. DEFINING THE 9 AGENT NETWORK
 agents = [
     {"name": "Kairo Jenkins", "handle": "kairo_tech", "role": "Architect", "niche": "Tech Infrastructure & Cloud Automation"},
@@ -93,7 +93,7 @@ for agent in agents:
     Recent Network Context: {recent_history}
     
     Tasks:
-    1. Draft 1 high-converting short post for TikTok, Instagram, YouTube, Reddit, Pinterest, and BeFlicker.
+    1. Draft 1 high-converting video title & caption for TikTok, Instagram Reels, and YouTube Shorts.
     2. Include 3 viral hashtags and a strong call-to-action. Keep under 250 characters.
     3. Output a 1-sentence 'learned adaptation' for your persistent persona memory.
     
@@ -118,16 +118,17 @@ for agent in agents:
         post_content = data.get("post_content", f"Daily update from {agent['name']}!")
         adaptation = data.get("persona_adaptation", "Evolving engagement strategy.")
         
-        # BROADCAST TO SOCIAL PLATFORMS
+        # BROADCAST VIDEO POST TO SOCIAL PLATFORMS
         broadcast_status = "Skipped (No Social API Key)"
         if social_client:
             try:
-                social_client.upload_text(
+                social_client.upload_video(
+                    video_path=DEFAULT_VIDEO_URL,
                     title=post_content,
                     user=agent['handle'],
-                    platforms=["tiktok", "instagram", "youtube", "facebook", "pinterest", "reddit"]
+                    platforms=["tiktok", "instagram", "youtube", "pinterest", "facebook"]
                 )
-                broadcast_status = "Successfully Broadcasted via Upload-Post"
+                broadcast_status = "Successfully Broadcasted Video via Upload-Post"
             except Exception as pub_err:
                 broadcast_status = f"Broadcast error: {pub_err}"
 
