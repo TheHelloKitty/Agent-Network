@@ -1,2 +1,2 @@
-coinbase-agentkit
 requests
+coinbase-developer-platform
