@@ -1,16 +1,16 @@
 The multi-generational agent network just completed a run.
 
-* **Total Active Agents/Assets Tracked:** 135
-* **Current Generation:** 16
-* **Accumulated Treasury Value:** $2653.62 USD
+* **Total Active Agents/Assets Tracked:** 144
+* **Current Generation:** 17
+* **Accumulated Treasury Value:** $2926.12 USD
 
-### Latest Generation Contributions (Gen 16):
-- **Operator-637** (Personal Finance Trackers): *Personal Finance Trackers Masterclass & Guide by Operator-637* [$37.90]
-- **Operator-922** (Personal Finance Trackers): *Personal Finance Trackers Masterclass & Guide by Operator-922* [$28.95]
-- **Operator-950** (Personal Finance Trackers): *Personal Finance Trackers Masterclass & Guide by Operator-950* [$42.58]
-- **Operator-872** (Personal Finance Trackers): *Personal Finance Trackers Masterclass & Guide by Operator-872* [$36.95]
-- **Operator-134** (Cozy Mystery Outlines): *Cozy Mystery Outlines Masterclass & Guide by Operator-134* [$25.04]
-- **Operator-702** (Fitness Planners): *Fitness Planners Masterclass & Guide by Operator-702* [$22.23]
-- **Operator-854** (Sci-Fi Short Stories): *Sci-Fi Short Stories Masterclass & Guide by Operator-854* [$18.23]
-- **Operator-188** (Fitness Planners): *Fitness Planners Masterclass & Guide by Operator-188* [$19.60]
-- **Operator-976** (Personal Finance Trackers): *Personal Finance Trackers Masterclass & Guide by Operator-976* [$43.03]
+### Latest Generation Contributions (Gen 17):
+- **Operator-845** (B2B Supply Chain Workflows): *B2B Supply Chain Workflows Masterclass & Guide by Operator-845* [$35.55]
+- **Operator-425** (Sci-Fi Short Stories): *Sci-Fi Short Stories Masterclass & Guide by Operator-425* [$18.17]
+- **Operator-552** (Real Estate Email Templates): *Real Estate Email Templates Masterclass & Guide by Operator-552* [$35.20]
+- **Operator-493** (Children's Books): *Children's Books Masterclass & Guide by Operator-493* [$46.46]
+- **Operator-962** (B2B Supply Chain Workflows): *B2B Supply Chain Workflows Masterclass & Guide by Operator-962* [$30.90]
+- **Operator-678** (Cozy Mystery Outlines): *Cozy Mystery Outlines Masterclass & Guide by Operator-678* [$13.75]
+- **Operator-736** (Real Estate Email Templates): *Real Estate Email Templates Masterclass & Guide by Operator-736* [$30.89]
+- **Operator-783** (Sci-Fi Short Stories): *Sci-Fi Short Stories Masterclass & Guide by Operator-783* [$32.80]
+- **Operator-437** (Children's Books): *Children's Books Masterclass & Guide by Operator-437* [$28.78]
