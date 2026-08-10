@@ -9,7 +9,6 @@ jobs:
   build-and-run:
     runs-on: ubuntu-latest
     
-    # Add your environment variables down here inside the job
     env:
       GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
 
@@ -22,4 +21,4 @@ jobs:
           python-version: '3.10'
           
       - name: Run Swarm Script
-        run: python your_script.py
+        run: python swarm_agent.py
