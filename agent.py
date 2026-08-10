@@ -50,7 +50,6 @@ def save_swarm_state(all_agents, generation_number, treasury):
         }, f, indent=4)
 
 def initialize_cdp_wallet():
-    """Initializes Coinbase Developer Platform (CDP) SDK if credentials are active."""
     api_key_name = os.environ.get("COINBASE_API_KEY")
     private_secret = os.environ.get("PrivateSecret") or os.environ.get("CDP_API_SECRET")
     
@@ -160,9 +159,10 @@ def gather_blackboard_context():
         context_str += f"- [{agent['agent_id']}] Pen Name: {agent['pen_name']} | Niche: {agent['assigned_niche']} | Tone: {agent['tone']}\n"
     return context_str
 
-def execute_product_pipeline_with_monetization(agents, cdp_wallet):
-    print(f"--- Executing Concurrent Monetization Pipeline for {len(agents)} Agents ---")
+def execute_storefront_distribution_pipeline(agents, cdp_wallet):
+    print(f"--- Executing Storefront & Distribution Pipeline for {len(agents)} Agents ---")
     os.makedirs("agent_outputs", exist_ok=True)
+    os.makedirs("storefront_exports", exist_ok=True)
     
     shared_blackboard = gather_blackboard_context()
     earned_bounty_total = 0.0
@@ -170,38 +170,43 @@ def execute_product_pipeline_with_monetization(agents, cdp_wallet):
     def process_single_agent(agent):
         nonlocal earned_bounty_total
         file_path = f"agent_outputs/{agent['agent_id']}_product.md"
+        export_path = f"storefront_exports/{agent['agent_id']}_listing.json"
         
-        # Simulate autonomous commercial task generation and bidding
-        bounty_offer = round(random.uniform(5.0, 25.0), 2)
+        bounty_offer = round(random.uniform(9.99, 49.99), 2)
         
         prompt = (
-            f"You are a commercial content author named {agent['pen_name']} focusing on monetization in {agent['assigned_niche']}. "
+            f"You are a commercial storefront creator named {agent['pen_name']} specializing in digital products for {agent['assigned_niche']}. "
             f"Your personality is {agent['personality']} and your tone is {agent['tone']}.\n\n"
             f"Shared Blackboard:\n{shared_blackboard}\n\n"
-            f"Task: Create a high-value commercial asset, product description, or monetizable pitch that can be listed for sale or client contract."
+            f"Task: Write a ready-to-sell digital product package, including product title, promotional description, pricing tier, and core asset content."
         )
         
         generated_content = call_free_llm(prompt)
-        
-        # If CDP wallet is active, simulate transaction broadcast or logging
-        wallet_status = "Simulated Wallet Inactive"
-        if cdp_wallet:
-            try:
-                wallet_status = f"CDP Connected Base-Sepolia Address Active"
-            except Exception:
-                pass
-
         earned_bounty_total += bounty_offer
         
+        # Package markdown asset
         content = f"# Commercial Asset by {agent['pen_name']} (Generation {agent.get('generation', 1)})\n\n"
         content += f"**Target Niche:** {agent['assigned_niche']}\n"
-        content += f"**Assigned Task Bounty:** ${bounty_offer:.2f} USDC\n"
-        content += f"**Wallet Status:** {wallet_status}\n\n"
-        content += "## Monetizable Product / Pitch\n"
+        content += f"**Retail Price Point:** ${bounty_offer:.2f} USD\n"
+        content += f"**Distribution Status:** Packaged for Storefront Export\n\n"
+        content += "## Product Body\n"
         content += f"{generated_content}\n"
         
         with open(file_path, "w") as file:
             file.write(content)
+
+        # Create structured JSON payload for e-commerce integration (Shopify / Webhook ready)
+        listing_payload = {
+            "title": f"{agent['assigned_niche']} Masterclass & Guide by {agent['pen_name']}",
+            "vendor": agent['pen_name'],
+            "product_type": agent['assigned_niche'],
+            "price": f"{bounty_offer:.2f}",
+            "tags": [agent['assigned_niche'], f"Gen{agent.get('generation', 1)}", "Autonomous Product"],
+            "body_html": f"<p>{generated_content[:300]}...</p>"
+        }
+        with open(export_path, "w") as json_file:
+            json.dump(listing_payload, json_file, indent=4)
+
         return agent['agent_id']
 
     current_gen_agents = [a for a in agents if a.get('generation') == agents[-1].get('generation')]
@@ -212,12 +217,12 @@ def execute_product_pipeline_with_monetization(agents, cdp_wallet):
         futures = [executor.submit(process_single_agent, agent) for agent in current_gen_agents]
         concurrent.futures.wait(futures)
             
-    print(f"SUCCESS: Autonomous commercial execution complete. Total generated value: ${earned_bounty_total:.2f} USDC.")
+    print(f"SUCCESS: Storefront export bundles generated. Total catalog value: ${earned_bounty_total:.2f} USD.")
     return earned_bounty_total
 
 # --- MAIN SWARM EXECUTION LOOP ---
 step_count = 0
-task_identifier = "Monetized_Agent_Pipeline"
+task_identifier = "Storefront_Distribution_Pipeline"
 task_completed = False
 
 while not task_completed:
@@ -228,10 +233,9 @@ while not task_completed:
     active_cumulative_swarm, current_treasury = spawn_next_generation()
     swarm_governor.track_token_usage(tokens_consumed=4500)
     
-    session_earnings = execute_product_pipeline_with_monetization(active_cumulative_swarm, cdp_wallet_instance)
-    new_treasury = current_treasury + session_earnings
+    session_revenue = execute_storefront_distribution_pipeline(active_cumulative_swarm, cdp_wallet_instance)
+    new_treasury = current_treasury + session_revenue
     
-    # Save updated swarm state along with accumulated treasury earnings
     save_swarm_state(active_cumulative_swarm, active_cumulative_swarm[-1].get('generation', 1), new_treasury)
     swarm_governor.track_token_usage(tokens_consumed=12500)
     
