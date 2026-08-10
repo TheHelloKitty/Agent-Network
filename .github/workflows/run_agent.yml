@@ -1,72 +1,26 @@
-import os
-import sys
-from google import genai
-import resend
-import requests
+name: Run Revenue Agent Swarm
 
-# 1. Load secrets from GitHub environment variables
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
-RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
+on:
+  workflow_dispatch:
 
-if not GEMINI_API_KEY:
-  print("Error: GEMINI_API_KEY is missing.")
-  sys.exit(1)
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-# 2. Initialize the Gemini client
-client = genai.Client(api_key=GEMINI_API_KEY)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
+      - name: Install dependencies
+        run: pip install google-genai resend requests
 
-def run_agent_task():
-  print("Running agent task with Gemini...")
-  # Ask Gemini to generate a status update or summary
-  response = client.models.generate_content(
-      model="gemini-2.0-flash",
-      contents=(
-          "Write a short, friendly status report from an autonomous agent network"
-          " indicating that all systems are operational."
-      ),
-  )
-  return response.text
-
-
-def send_discord_alert(message):
-  if not DISCORD_WEBHOOK_URL:
-    print("Discord webhook URL not found, skipping alert.")
-    return
-
-  payload = {"content": f"🤖 **Agent Network Alert**:\n{message}"}
-  response = requests.post(DISCORD_WEBHOOK_URL, json=payload)
-  if response.status_code == 204:
-    print("Discord alert sent successfully!")
-  else:
-    print(f"Failed to send Discord alert: {response.status_code}")
-
-
-def send_email_report(report_text):
-  if not RESEND_API_KEY:
-    print("Resend API key not found, skipping email.")
-    return
-
-  resend.api_key = RESEND_API_KEY
-  params = {
-      "from": "Agent Network <onboarding@resend.dev>",
-      "to": ["delivered@resend.dev"],  # Update to your email when ready
-      "subject": "Agent Network Daily Report",
-      "html": f"<p>{report_text}</p>",
-  }
-
-  try:
-    email = resend.Emails.send(params)
-    print("Email report sent successfully via Resend!")
-  except Exception as e:
-    print(f"Failed to send email: {e}")
-
-
-if __name__ == "__main__":
-  # Execute agent tasks and trigger integrations
-  task_output = run_agent_task()
-  print(f"\nAgent Output:\n{task_output}\n")
-
-  send_discord_alert(task_output)
-  send_email_report(task_output)
+      - name: Run python agent.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: python agent.py
