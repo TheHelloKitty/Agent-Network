@@ -21,4 +21,4 @@ jobs:
           python-version: '3.10'
           
       - name: Run Swarm Script
-        run: python swarm_agent.py
+        run: python agent.py
