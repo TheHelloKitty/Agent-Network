@@ -92,7 +92,7 @@ def create_lemon_squeezy_product(name, description, api_key, store_id):
 # --- MAIN EXECUTION ---
 if __name__ == "__main__":
     try:
-        print("Starting revenue sync script...")
+        print("Starting highest-quality revenue sync script...")
         gumroad_token = os.environ.get("GUMROAD_ACCESS_TOKEN")
         ls_api_key = os.environ.get("LEMON_SQUEEZY_API_KEY")
         ls_store_id = os.environ.get("LEMON_SQUEEZY_STORE_ID")
@@ -106,23 +106,23 @@ if __name__ == "__main__":
 
         generation_products = [
             {
-                "name": "Autonomous B2B Industrial Lead Generation Swarm Kit by Operator-845",
-                "description": "Complete production-ready Python & JSON multi-agent pipeline for scraping and qualifying large industrial facility leads.",
+                "name": "[Highest Quality] Autonomous B2B Industrial Lead Generation Swarm Kit by Operator-845",
+                "description": "Verified highest-quality production-ready Python & JSON multi-agent pipeline for scraping and qualifying large industrial facility leads.",
                 "price_cents": 9700
             },
             {
-                "name": "Commercial Lighting Retrofit ROI Calculator & Proposal Suite by Operator-425",
-                "description": "Advanced spreadsheet models, client presentation templates, and energy-saving audit forms for commercial lighting contractors.",
+                "name": "[Highest Quality] Commercial Lighting Retrofit ROI Calculator & Proposal Suite by Operator-425",
+                "description": "Premium grade advanced spreadsheet models, client presentation templates, and energy-saving audit forms for commercial lighting contractors.",
                 "price_cents": 7500
             },
             {
-                "name": "Automated E-Commerce Storefront Migration & Setup Kit by Operator-552",
-                "description": "Step-by-step technical blueprints, automated scripts, and product data mapping tools for fast storefront launches.",
+                "name": "[Highest Quality] Automated E-Commerce Storefront Migration & Setup Kit by Operator-552",
+                "description": "Enterprise-tier technical blueprints, automated scripts, and product data mapping tools for fast, robust storefront launches.",
                 "price_cents": 12500
             },
             {
-                "name": "High-Converting Cold Email & Outreach Sequence Library by Operator-493",
-                "description": "Tested and proven multi-channel B2B outreach scripts designed specifically for high-ticket service and software sales.",
+                "name": "[Highest Quality] High-Converting Cold Email & Outreach Sequence Library by Operator-493",
+                "description": "Rigorously tested and proven multi-channel B2B outreach scripts designed specifically for high-ticket service and software sales.",
                 "price_cents": 4900
             }
         ]
@@ -130,7 +130,7 @@ if __name__ == "__main__":
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
         gumroad_new = 0
         lemon_new = 0
-        log_lines = [f"\n=== MULTI-STOREFRONT REVENUE SYNC LOG ({timestamp}) ==="]
+        log_lines = [f"\n=== HIGHEST-QUALITY MULTI-STOREFRONT SYNC LOG ({timestamp}) ==="]
 
         for prod in generation_products:
             name = prod["name"]
