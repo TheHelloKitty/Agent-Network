@@ -1,6 +1,8 @@
 import os
 import sys
+import time
 from google import genai
+from google.genai.errors import ClientError
 import resend
 import requests
 
@@ -17,17 +19,24 @@ if not GEMINI_API_KEY:
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
-def run_agent_task():
+def run_agent_task(retries=3, delay=30):
   print("Running agent task with Gemini...")
-  # Use a fully supported active model endpoint
-  response = client.models.generate_content(
-      model="gemini-2.0-flash",
-      contents=(
-          "Write a short, friendly status report from an autonomous agent network"
-          " indicating that all systems are operational."
-      ),
-  )
-  return response.text
+  for attempt in range(retries):
+    try:
+      response = client.models.generate_content(
+          model="gemini-2.0-flash",
+          contents=(
+              "Write a short, friendly status report from an autonomous agent"
+              " network indicating that all systems are operational."
+          ),
+      )
+      return response.text
+    except ClientError as e:
+      if "RESOURCE_EXHAUSTED" in str(e) and attempt < retries - 1:
+        print(f"Rate limit hit. Waiting {delay} seconds before retrying...")
+        time.sleep(delay)
+      else:
+        raise e
 
 
 def send_discord_alert(message):
