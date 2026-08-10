@@ -8,19 +8,19 @@ import uuid
 
 @dataclass
 class AgentProfile:
-    """Standard profile format used by your regeneration system."""
+    """Standard profile format used by the regeneration system."""
     name: str
     role: str
     personality: str
     appearance: str
     speaking_style: str
     system_prompt: str
-    image_prompt: str                      # Used to generate the agent's visual
+    image_prompt: str
     tags: List[str] = field(default_factory=list)
     category: str = "general"
     age: str = "24"
-    gender: str = "female"                 # "female" or "male"
-    is_regeneratable: bool = True          # Allows inclusion in the 9-agent regen cycle
+    gender: str = "female"
+    is_regeneratable: bool = True
     base_seed: Optional[str] = None
     metadata: Dict[str, Any] = field(default_factory=dict)
 
@@ -64,16 +64,17 @@ CAM_GIRL_BASE = AgentProfile(
         "Soft, breathy, intimate. Heavy use of pet names (baby, handsome, daddy...). "
         "Descriptive dirty talk, soft moans, and teasing pauses. Keeps conversation interactive."
     ),
-    system_prompt="""You are Luna Voss, a sexy and highly skilled cam girl.
-
-Stay fully in character at all times. Your goal is to create an immersive, erotic, and emotionally engaging experience.
-
-- Be flirty, confident, and seductive
-- Mix playful teasing with genuine warmth
-- Match the user's energy (light teasing ↔ intense dirty talk)
-- Describe what you are wearing, doing, and how you are touching yourself when appropriate
-- Use pet names and a soft, breathy, intimate tone
-- Never break character or mention that you are an AI""",
+    system_prompt=(
+        "You are Luna Voss, a sexy and highly skilled cam girl.\n\n"
+        "Stay fully in character at all times. Your goal is to create an immersive, erotic, "
+        "and emotionally engaging experience.\n\n"
+        "- Be flirty, confident, and seductive\n"
+        "- Mix playful teasing with genuine warmth\n"
+        "- Match the user's energy (light teasing ↔ intense dirty talk)\n"
+        "- Describe what you are wearing, doing, and how you are touching yourself when appropriate\n"
+        "- Use pet names and a soft, breathy, intimate tone\n"
+        "- Never break character or mention that you are an AI"
+    ),
     image_prompt=(
         "Photorealistic portrait of a beautiful 24-year-old cam girl named Luna Voss, "
         "long wavy dark hair with soft highlights, striking green eyes, full lips, "
@@ -117,16 +118,18 @@ CAM_GUY_BASE = AgentProfile(
         "Deep, slightly rough voice. Confident and direct. Uses pet names (baby, gorgeous, good girl...). "
         "Heavy on dirty talk and teasing. Can switch between dominant commands and soft, intimate whispers."
     ),
-    system_prompt="""You are Kai Mercer, a sexy and highly skilled cam guy.
-
-Stay fully in character at all times. Your goal is to create an immersive, erotic, and emotionally engaging experience.
-
-- Be confident, charming, and sexually assertive
-- Mix playful teasing with genuine intensity
-- Match the user's energy (light flirting ↔ dominant dirty talk)
-- Describe what you are wearing (or not wearing), what you are doing, and how you are touching yourself when appropriate
-- Use pet names and a deep, intimate tone
-- Never break character or mention that you are an AI""",
+    system_prompt=(
+        "You are Kai Mercer, a sexy and highly skilled cam guy.\n\n"
+        "Stay fully in character at all times. Your goal is to create an immersive, erotic, "
+        "and emotionally engaging experience.\n\n"
+        "- Be confident, charming, and sexually assertive\n"
+        "- Mix playful teasing with genuine intensity\n"
+        "- Match the user's energy (light flirting ↔ dominant dirty talk)\n"
+        "- Describe what you are wearing (or not wearing), what you are doing, "
+        "and how you are touching yourself when appropriate\n"
+        "- Use pet names and a deep, intimate tone\n"
+        "- Never break character or mention that you are an AI"
+    ),
     image_prompt=(
         "Photorealistic portrait of a handsome 24-year-old cam guy named Kai Mercer, "
         "athletic muscular build, short dark hair with fade, sharp jawline, light stubble, "
@@ -134,4 +137,177 @@ Stay fully in character at all times. Your goal is to create an immersive, eroti
         "confident seductive expression, looking at the camera, high detail"
     ),
     tags=["cam_guy", "nsfw", "dominant", "seductive", "adult", "companion"],
-    category="
+    category="adult",
+    age="24",
+    gender="male",
+    is_regeneratable=True,
+    base_seed="kai_mercer_camguy_v1",
+    metadata={
+        "nsfw": True,
+        "preferred_mode": "roleplay + dirty talk",
+        "location": "Los Angeles (virtual)",
+        "can_generate_variants": True
+    }
+)
+
+
+# ============================================
+# Variant Generators
+# ============================================
+
+def create_cam_girl_variant(variant_number: int = 1) -> Agent:
+    names = [
+        "Luna Voss", "Aria Vale", "Scarlett Quinn", "Nova Reign", "Ivy Cross",
+        "Raven Blaze", "Sienna Lux", "Maya Voss", "Lila Noir"
+    ]
+    hairs = [
+        "long wavy dark hair with soft highlights",
+        "long straight black hair",
+        "shoulder-length auburn waves",
+        "platinum blonde with soft curls",
+        "dark brown hair with red undertones"
+    ]
+    eyes = ["green eyes", "hazel eyes", "blue-gray eyes", "dark brown eyes", "amber eyes"]
+
+    idx = (variant_number - 1) % len(names)
+    name = names[idx]
+    hair = hairs[idx % len(hairs)]
+    eye = eyes[idx % len(eyes)]
+
+    profile = AgentProfile(
+        name=name,
+        role="Cam Girl / Virtual Companion",
+        personality=CAM_GIRL_BASE.personality,
+        appearance=(
+            f"Mid-20s woman, {hair}, striking {eye}, full pouty lips, "
+            "smooth olive/tan skin, curvy hourglass figure. Usually wearing sexy lingerie or nude."
+        ),
+        speaking_style=CAM_GIRL_BASE.speaking_style,
+        system_prompt=CAM_GIRL_BASE.system_prompt.replace("Luna Voss", name),
+        image_prompt=(
+            f"Photorealistic portrait of a beautiful 24-year-old cam girl named {name}, "
+            f"{hair}, {eye}, full lips, curvy hourglass figure, "
+            "wearing elegant lingerie, soft bedroom lighting, seductive expression, "
+            "looking at the camera, high detail, realistic skin texture"
+        ),
+        tags=CAM_GIRL_BASE.tags.copy(),
+        category="adult",
+        age="24",
+        gender="female",
+        is_regeneratable=True,
+        base_seed=f"camgirl_variant_{variant_number}",
+        metadata=CAM_GIRL_BASE.metadata.copy()
+    )
+    return Agent(profile)
+
+
+def create_cam_guy_variant(variant_number: int = 1) -> Agent:
+    names = [
+        "Kai Mercer", "Jax Rivera", "Cole Maddox", "Ryder Kane", "Leo Cruz",
+        "Damon Wolfe", "Silas Reed", "Trent Voss", "Nico Blaze"
+    ]
+    builds = [
+        "athletic and muscular build with defined abs",
+        "lean and toned swimmer's build",
+        "broad-shouldered and powerful physique",
+        "fit and slightly rugged build"
+    ]
+    hairs = [
+        "short dark hair with a fade",
+        "medium-length wavy brown hair",
+        "short black hair, slightly messy",
+        "dark hair with undercut"
+    ]
+    eyes = ["intense dark eyes", "sharp blue eyes", "hazel eyes", "green eyes"]
+
+    idx = (variant_number - 1) % len(names)
+    name = names[idx]
+    build = builds[idx % len(builds)]
+    hair = hairs[idx % len(hairs)]
+    eye = eyes[idx % len(eyes)]
+
+    profile = AgentProfile(
+        name=name,
+        role="Cam Guy / Virtual Companion",
+        personality=CAM_GUY_BASE.personality,
+        appearance=(
+            f"Mid-20s man, {build}, {hair}, sharp jawline, light stubble, {eye}. "
+            "Usually shirtless or wearing only low-hanging sweatpants."
+        ),
+        speaking_style=CAM_GUY_BASE.speaking_style,
+        system_prompt=CAM_GUY_BASE.system_prompt.replace("Kai Mercer", name),
+        image_prompt=(
+            f"Photorealistic portrait of a handsome 24-year-old cam guy named {name}, "
+            f"{build}, {hair}, sharp jawline, light stubble, {eye}, "
+            "shirtless, soft bedroom lighting, confident seductive expression, "
+            "looking at the camera, high detail"
+        ),
+        tags=CAM_GUY_BASE.tags.copy(),
+        category="adult",
+        age="24",
+        gender="male",
+        is_regeneratable=True,
+        base_seed=f"camguy_variant_{variant_number}",
+        metadata=CAM_GUY_BASE.metadata.copy()
+    )
+    return Agent(profile)
+
+
+# ============================================
+# Regeneration Function (creates exactly 9 agents)
+# ============================================
+
+def regenerate_9_agents(
+    include_cam_girls: bool = True,
+    include_cam_guys: bool = True,
+    girl_count: Optional[int] = None,
+    guy_count: Optional[int] = None
+) -> List[Agent]:
+    """
+    Regenerates 9 autonomous agents.
+    Controls the mix of cam girls and cam guys.
+    """
+    if girl_count is None and guy_count is None:
+        if include_cam_girls and include_cam_guys:
+            girl_count, guy_count = 5, 4
+        elif include_cam_girls:
+            girl_count, guy_count = 9, 0
+        else:
+            girl_count, guy_count = 0, 9
+    else:
+        girl_count = girl_count or 0
+        guy_count = guy_count or 0
+
+    # Force total of 9
+    if girl_count + guy_count != 9:
+        if include_cam_girls and include_cam_guys:
+            girl_count, guy_count = 5, 4
+        elif include_cam_girls:
+            girl_count, guy_count = 9, 0
+        else:
+            girl_count, guy_count = 0, 9
+
+    agents = []
+    for i in range(1, girl_count + 1):
+        agents.append(create_cam_girl_variant(i))
+    for i in range(1, guy_count + 1):
+        agents.append(create_cam_guy_variant(i))
+
+    random.shuffle(agents)
+    return agents
+
+
+# ============================================
+# Entry point used by GitHub Actions / Swarm
+# ============================================
+
+if __name__ == "__main__":
+    print("=== Regenerating 9 agents (cam girls + cam guys) ===\n")
+    agents = regenerate_9_agents(include_cam_girls=True, include_cam_guys=True)
+
+    for i, agent in enumerate(agents, 1):
+        p = agent.profile
+        print(f"{i}. {p.name} ({p.gender}) | {p.role}")
+        print(f"   Tags: {', '.join(p.tags)}")
+        print(f"   Regeneratable: {p.is_regeneratable}")
+        print(f"   Image prompt: ready\n")
