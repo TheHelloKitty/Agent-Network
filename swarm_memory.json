@@ -1,6 +1,6 @@
 {
-    "current_generation": 8,
-    "treasury": 393.78999999999996,
+    "current_generation": 9,
+    "treasury": 645.6899999999999,
     "all_agents": [
         {
             "agent_id": "Gen2_Agent_1",
@@ -630,6 +630,96 @@
             "personality": "Methodical & Analytical",
             "tone": "Pragmatic",
             "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen9_Agent_1",
+            "generation": 9,
+            "pen_name": "Operator-711",
+            "assigned_niche": "SaaS Marketing Funnels",
+            "personality": "Warm & Conversational",
+            "tone": "Poetic",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen9_Agent_2",
+            "generation": 9,
+            "pen_name": "Operator-253",
+            "assigned_niche": "Children's Books",
+            "personality": "Warm & Conversational",
+            "tone": "Humorous",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen9_Agent_3",
+            "generation": 9,
+            "pen_name": "Operator-490",
+            "assigned_niche": "Fitness Planners",
+            "personality": "Warm & Conversational",
+            "tone": "Pragmatic",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen9_Agent_4",
+            "generation": 9,
+            "pen_name": "Operator-857",
+            "assigned_niche": "Cozy Mystery Outlines",
+            "personality": "Cynical & Direct",
+            "tone": "Pragmatic",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen9_Agent_5",
+            "generation": 9,
+            "pen_name": "Operator-216",
+            "assigned_niche": "Cat Care Guides",
+            "personality": "Cynical & Direct",
+            "tone": "Authoritative",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen9_Agent_6",
+            "generation": 9,
+            "pen_name": "Operator-188",
+            "assigned_niche": "Cat Care Guides",
+            "personality": "Bold & Provocative",
+            "tone": "Poetic",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen9_Agent_7",
+            "generation": 9,
+            "pen_name": "Operator-925",
+            "assigned_niche": "Fitness Planners",
+            "personality": "Warm & Conversational",
+            "tone": "Pragmatic",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen9_Agent_8",
+            "generation": 9,
+            "pen_name": "Operator-119",
+            "assigned_niche": "Cozy Mystery Outlines",
+            "personality": "Warm & Conversational",
+            "tone": "Poetic",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen9_Agent_9",
+            "generation": 9,
+            "pen_name": "Operator-110",
+            "assigned_niche": "Children's Books",
+            "personality": "Cynical & Direct",
+            "tone": "Humorous",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
             "status": "Active"
         }
     ]
