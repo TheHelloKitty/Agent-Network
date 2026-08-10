@@ -19,9 +19,9 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 def run_agent_task():
   print("Running agent task with Gemini...")
-  # Ask Gemini to generate a status update or summary
+  # Ask Gemini to generate a status update or summary using an active model
   response = client.models.generate_content(
-      model="gemini-2.0-flash",
+      model="gemini-2.5-flash",
       contents=(
           "Write a short, friendly status report from an autonomous agent network"
           " indicating that all systems are operational."
