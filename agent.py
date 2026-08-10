@@ -31,10 +31,12 @@ def create_gumroad_product(name, description, price_cents, token):
     req = urllib.request.Request(url, data=data, method="POST")
     try:
         with urllib.request.urlopen(req, timeout=30) as response:
-            return json.loads(response.read().decode("utf-8"))
+            return json.loads(response.read().decode("utf-8")), None
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode('utf-8')
+        return None, f"Gumroad HTTP Error {e.code}: {error_body}"
     except Exception as e:
-        print(f"Gumroad Error ({name}): {str(e)}")
-    return None
+        return None, f"Gumroad Error: {str(e)}"
 
 # --- LEMON SQUEEZY FUNCTIONS ---
 def get_existing_lemon_products(api_key):
@@ -81,13 +83,12 @@ def create_lemon_squeezy_product(name, description, api_key, store_id):
     req = urllib.request.Request(url, data=data, headers=headers, method="POST")
     try:
         with urllib.request.urlopen(req, timeout=30) as response:
-            return json.loads(response.read().decode("utf-8"))
+            return json.loads(response.read().decode("utf-8")), None
     except urllib.error.HTTPError as e:
         error_body = e.read().decode('utf-8')
-        print(f"Lemon Squeezy HTTP Error ({name}): {error_body}")
+        return None, f"Lemon Squeezy HTTP Error {e.code}: {error_body}"
     except Exception as e:
-        print(f"Lemon Squeezy Error ({name}): {str(e)}")
-    return None
+        return None, f"Lemon Squeezy Error: {str(e)}"
 
 # --- MAIN EXECUTION ---
 if __name__ == "__main__":
@@ -140,40 +141,37 @@ if __name__ == "__main__":
             desc = prod["description"]
             log_lines.append(f"\nProduct: {name} [${price/100:.2f}]")
 
-            try:
-                # Push to Gumroad if not present
-                if name in existing_gumroad:
-                    log_lines.append(f"  - Gumroad: Skipped [{name}] (Already Exists)")
-                else:
-                    g_res = create_gumroad_product(name, desc, price, gumroad_token)
-                    if g_res and "product" in g_res:
-                        gumroad_new += 1
-                        g_url = g_res["product"].get("short_url", "#")
-                        uploaded_items.append(f"Gumroad: {name} ({g_url})")
-                        log_lines.append(f"  - Gumroad: Published successfully ({g_url})")
-                    else:
-                        issues_list.append(f"Gumroad upload skipped or failed for: {name}")
+            # Push to Gumroad
+            if name in existing_gumroad:
+                log_lines.append(f"  - Gumroad: Skipped (Already Exists)")
+            else:
+                g_res, g_err = create_gumroad_product(name, desc, price, gumroad_token)
+                if g_err:
+                    issues_list.append(f"Gumroad API Error for '{name}': {g_err}")
+                elif g_res and "product" in g_res:
+                    gumroad_new += 1
+                    g_url = g_res["product"].get("short_url", "#")
+                    uploaded_items.append(f"Gumroad: {name} ({g_url})")
+                    log_lines.append(f"  - Gumroad: Published successfully ({g_url})")
 
-                # Push to Lemon Squeezy if not present
-                if name in existing_lemon:
-                    log_lines.append(f"  - Lemon Squeezy: Skipped [{name}] (Already Exists)")
-                else:
-                    l_res = create_lemon_squeezy_product(name, desc, ls_api_key, ls_store_id)
-                    if l_res and "data" in l_res:
-                        lemon_new += 1
-                        uploaded_items.append(f"Lemon Squeezy: {name}")
-                        log_lines.append("  - Lemon Squeezy: Published successfully")
-                    else:
-                        issues_list.append(f"Lemon Squeezy upload skipped or failed for: {name}")
-            except Exception as inner_e:
-                issues_list.append(f"Exception encountered for {name}: {str(inner_e)}")
+            # Push to Lemon Squeezy
+            if name in existing_lemon:
+                log_lines.append(f"  - Lemon Squeezy: Skipped (Already Exists)")
+            else:
+                l_res, l_err = create_lemon_squeezy_product(name, desc, ls_api_key, ls_store_id)
+                if l_err:
+                    issues_list.append(f"Lemon Squeezy API Error for '{name}': {l_err}")
+                elif l_res and "data" in l_res:
+                    lemon_new += 1
+                    uploaded_items.append(f"Lemon Squeezy: {name}")
+                    log_lines.append("  - Lemon Squeezy: Published successfully")
 
         print("\n".join(log_lines))
 
         print("\n" + "="*40)
         print("📊 AGENT UPLOAD REPORT")
         print("="*40)
-        print(f"Total Successfully Processed/Uploaded This Run: {len(uploaded_items)}")
+        print(f"Total New Products Deployed This Run: {len(uploaded_items)}")
         for item in uploaded_items:
             print(f"  ✅ {item}")
 
@@ -181,7 +179,7 @@ if __name__ == "__main__":
         print("⚠️ RUN ISSUES & WARNINGS")
         print("="*40)
         if len(issues_list) == 0:
-            print("  🎉 Zero issues detected! All operations nominal.")
+            print("  🎉 Zero API errors or blockers detected! (Note: 'Already Exists' skips are normal when products are already synced).")
         else:
             for issue in issues_list:
                 print(f"  ❌ {issue}")
