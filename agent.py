@@ -5,7 +5,6 @@ import urllib.error
 import urllib.parse
 
 def create_gumroad_product(name, description, price_cents):
-    # Grabs the Access Token you saved in GitHub Secrets
     token = os.environ.get("GUMROAD_ACCESS_TOKEN")
     if not token:
         print("Error: GUMROAD_ACCESS_TOKEN not found in environment variables.")
@@ -13,7 +12,6 @@ def create_gumroad_product(name, description, price_cents):
 
     url = "https://api.gumroad.com/v2/products"
     
-    # Gumroad payload (prices are in cents, e.g., $9.00 = 900)
     payload = {
         "access_token": token,
         "name": name,
@@ -39,7 +37,6 @@ def create_gumroad_product(name, description, price_cents):
     return None
 
 if __name__ == "__main__":
-    # Test call to verify your agents can post items
     create_gumroad_product(
         name="Swarm Digital Asset Package", 
         description="Generated automatically by your agent network.", 
