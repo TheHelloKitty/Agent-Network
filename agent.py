@@ -208,7 +208,7 @@ def execute_storefront_distribution_pipeline(agents, cdp_wallet):
 
         return agent['agent_id']
 
-    current_gen_agents = [a for a in agents if a.get('generation'] == agents[-1].get('generation')]
+    current_gen_agents = [a for a in agents if a.get('generation') == agents[-1].get('generation')]
     if not current_gen_agents:
         current_gen_agents = agents
 
