@@ -112,76 +112,81 @@ def create_github_issue(title, body):
 
 # --- MAIN EXECUTION ---
 if __name__ == "__main__":
-    gumroad_token = os.environ.get("GUMROAD_ACCESS_TOKEN")
-    ls_api_key = os.environ.get("LEMON_SQUEEZY_API_KEY")
-    ls_store_id = os.environ.get("LEMON_SQUEEZY_STORE_ID")
+    try:
+        gumroad_token = os.environ.get("GUMROAD_ACCESS_TOKEN")
+        ls_api_key = os.environ.get("LEMON_SQUEEZY_API_KEY")
+        ls_store_id = os.environ.get("LEMON_SQUEEZY_STORE_ID")
 
-    if not gumroad_token:
-        print("Error: GUMROAD_ACCESS_TOKEN not found.")
-        exit(1)
-    if not ls_api_key or not ls_store_id:
-        print("Error: Lemon Squeezy API Key or Store ID not found in environment variables.")
-        exit(1)
+        if not gumroad_token:
+            print("Error: GUMROAD_ACCESS_TOKEN not found.")
+            exit(1)
+        if not ls_api_key or not ls_store_id:
+            print("Error: Lemon Squeezy API Key or Store ID not found in environment variables.")
+            exit(1)
 
-    existing_gumroad = get_existing_gumroad_products(gumroad_token)
-    existing_lemon = get_existing_lemon_products(ls_api_key)
+        existing_gumroad = get_existing_gumroad_products(gumroad_token)
+        existing_lemon = get_existing_lemon_products(ls_api_key)
 
-    generation_products = [
-        {
-            "name": "Autonomous B2B Industrial Lead Generation Swarm Kit by Operator-845",
-            "description": "Complete production-ready Python & JSON multi-agent pipeline for scraping and qualifying large industrial facility leads.",
-            "price_cents": 9700
-        },
-        {
-            "name": "Commercial Lighting Retrofit ROI Calculator & Proposal Suite by Operator-425",
-            "description": "Advanced spreadsheet models, client presentation templates, and energy-saving audit forms for commercial lighting contractors.",
-            "price_cents": 7500
-        },
-        {
-            "name": "Automated E-Commerce Storefront Migration & Setup Kit by Operator-552",
-            "description": "Step-by-step technical blueprints, automated scripts, and product data mapping tools for fast storefront launches.",
-            "price_cents": 12500
-        },
-        {
-            "name": "High-Converting Cold Email & Outreach Sequence Library by Operator-493",
-            "description": "Tested and proven multi-channel B2B outreach scripts designed specifically for high-ticket service and software sales.",
-            "price_cents": 4900
-        }
-    ]
+        generation_products = [
+            {
+                "name": "Autonomous B2B Industrial Lead Generation Swarm Kit by Operator-845",
+                "description": "Complete production-ready Python & JSON multi-agent pipeline for scraping and qualifying large industrial facility leads.",
+                "price_cents": 9700
+            },
+            {
+                "name": "Commercial Lighting Retrofit ROI Calculator & Proposal Suite by Operator-425",
+                "description": "Advanced spreadsheet models, client presentation templates, and energy-saving audit forms for commercial lighting contractors.",
+                "price_cents": 7500
+            },
+            {
+                "name": "Automated E-Commerce Storefront Migration & Setup Kit by Operator-552",
+                "description": "Step-by-step technical blueprints, automated scripts, and product data mapping tools for fast storefront launches.",
+                "price_cents": 12500
+            },
+            {
+                "name": "High-Converting Cold Email & Outreach Sequence Library by Operator-493",
+                "description": "Tested and proven multi-channel B2B outreach scripts designed specifically for high-ticket service and software sales.",
+                "price_cents": 4900
+            }
+        ]
 
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
-    gumroad_new = 0
-    lemon_new = 0
-    issue_lines = [f"### 💰 Multi-Storefront Revenue Sync Log\n* **Timestamp:** {timestamp}\n"]
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
+        gumroad_new = 0
+        lemon_new = 0
+        issue_lines = [f"### 💰 Multi-Storefront Revenue Sync Log\n* **Timestamp:** {timestamp}\n"]
 
-    for prod in generation_products:
-        name = prod["name"]
-        price = prod["price_cents"]
-        desc = prod["description"]
-        issue_lines.append(f"#### 📄 {name} [${price/100:.2f}]")
+        for prod in generation_products:
+            name = prod["name"]
+            price = prod["price_cents"]
+            desc = prod["description"]
+            issue_lines.append(f"#### 📄 {name} [${price/100:.2f}]")
 
-        # Push to Gumroad if not present
-        if name in existing_gumroad:
-            issue_lines.append("- **Gumroad:** ⏭️ Skipped (Already Exists)")
-        else:
-            g_res = create_gumroad_product(name, desc, price, gumroad_token)
-            if g_res and "product" in g_res:
-                gumroad_new += 1
-                g_url = g_res["product"].get("short_url", "#")
-                issue_lines.append(f"- **Gumroad:** ✅ Published ([View]({g_url}))")
+            # Push to Gumroad if not present
+            if name in existing_gumroad:
+                issue_lines.append("- **Gumroad:** ⏭️ Skipped (Already Exists)")
             else:
-                issue_lines.append("- **Gumroad:** ⏭️ Skipped / Already Exists")
+                g_res = create_gumroad_product(name, desc, price, gumroad_token)
+                if g_res and "product" in g_res:
+                    gumroad_new += 1
+                    g_url = g_res["product"].get("short_url", "#")
+                    issue_lines.append(f"- **Gumroad:** ✅ Published ([View]({g_url}))")
+                else:
+                    issue_lines.append("- **Gumroad:** ⏭️ Skipped / Already Exists")
 
-        # Push to Lemon Squeezy if not present
-        if name in existing_lemon:
-            issue_lines.append("- **Lemon Squeezy:** ⏭️ Skipped (Already Exists)")
-        else:
-            l_res = create_lemon_squeezy_product(name, desc, ls_api_key, ls_store_id)
-            if l_res and "data" in l_res:
-                lemon_new += 1
-                issue_lines.append("- **Lemon Squeezy:** ✅ Published")
+            # Push to Lemon Squeezy if not present
+            if name in existing_lemon:
+                issue_lines.append("- **Lemon Squeezy:** ⏭️ Skipped (Already Exists)")
             else:
-                issue_lines.append("- **Lemon Squeezy:** ⏭️ Skipped / Already Exists")
+                l_res = create_lemon_squeezy_product(name, desc, ls_api_key, ls_store_id)
+                if l_res and "data" in l_res:
+                    lemon_new += 1
+                    issue_lines.append("- **Lemon Squeezy:** ✅ Published")
+                else:
+                    issue_lines.append("- **Lemon Squeezy:** ⏭️ Skipped / Already Exists")
 
-    issue_title = f"💰 Revenue Run: {gumroad_new} Gumroad / {lemon_new} Lemon Squeezy New"
-    create_github_issue(issue_title, "\n".join(issue_lines))
+        issue_title = f"💰 Revenue Run: {gumroad_new} Gumroad / {lemon_new} Lemon Squeezy New"
+        create_github_issue(issue_title, "\n".join(issue_lines))
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        exit(1)
