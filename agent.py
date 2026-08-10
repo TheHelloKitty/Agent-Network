@@ -77,7 +77,6 @@ if __name__ == "__main__":
     existing_product_names = get_existing_gumroad_products(token)
 
     # 2. Gather active items produced by your agent network run
-    # (If your network writes to a generation log file, you can load it dynamically here)
     generation_products = [
         {
             "name": "B2B Supply Chain Workflows Masterclass & Guide by Operator-845",
@@ -113,9 +112,10 @@ if __name__ == "__main__":
     for prod in generation_products:
         name = prod["name"]
         
-        # Skip if it already exists on Gumroad to prevent duplicates
+        # Check if it already exists on Gumroad
         if name in existing_product_names:
             print(f"Skipping (already exists on Gumroad): {name}")
+            issue_body_lines.append(f"- ⏭️ **Skipped (Already Exists):** {name}")
             continue
 
         result = create_gumroad_product(
@@ -132,9 +132,6 @@ if __name__ == "__main__":
         else:
             issue_body_lines.append(f"- ❌ **Failed:** {name} [${prod['price_cents']/100:.2f}]")
 
-    # Only open an issue if new products were successfully pushed
-    if new_uploads_count > 0:
-        issue_title = f"🚀 Gumroad Sync: {new_uploads_count} New Product(s) Published"
-        create_github_issue(issue_title, "\n".join(issue_body_lines))
-    else:
-        print("Sync complete. No new products found to push.")
+    # ALWAYS create an issue on every run so you have a direct status report
+    issue_title = f"📊 Gumroad Run Status: {new_uploads_count} New Product(s) Published"
+    create_github_issue(issue_title, "\n".join(issue_body_lines))
