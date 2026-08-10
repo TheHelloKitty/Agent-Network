@@ -54,15 +54,13 @@ def get_existing_lemon_products(api_key):
     return set()
 
 def create_lemon_squeezy_product(name, description, price_cents, api_key, store_id):
+    url = "https://api.lemonsqueezy.com/v1/products"
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Accept": "application/vnd.api+json",
         "Content-Type": "application/vnd.api+json"
     }
-    
-    # Step 1: Create the base product
-    product_url = "https://api.lemonsqueezy.com/v1/products"
-    product_payload = {
+    payload = {
         "data": {
             "type": "products",
             "attributes": {
@@ -79,30 +77,11 @@ def create_lemon_squeezy_product(name, description, price_cents, api_key, store_
             }
         }
     }
-    
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=data, headers=headers, method="POST")
     try:
-        req = urllib.request.Request(product_url, data=json.dumps(product_payload).encode("utf-8"), headers=headers, method="POST")
         with urllib.request.urlopen(req, timeout=30) as response:
-            res_data = json.loads(response.read().decode("utf-8"))
-            product_id = res_data["data"]["id"]
-            
-            # Step 2: Create the variant/price for the product
-            variant_url = "https://api.lemonsqueezy.com/v1/variants"
-            variant_payload = {
-                "data": {
-                    "type": "variants",
-                    "attributes": {
-                        "product_id": int(product_id),
-                        "name": "Default",
-                        "price": price_cents,
-                        "status": "published"
-                    }
-                }
-            }
-            v_req = urllib.request.Request(variant_url, data=json.dumps(variant_payload).encode("utf-8"), headers=headers, method="POST")
-            with urllib.request.urlopen(v_req, timeout=30) as v_response:
-                return json.loads(v_response.read().decode("utf-8"))
-                
+            return json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
         print(f"Lemon Squeezy HTTP Error ({name}): {e.read().decode('utf-8')}")
     except Exception as e:
@@ -190,7 +169,7 @@ if __name__ == "__main__":
                 g_url = g_res["product"].get("short_url", "#")
                 issue_lines.append(f"- **Gumroad:** ✅ Published ([View]({g_url}))")
             else:
-                issue_lines.append("- **Gumroad:** ❌ Skipped / Already Exists")
+                issue_lines.append("- **Gumroad:** ⏭️ Skipped / Already Exists")
 
         # Push to Lemon Squeezy if not present
         if name in existing_lemon:
@@ -201,7 +180,7 @@ if __name__ == "__main__":
                 lemon_new += 1
                 issue_lines.append("- **Lemon Squeezy:** ✅ Published")
             else:
-                issue_lines.append("- **Lemon Squeezy:** ❌ Skipped / Already Exists")
+                issue_lines.append("- **Lemon Squeezy:** ⏭️ Skipped / Already Exists")
 
     issue_title = f"💰 Revenue Run: {gumroad_new} Gumroad / {lemon_new} Lemon Squeezy New"
     create_github_issue(issue_title, "\n".join(issue_lines))
