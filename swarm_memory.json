@@ -1,6 +1,6 @@
 {
-    "current_generation": 7,
-    "treasury": 120.78999999999999,
+    "current_generation": 8,
+    "treasury": 393.78999999999996,
     "all_agents": [
         {
             "agent_id": "Gen2_Agent_1",
@@ -539,6 +539,96 @@
             "assigned_niche": "Cat Care Guides",
             "personality": "Methodical & Analytical",
             "tone": "Humorous",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen8_Agent_1",
+            "generation": 8,
+            "pen_name": "Operator-708",
+            "assigned_niche": "Fitness Planners",
+            "personality": "Cynical & Direct",
+            "tone": "Suspenseful",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen8_Agent_2",
+            "generation": 8,
+            "pen_name": "Operator-903",
+            "assigned_niche": "B2B Supply Chain Workflows",
+            "personality": "Cynical & Direct",
+            "tone": "Suspenseful",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen8_Agent_3",
+            "generation": 8,
+            "pen_name": "Operator-945",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Methodical & Analytical",
+            "tone": "Pragmatic",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen8_Agent_4",
+            "generation": 8,
+            "pen_name": "Operator-753",
+            "assigned_niche": "Cat Care Guides",
+            "personality": "Methodical & Analytical",
+            "tone": "Suspenseful",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen8_Agent_5",
+            "generation": 8,
+            "pen_name": "Operator-649",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Cynical & Direct",
+            "tone": "Humorous",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen8_Agent_6",
+            "generation": 8,
+            "pen_name": "Operator-907",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Cynical & Direct",
+            "tone": "Pragmatic",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen8_Agent_7",
+            "generation": 8,
+            "pen_name": "Operator-493",
+            "assigned_niche": "B2B Supply Chain Workflows",
+            "personality": "Whimsical & Energetic",
+            "tone": "Pragmatic",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen8_Agent_8",
+            "generation": 8,
+            "pen_name": "Operator-544",
+            "assigned_niche": "Sci-Fi Short Stories",
+            "personality": "Warm & Conversational",
+            "tone": "Humorous",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen8_Agent_9",
+            "generation": 8,
+            "pen_name": "Operator-791",
+            "assigned_niche": "B2B Supply Chain Workflows",
+            "personality": "Methodical & Analytical",
+            "tone": "Pragmatic",
             "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
             "status": "Active"
         }
