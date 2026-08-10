@@ -53,7 +53,7 @@ def get_existing_lemon_products(api_key):
         print(f"Warning: Could not fetch Lemon Squeezy products: {e}")
     return set()
 
-def create_lemon_squeezy_product(name, description, price_cents, api_key, store_id):
+def create_lemon_squeezy_product(name, description, api_key, store_id):
     url = "https://api.lemonsqueezy.com/v1/products"
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -65,8 +65,7 @@ def create_lemon_squeezy_product(name, description, price_cents, api_key, store_
             "type": "products",
             "attributes": {
                 "name": name,
-                "description": description,
-                "price": price_cents
+                "description": description
             },
             "relationships": {
                 "store": {
@@ -177,7 +176,7 @@ if __name__ == "__main__":
         if name in existing_lemon:
             issue_lines.append("- **Lemon Squeezy:** ⏭️ Skipped (Already Exists)")
         else:
-            l_res = create_lemon_squeezy_product(name, desc, price, ls_api_key, ls_store_id)
+            l_res = create_lemon_squeezy_product(name, desc, ls_api_key, ls_store_id)
             if l_res and "data" in l_res:
                 lemon_new += 1
                 issue_lines.append("- **Lemon Squeezy:** ✅ Published")
