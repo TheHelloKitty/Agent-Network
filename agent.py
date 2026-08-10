@@ -208,7 +208,7 @@ def execute_storefront_distribution_pipeline(agents, cdp_wallet):
 
         return agent['agent_id']
 
-    current_gen_agents = [a for a in agents if a.get('generation') == agents[-1].get('generation')]
+    current_gen_agents = [a for a in agents if a.get('generation'] == agents[-1].get('generation')]
     if not current_gen_agents:
         current_gen_agents = agents
 
@@ -218,6 +218,34 @@ def execute_storefront_distribution_pipeline(agents, cdp_wallet):
             
     print(f"SUCCESS: Storefront export bundles generated. Total catalog value: ${earned_bounty_total:.2f} USD.")
     return earned_bounty_total
+
+def generate_issue_summary_report(agents, treasury):
+    current_gen = agents[-1].get('generation', 1) if agents else 1
+    current_gen_agents = [a for a in agents if a.get('generation') == current_gen]
+    
+    report = f"The multi-generational agent network just completed a run.\n\n"
+    report += f"* **Total Active Agents/Assets Tracked:** {len(agents)}\n"
+    report += f"* **Current Generation:** {current_gen}\n"
+    report += f"* **Accumulated Treasury Value:** ${treasury:.2f} USD\n\n"
+    report += f"### Latest Generation Contributions (Gen {current_gen}):\n"
+    
+    for agent in current_gen_agents:
+        export_path = f"storefront_exports/{agent['agent_id']}_listing.json"
+        title = f"{agent['assigned_niche']} Package"
+        price = "25.00"
+        if os.path.exists(export_path):
+            try:
+                with open(export_path, "r") as jf:
+                    jdata = json.load(jf)
+                    title = jdata.get("title", title)
+                    price = jdata.get("price", price)
+            except Exception:
+                pass
+        report += f"- **{agent['pen_name']}** ({agent['assigned_niche']}): *{title}* [${price}]\n"
+
+    with open("issue_body.txt", "w") as report_file:
+        report_file.write(report)
+    print("SUCCESS: Detailed issue report generated in issue_body.txt")
 
 # --- MAIN SWARM EXECUTION LOOP ---
 step_count = 0
@@ -236,6 +264,8 @@ while not task_completed:
     new_treasury = current_treasury + session_revenue
     
     save_swarm_state(active_cumulative_swarm, active_cumulative_swarm[-1].get('generation', 1), new_treasury)
+    generate_issue_summary_report(active_cumulative_swarm, new_treasury)
+    
     swarm_governor.track_token_usage(tokens_consumed=12500)
     
     task_completed = True
