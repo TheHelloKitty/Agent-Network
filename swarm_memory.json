@@ -1,5 +1,6 @@
 {
-    "current_generation": 6,
+    "current_generation": 7,
+    "treasury": 120.78999999999999,
     "all_agents": [
         {
             "agent_id": "Gen2_Agent_1",
@@ -449,6 +450,96 @@
             "personality": "Cynical & Direct",
             "tone": "Poetic",
             "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen7_Agent_1",
+            "generation": 7,
+            "pen_name": "Operator-164",
+            "assigned_niche": "SaaS Marketing Funnels",
+            "personality": "Warm & Conversational",
+            "tone": "Poetic",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen7_Agent_2",
+            "generation": 7,
+            "pen_name": "Operator-155",
+            "assigned_niche": "B2B Supply Chain Workflows",
+            "personality": "Warm & Conversational",
+            "tone": "Authoritative",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen7_Agent_3",
+            "generation": 7,
+            "pen_name": "Operator-376",
+            "assigned_niche": "Cozy Mystery Outlines",
+            "personality": "Cynical & Direct",
+            "tone": "Humorous",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen7_Agent_4",
+            "generation": 7,
+            "pen_name": "Operator-507",
+            "assigned_niche": "Cozy Mystery Outlines",
+            "personality": "Methodical & Analytical",
+            "tone": "Humorous",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen7_Agent_5",
+            "generation": 7,
+            "pen_name": "Operator-710",
+            "assigned_niche": "Children's Books",
+            "personality": "Warm & Conversational",
+            "tone": "Pragmatic",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen7_Agent_6",
+            "generation": 7,
+            "pen_name": "Operator-382",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Warm & Conversational",
+            "tone": "Pragmatic",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen7_Agent_7",
+            "generation": 7,
+            "pen_name": "Operator-490",
+            "assigned_niche": "Fitness Planners",
+            "personality": "Warm & Conversational",
+            "tone": "Authoritative",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen7_Agent_8",
+            "generation": 7,
+            "pen_name": "Operator-667",
+            "assigned_niche": "Children's Books",
+            "personality": "Methodical & Analytical",
+            "tone": "Pragmatic",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen7_Agent_9",
+            "generation": 7,
+            "pen_name": "Operator-455",
+            "assigned_niche": "Cat Care Guides",
+            "personality": "Methodical & Analytical",
+            "tone": "Humorous",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
             "status": "Active"
         }
     ]
