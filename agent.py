@@ -89,27 +89,6 @@ def create_lemon_squeezy_product(name, description, api_key, store_id):
         print(f"Lemon Squeezy Error ({name}): {str(e)}")
     return None
 
-# --- GITHUB ISSUE LOGGER ---
-def create_github_issue(title, body):
-    repo = os.environ.get("GITHUB_REPOSITORY")
-    gh_token = os.environ.get("GITHUB_TOKEN")
-    if not repo or not gh_token:
-        print("GitHub environment variables missing, skipping issue.")
-        return
-
-    url = f"https://api.github.com/repos/{repo}/issues"
-    payload = {"title": title, "body": body}
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=data, method="POST")
-    req.add_header("Authorization", f"Bearer {gh_token}")
-    req.add_header("Accept", "application/vnd.github+json")
-    req.add_header("Content-Type", "application/json")
-    try:
-        with urllib.request.urlopen(req, timeout=30) as response:
-            print("SUCCESS: Logged action to GitHub Issues!")
-    except Exception as e:
-        print(f"Failed to create GitHub Issue: {str(e)}")
-
 # --- MAIN EXECUTION ---
 if __name__ == "__main__":
     try:
@@ -153,39 +132,39 @@ if __name__ == "__main__":
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
         gumroad_new = 0
         lemon_new = 0
-        issue_lines = [f"### 💰 Multi-Storefront Revenue Sync Log\n* **Timestamp:** {timestamp}\n"]
+        log_lines = [f"\n=== MULTI-STOREFRONT REVENUE SYNC LOG ({timestamp}) ==="]
 
         for prod in generation_products:
             name = prod["name"]
             price = prod["price_cents"]
             desc = prod["description"]
-            issue_lines.append(f"#### 📄 {name} [${price/100:.2f}]")
+            log_lines.append(f"\nProduct: {name} [${price/100:.2f}]")
 
             # Push to Gumroad if not present
             if name in existing_gumroad:
-                issue_lines.append("- **Gumroad:** ⏭️ Skipped (Already Exists)")
+                log_lines.append("  - Gumroad: Skipped (Already Exists)")
             else:
                 g_res = create_gumroad_product(name, desc, price, gumroad_token)
                 if g_res and "product" in g_res:
                     gumroad_new += 1
                     g_url = g_res["product"].get("short_url", "#")
-                    issue_lines.append(f"- **Gumroad:** ✅ Published ([View]({g_url}))")
+                    log_lines.append(f"  - Gumroad: Published successfully ({g_url})")
                 else:
-                    issue_lines.append("- **Gumroad:** ⏭️ Skipped / Already Exists")
+                    log_lines.append("  - Gumroad: Skipped / Already Exists")
 
             # Push to Lemon Squeezy if not present
             if name in existing_lemon:
-                issue_lines.append("- **Lemon Squeezy:** ⏭️ Skipped (Already Exists)")
+                log_lines.append("  - Lemon Squeezy: Skipped (Already Exists)")
             else:
                 l_res = create_lemon_squeezy_product(name, desc, ls_api_key, ls_store_id)
                 if l_res and "data" in l_res:
                     lemon_new += 1
-                    issue_lines.append("- **Lemon Squeezy:** ✅ Published")
+                    log_lines.append("  - Lemon Squeezy: Published successfully")
                 else:
-                    issue_lines.append("- **Lemon Squeezy:** ⏭️ Skipped / Already Exists")
+                    log_lines.append("  - Lemon Squeezy: Skipped / Already Exists")
 
-        issue_title = f"💰 Revenue Run: {gumroad_new} Gumroad / {lemon_new} Lemon Squeezy New"
-        create_github_issue(issue_title, "\n".join(issue_lines))
+        log_lines.append(f"\nSummary: {gumroad_new} added to Gumroad, {lemon_new} added to Lemon Squeezy.")
+        print("\n".join(log_lines))
     except Exception as e:
         import traceback
         traceback.print_exc()
