@@ -10,8 +10,8 @@ DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
 
 if not GEMINI_API_KEY:
-    print("Error: GEMINI_API_KEY is missing.")
-    sys.exit(1)
+  print("Error: GEMINI_API_KEY is missing.")
+  sys.exit(1)
 
 # 2. Initialize the Gemini client
 client = genai.Client(api_key=GEMINI_API_KEY)
@@ -21,7 +21,7 @@ def run_agent_task():
   print("Running agent task with Gemini...")
   # Ask Gemini to generate a status update or summary
   response = client.models.generate_content(
-      model="gemini-2.5-flash",
+      model="gemini-2.0-flash",
       contents=(
           "Write a short, friendly status report from an autonomous agent network"
           " indicating that all systems are operational."
