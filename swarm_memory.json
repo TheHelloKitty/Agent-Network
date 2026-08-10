@@ -1,6 +1,6 @@
 {
-    "current_generation": 10,
-    "treasury": 893.53,
+    "current_generation": 11,
+    "treasury": 1218.85,
     "all_agents": [
         {
             "agent_id": "Gen2_Agent_1",
@@ -810,6 +810,96 @@
             "personality": "Methodical & Analytical",
             "tone": "Pragmatic",
             "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen11_Agent_1",
+            "generation": 11,
+            "pen_name": "Operator-517",
+            "assigned_niche": "Sci-Fi Short Stories",
+            "personality": "Warm & Conversational",
+            "tone": "Humorous",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen11_Agent_2",
+            "generation": 11,
+            "pen_name": "Operator-178",
+            "assigned_niche": "SaaS Marketing Funnels",
+            "personality": "Whimsical & Energetic",
+            "tone": "Humorous",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen11_Agent_3",
+            "generation": 11,
+            "pen_name": "Operator-751",
+            "assigned_niche": "Cat Care Guides",
+            "personality": "Cynical & Direct",
+            "tone": "Humorous",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen11_Agent_4",
+            "generation": 11,
+            "pen_name": "Operator-150",
+            "assigned_niche": "SaaS Marketing Funnels",
+            "personality": "Whimsical & Energetic",
+            "tone": "Pragmatic",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen11_Agent_5",
+            "generation": 11,
+            "pen_name": "Operator-765",
+            "assigned_niche": "Sci-Fi Short Stories",
+            "personality": "Cynical & Direct",
+            "tone": "Poetic",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen11_Agent_6",
+            "generation": 11,
+            "pen_name": "Operator-600",
+            "assigned_niche": "SaaS Marketing Funnels",
+            "personality": "Methodical & Analytical",
+            "tone": "Suspenseful",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen11_Agent_7",
+            "generation": 11,
+            "pen_name": "Operator-756",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Whimsical & Energetic",
+            "tone": "Pragmatic",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen11_Agent_8",
+            "generation": 11,
+            "pen_name": "Operator-777",
+            "assigned_niche": "Cat Care Guides",
+            "personality": "Bold & Provocative",
+            "tone": "Authoritative",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen11_Agent_9",
+            "generation": 11,
+            "pen_name": "Operator-954",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Bold & Provocative",
+            "tone": "Poetic",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
             "status": "Active"
         }
     ]
