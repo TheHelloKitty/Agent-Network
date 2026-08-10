@@ -1,6 +1,6 @@
 {
-    "current_generation": 15,
-    "treasury": 2379.11,
+    "current_generation": 16,
+    "treasury": 2653.62,
     "all_agents": [
         {
             "agent_id": "Gen2_Agent_1",
@@ -1260,6 +1260,96 @@
             "personality": "Cynical & Direct",
             "tone": "Humorous",
             "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen16_Agent_1",
+            "generation": 16,
+            "pen_name": "Operator-637",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Cynical & Direct",
+            "tone": "Authoritative",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen16_Agent_2",
+            "generation": 16,
+            "pen_name": "Operator-922",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Bold & Provocative",
+            "tone": "Pragmatic",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen16_Agent_3",
+            "generation": 16,
+            "pen_name": "Operator-950",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Bold & Provocative",
+            "tone": "Authoritative",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen16_Agent_4",
+            "generation": 16,
+            "pen_name": "Operator-872",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Bold & Provocative",
+            "tone": "Poetic",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen16_Agent_5",
+            "generation": 16,
+            "pen_name": "Operator-134",
+            "assigned_niche": "Cozy Mystery Outlines",
+            "personality": "Bold & Provocative",
+            "tone": "Pragmatic",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen16_Agent_6",
+            "generation": 16,
+            "pen_name": "Operator-702",
+            "assigned_niche": "Fitness Planners",
+            "personality": "Cynical & Direct",
+            "tone": "Suspenseful",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen16_Agent_7",
+            "generation": 16,
+            "pen_name": "Operator-854",
+            "assigned_niche": "Sci-Fi Short Stories",
+            "personality": "Warm & Conversational",
+            "tone": "Poetic",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen16_Agent_8",
+            "generation": 16,
+            "pen_name": "Operator-188",
+            "assigned_niche": "Fitness Planners",
+            "personality": "Cynical & Direct",
+            "tone": "Poetic",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen16_Agent_9",
+            "generation": 16,
+            "pen_name": "Operator-976",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Whimsical & Energetic",
+            "tone": "Pragmatic",
+            "physical_profile": "Wears round tortoise-shell glasses and always drinks black coffee.",
             "status": "Active"
         }
     ]
