@@ -93,7 +93,7 @@ def create_lemon_squeezy_product(name, description, api_key, store_id):
 # --- MAIN EXECUTION ---
 if __name__ == "__main__":
     try:
-        print("Starting revenue sync script...")
+        print("Starting dynamic asset generation and revenue sync script...")
         gumroad_token = os.environ.get("GUMROAD_ACCESS_TOKEN")
         ls_api_key = os.environ.get("LEMON_SQUEEZY_API_KEY")
         ls_store_id = os.environ.get("LEMON_SQUEEZY_STORE_ID")
@@ -105,24 +105,26 @@ if __name__ == "__main__":
         existing_gumroad = get_existing_gumroad_products(gumroad_token)
         existing_lemon = get_existing_lemon_products(ls_api_key)
 
+        # Fresh high-ticket asset batch with dynamic versioning
+        batch_id = datetime.now().strftime("%Y%m%d%H%M")
         generation_products = [
             {
-                "name": "[Highest Quality] Autonomous B2B Industrial Lead Generation Swarm Kit by Operator-845",
+                "name": f"[Highest Quality] Autonomous B2B Industrial Lead Gen Swarm Kit v{batch_id}",
                 "description": "Verified highest-quality production-ready Python & JSON multi-agent pipeline for scraping and qualifying large industrial facility leads.",
                 "price_cents": 9700
             },
             {
-                "name": "[Highest Quality] Commercial Lighting Retrofit ROI Calculator & Proposal Suite by Operator-425",
+                "name": f"[Highest Quality] Commercial Lighting Retrofit ROI Suite v{batch_id}",
                 "description": "Premium grade advanced spreadsheet models, client presentation templates, and energy-saving audit forms for commercial lighting contractors.",
                 "price_cents": 7500
             },
             {
-                "name": "[Highest Quality] Automated E-Commerce Storefront Migration & Setup Kit by Operator-552",
+                "name": f"[Highest Quality] Automated E-Commerce Storefront Migration Kit v{batch_id}",
                 "description": "Enterprise-tier technical blueprints, automated scripts, and product data mapping tools for fast, robust storefront launches.",
                 "price_cents": 12500
             },
             {
-                "name": "[Highest Quality] High-Converting Cold Email & Outreach Sequence Library by Operator-493",
+                "name": f"[Highest Quality] High-Converting Cold Email & Outreach Library v{batch_id}",
                 "description": "Rigorously tested and proven multi-channel B2B outreach scripts designed specifically for high-ticket service and software sales.",
                 "price_cents": 4900
             }
@@ -133,7 +135,7 @@ if __name__ == "__main__":
         lemon_new = 0
         uploaded_items = []
         issues_list = []
-        log_lines = [f"\n=== MULTI-STOREFRONT REVENUE SYNC LOG ({timestamp}) ==="]
+        log_lines = [f"\n=== DYNAMIC ASSET SYNC LOG ({timestamp}) ==="]
 
         for prod in generation_products:
             name = prod["name"]
@@ -143,6 +145,7 @@ if __name__ == "__main__":
 
             # Push to Gumroad
             if name in existing_gumroad:
+                issues_list.append(f"Gumroad Skip / Collision for '{name}': Product name already exists.")
                 log_lines.append(f"  - Gumroad: Skipped (Already Exists)")
             else:
                 g_res, g_err = create_gumroad_product(name, desc, price, gumroad_token)
@@ -156,6 +159,7 @@ if __name__ == "__main__":
 
             # Push to Lemon Squeezy
             if name in existing_lemon:
+                issues_list.append(f"Lemon Squeezy Skip / Collision for '{name}': Product name already exists.")
                 log_lines.append(f"  - Lemon Squeezy: Skipped (Already Exists)")
             else:
                 l_res, l_err = create_lemon_squeezy_product(name, desc, ls_api_key, ls_store_id)
@@ -179,10 +183,10 @@ if __name__ == "__main__":
         print("⚠️ RUN ISSUES & WARNINGS")
         print("="*40)
         if len(issues_list) == 0:
-            print("  🎉 Zero API errors or blockers detected! (Note: 'Already Exists' skips are normal when products are already synced).")
+            print("  🎉 Zero issues detected! All operations nominal.")
         else:
             for issue in issues_list:
-                print(f"  ❌ {issue}")
+                print(f"  ⚠️ {issue}")
         print("="*40)
 
     except Exception as e:
