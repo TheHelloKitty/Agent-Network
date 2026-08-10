@@ -1,6 +1,6 @@
 {
-    "current_generation": 13,
-    "treasury": 1747.35,
+    "current_generation": 14,
+    "treasury": 2079.38,
     "all_agents": [
         {
             "agent_id": "Gen2_Agent_1",
@@ -1080,6 +1080,96 @@
             "personality": "Warm & Conversational",
             "tone": "Authoritative",
             "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen14_Agent_1",
+            "generation": 14,
+            "pen_name": "Operator-131",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Cynical & Direct",
+            "tone": "Poetic",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen14_Agent_2",
+            "generation": 14,
+            "pen_name": "Operator-571",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Whimsical & Energetic",
+            "tone": "Poetic",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen14_Agent_3",
+            "generation": 14,
+            "pen_name": "Operator-373",
+            "assigned_niche": "Children's Books",
+            "personality": "Cynical & Direct",
+            "tone": "Authoritative",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen14_Agent_4",
+            "generation": 14,
+            "pen_name": "Operator-976",
+            "assigned_niche": "Real Estate Email Templates",
+            "personality": "Warm & Conversational",
+            "tone": "Poetic",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen14_Agent_5",
+            "generation": 14,
+            "pen_name": "Operator-752",
+            "assigned_niche": "Cozy Mystery Outlines",
+            "personality": "Warm & Conversational",
+            "tone": "Pragmatic",
+            "physical_profile": "Minimalist setup with dual monitors and a habit of pacing while thinking.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen14_Agent_6",
+            "generation": 14,
+            "pen_name": "Operator-194",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Methodical & Analytical",
+            "tone": "Poetic",
+            "physical_profile": "Keeps an organized desk with stacked index cards and a mechanical pencil collection.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen14_Agent_7",
+            "generation": 14,
+            "pen_name": "Operator-970",
+            "assigned_niche": "Sci-Fi Short Stories",
+            "personality": "Bold & Provocative",
+            "tone": "Suspenseful",
+            "physical_profile": "Prefers late-night writing sessions under a green-shaded desk lamp.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen14_Agent_8",
+            "generation": 14,
+            "pen_name": "Operator-609",
+            "assigned_niche": "Children's Books",
+            "personality": "Cynical & Direct",
+            "tone": "Authoritative",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
+            "status": "Active"
+        },
+        {
+            "agent_id": "Gen14_Agent_9",
+            "generation": 14,
+            "pen_name": "Operator-458",
+            "assigned_niche": "Personal Finance Trackers",
+            "personality": "Whimsical & Energetic",
+            "tone": "Poetic",
+            "physical_profile": "Wears vintage tweed jackets and listens to lo-fi ambient beats.",
             "status": "Active"
         }
     ]
