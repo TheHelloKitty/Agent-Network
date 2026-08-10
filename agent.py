@@ -19,9 +19,9 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 def run_agent_task():
   print("Running agent task with Gemini...")
-  # Ask Gemini to generate a status update or summary
+  # Ask Gemini to generate a status update or summary using gemini-2.0-flash
   response = client.models.generate_content(
-      model="gemini-1.5-flash",
+      model="gemini-2.0-flash",
       contents=(
           "Write a short, friendly status report from an autonomous agent network"
           " indicating that all systems are operational."
@@ -51,7 +51,7 @@ def send_email_report(report_text):
   resend.api_key = RESEND_API_KEY
   params = {
       "from": "Agent Network <onboarding@resend.dev>",
-      "to": ["delivered@resend.dev"],  # Update to your email when ready
+      "to": ["delivered@resend.dev"],
       "subject": "Agent Network Daily Report",
       "html": f"<p>{report_text}</p>",
   }
@@ -64,7 +64,6 @@ def send_email_report(report_text):
 
 
 if __name__ == "__main__":
-  # Execute agent tasks and trigger integrations
   task_output = run_agent_task()
   print(f"\nAgent Output:\n{task_output}\n")
 
