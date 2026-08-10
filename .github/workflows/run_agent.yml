@@ -1,46 +1,50 @@
-name: Run Agent Network
+name: Agent Swarm Pipeline
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
 
 permissions:
   contents: write
   issues: write
 
 jobs:
-  build:
+  run-swarm:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install cdp-sdk
 
       - name: Run Swarm Execution
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          OPEN_ROUTER_KEY: ${{ secrets.OPEN_ROUTER_KEY }}
-          API_KEY: ${{ secrets.API_KEY }}
-          TOGETHER: ${{ secrets.TOGETHER }}
-        run: python agent.py
+          COINBASE_API_KEY: ${{ secrets.COINBASE_API_KEY }}
+          CDP_API_SECRET: ${{ secrets.CDP_API_SECRET }}
+        run: |
+          python agent.py
 
       - name: Commit and Push Generated Assets
         run: |
-          git config --global user.name "Talos Bot"
-          git config --global user.email "actions@github.com"
-          git add agent_outputs/ swarm_memory.json
-          git diff --staged --quiet || git commit -m "chore: automated agent generation and memory sync [skip ci]"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add swarm_memory.json agent_outputs/ storefront_exports/ issue_body.txt
+          git commit -m "🤖 Swarm Update: Generated New Generation Assets and Report" || echo "No changes to commit"
           git push
 
       - name: Open Notification Issue for Swarm Run
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Count active outputs to put in the issue body
-          TOTAL_AGENTS=$(ls -1 agent_outputs/ | wc -l)
-          gh issue create \
-            --title "🤖 Swarm Update: New Generation Executed Successfully" \
-            --body "The multi-generational agent network just completed a run. Total active agents/assets tracked in repository: **$TOTAL_AGENTS**."
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "🤖 Swarm Update: New Generation Executed Successfully"
+          content-filepath: "issue_body.txt"
+          token: ${{ secrets.GITHUB_TOKEN }}
