@@ -97,22 +97,8 @@ if __name__ == "__main__":
         ls_api_key = os.environ.get("LEMON_SQUEEZY_API_KEY")
         ls_store_id = os.environ.get("LEMON_SQUEEZY_STORE_ID")
 
-        if not gumroad_token:
-            print("CRITICAL ERROR: GUMROAD_ACCESS_TOKEN environment variable is missing or empty.")
-        else:
-            print("GUMROAD_ACCESS_TOKEN detected.")
-
-        if not ls_api_key:
-            print("CRITICAL ERROR: LEMON_SQUEEZY_API_KEY environment variable is missing or empty.")
-        else:
-            print("LEMON_SQUEEZY_API_KEY detected.")
-
-        if not ls_store_id:
-            print("CRITICAL ERROR: LEMON_SQUEEZY_STORE_ID environment variable is missing or empty.")
-        else:
-            print(f"LEMON_SQUEEZY_STORE_ID detected: {ls_store_id}")
-
         if not gumroad_token or not ls_api_key or not ls_store_id:
+            print("CRITICAL ERROR: One or more required environment variables/secrets are missing.")
             exit(1)
 
         existing_gumroad = get_existing_gumroad_products(gumroad_token)
