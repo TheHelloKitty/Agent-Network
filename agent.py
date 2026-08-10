@@ -65,7 +65,8 @@ def create_lemon_squeezy_product(name, description, price_cents, api_key, store_
             "type": "products",
             "attributes": {
                 "name": name,
-                "description": description
+                "description": description,
+                "price": price_cents
             },
             "relationships": {
                 "store": {
@@ -83,7 +84,8 @@ def create_lemon_squeezy_product(name, description, price_cents, api_key, store_
         with urllib.request.urlopen(req, timeout=30) as response:
             return json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
-        print(f"Lemon Squeezy HTTP Error ({name}): {e.read().decode('utf-8')}")
+        error_body = e.read().decode('utf-8')
+        print(f"Lemon Squeezy HTTP Error ({name}): {error_body}")
     except Exception as e:
         print(f"Lemon Squeezy Error ({name}): {str(e)}")
     return None
