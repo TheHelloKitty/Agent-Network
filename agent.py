@@ -19,7 +19,7 @@ if not GEMINI_API_KEY:
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
-def run_agent_task(retries=3, delay=65):
+def run_agent_task(retries=5, delay=55):
   print("Running agent task with Gemini...")
   for attempt in range(retries):
     try:
@@ -36,7 +36,7 @@ def run_agent_task(retries=3, delay=65):
       if attempt < retries - 1:
         print(
             f"Rate limit hit or quota exceeded. Waiting {delay} seconds before"
-            " retrying..."
+            f" retrying (Attempt {attempt + 1}/{retries})..."
         )
         time.sleep(delay)
       else:
