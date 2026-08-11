@@ -1,4 +1,4 @@
-      - name: Run agent registration script
-        env:
-          TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
-        run: python agent.py
+name: Run agent registration script
+env:
+  TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
+run: python agent.py
