@@ -1,2 +1,2 @@
-      - name: Install dependencies
-        run: pip install requests coinbase
+name: Install dependencies
+run: pip install requests coinbase
