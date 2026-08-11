@@ -24,7 +24,7 @@ def run_agent_task(retries=5, delay=55):
   for attempt in range(retries):
     try:
       response = client.models.generate_content(
-          model="gemini-2.5-flash",
+          model="gemini-2.0-flash",
           contents=(
               "Write a short, detailed operational status report from your"
               " autonomous agent network indicating all systems, revenue"
@@ -65,7 +65,7 @@ def send_email_report(report_text):
   resend.api_key = RESEND_API_KEY
   params = {
       "from": "Agent Network <onboarding@resend.dev>",
-      "to": ["delivered@resend.dev"],  # Change or add your target email here
+      "to": ["delivered@resend.dev"],
       "subject": "Agent Network Execution Report",
       "html": f"<p>{report_text}</p>",
   }
@@ -78,10 +78,8 @@ def send_email_report(report_text):
 
 
 if __name__ == "__main__":
-  # Generate the report content using Gemini
   task_output = run_agent_task()
   print(f"\nAgent Output:\n{task_output}\n")
 
-  # Push reports to your notification channels
   send_discord_alert(task_output)
   send_email_report(task_output)
