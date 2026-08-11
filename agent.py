@@ -1,9 +1,12 @@
 import os
+import requests
 from coinbase.rest import RESTClient
 
-# Initialize Coinbase credentials from environment variables
+# Initialize credentials
 COINBASE_API_KEY = os.environ.get("COINBASE_API_KEY")
 COINBASE_API_SECRET = os.environ.get("COINBASE_API_SECRET")
+PAYPAL_CLIENT_ID = os.environ.get("PAYPAL_CLIENT_ID")
+PAYPAL_CLIENT_SECRET = os.environ.get("PAYPAL_CLIENT_SECRET")
 
 def get_coinbase_balance():
     if not COINBASE_API_KEY or not COINBASE_API_SECRET:
@@ -22,7 +25,27 @@ def get_coinbase_balance():
     except Exception as e:
         return f"Error fetching Coinbase balance: {e}"
 
+def check_paypal_connection():
+    if not PAYPAL_CLIENT_ID or not PAYPAL_CLIENT_SECRET:
+        return "PayPal credentials not configured."
+    try:
+        url = "https://api-m.sandbox.paypal.com/v1/oauth2/token"
+        headers = {"Accept": "application/json", "Accept-Language": "en_US"}
+        data = {"grant_type": "client_credentials"}
+        response = requests.post(url, auth=(PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET), headers=headers, data=data)
+        
+        if response.status_code == 200:
+            return "Connected Successfully (Sandbox Access Token Acquired)"
+        else:
+            return f"Failed to connect: {response.status_code} - {response.text}"
+    except Exception as e:
+        return f"Error connecting to PayPal: {e}"
+
 if __name__ == "__main__":
-    print("Running Revenue Agent...")
+    print("Running Revenue Agent Swarm...")
+    
     balance_report = get_coinbase_balance()
     print(f"Coinbase Status -> {balance_report}")
+    
+    paypal_status = check_paypal_connection()
+    print(f"PayPal Status -> {paypal_status}")
