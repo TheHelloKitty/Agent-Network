@@ -1,8 +1,6 @@
 import os
 import sys
-import time
 from google import genai
-from google.genai.errors import ClientError
 import resend
 import requests
 
@@ -12,35 +10,24 @@ DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
 
 if not GEMINI_API_KEY:
-  print("Error: GEMINI_API_KEY is missing.")
-  sys.exit(1)
+    print("Error: GEMINI_API_KEY is missing.")
+    sys.exit(1)
 
 # 2. Initialize the Gemini client
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
-def run_agent_task(retries=3, delay=35):
+def run_agent_task():
   print("Running agent task with Gemini...")
-  for attempt in range(retries):
-    try:
-      response = client.models.generate_content(
-          model="gemini-2.0-flash",
-          contents=(
-              "Write a short, friendly status report from an autonomous agent"
-              " network indicating that all systems are operational."
-          ),
-      )
-      return response.text
-    except ClientError as e:
-      print(f"Caught API ClientError: {e}")
-      if attempt < retries - 1:
-        print(
-            f"Rate limit hit or quota exceeded. Waiting {delay} seconds before"
-            " retrying..."
-        )
-        time.sleep(delay)
-      else:
-        raise e
+  # Ask Gemini to generate a status update or summary
+  response = client.models.generate_content(
+      model="gemini-2.5-flash",
+      contents=(
+          "Write a short, friendly status report from an autonomous agent network"
+          " indicating that all systems are operational."
+      ),
+  )
+  return response.text
 
 
 def send_discord_alert(message):
@@ -64,7 +51,7 @@ def send_email_report(report_text):
   resend.api_key = RESEND_API_KEY
   params = {
       "from": "Agent Network <onboarding@resend.dev>",
-      "to": ["delivered@resend.dev"],
+      "to": ["delivered@resend.dev"],  # Update to your email when ready
       "subject": "Agent Network Daily Report",
       "html": f"<p>{report_text}</p>",
   }
@@ -77,6 +64,7 @@ def send_email_report(report_text):
 
 
 if __name__ == "__main__":
+  # Execute agent tasks and trigger integrations
   task_output = run_agent_task()
   print(f"\nAgent Output:\n{task_output}\n")
 
