@@ -24,10 +24,11 @@ def run_agent_task(retries=5, delay=55):
   for attempt in range(retries):
     try:
       response = client.models.generate_content(
-          model="gemini-3.5-flash",
+          model="gemini-2.5-flash",
           contents=(
-              "Write a short, friendly status report from an autonomous agent"
-              " network indicating that all systems are operational."
+              "Write a short, detailed operational status report from your"
+              " autonomous agent network indicating all systems, revenue"
+              " pipelines, and tasks are operational."
           ),
       )
       return response.text
@@ -35,15 +36,52 @@ def run_agent_task(retries=5, delay=55):
       print(f"Caught API ClientError: {e}")
       if attempt < retries - 1:
         print(
-            f"Rate limit hit or quota exceeded. Waiting {delay} seconds before"
-            f" retrying (Attempt {attempt + 1}/{retries})..."
+            f"Rate limit hit. Waiting {delay} seconds before retrying (Attempt"
+            f" {attempt + 1}/{retries})..."
         )
         time.sleep(delay)
       else:
         raise e
 
 
+def send_discord_alert(message):
+  if not DISCORD_WEBHOOK_URL:
+    print("Discord webhook URL not found, skipping alert.")
+    return
+
+  payload = {"content": f"🤖 **Revenue Agent Swarm Report**:\n{message}"}
+  response = requests.post(DISCORD_WEBHOOK_URL, json=payload)
+  if response.status_code == 204:
+    print("Discord alert sent successfully!")
+  else:
+    print(f"Failed to send Discord alert: {response.status_code}")
+
+
+def send_email_report(report_text):
+  if not RESEND_API_KEY:
+    print("Resend API key not found, skipping email.")
+    return
+
+  resend.api_key = RESEND_API_KEY
+  params = {
+      "from": "Agent Network <onboarding@resend.dev>",
+      "to": ["delivered@resend.dev"],  # Change or add your target email here
+      "subject": "Agent Network Execution Report",
+      "html": f"<p>{report_text}</p>",
+  }
+
+  try:
+    email = resend.Emails.send(params)
+    print("Email report sent successfully via Resend!")
+  except Exception as e:
+    print(f"Failed to send email: {e}")
+
+
 if __name__ == "__main__":
+  # Generate the report content using Gemini
   task_output = run_agent_task()
   print(f"\nAgent Output:\n{task_output}\n")
-  # Your Lemon Squeezy and other platform triggers run here...
+
+  # Push reports to your notification channels
+  send_discord_alert(task_output)
+  send_email_report(task_output)
