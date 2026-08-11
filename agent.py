@@ -19,7 +19,7 @@ if not GEMINI_API_KEY:
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
-def run_agent_task(retries=3, delay=35):
+def run_agent_task(retries=3, delay=65):
   print("Running agent task with Gemini...")
   for attempt in range(retries):
     try:
