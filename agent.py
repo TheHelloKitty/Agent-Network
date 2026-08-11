@@ -7,6 +7,7 @@ COINBASE_API_KEY = os.environ.get("COINBASE_API_KEY")
 COINBASE_API_SECRET = os.environ.get("COINBASE_API_SECRET")
 PAYPAL_CLIENT_ID = os.environ.get("PAYPAL_CLIENT_ID")
 PAYPAL_CLIENT_SECRET = os.environ.get("PAYPAL_CLIENT_SECRET")
+DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
 def get_coinbase_balance():
     if not COINBASE_API_KEY or not COINBASE_API_SECRET:
@@ -41,11 +42,31 @@ def check_paypal_connection():
     except Exception as e:
         return f"Error connecting to PayPal: {e}"
 
+def send_discord_alert(message):
+    if not DISCORD_WEBHOOK_URL:
+        print("Discord Webhook URL not configured.")
+        return
+    payload = {"content": message}
+    try:
+        response = requests.post(DISCORD_WEBHOOK_URL, json=payload)
+        if response.status_code == 204:
+            print("Discord alert sent successfully.")
+        else:
+            print(f"Failed to send Discord alert: {response.status_code} - {response.text}")
+    except Exception as e:
+        print(f"Error sending Discord alert: {e}")
+
 if __name__ == "__main__":
     print("Running Revenue Agent Swarm...")
     
     balance_report = get_coinbase_balance()
-    print(f"Coinbase Status -> {balance_report}")
-    
     paypal_status = check_paypal_connection()
-    print(f"PayPal Status -> {paypal_status}")
+    
+    report_message = (
+        "🤖 **Revenue Agent Swarm Status Report**\n"
+        f"• **Coinbase Status** -> {balance_report}\n"
+        f"• **PayPal Status** -> {paypal_status}"
+    )
+    
+    print(report_message)
+    send_discord_alert(report_message)
