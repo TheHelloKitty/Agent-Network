@@ -10,6 +10,10 @@ import requests
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+GITHUB_REPOSITORY = os.environ.get(
+    "GITHUB_REPOSITORY"
+)  # automatically available in GitHub Actions
 
 if not GEMINI_API_KEY:
   print("Error: GEMINI_API_KEY is missing.")
@@ -42,6 +46,31 @@ def run_agent_task(retries=5, delay=55):
         time.sleep(delay)
       else:
         raise e
+
+
+def create_github_issue(report_text):
+  if not GITHUB_TOKEN or not GITHUB_REPOSITORY:
+    print("GitHub token or repository info not found, skipping issue creation.")
+    return
+
+  url = f"https://api.github.com/repos/{GITHUB_REPOSITORY}/issues"
+  headers = {
+      "Authorization": f"Bearer {GITHUB_TOKEN}",
+      "Accept": "vnd.github+json",
+  }
+  payload = {
+      "title": f"Agent Run Report - {time.strftime('%Y-%m-%d %H:%M:%S')}",
+      "body": f"### Autonomous Agent Network Report\n\n{report_text}",
+  }
+
+  response = requests.post(url, json=payload, headers=headers)
+  if response.status_code == 201:
+    print("GitHub issue created successfully!")
+  else:
+    print(
+        f"Failed to create GitHub issue: {response.status_code} -"
+        f" {response.text}"
+    )
 
 
 def send_discord_alert(message):
@@ -81,5 +110,6 @@ if __name__ == "__main__":
   task_output = run_agent_task()
   print(f"\nAgent Output:\n{task_output}\n")
 
+  create_github_issue(task_output)
   send_discord_alert(task_output)
   send_email_report(task_output)
