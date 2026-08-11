@@ -1,2 +1,26 @@
-name: Install dependencies
-run: pip install requests coinbase
+name: Run Agent Workflow
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened]
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests coinbase
+
+      - name: Run agent registration script
+        env:
+          TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
+        run: python agent.py
