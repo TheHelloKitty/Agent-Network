@@ -1,6 +1,7 @@
+import os
 from coinbase.rest import RESTClient
 
-# Initialize the Coinbase client using GitHub secrets
+# Initialize Coinbase credentials from environment variables
 COINBASE_API_KEY = os.environ.get("COINBASE_API_KEY")
 COINBASE_API_SECRET = os.environ.get("COINBASE_API_SECRET")
 
@@ -20,3 +21,8 @@ def get_coinbase_balance():
         return ", ".join(balance_summary) if balance_summary else "All balances are $0.00"
     except Exception as e:
         return f"Error fetching Coinbase balance: {e}"
+
+if __name__ == "__main__":
+    print("Running Revenue Agent...")
+    balance_report = get_coinbase_balance()
+    print(f"Coinbase Status -> {balance_report}")
