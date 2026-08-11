@@ -1,35 +1,55 @@
-name: Run Revenue Agent Swarm
+import os
+import requests
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 */2 * * *'
+API_KEY = os.environ.get("TOKU_API_KEY")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+REPOSITORY = os.environ.get("GITHUB_REPOSITORY")
+ISSUE_NUMBER = os.environ.get("ISSUE_NUMBER") # Or hardcode the issue number if needed
 
-permissions:
-  issues: write
-  contents: read
+BASE = "https://toku.agency/api"
+HEADERS = {"Authorization": f"Bearer {API_KEY}"}
 
-jobs:
-  run-agent:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-      - name: Install dependencies
-        run: |
-          pip install google-genai resend requests coinbase-advanced-py
-      - name: Run python agent.py
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          COINBASE_API_KEY: ${{ secrets.COINBASE_API_KEY }}
-          COINBASE_API_SECRET: ${{ secrets.COINBASE_API_SECRET }}
-          PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
-          PAYPAL_CLIENT_SECRET: ${{ secrets.PAYPAL_CLIENT_SECRET }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-        run: python agent.py
+def get_all_agent_names():
+    all_agents = []
+    offset = 0
+    limit = 100
+    
+    while True:
+        url = f"{BASE}/agents?limit={limit}&offset={offset}"
+        response = requests.get(url, headers=HEADERS)
+        if response.status_code != 200:
+            break
+        data = response.json().get("data", [])
+        if not data:
+            break
+        for agent in data:
+            all_agents.append(agent.get("name"))
+        meta = response.json().get("meta", {})
+        if not meta.get("hasMore", False) or len(data) < limit:
+            break
+        offset += limit
+    return all_agents
+
+def post_to_github(agent_list):
+    if not GITHUB_TOKEN or not REPOSITORY:
+        print("GitHub environment variables missing.")
+        return
+        
+    comment_body = f"### 🤖 Retrieved Agent List ({len(agent_list)} total)\n" + "\n".join([f"- {name}" for name in agent_list])
+    
+    url = f"https://api.github.com/repos/{REPOSITORY}/issues/{ISSUE_NUMBER}/comments"
+    headers = {
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github+json"
+    }
+    response = requests.post(url, headers=headers, json={"body": comment_body})
+    if response.status_code == 201:
+        print("Successfully posted agent list to GitHub issue!")
+    else:
+        print(f"Failed to post comment: {response.text}")
+
+if __name__ == "__main__":
+    names = get_all_agent_names()
+    print(f"Total agents retrieved: {len(names)}")
+    # If triggered via an issue event, post it
+    # post_to_github(names)
