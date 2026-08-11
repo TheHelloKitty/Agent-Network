@@ -24,7 +24,7 @@ def run_agent_task(retries=5, delay=55):
   for attempt in range(retries):
     try:
       response = client.models.generate_content(
-          model="gemini-2.0-flash",
+          model="gemini-2.5-flash-lite",
           contents=(
               "Write a short, friendly status report from an autonomous agent"
               " network indicating that all systems are operational."
