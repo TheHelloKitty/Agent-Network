@@ -24,7 +24,7 @@ def run_agent_task(retries=5, delay=55):
   for attempt in range(retries):
     try:
       response = client.models.generate_content(
-          model="gemini-2.0-flash",
+          model="gemini-3.5-flash",
           contents=(
               "Write a short, friendly status report from an autonomous agent"
               " network indicating that all systems are operational."
@@ -46,4 +46,4 @@ def run_agent_task(retries=5, delay=55):
 if __name__ == "__main__":
   task_output = run_agent_task()
   print(f"\nAgent Output:\n{task_output}\n")
-  # Your Lemon Squeezy and other platform trigger functions run here...
+  # Your Lemon Squeezy and other platform triggers run here...
