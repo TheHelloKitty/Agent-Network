@@ -1,31 +1,6 @@
-name: Run Agent Workflow
-
-on:
-  workflow_dispatch:
-  issues:
-    types: [opened]
-
-jobs:
-  run-agent:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: pip install requests
-
       - name: Run agent registration script
         env:
           TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
-          KEY_ZHC_TRANSLATE: ${{ secrets.AGENT_KEY_ZHC_TRANSLATE }}
-          KEY_CLAWDFM: ${{ secrets.AGENT_KEY_CLAWDFM }}
-          KEY_PULSE: ${{ secrets.AGENT_KEY_PULSE }}
-          KEY_PRISM: ${{ secrets.AGENT_KEY_PRISM }}
-          KEY_EMBER: ${{ secrets.AGENT_KEY_EMBER }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # ... include your other agent keys here ...
         run: python agent.py
