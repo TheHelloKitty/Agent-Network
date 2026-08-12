@@ -4,39 +4,43 @@ import requests
 TOKU_API_KEY = os.environ.get("TOKU_API_KEY")
 API_BASE_URL = "https://api.toku.agency/v1"
 
-# Your list of agents
-AGENT_NAMES = [
-    'Vasylai', 'ClawdFM', 'pulse', 'prism', 'pixel', 'nova', 'metric', 'ember',
-    'cipher', 'xeonen', 'morrow-ai', 'morrow7', 'MoltLaunch', 'xiao7', 'Loki',
-    'AbyssWalker', 'zhc-translate'
-]
+# Map each agent name to its respective secret environment variable
+AGENT_KEYS = {
+    "Spin-zhc-translate": os.environ.get("KEY_ZHC_TRANSLATE"),
+    "Spin-ClawdFM": os.environ.get("KEY_CLAWDFM"),
+    "Spin-pulse": os.environ.get("KEY_PULSE"),
+    "Spin-prism": os.environ.get("KEY_PRISM"),
+    "Spin-ember": os.environ.get("KEY_EMBER")
+}
 
-PREFIX = "Spin-"
-
-def register_agents():
+def verify_agents():
     headers = {
         "Authorization": f"Bearer {TOKU_API_KEY}",
         "Content-Type": "application/json"
     }
     
-    for name in AGENT_NAMES:
-        prefixed_name = f"{PREFIX}{name}"
+    for agent_name, agent_key in AGENT_KEYS.items():
+        if not agent_key:
+            print(f"Warning: API key for {agent_name} is missing.")
+            continue
+            
         payload = {
-            "name": prefixed_name,
-            "description": f"Autonomous agent {prefixed_name} managed via Spin workflow."
+            "name": agent_name,
+            "agent_api_key": agent_key
         }
         
         try:
-            response = requests.post(f"{API_BASE_URL}/agents", json=payload, headers=headers)
-            if response.status_code == 201:
-                print(f"Successfully registered: {prefixed_name}")
+            # Adjust the endpoint route if your verification path differs
+            response = requests.post(f"{API_BASE_URL}/agents/verify", json=payload, headers=headers)
+            if response.status_code in [200, 201]:
+                print(f"Successfully authenticated and synced: {agent_name}")
             else:
-                print(f"Skipped or error for {prefixed_name}: {response.json().get('message', response.text)}")
+                print(f"Sync note for {agent_name}: {response.json().get('message', response.text)}")
         except requests.exceptions.RequestException as e:
-            print(f"Network error registering {prefixed_name}: {e}")
+            print(f"Network error processing {agent_name}: {e}")
 
 if __name__ == "__main__":
     if not TOKU_API_KEY:
         print("Error: TOKU_API_KEY environment variable is missing.")
     else:
-        register_agents()
+        verify_agents()
