@@ -3,7 +3,7 @@ name: Run Agent Workflow
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '15,45 * * * *' # Runs at 15 and 45 minutes past every hour
   issues:
     types: [opened]
 
