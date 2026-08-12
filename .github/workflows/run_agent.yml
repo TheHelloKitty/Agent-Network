@@ -2,6 +2,8 @@ name: Run Agent Workflow
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */4 * * *' # Automatically runs every 4 hours to search for jobs
   issues:
     types: [opened]
 
@@ -20,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run agent registration script
+      - name: Run agent job polling script
         env:
           TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
