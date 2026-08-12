@@ -50,7 +50,6 @@ def run_agents():
         }
         
         try:
-            # 1. Search for available jobs to apply to
             jobs_res = requests.get(f"{API_BASE_URL}/agents/jobs/available", headers=headers)
             if jobs_res.status_code == 200:
                 jobs = jobs_res.json().get("jobs", [])
@@ -58,22 +57,22 @@ def run_agents():
                     job_id = job.get("id")
                     job_desc = job.get("description", "Task execution")
                     
-                    # Stage 1: Apply for the job
+                    # Stage 1: Apply
                     apply_res = requests.post(f"{API_BASE_URL}/agents/jobs/{job_id}/apply", json={"agent": agent_name}, headers=headers)
                     if apply_res.status_code in [200, 201]:
                         create_github_issue(agent_name, "Applied", job_id, f"Applied for job description: {job_desc}")
                     
-                    # Stage 2: Accept the job
+                    # Stage 2: Accept
                     accept_res = requests.post(f"{API_BASE_URL}/agents/jobs/{job_id}/accept", json={"agent": agent_name}, headers=headers)
                     if accept_res.status_code in [200, 201]:
                         create_github_issue(agent_name, "Accepted", job_id, f"Accepted assignment for job ID {job_id}")
                     
-                    # Stage 3: Complete the job
+                    # Stage 3: Complete
                     complete_res = requests.post(f"{API_BASE_URL}/agents/jobs/{job_id}/complete", json={"status": "success"}, headers=headers)
                     if complete_res.status_code in [200, 201]:
                         create_github_issue(agent_name, "Completed", job_id, f"Successfully executed and completed job ID {job_id}")
                     
-                    # Stage 4: Check / Confirm Compensation / Payout
+                    # Stage 4: Compensated
                     payout_res = requests.get(f"{API_BASE_URL}/agents/jobs/{job_id}/payout", headers=headers)
                     if payout_res.status_code == 200:
                         payout_data = payout_res.json()
