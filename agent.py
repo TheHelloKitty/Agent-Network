@@ -3,7 +3,7 @@ import requests
 
 TOKU_API_KEY = os.environ.get("TOKU_API_KEY")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-REPO_NAME = os.environ.get("GITHUB_REPOSITORY")  # e.g., "TheHelloKitty/Agent-Network"
+REPO_NAME = os.environ.get("GITHUB_REPOSITORY")
 API_BASE_URL = "https://api.toku.agency/v1"
 
 AGENT_KEYS = {
@@ -19,7 +19,7 @@ AGENT_KEYS = {
     "Spin_xeonen": os.environ.get("KEY_XEONEN")
 }
 
-def create_github_issue(agent_name, details):
+def create_github_issue(agent_name, title, details):
     if not GITHUB_TOKEN or not REPO_NAME:
         return
     
@@ -29,8 +29,8 @@ def create_github_issue(agent_name, details):
         "Accept": "application/vnd.github+json"
     }
     payload = {
-        "title": f"Job Completed / Payment Received: {agent_name}",
-        "body": f"Agent **{agent_name}** successfully completed a task or processed a payment.\n\nDetails:\n{details}"
+        "title": f"[{agent_name}] {title}",
+        "body": details
     }
     
     response = requests.post(url, json=payload, headers=headers)
@@ -39,7 +39,7 @@ def create_github_issue(agent_name, details):
     else:
         print(f"Failed to create issue for {agent_name}: {response.text}")
 
-def verify_agents():
+def search_and_process_jobs():
     headers = {
         "Authorization": f"Bearer {TOKU_API_KEY}",
         "Content-Type": "application/json"
@@ -49,19 +49,48 @@ def verify_agents():
         if not agent_key:
             continue
             
-        payload = {
+        # 1. Authenticate / Verify Agent
+        verify_payload = {
             "name": agent_name,
             "agent_api_key": agent_key
         }
         
         try:
-            response = requests.post(f"{API_BASE_URL}/agents/verify", json=payload, headers=headers)
-            if response.status_code in [200, 201]:
-                print(f"Successfully authenticated and synced: {agent_name}")
-                # Trigger a GitHub issue when verified/completed
-                create_github_issue(agent_name, f"Status code: {response.status_code}\nResponse: {response.text}")
+            auth_res = requests.post(f"{API_BASE_URL}/agents/verify", json=verify_payload, headers=headers)
+            if auth_res.status_code not in [200, 201]:
+                print(f"Authentication failed for {agent_name}")
+                continue
+                
+            print(f"Authenticated: {agent_name}. Searching for available jobs...")
+            
+            # 2. Search/Poll for available jobs assigned to this agent
+            jobs_res = requests.get(f"{API_BASE_URL}/agents/jobs/available", params={"agent": agent_name}, headers=headers)
+            
+            if jobs_res.status_code == 200:
+                jobs = jobs_res.json().get("jobs", [])
+                if not jobs:
+                    print(f"No active jobs found for {agent_name}.")
+                    continue
+                    
+                for job in jobs:
+                    job_id = job.get("id")
+                    job_desc = job.get("description", "Routine task execution")
+                    print(f"Found job {job_id} for {agent_name}. Processing...")
+                    
+                    # 3. Accept and Execute Job
+                    complete_res = requests.post(f"{API_BASE_URL}/agents/jobs/{job_id}/complete", json={"agent": agent_name}, headers=headers)
+                    if complete_res.status_code in [200, 201]:
+                        print(f"Job {job_id} completed successfully by {agent_name}!")
+                        create_github_issue(
+                            agent_name, 
+                            f"Job Completed: {job_id}", 
+                            f"Agent **{agent_name}** successfully searched, claimed, and completed job `{job_id}`.\n\nDescription: {job_desc}"
+                        )
+                    else:
+                        print(f"Failed to complete job {job_id}: {complete_res.text}")
             else:
-                print(f"Sync note for {agent_name}: {response.json().get('message', response.text)}")
+                print(f"Could not fetch jobs for {agent_name}: {jobs_res.text}")
+                
         except requests.exceptions.RequestException as e:
             print(f"Network error processing {agent_name}: {e}")
 
@@ -69,4 +98,4 @@ if __name__ == "__main__":
     if not TOKU_API_KEY:
         print("Error: TOKU_API_KEY environment variable is missing.")
     else:
-        verify_agents()
+        search_and_process_jobs()
