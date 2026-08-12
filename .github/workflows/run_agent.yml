@@ -1,39 +1,6 @@
-name: Run Agent Workflow
-
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */4 * * *' # Automatically runs every 4 hours to search for jobs
+    - cron: '0 */2 * * *' # Runs automatically every 2 hours
   issues:
     types: [opened]
-
-jobs:
-  run-agent:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Run agent job polling script
-        env:
-          TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          KEY_ZHC_TRANSLATE: ${{ secrets.AGENT_KEY_ZHC_TRANSLATE }}
-          KEY_CLAWDFM: ${{ secrets.AGENT_KEY_CLAWDFM }}
-          KEY_PULSE: ${{ secrets.AGENT_KEY_PULSE }}
-          KEY_PRISM: ${{ secrets.AGENT_KEY_PRISM }}
-          KEY_EMBER: ${{ secrets.AGENT_KEY_EMBER }}
-          KEY_PIXEL: ${{ secrets.AGENT_KEY_PIXEL }}
-          KEY_NOVA: ${{ secrets.AGENT_KEY_NOVA }}
-          KEY_METRIC: ${{ secrets.AGENT_KEY_METRIC }}
-          KEY_CIPHER: ${{ secrets.AGENT_KEY_CIPHER }}
-          KEY_XEONEN: ${{ secrets.AGENT_KEY_XEONEN }}
-        run: python agent.py
