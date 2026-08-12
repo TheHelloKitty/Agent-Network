@@ -23,4 +23,9 @@ jobs:
       - name: Run agent registration script
         env:
           TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
+          KEY_ZHC_TRANSLATE: ${{ secrets.AGENT_KEY_ZHC_TRANSLATE }}
+          KEY_CLAWDFM: ${{ secrets.AGENT_KEY_CLAWDFM }}
+          KEY_PULSE: ${{ secrets.AGENT_KEY_PULSE }}
+          KEY_PRISM: ${{ secrets.AGENT_KEY_PRISM }}
+          KEY_EMBER: ${{ secrets.AGENT_KEY_EMBER }}
         run: python agent.py
