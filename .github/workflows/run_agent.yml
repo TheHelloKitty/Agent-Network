@@ -1,1 +1,42 @@
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+name: Run Agent Pipeline
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  run-agents:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Agent Pipeline
+        run: python agent.py
+        env:
+          TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LEMON_SQUEEZY_API_KEY: ${{ secrets.LEMON_SQUEEZY_API_KEY }}
+          HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
+          SPIN_CIPHER: ${{ secrets.SPIN_CIPHER }}
+          SPIN_CLAWDFM: ${{ secrets.SPIN_CLAWDFM }}
+          SPIN_EMBER: ${{ secrets.SPIN_EMBER }}
+          SPIN_METRIC: ${{ secrets.SPIN_METRIC }}
+          SPIN_NOVA: ${{ secrets.SPIN_NOVA }}
+          SPIN_PIXEL: ${{ secrets.SPIN_PIXEL }}
+          SPIN_PRISM: ${{ secrets.SPIN_PRISM }}
+          SPIN_PULSE: ${{ secrets.SPIN_PULSE }}
+          SPIN_XEONEN: ${{ secrets.SPIN_XEONEN }}
+          SPIN_ZHC_TRANSLATE: ${{ secrets.SPIN_ZHC_TRANSLATE }}
