@@ -18,7 +18,7 @@ LEMON_API_URL = "https://api.lemonsqueezy.com/v1"
 RESEND_API_URL = "https://api.resend.com/emails"
 TWITTER_API_URL = "https://api.x.com/2/tweets"
 
-# Dynamically map all 10 named Spin agents from environment variables
+# Dynamically map all active Spin agents from environment variables
 AGENT_KEYS = {}
 for env_key, env_value in os.environ.items():
     if env_key.startswith("SPIN_") and env_value:
@@ -232,7 +232,7 @@ def run_agents():
         execution_logs.append("- ⚠️ **Warning:** No named `SPIN_` agent keys detected. Verify secrets are mapped properly in GitHub Actions.")
     else:
         agent_names_list = ", ".join(AGENT_KEYS.keys())
-        execution_logs.append(f"- 🚀 **Fleet Online:** Successfully loaded {active_count} named agents ({agent_names_list}).")
+        execution_logs.append(f"- 🚀 **Fleet Online:** Successfully loaded {active_count} named agents.")
 
     prod_info = generate_profitable_digital_product()
     listing_result = publish_to_lemon_squeezy(prod_info)
