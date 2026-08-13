@@ -14,12 +14,12 @@ API_BASE_URL = "https://api.toku.agency/v1"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 LEMON_API_URL = "https://api.lemonsqueezy.com/v1"
 
-# Dynamically map your named Spin agents from environment variables (e.g., SPIN_ZHC_TRANSLATE, SPIN_CLAWDFM, etc.)
+# Dynamically map your exact named Spin agents from environment variables
 AGENT_KEYS = {}
 for env_key, env_value in os.environ.items():
     if env_key.startswith("SPIN_") and env_value:
         agent_suffix = env_key.replace("SPIN_", "")
-        # Preserves custom names nicely (e.g. Spin_Zhc_translate or custom named keys)
+        # Formats names cleanly (e.g., Spin_Cipher, Spin_Clawdfm, etc.)
         agent_name = f"Spin_{agent_suffix.capitalize()}"
         AGENT_KEYS[agent_name] = env_value
 
@@ -54,7 +54,7 @@ def get_lemonsqueezy_store_id():
         if res.status_code == 200:
             stores = res.json().get("data", [])
             if stores:
-                return stores[0].get("id") # Automatically finds your store ID (e.g., The Spin Cycle)
+                return stores[0].get("id") # Automatically maps to your store ID (e.g., The Spin Cycle)
     except Exception:
         pass
     return None
