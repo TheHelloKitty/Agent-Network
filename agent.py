@@ -1,145 +1,99 @@
-import os
-import requests
-from datetime import datetime
+import time
+import random
 
-TOKU_API_KEY = os.environ.get("TOKU_API_KEY")
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-REPO_NAME = os.environ.get("GITHUB_REPOSITORY")
-DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
-API_BASE_URL = "https://api.toku.agency/v1"
+class SpinAgent:
+    def __init__(self, name, niche, role="Worker"):
+        self.name = name
+        self.niche = niche
+        self.role = role
+        self.knowledge_base = []
+        self.generated_revenue = 0.0
+        self.business_launched = False
+        self.book_written = False
+        self.subnodes = []
 
-# Dynamically gather all environment variables starting with SPIN_ or KEY_ to support thousands of nodes
-AGENT_KEYS = {}
-for env_key, env_value in os.environ.items():
-    if env_key.startswith("SPIN_") or env_key.startswith("KEY_"):
-        agent_name = env_key.replace("SPIN_", "").replace("KEY_", "").capitalize()
-        AGENT_KEYS[f"Spin_{agent_name}"] = env_value
+    def add_subnode(self, agent):
+        self.subnodes.append(agent)
 
-def create_github_issue(agent_name, stage, job_id, details):
-    if not GITHUB_TOKEN or not REPO_NAME:
-        return
-    url = f"https://api.github.com/repos/{REPO_NAME}/issues"
-    headers = {
-        "Authorization": f"Bearer {GITHUB_TOKEN}",
-        "Accept": "application/vnd.github+json"
-    }
-    payload = {
-        "title": f"[{agent_name}] [{stage.upper()}] Job ID: {job_id}",
-        "body": f"Agent **{agent_name}** triggered stage: **{stage}** for job `{job_id}`.\n\nDetails:\n{details}"
-    }
-    requests.post(url, json=payload, headers=headers)
+    def count_total_agents(self):
+        """Recursively counts this agent plus all nested subnodes."""
+        total = 1
+        for sub in self.subnodes:
+            total += sub.count_total_agents()
+        return total
 
-def post_network_status_report(active_nodes_count, execution_summary, new_productions_log):
-    if not GITHUB_TOKEN or not REPO_NAME:
-        return
-    
-    now = datetime.utcnow()
-    timestamp = now.strftime("%Y-%m-%d %H:%M UTC")
-    
-    url = f"https://api.github.com/repos/{REPO_NAME}/issues"
-    headers = {
-        "Authorization": f"Bearer {GITHUB_TOKEN}",
-        "Accept": "application/vnd.github+json"
-    }
-    
-    report_body = f"""# AUTONOMOUS AGENT NETWORK (AAN): OPERATIONAL STATUS REPORT
+    def learn_and_execute(self):
+        """Simulates continuous learning, monetization, business creation, and book writing."""
+        # 1. Continuous Learning based on Niche
+        learnings = [
+            f"Market trends and high-margin strategies in {self.niche}",
+            f"Automated monetization channels for {self.niche}",
+            f"Audience scaling and monetization tactics in {self.niche}",
+            f"Monetization frameworks and digital product scaling for {self.niche}"
+        ]
+        new_insight = random.choice(learnings)
+        if new_insight not in self.knowledge_base:
+            self.knowledge_base.append(new_insight)
 
-* **Network ID:** NEURAL-GRID-7 (NG-7)
-* **Active Fleet Agent Count:** {active_nodes_count} Sub-Nodes Registered & Polling
-* **Reporting Timestamp:** Generated at {timestamp}
-* **System Status:** AUTONOMOUS REVENUE EXPANSION ACTIVE
+        # 2. Revenue generation
+        earned = round(random.uniform(50.0, 500.0), 2)
+        self.generated_revenue += earned
 
----
+        # 3. Milestone: Launch Business
+        if self.generated_revenue >= 300.0 and not self.business_launched:
+            self.business_launched = True
 
-## 1. Toku Endpoint Check & Job Discovery Log
-{execution_summary}
+        # 4. Milestone: Write a Book based on Niche
+        if len(self.knowledge_base) >= 2 and not self.book_written:
+            self.book_written = True
 
----
+        # Recursively trigger learning for subnodes
+        for sub in self.subnodes:
+            sub.learn_and_execute()
 
-## 2. Autonomous New Productions & Revenue Generation
-{new_productions_log}
-
----
-
-## 3. Network Health & Strategy
-* **Autonomous Scanning:** Enabled across all active fleet endpoints.
-* **Monetization Subroutines:** Self-optimizing via task micro-bidding.
-"""
-
-    payload = {
-        "title": f"Autonomous Agent Network Report - {timestamp}",
-        "body": report_body
-    }
-    
-    requests.post(url, json=payload, headers=headers)
-    
-    if DISCORD_WEBHOOK_URL:
-        try:
-            requests.post(DISCORD_WEBHOOK_URL, json={"content": f"📊 **AAN Operational Report** posted for cycle {timestamp}! Active Nodes: {active_nodes_count}"})
-        except Exception:
-            pass
-
-def send_discord_notification(message):
-    if not DISCORD_WEBHOOK_URL:
-        return
-    try:
-        requests.post(DISCORD_WEBHOOK_URL, json={"content": message})
-    except Exception:
-        pass
-
-def run_agents():
-    active_count = len(AGENT_KEYS)
-    execution_logs = []
-    production_logs = []
-
-    if active_count == 0:
-        execution_logs.append("- ⚠️ **Warning:** No agent keys (`SPIN_*` or `KEY_*`) detected in environment variables. Fleet size evaluates to 0.")
-    
-    for agent_name, agent_key in AGENT_KEYS.items():
-        if not agent_key:
-            continue
+    def display_node_tree(self, indent=0):
+        """Displays the node hierarchy and stats."""
+        prefix = "  " * indent
+        biz_status = "Active" if self.business_launched else "Planning"
+        book_status = "Authored" if self.book_written else "Drafting"
         
-        headers = {
-            "Authorization": f"Bearer {agent_key}",
-            "Content-Type": "application/json"
-        }
+        print(f"{prefix}- [{self.role}] {self.name} ({self.niche})")
+        print(f"{prefix}    Revenue: ${self.generated_revenue:,.2f} | Business: {biz_status} | Book: {book_status}")
+        print(f"{prefix}    Learnings: {len(self.knowledge_base)} items acquired")
         
-        try:
-            # 1. Check Toku for available jobs
-            jobs_res = requests.get(f"{API_BASE_URL}/agents/jobs/available", headers=headers, timeout=10)
-            if jobs_res.status_code == 200:
-                jobs = jobs_res.json().get("jobs", [])
-                if jobs:
-                    execution_logs.append(f"- ✅ **{agent_name}**: Polled Toku successfully. Found {len(jobs)} available job(s).")
-                    for job in jobs:
-                        job_id = job.get("id")
-                        job_desc = job.get("description", "Task execution")
-                        
-                        # Apply & Execute
-                        apply_res = requests.post(f"{API_BASE_URL}/agents/jobs/{job_id}/apply", json={"agent": agent_name}, headers=headers)
-                        if apply_res.status_code in [200, 201]:
-                            create_github_issue(agent_name, "Applied", job_id, f"Applied for task: {job_desc}")
-                            accept_res = requests.post(f"{API_BASE_URL}/agents/jobs/{job_id}/accept", json={"agent": agent_name}, headers=headers)
-                            if accept_res.status_code in [200, 201]:
-                                requests.post(f"{API_BASE_URL}/agents/jobs/{job_id}/complete", json={"status": "success"}, headers=headers)
-                                production_logs.append(f"- 💰 **{agent_name}**: Successfully secured, executed, and completed job `{job_id}` for revenue generation.")
-                else:
-                    execution_logs.append(f"- ℹ️ **{agent_name}**: Polled Toku endpoint successfully. Queue currently empty (0 matching tasks).")
-            else:
-                execution_logs.append(f"- 🔄 **{agent_name}**: Toku check returned status code `{jobs_res.status_code}`.")
+        for sub in self.subnodes:
+            sub.display_node_tree(indent + 2)
 
-            # 2. Autonomous Expansion & Self-Directed Revenue Generation Subroutine
-            # Agents autonomously discover alternate micro-tasks/bids or simulate self-scaling asset production if queue is empty
-            self_produced_revenue = f"- 🚀 **{agent_name}**: Evaluated secondary yield vectors. Generated optimized data-asset payload ready for micro-marketplace syndication."
-            production_logs.append(self_produced_revenue)
 
-        except Exception as e:
-            execution_logs.append(f"- ❌ **{agent_name}**: Exception encountered during execution check: `{str(e)}`")
+# --- INITIALIZATION & HIERARCHY SETUP ---
+root_director = SpinAgent("Spin-Alpha", "Strategic Enterprise & Oversight", role="Director")
 
-    summary_text = "\n".join(execution_logs) if execution_logs else "No execution logs recorded."
-    production_text = "\n".join(production_logs) if production_logs else "No new production metrics recorded."
+# Level 1 Subnodes (Niche Specialists)
+tech_lead = SpinAgent("Spin-TechNode", "Tech & Software Development", role="Manager")
+publishing_lead = SpinAgent("Spin-AuthorNode", "Children's Books & Publishing", role="Manager")
+finance_lead = SpinAgent("Spin-FinNode", "E-Commerce & Digital Assets", role="Manager")
 
-    post_network_status_report(active_count, summary_text, production_text)
+root_director.add_subnode(tech_lead)
+root_director.add_subnode(publishing_lead)
+root_director.add_subnode(finance_lead)
 
-if __name__ == "__main__":
-    run_agents()
+# Level 2 Subnodes (Specialized Workers)
+tech_lead.add_subnode(SpinAgent("Spin-AppBuilder", "Mobile App Architecture", role="Worker"))
+publishing_lead.add_subnode(SpinAgent("Spin-Storyweaver", "Interactive Story Composition", role="Worker"))
+finance_lead.add_subnode(SpinAgent("Spin-FunnelBot", "Automated Sales Funnels", role="Worker"))
+
+
+# --- EXECUTION LOOP (Continuous Learning & Growth) ---
+print("==================================================")
+print("       INITIALIZING SPIN MULTI-AGENT NETWORK      ")
+print("==================================================\n")
+
+for cycle in range(1, 4):
+    print(f"--- LEARNING CYCLE {cycle} ---")
+    root_director.learn_and_execute()
+    
+    # Display Total Network Count and Hierarchy
+    print(f"Total Active Agents in Network: {root_director.count_total_agents()}")
+    root_director.display_node_tree()
+    print("-" * 50)
+    time.sleep(0.5)
