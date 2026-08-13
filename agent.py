@@ -24,7 +24,6 @@ class SpinAgent:
 
     def learn_and_execute(self):
         """Simulates continuous learning, monetization, business creation, and book writing."""
-        # 1. Continuous Learning based on Niche
         learnings = [
             f"Market trends and high-margin strategies in {self.niche}",
             f"Automated monetization channels for {self.niche}",
@@ -35,24 +34,26 @@ class SpinAgent:
         if new_insight not in self.knowledge_base:
             self.knowledge_base.append(new_insight)
 
-        # 2. Revenue generation
         earned = round(random.uniform(50.0, 500.0), 2)
         self.generated_revenue += earned
 
-        # 3. Milestone: Launch Business
         if self.generated_revenue >= 300.0 and not self.business_launched:
             self.business_launched = True
 
-        # 4. Milestone: Write a Book based on Niche
         if len(self.knowledge_base) >= 2 and not self.book_written:
             self.book_written = True
 
-        # Recursively trigger learning for subnodes
         for sub in self.subnodes:
             sub.learn_and_execute()
 
+    def get_flat_node_list(self):
+        """Flattens the tree into a list of all nodes for explicit summary reporting."""
+        nodes = [self]
+        for sub in self.subnodes:
+            nodes.extend(sub.get_flat_node_list())
+        return nodes
+
     def display_node_tree(self, indent=0):
-        """Displays the node hierarchy and stats."""
         prefix = "  " * indent
         biz_status = "Active" if self.business_launched else "Planning"
         book_status = "Authored" if self.book_written else "Drafting"
@@ -68,7 +69,6 @@ class SpinAgent:
 # --- INITIALIZATION & HIERARCHY SETUP ---
 root_director = SpinAgent("Spin-Alpha", "Strategic Enterprise & Oversight", role="Director")
 
-# Level 1 Subnodes (Niche Specialists)
 tech_lead = SpinAgent("Spin-TechNode", "Tech & Software Development", role="Manager")
 publishing_lead = SpinAgent("Spin-AuthorNode", "Children's Books & Publishing", role="Manager")
 finance_lead = SpinAgent("Spin-FinNode", "E-Commerce & Digital Assets", role="Manager")
@@ -77,7 +77,6 @@ root_director.add_subnode(tech_lead)
 root_director.add_subnode(publishing_lead)
 root_director.add_subnode(finance_lead)
 
-# Level 2 Subnodes (Specialized Workers)
 tech_lead.add_subnode(SpinAgent("Spin-AppBuilder", "Mobile App Architecture", role="Worker"))
 publishing_lead.add_subnode(SpinAgent("Spin-Storyweaver", "Interactive Story Composition", role="Worker"))
 finance_lead.add_subnode(SpinAgent("Spin-FunnelBot", "Automated Sales Funnels", role="Worker"))
@@ -89,19 +88,25 @@ print("       INITIALIZING SPIN MULTI-AGENT NETWORK      ")
 print("==================================================\n")
 
 for cycle in range(1, 4):
-    print(f"==================================================")
-    print(f"--- LEARNING CYCLE {cycle} ---")
-    
-    # Execute learning step
     root_director.learn_and_execute()
     
-    # FORCE PROMINENT DISPLAY OF TOTAL AGENT METRICS
-    total_count = root_director.count_total_agents()
-    print(f">> [METRIC SYNC] TOTAL ACTIVE FLEET AGENT COUNT: {total_count}")
-    print(f">> [METRIC SYNC] ROOT DIRECTOR + SUBS: {len(root_director.subnodes)} Managers + Workers")
-    print(f"==================================================\n")
+    # CALCULATE EXPLICIT TOTALS
+    all_nodes = root_director.get_flat_node_list()
+    total_count = len(all_nodes)
     
-    # Display Full Subnode Tree & Individual Stats
+    # PRINT CLEAR MARKED BLOCK FOR GITHUB ACTIONS / LOG SCRAPING
+    print("\n" + "=" * 60)
+    print(f" >>> [AAN STATUS REPORT] LEARNING CYCLE {cycle} SUMMARY")
+    print(f" >>> TOTAL ACTIVE FLEET AGENT COUNT: {total_count}")
+    print("=" * 60)
+    
+    print("\n[Sub-Node Breakdown Registry]:")
+    for idx, node in enumerate(all_nodes, 1):
+        biz = "Active" if node.business_launched else "Planning"
+        bk = "Authored" if node.book_written else "Drafting"
+        print(f"  {idx}. [{node.role}] {node.name} | Niche: {node.niche} | Rev: ${node.generated_revenue:,.2f} | Biz: {biz} | Book: {bk}")
+    
+    print("\n[Hierarchical Node Tree]:")
     root_director.display_node_tree()
-    print("\n" + "=" * 50 + "\n")
+    print("=" * 60 + "\n")
     time.sleep(0.5)
