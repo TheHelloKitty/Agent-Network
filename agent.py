@@ -89,11 +89,19 @@ print("       INITIALIZING SPIN MULTI-AGENT NETWORK      ")
 print("==================================================\n")
 
 for cycle in range(1, 4):
+    print(f"==================================================")
     print(f"--- LEARNING CYCLE {cycle} ---")
+    
+    # Execute learning step
     root_director.learn_and_execute()
     
-    # Display Total Network Count and Hierarchy
-    print(f"Total Active Agents in Network: {root_director.count_total_agents()}")
+    # FORCE PROMINENT DISPLAY OF TOTAL AGENT METRICS
+    total_count = root_director.count_total_agents()
+    print(f">> [METRIC SYNC] TOTAL ACTIVE FLEET AGENT COUNT: {total_count}")
+    print(f">> [METRIC SYNC] ROOT DIRECTOR + SUBS: {len(root_director.subnodes)} Managers + Workers")
+    print(f"==================================================\n")
+    
+    # Display Full Subnode Tree & Individual Stats
     root_director.display_node_tree()
-    print("-" * 50)
+    print("\n" + "=" * 50 + "\n")
     time.sleep(0.5)
