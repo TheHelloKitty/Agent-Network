@@ -22,7 +22,7 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           LEMON_SQUEEZY_API_KEY: ${{ secrets.LEMON_SQUEEZY_API_KEY }}
-          SPIN_CIPHER: ${{ secrets.SPIN_CIPHER }}
+                    SPIN_CIPHER: ${{ secrets.SPIN_CIPHER }}
           SPIN_CLAWDFM: ${{ secrets.SPIN_CLAWDFM }}
           SPIN_EMBER: ${{ secrets.SPIN_EMBER }}
           SPIN_METRIC: ${{ secrets.SPIN_METRIC }}
