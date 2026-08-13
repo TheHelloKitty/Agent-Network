@@ -18,7 +18,7 @@ LEMON_API_URL = "https://api.lemonsqueezy.com/v1"
 RESEND_API_URL = "https://api.resend.com/emails"
 TWITTER_API_URL = "https://api.x.com/2/tweets"
 
-# Dynamically map your exact named Spin agents from environment variables
+# Dynamically map all 10 named Spin agents from environment variables
 AGENT_KEYS = {}
 for env_key, env_value in os.environ.items():
     if env_key.startswith("SPIN_") and env_value:
@@ -142,9 +142,9 @@ def broadcast_via_resend(product_title):
     }
     payload = {
         "from": "Autonomous Agent Network <onboarding@resend.dev>",
-        "to": ["delivered@resend.dev"],  # Update with your target destination or list
+        "to": ["delivered@resend.dev"],
         "subject": f"New Product Launch: {product_title}",
-        "html": f"<p>Your autonomous network successfully launched a brand new asset: <strong>{product_title}</strong>. Check your Lemon Squeezy dashboard for details.</p>"
+        "html": f"<p>Your autonomous network successfully launched a brand new asset: <strong>{product_title}</strong>.</p>"
     }
     try:
         res = requests.post(RESEND_API_URL, json=payload, headers=headers, timeout=10)
@@ -165,7 +165,7 @@ def post_to_twitter(product_title):
         "Content-Type": "application/json"
     }
     payload = {
-        "text": f"🚀 Just launched our newest automated drop: {product_title}. Streamline your workflow today! #AI #Automation #DigitalProducts"
+        "text": f"🚀 Just launched our newest automated drop: {product_title}. Streamline your workflow today! #AI #Automation"
     }
     try:
         res = requests.post(TWITTER_API_URL, json=payload, headers=headers, timeout=10)
@@ -244,6 +244,7 @@ def run_agents():
     production_logs.append(f"- 📧 **Resend Outreach:** {email_result}")
     production_logs.append(f"- 🐦 **Twitter Broadcast:** {tweet_result}")
 
+    # Iterate through all loaded agents and poll Toku tasks concurrently
     for agent_name, agent_key in AGENT_KEYS.items():
         headers = {
             "Authorization": f"Bearer {agent_key}",
