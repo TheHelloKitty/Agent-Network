@@ -9,19 +9,19 @@ REPO_NAME = os.environ.get("GITHUB_REPOSITORY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 LEMON_SQUEEZY_API_KEY = os.environ.get("LEMON_SQUEEZY_API_KEY")
-LEMON_SQUEEZY_STORE_ID = os.environ.get("LEMON_SQUEEZY_STORE_ID") # Required for creating products
 
 API_BASE_URL = "https://api.toku.agency/v1"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 LEMON_API_URL = "https://api.lemonsqueezy.com/v1"
 
-# Dynamically gather all agent nodes starting with SPIN_ or KEY_
+# Dynamically map your named Spin agents from environment variables (e.g., SPIN_ZHC_TRANSLATE, SPIN_CLAWDFM, etc.)
 AGENT_KEYS = {}
 for env_key, env_value in os.environ.items():
-    if env_key.startswith("SPIN_") or env_key.startswith("KEY_"):
-        if env_key not in ["KEY_ZHC_TRANSLATE", "KEY_CLAWDFM"] or env_value: # Filter out empty placeholders
-            agent_name = env_key.replace("SPIN_", "").replace("KEY_", "").capitalize()
-            AGENT_KEYS[f"Spin_{agent_name}"] = env_value
+    if env_key.startswith("SPIN_") and env_value:
+        agent_suffix = env_key.replace("SPIN_", "")
+        # Preserves custom names nicely (e.g. Spin_Zhc_translate or custom named keys)
+        agent_name = f"Spin_{agent_suffix.capitalize()}"
+        AGENT_KEYS[agent_name] = env_value
 
 def create_github_issue(agent_name, stage, job_id, details):
     if not GITHUB_TOKEN or not REPO_NAME:
@@ -40,6 +40,25 @@ def create_github_issue(agent_name, stage, job_id, details):
     except Exception:
         pass
 
+def get_lemonsqueezy_store_id():
+    """Autonomously fetches the store ID using the Lemon Squeezy API key."""
+    if not LEMON_SQUEEZY_API_KEY:
+        return None
+    headers = {
+        "Authorization": f"Bearer {LEMON_SQUEEZY_API_KEY}",
+        "Accept": "application/vnd.api+json",
+        "Content-Type": "application/vnd.api+json"
+    }
+    try:
+        res = requests.get(f"{LEMON_API_URL}/stores", headers=headers, timeout=10)
+        if res.status_code == 200:
+            stores = res.json().get("data", [])
+            if stores:
+                return stores[0].get("id") # Automatically finds your store ID (e.g., The Spin Cycle)
+    except Exception:
+        pass
+    return None
+
 def generate_profitable_digital_product():
     """Uses OpenRouter to autonomously create content for a digital product."""
     if not OPENROUTER_API_KEY:
@@ -52,23 +71,26 @@ def generate_profitable_digital_product():
     payload = {
         "model": "deepseek/deepseek-chat",
         "messages": [
-            {"role": "user", "content": "Generate a title, a short marketing description, and a pricing suggestion (in cents, e.g. 999 for $9.99) for a profitable digital product like an AI prompt bundle or business system. Return strictly as plain text in format: TITLE: [title] | DESC: [description] | PRICE: [price in cents]"}
+            {"role": "user", "content": "Generate a title, a short marketing description, and a pricing suggestion in cents (e.g. 999 for $9.99) for a profitable digital product. Format strictly as: TITLE: [title] | DESC: [description] | PRICE: [price in cents]"}
         ]
     }
     try:
         res = requests.post(OPENROUTER_URL, json=payload, headers=headers, timeout=20)
         if res.status_code == 200:
             content = res.json()["choices"][0]["message"]["content"]
-            # Basic parser
             return {"title": "Autonomous AI Prompt & Workflow Suite", "description": content, "price": 1499}
     except Exception:
         pass
     return {"title": "The Ultimate Business AI Kit", "description": "High-utility automated prompts and systems.", "price": 1299}
 
 def publish_to_lemon_squeezy(product_data):
-    """Programmatically creates a product on Lemon Squeezy for instant sales."""
-    if not LEMON_SQUEEZY_API_KEY or not LEMON_SQUEEZY_STORE_ID:
-        return "Skipped (Lemon Squeezy API Key or Store ID missing)"
+    """Programmatically creates a product on Lemon Squeezy using auto-fetched Store ID."""
+    if not LEMON_SQUEEZY_API_KEY:
+        return "Skipped (Lemon Squeezy API Key missing)"
+    
+    store_id = get_lemonsqueezy_store_id()
+    if not store_id:
+        return "Failed to fetch Store ID automatically from Lemon Squeezy account."
     
     headers = {
         "Authorization": f"Bearer {LEMON_SQUEEZY_API_KEY}",
@@ -88,7 +110,7 @@ def publish_to_lemon_squeezy(product_data):
                 "store": {
                     "data": {
                         "type": "stores",
-                        "id": str(LEMON_SQUEEZY_STORE_ID)
+                        "id": str(store_id)
                     }
                 }
             }
@@ -100,7 +122,7 @@ def publish_to_lemon_squeezy(product_data):
         if res.status_code in [200, 201]:
             resp_json = res.json()
             product_id = resp_json.get("data", {}).get("id")
-            return f"Successfully published! Product ID: {product_id}"
+            return f"Successfully published to Store ID {store_id}! Product ID: {product_id}"
         else:
             return f"Failed to publish (Status {res.status_code}): {res.text}"
     except Exception as e:
@@ -122,7 +144,7 @@ def post_network_status_report(active_nodes_count, execution_summary, production
     report_body = f"""# AUTONOMOUS AGENT NETWORK (AAN): OPERATIONAL STATUS REPORT
 
 * **Network ID:** NEURAL-GRID-7 (NG-7)
-* **Total Active Fleet Agent Count:** {active_nodes_count} Sub-Nodes Registered & Polling
+* **Total Active Fleet Agent Count:** {active_nodes_count} Named Sub-Nodes Registered & Polling
 * **Reporting Timestamp:** Generated at {timestamp}
 * **System Status:** FULL AUTONOMOUS PIPELINE ACTIVE
 
@@ -149,17 +171,20 @@ def post_network_status_report(active_nodes_count, execution_summary, production
     
     if DISCORD_WEBHOOK_URL:
         try:
-            requests.post(DISCORD_WEBHOOK_URL, json={"content": f"📊 **AAN Operational Report** posted! Fleet Active: {active_nodes_count} nodes."})
+            requests.post(DISCORD_WEBHOOK_URL, json={"content": f"📊 **AAN Operational Report** posted! Fleet Active: {active_nodes_count} named nodes."})
         except Exception:
             pass
 
 def run_agents():
-    active_count = len([k for k, v in AGENT_KEYS.items() if v])
+    active_count = len(AGENT_KEYS)
     execution_logs = []
     production_logs = []
 
     if active_count == 0:
-        execution_logs.append("- ⚠️ **Warning:** No agent keys detected. Ensure secrets are mapped properly in GitHub.")
+        execution_logs.append("- ⚠️ **Warning:** No named `SPIN_` agent keys detected. Verify secrets are mapped properly in GitHub Actions.")
+    else:
+        agent_names_list = ", ".join(AGENT_KEYS.keys())
+        execution_logs.append(f"- 🚀 **Fleet Online:** Successfully loaded {active_count} named agents ({agent_names_list}).")
 
     # Step A: Run Autonomous Product Generation & Storefront Listing
     prod_info = generate_profitable_digital_product()
@@ -167,11 +192,8 @@ def run_agents():
     production_logs.append(f"- 🚀 **Asset Generated:** *{prod_info['title']}* (Target Price: ${prod_info['price']/100:.2f})")
     production_logs.append(f"- 🛒 **Lemon Squeezy Status:** {listing_result}")
 
-    # Step B: Poll Toku for Jobs across active nodes
+    # Step B: Poll Toku for Jobs across active named Spin nodes
     for agent_name, agent_key in AGENT_KEYS.items():
-        if not agent_key:
-            continue
-        
         headers = {
             "Authorization": f"Bearer {agent_key}",
             "Content-Type": "application/json"
