@@ -1,2 +1,7 @@
-requests
-cdp-sdk
+torch
+diffusers
+transformers
+accelerate
+safetensors
+pillow
+huggingface_hub
