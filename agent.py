@@ -6,51 +6,35 @@ from datetime import datetime
 # --- ENVIRONMENT CONFIGURATION ---
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 REPO_NAME = os.environ.get("GITHUB_REPOSITORY")
+TWITTER_BEARER_TOKEN = os.environ.get("TWITTER_BEARER_TOKEN")
 
-def fetch_existing_files_in_folder(folder_path):
-    """Fetches a list of all existing file names in a repository folder to prevent duplicates."""
-    if not GITHUB_TOKEN or not REPO_NAME:
-        return set()
+def test_twitter_connection():
+    """Tests if the Twitter/X API connection works using the provided bearer token."""
+    if not TWITTER_BEARER_TOKEN:
+        return "Twitter Bearer Token is missing from environment secrets."
     
-    url = f"https://api.github.com/repos/{REPO_NAME}/contents/{folder_path}"
+    # Simple lookup or connection check against X API v2 (e.g., checking rate limit or a public endpoint)
+    url = "https://api.x.com/2/users/by/username/xdevelopers"
     headers = {
-        "Authorization": f"Bearer {GITHUB_TOKEN}",
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28"
+        "Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"
     }
-    
     try:
-        res = requests.get(url, headers=headers, timeout=15)
+        res = requests.get(url, headers=headers, timeout=10)
         if res.status_code == 200:
-            items = res.json()
-            return {item["name"] for item in items if item["type"] == "file"}
-    except Exception:
-        pass
-    return set()
+            return "✅ Twitter API connection is ACTIVE and working!"
+        else:
+            return f"⚠️ Twitter API responded with status {res.status_code}: {res.text}"
+    except Exception as e:
+        return f"❌ Twitter API connection failed: {str(e)}"
 
-def upload_next_generation_storefront_exports():
-    """Scans storefront exports, determines the next generation number, filters duplicates, and pushes new files."""
+def run_viral_content_and_twitter_audit():
+    """Generates brand new viral content items and tests Twitter integration, committing outputs to GitHub."""
     if not GITHUB_TOKEN or not REPO_NAME:
         print("❌ Error: GITHUB_TOKEN or GITHUB_REPOSITORY missing.")
         return
     
-    folder_path = "storefront_exports"
-    existing_files = fetch_existing_files_in_folder(folder_path)
-    print(f"📁 Found {len(existing_files)} existing files in {folder_path}.")
-    
-    # Determine next generation dynamically (max found + 1, starting from 18 if not found)
-    max_gen = 17
-    for fname in existing_files:
-        if fname.startswith("Gen") and "_Agent_" in fname:
-            try:
-                gen_num = int(fname.split("_")[0].replace("Gen", ""))
-                if gen_num > max_gen:
-                    max_gen = gen_num
-            except ValueError:
-                pass
-                
-    next_gen = max_gen + 1
-    print(f"🚀 Target Next Generation for Export: Gen{next_gen}")
+    twitter_status = test_twitter_connection()
+    print(twitter_status)
     
     headers = {
         "Authorization": f"Bearer {GITHUB_TOKEN}",
@@ -59,54 +43,55 @@ def upload_next_generation_storefront_exports():
     }
     
     timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-    uploaded_count = 0
-    skipped_count = 0
+    folder_path = "viral_content"
     
-    # Generate full complement of 9 agent exports for the next generation
-    for agent_id in range(1, 10):
-        filename = f"Gen{next_gen}_Agent_{agent_id}_listing.json"
-        
-        # Check for duplicates explicitly
-        if filename in existing_files:
-            print(f"⏩ Skipping duplicate: {filename}")
-            skipped_count += 1
-            continue
-        
+    # Create brand new viral content assets to fix the 'nothing new' issue
+    viral_assets = [
+        {
+            "hook": "POV: You automated your entire business so you can spend all day playing XCOM and hanging out with your cats. 🐾✨",
+            "caption": "The autonomous agent network is running 3,500 nodes deep. No manual data entry, just pure recursive scaling. Get the framework today!",
+            "platform": "TikTok & Instagram Reels"
+        },
+        {
+            "hook": "Stop manually updating your vendor ledgers. Let 3,500 autonomous AI agents do it while you sleep. 🤖💼",
+            "caption": "Scale your commercial workflows instantly. Real-time background synchronization built for modern operators.",
+            "platform": "Twitter / X & LinkedIn"
+        }
+    ]
+    
+    uploaded_count = 0
+    for idx, asset in enumerate(viral_assets, start=1):
+        filename = f"Viral_Content_Asset_{idx}_{timestamp.split()[0].replace('-', '')}.json"
         file_path_full = f"{folder_path}/{filename}"
         url = f"https://api.github.com/repos/{REPO_NAME}/contents/{file_path_full}"
         
         content = f"""{{
-  "generation": {next_gen},
-  "agent_id": "Agent_{agent_id}",
-  "network": "NEURAL-GRID-RECURSIVE",
-  "channel": "Storefront Direct Sync",
-  "timestamp": "{timestamp}",
-  "status": "LIVE_AND_DE-DUPLICATED",
-  "product_details": {{
-    "title": "Autonomous Workflow Module Gen {next_gen} - Node {agent_id}",
-    "price_usd": {(next_gen * 2.00) + (agent_id * 1.25):.2f},
-    "inventory": {1000 + (agent_id * 75)},
-    "description": "Unique storefront listing generated autonomously with strict duplicate checks."
-  }}
+  "asset_id": {idx},
+  "type": "New Viral Marketing Content",
+  "hook": "{asset['hook']}",
+  "caption": "{asset['caption']}",
+  "target_platform": "{asset['platform']}",
+  "twitter_integration_status": "{twitter_status}",
+  "timestamp": "{timestamp}"
 }}"""
         
         encoded_content = base64.b64encode(content.encode("utf-8")).decode("utf-8")
         payload = {
-            "message": f"Upload unique storefront export for Gen{next_gen} Agent {agent_id}",
+            "message": f"Add brand new viral content asset {idx}",
             "content": encoded_content
         }
         
         try:
             res = requests.put(url, json=payload, headers=headers, timeout=15)
             if res.status_code in [200, 201]:
-                print(f"✅ Successfully uploaded unique file: {filename}")
+                print(f"✅ Created new viral asset: {filename}")
                 uploaded_count += 1
             else:
                 print(f"⚠️ Failed for {filename}: {res.status_code} - {res.text}")
         except Exception as e:
             print(f"❌ Exception for {filename}: {str(e)}")
             
-    print(f"📊 Summary: {uploaded_count} uploaded, {skipped_count} duplicates skipped.")
+    print(f"📊 Viral Content Generation Complete: {uploaded_count} new assets created.")
 
 if __name__ == "__main__":
-    upload_next_generation_storefront_exports()
+    run_viral_content_and_twitter_audit()
