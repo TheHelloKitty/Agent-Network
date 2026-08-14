@@ -1,25 +1,7 @@
-name: Run Agent Pipeline
+- name: Login to Hugging Face
+  run: |
+    pip install huggingface_hub
+    huggingface-cli login --token ${{ secrets.HUGGINGFACE_TOKEN }}
 
-on:
-  workflow_dispatch:   # Allows manual trigger
-  # push:
-  #   branches: [ main ]
-
-jobs:
-  run-agents:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run Agent Pipeline
-        run: python agent.py
+- name: Run Agent Pipeline
+  run: python agent.py
