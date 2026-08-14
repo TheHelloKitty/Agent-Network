@@ -19,10 +19,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Login to Hugging Face
-        run: |
-          pip install -U huggingface_hub
-          hf auth login --token ${{ secrets.HUGGINGFACE_TOKEN }}
-
       - name: Run Agent Pipeline
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
         run: python agent.py
