@@ -1,13 +1,20 @@
 from diffusers import FluxPipeline
 import torch
-from PIL import Image
+import gc
 
-# Load model (only needs to run once)
+# Clear any lingering GPU cache before loading
+gc.collect()
+torch.cuda.empty_cache()
+
+# Load the model with memory-efficient settings for T4 GPU
 pipe = FluxPipeline.from_pretrained(
     "black-forest-labs/FLUX.1-schnell",
-    torch_dtype=torch.bfloat16
+    torch_dtype=torch.float16  # Use float16 instead of bfloat16 for better T4 compatibility
 )
+
+# Enable memory-saving features
 pipe.enable_model_cpu_offload()
+pipe.vae.enable_tiling()  # Prevents OOM during VAE decoding at higher resolutions
 
 def generate_profile(name="Rose Bloom", extra_details=""):
     prompt = (
@@ -18,18 +25,19 @@ def generate_profile(name="Rose Bloom", extra_details=""):
         f"soft lighting, clean background, {extra_details}"
     )
 
+    # Lower resolution further to 512x512 to guarantee no OutOfMemoryError on a free T4 GPU
     image = pipe(
         prompt=prompt,
         guidance_scale=0.0,
         num_inference_steps=4,
         max_sequence_length=256,
-        height=1024,
-        width=1024
+        height=512,
+        width=512
     ).images[0]
 
     filename = f"{name.lower().replace(' ', '_')}_profile.png"
     image.save(filename)
-    display(image)          # shows the image in Colab
+    display(image)
     print(f"✅ Saved as {filename}")
     return image
 
