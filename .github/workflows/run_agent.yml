@@ -1,26 +1,34 @@
-name: Run Agent Pipeline
-
+name: Agent Firecrawl Scrape
 on:
   workflow_dispatch:
 
 jobs:
-  run-agents:
+  scrape-target:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run Agent Pipeline
+      - name: Run Firecrawl Scraper Script
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-        run: python agent.py
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+        run: |
+          python3 -c '
+          import os
+          import requests
+          
+          api_key = os.environ.get("FIRECRAWL_API_KEY")
+          url = "https://api.firecrawl.dev/v1/scrape"
+          headers = {
+              "Authorization": f"Bearer {api_key}",
+              "Content-Type": "application/json"
+          }
+          payload = {
+              "url": "https://example.com",
+              "formats": ["markdown"]
+          }
+          
+          response = requests.post(url, json=payload, headers=headers)
+          print(f"Status Code: {response.status_code}")
+          print(response.json())
+          '
