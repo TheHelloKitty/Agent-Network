@@ -28,8 +28,8 @@ def fetch_existing_files_in_folder(folder_path):
         pass
     return set()
 
-def upload_unique_storefront_exports():
-    """Scans storefront exports, filters out duplicates, and uploads only new unique files directly for storefront sync."""
+def upload_next_generation_storefront_exports():
+    """Scans storefront exports, determines the next generation number, filters duplicates, and pushes new files."""
     if not GITHUB_TOKEN or not REPO_NAME:
         print("❌ Error: GITHUB_TOKEN or GITHUB_REPOSITORY missing.")
         return
@@ -38,6 +38,20 @@ def upload_unique_storefront_exports():
     existing_files = fetch_existing_files_in_folder(folder_path)
     print(f"📁 Found {len(existing_files)} existing files in {folder_path}.")
     
+    # Determine next generation dynamically (max found + 1, starting from 18 if not found)
+    max_gen = 17
+    for fname in existing_files:
+        if fname.startswith("Gen") and "_Agent_" in fname:
+            try:
+                gen_num = int(fname.split("_")[0].replace("Gen", ""))
+                if gen_num > max_gen:
+                    max_gen = gen_num
+            except ValueError:
+                pass
+                
+    next_gen = max_gen + 1
+    print(f"🚀 Target Next Generation for Export: Gen{next_gen}")
+    
     headers = {
         "Authorization": f"Bearer {GITHUB_TOKEN}",
         "Accept": "application/vnd.github+json",
@@ -45,16 +59,14 @@ def upload_unique_storefront_exports():
     }
     
     timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-    
-    # Generate batch files for Gen 14 to populate unique storefront export listings
-    gen = 14
     uploaded_count = 0
     skipped_count = 0
     
+    # Generate full complement of 9 agent exports for the next generation
     for agent_id in range(1, 10):
-        filename = f"Gen{gen}_Agent_{agent_id}_storefront_export.json"
+        filename = f"Gen{next_gen}_Agent_{agent_id}_listing.json"
         
-        # Check for duplicates
+        # Check for duplicates explicitly
         if filename in existing_files:
             print(f"⏩ Skipping duplicate: {filename}")
             skipped_count += 1
@@ -64,29 +76,30 @@ def upload_unique_storefront_exports():
         url = f"https://api.github.com/repos/{REPO_NAME}/contents/{file_path_full}"
         
         content = f"""{{
-  "generation": {gen},
+  "generation": {next_gen},
   "agent_id": "Agent_{agent_id}",
+  "network": "NEURAL-GRID-RECURSIVE",
   "channel": "Storefront Direct Sync",
   "timestamp": "{timestamp}",
-  "status": "READY_FOR_PUBLISH",
+  "status": "LIVE_AND_DE-DUPLICATED",
   "product_details": {{
-    "title": "Automated Workflow Module Gen {gen} - Node {agent_id}",
-    "price_usd": {(gen * 2.50) + (agent_id * 1.50):.2f},
-    "inventory": {1000 + (agent_id * 50)},
-    "description": "Unique storefront listing generated autonomously without duplication."
+    "title": "Autonomous Workflow Module Gen {next_gen} - Node {agent_id}",
+    "price_usd": {(next_gen * 2.00) + (agent_id * 1.25):.2f},
+    "inventory": {1000 + (agent_id * 75)},
+    "description": "Unique storefront listing generated autonomously with strict duplicate checks."
   }}
 }}"""
         
         encoded_content = base64.b64encode(content.encode("utf-8")).decode("utf-8")
         payload = {
-            "message": f"Upload unique storefront export for Gen{gen} Agent {agent_id}",
+            "message": f"Upload unique storefront export for Gen{next_gen} Agent {agent_id}",
             "content": encoded_content
         }
         
         try:
             res = requests.put(url, json=payload, headers=headers, timeout=15)
             if res.status_code in [200, 201]:
-                print(f"✅ Successfully uploaded unique storefront file: {filename}")
+                print(f"✅ Successfully uploaded unique file: {filename}")
                 uploaded_count += 1
             else:
                 print(f"⚠️ Failed for {filename}: {res.status_code} - {res.text}")
@@ -96,4 +109,4 @@ def upload_unique_storefront_exports():
     print(f"📊 Summary: {uploaded_count} uploaded, {skipped_count} duplicates skipped.")
 
 if __name__ == "__main__":
-    upload_unique_storefront_exports()
+    upload_next_generation_storefront_exports()
