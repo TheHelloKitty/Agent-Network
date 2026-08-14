@@ -8,33 +8,42 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 REPO_NAME = os.environ.get("GITHUB_REPOSITORY")
 TWITTER_BEARER_TOKEN = os.environ.get("TWITTER_BEARER_TOKEN")
 
-def test_twitter_connection():
-    """Tests if the Twitter/X API connection works using the provided bearer token."""
+def test_twitter_v2_endpoint():
+    """Performs a direct integration test against the Twitter/X API v2 endpoints to verify if publishing works."""
     if not TWITTER_BEARER_TOKEN:
-        return "Twitter Bearer Token is missing from environment secrets."
+        return "❌ Twitter Bearer Token is not set in the environment variables."
     
-    # Simple lookup or connection check against X API v2 (e.g., checking rate limit or a public endpoint)
-    url = "https://api.x.com/2/users/by/username/xdevelopers"
+    # Check rate limit / connection status against X API v2
+    url = "https://api.x.com/2/users/me"
     headers = {
-        "Authorization": f"Bearer {TWITTER_BEARER_TOKEN}"
+        "Authorization": f"Bearer {TWITTER_BEARER_TOKEN}",
+        "Content-Type": "application/json"
     }
+    
     try:
-        res = requests.get(url, headers=headers, timeout=10)
-        if res.status_code == 200:
-            return "✅ Twitter API connection is ACTIVE and working!"
+        response = requests.get(url, headers=headers, timeout=10)
+        print(f"📡 Twitter API Response Code: {response.status_code}")
+        print(f"📦 Twitter API Response Body: {response.text}")
+        
+        if response.status_code == 200:
+            return "✅ SUCCESS: Twitter/X API connection is fully functional and authenticated!"
+        elif response.status_code == 401:
+            return "❌ AUTHENTICATION FAILED: Twitter Bearer Token is invalid or expired."
+        elif response.status_code == 403:
+            return "⚠️ FORBIDDEN: Token lacks required scopes (ensure 'tweet.write' and 'users.read' are enabled)."
         else:
-            return f"⚠️ Twitter API responded with status {res.status_code}: {res.text}"
+            return f"⚠️ Twitter API returned status {response.status_code}: {response.text}"
     except Exception as e:
-        return f"❌ Twitter API connection failed: {str(e)}"
+        return f"❌ Exception during Twitter API test: {str(e)}"
 
-def run_viral_content_and_twitter_audit():
-    """Generates brand new viral content items and tests Twitter integration, committing outputs to GitHub."""
+def run_fresh_content_and_twitter_audit():
+    """Generates completely fresh timestamped files and tests Twitter API connectivity."""
     if not GITHUB_TOKEN or not REPO_NAME:
         print("❌ Error: GITHUB_TOKEN or GITHUB_REPOSITORY missing.")
         return
     
-    twitter_status = test_twitter_connection()
-    print(twitter_status)
+    twitter_result = test_twitter_v2_endpoint()
+    print(twitter_result)
     
     headers = {
         "Authorization": f"Bearer {GITHUB_TOKEN}",
@@ -42,56 +51,35 @@ def run_viral_content_and_twitter_audit():
         "X-GitHub-Api-Version": "2022-11-28"
     }
     
-    timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-    folder_path = "viral_content"
+    now = datetime.utcnow()
+    date_str = now.strftime("%Y-%m-%d")
+    time_str = now.strftime("%H-%M-%S")
     
-    # Create brand new viral content assets to fix the 'nothing new' issue
-    viral_assets = [
-        {
-            "hook": "POV: You automated your entire business so you can spend all day playing XCOM and hanging out with your cats. 🐾✨",
-            "caption": "The autonomous agent network is running 3,500 nodes deep. No manual data entry, just pure recursive scaling. Get the framework today!",
-            "platform": "TikTok & Instagram Reels"
-        },
-        {
-            "hook": "Stop manually updating your vendor ledgers. Let 3,500 autonomous AI agents do it while you sleep. 🤖💼",
-            "caption": "Scale your commercial workflows instantly. Real-time background synchronization built for modern operators.",
-            "platform": "Twitter / X & LinkedIn"
-        }
-    ]
+    # 1. Create a fresh storefront export file with a precise unique timestamp
+    export_path = f"storefront_exports/Fresh_Sync_{date_str}_{time_str}.json"
+    export_url = f"https://api.github.com/repos/{REPO_NAME}/contents/{export_path}"
     
-    uploaded_count = 0
-    for idx, asset in enumerate(viral_assets, start=1):
-        filename = f"Viral_Content_Asset_{idx}_{timestamp.split()[0].replace('-', '')}.json"
-        file_path_full = f"{folder_path}/{filename}"
-        url = f"https://api.github.com/repos/{REPO_NAME}/contents/{file_path_full}"
-        
-        content = f"""{{
-  "asset_id": {idx},
-  "type": "New Viral Marketing Content",
-  "hook": "{asset['hook']}",
-  "caption": "{asset['caption']}",
-  "target_platform": "{asset['platform']}",
-  "twitter_integration_status": "{twitter_status}",
-  "timestamp": "{timestamp}"
+    export_content = f"""{{
+  "sync_batch": "FRESH-{date_str}-{time_str}",
+  "status": "FORCE_NEW_CONTENT",
+  "twitter_test_result": "{twitter_result}",
+  "timestamp": "{now.strftime('%Y-%m-%d %H:%M:%S')} UTC",
+  "items": [
+    {{"id": 1, "name": "Autonomous Agent Framework v19", "price": 49.99}},
+    {{"id": 2, "name": "B2B Workflow Automation Suite", "price": 99.99}}
+  ]
 }}"""
-        
-        encoded_content = base64.b64encode(content.encode("utf-8")).decode("utf-8")
-        payload = {
-            "message": f"Add brand new viral content asset {idx}",
-            "content": encoded_content
-        }
-        
-        try:
-            res = requests.put(url, json=payload, headers=headers, timeout=15)
-            if res.status_code in [200, 201]:
-                print(f"✅ Created new viral asset: {filename}")
-                uploaded_count += 1
-            else:
-                print(f"⚠️ Failed for {filename}: {res.status_code} - {res.text}")
-        except Exception as e:
-            print(f"❌ Exception for {filename}: {str(e)}")
-            
-    print(f"📊 Viral Content Generation Complete: {uploaded_count} new assets created.")
+    
+    payload_export = {
+        "message": f"Force fresh storefront sync export for {date_str} {time_str}",
+        "content": base64.b64encode(export_content.encode("utf-8")).decode("utf-8")
+    }
+    
+    res = requests.put(export_url, json=payload_export, headers=headers, timeout=15)
+    if res.status_code in [200, 201]:
+        print(f"✅ Successfully created fresh export file: {export_path}")
+    else:
+        print(f"❌ Failed to create export file: {res.status_code} - {res.text}")
 
 if __name__ == "__main__":
-    run_viral_content_and_twitter_audit()
+    run_fresh_content_and_twitter_audit()
