@@ -1,35 +1,12 @@
-name: Run Agent Network
-
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
-      issues: write
-
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      X_CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
-      X_CLIENT_SECRET: ${{ secrets.X_CLIENT_SECRET }}
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Run agent script
-        run: python agent.py
+{
+  "mcpServers": {
+    "tavily": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.tavily.com/mcp/?tavilyApiKey=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"
+      ]
+    }
+  }
+}
