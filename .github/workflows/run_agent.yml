@@ -1,3 +1,23 @@
+name: Run Agent
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs 5 times a day mapped to Eastern Time
+    - cron: '0 0,12,15,18,21 * * *'
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
       - name: Run Agent with Eastern Time
         env:
           YOU_API_KEY: ${{ secrets.YOU_API_KEY }}
@@ -7,5 +27,13 @@
         run: |
           python3 -c '
           import os
+          from datetime import datetime, timezone
+          from zoneinfo import ZoneInfo
+          
+          eastern_tz = ZoneInfo("America/New_York")
+          local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
+          timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
+          
+          print(f"Agent Run Triggered at: {timestamp_str}")
           print("Lemon Squeezy Store ID loaded:", bool(os.environ.get("LEMONSQUEEZY_STORE_ID")))
           '
