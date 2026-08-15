@@ -18,22 +18,17 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run Agent with Eastern Time
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Execute Full Agent Fleet Run
         env:
           YOU_API_KEY: ${{ secrets.YOU_API_KEY }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           LEMONSQUEEZY_API_KEY: ${{ secrets.LEMONSQUEEZY_API_KEY }}
           LEMONSQUEEZY_STORE_ID: ${{ secrets.LEMONSQUEEZY_STORE_ID }}
         run: |
-          python3 -c '
-          import os
-          from datetime import datetime, timezone
-          from zoneinfo import ZoneInfo
-          
-          eastern_tz = ZoneInfo("America/New_York")
-          local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
-          timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
-          
-          print(f"Agent Run Triggered at: {timestamp_str}")
-          print("Lemon Squeezy Store ID loaded:", bool(os.environ.get("LEMONSQUEEZY_STORE_ID")))
-          '
+          # Replace 'agent.py' with your primary orchestration script file name if different
+          python3 agent.py
