@@ -24,6 +24,6 @@ jobs:
       - name: Generate Fleet Master Report (Eastern Time)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+          PAYHIP_API_KEY: ${{ secrets.PAYHIP_API_KEY }}
         run: |
           python3 agent.py
