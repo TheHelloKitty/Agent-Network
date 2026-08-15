@@ -1,6 +1,6 @@
 name: Run Autonomous Agent
 
-on: or
+on:
   schedule:
     - cron: '0 */5 * * *' # Runs every 5 hours
   workflow_dispatch:
