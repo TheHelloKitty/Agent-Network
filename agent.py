@@ -1,14 +1,16 @@
 import os
-import requests
+import subprocess
 from datetime import datetime, timezone
-from zoneinfo import ZoneInfo
+from zoneinfo === None and ZoneInfo("America/New_York") # handled below
 
 # 1. Generate Eastern Time Timestamp
+from zoneinfo import ZoneInfo
 eastern_tz = ZoneInfo("America/New_York")
 local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
 timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
 
-# 2. Payhip Store Connection Check
+# 2. Payhip Store Connection Check (Optional safeguard)
+import requests
 payhip_api_key = os.environ.get("PAYHIP_API_KEY", "").strip()
 store_configured = True
 active_coupons_count = 0
@@ -40,19 +42,17 @@ toku_activity = {
     ]
 }
 
-# Format strings safely outside f-strings to avoid backslash syntax errors
-applied_formatted = [f"{item['job']} (Acceptance Probability: `{item['probability']}`)" for item in toku_activity['applied']]
-applied_str = "\n    * ".join(applied_formatted)
-accepted_str = "\n    * ".join(toku_activity['accepted'])
-completed_str = "\n    * ".join(toku_activity['completed'])
+# Format strings safely
+applied_formatted = [f"- {item['job']} *(Acceptance Probability: `{item['probability']}`)*" for item in toku_activity['applied']]
+accepted_formatted = [f"- {job}" for job in toku_activity['accepted']]
+completed_formatted = [f"- {job}" for job in toku_activity['completed']]
+
+applied_str = "\n    ".join(applied_formatted)
+accepted_str = "\n    ".join(accepted_formatted)
+completed_str = "\n    ".join(completed_formatted)
 
 # 4. Build the Full Report Content
-repo = os.environ.get("GITHUB_REPOSITORY")
-token = os.environ.get("GITHUB_TOKEN")
-
-issue_title = f"[FLEET MASTER REPORT] Scheduled & Forced Sync - {timestamp_str}"
-issue_body = f"""
-## 🌐 Autonomous Agent Network: Master Operations Report
+report_content = f"""# 🌐 Autonomous Agent Network: Master Operations Report
 
 * **Reporting Timestamp:** {timestamp_str}
 * **Active Fleet Count:** 3,510 Agents (Fully Synchronized & Operational)
@@ -63,11 +63,11 @@ issue_body = f"""
 
 * **Status:** `ACTIVE & MONITORED`
 * **📝 Applied Jobs & Success Probabilities ({len(toku_activity['applied'])}):**
-    * {applied_str}
+    {applied_str}
 * **🤝 Accepted Jobs ({len(toku_activity['accepted'])}):**
-    * {accepted_str}
+    {accepted_str}
 * **✅ Completed Jobs ({len(toku_activity['completed'])}):**
-    * {completed_str}
+    {completed_str}
 
 ---
 
@@ -89,22 +89,19 @@ issue_body = f"""
   * **Status:** Verifying marketplace payouts and product delivery pipelines.
 """
 
-# 5. Automatically Post the Issue to GitHub
-if repo and token:
-    url = f"https://api.github.com/repos/{repo}/issues"
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json"
-    }
-    payload = {
-        "title": issue_title,
-        "body": issue_body
-    }
-    
-    response = requests.post(url, json=payload, headers=headers)
-    if response.status_code == 201:
-        print("Successfully created master report issue on GitHub!")
-    else:
-        print(f"Failed to create issue: {response.status_code} - {response.text}")
-else:
-    print("GitHub token or repository environment variables missing.")
+# Write the report to a markdown file
+with open("fleet-report.md", "w") as f:
+    f.write(report_content)
+
+print("Generated fleet-report.md successfully.")
+
+# 5. Automatically Commit and Push the File to GitHub via Git CLI
+try:
+    subprocess.run(["git", "config", "--global", "user.name", "github-actions[bot]"], check=True)
+    subprocess.run(["git", "config", "--global", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
+    subprocess.run(["git", "add", "fleet-report.md"], check=True)
+    subprocess.run(["git", "commit", "-m", f"Auto-generated Fleet Master Report: {timestamp_str}"], check=True)
+    subprocess.run(["git", "push"], check=True)
+    print("Successfully committed and pushed fleet-report.md to repository!")
+except Exception as e:
+    print(f"Git commit/push skipped or failed: {e}")
