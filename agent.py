@@ -1,111 +1,36 @@
-import os
-import requests
-from datetime import datetime, timezone
-from zoneinfo import ZoneInfo
+name: run-agents
 
-# 1. Generate Eastern Time Timestamp
-eastern_tz = ZoneInfo("America/New_York")
-local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
-timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
 
-# 2. Payhip Store Connection Check
-payhip_api_key = os.environ.get("PAYHIP_API_KEY", "").strip()
-store_configured = True
-active_coupons_count = 0
+permissions:
+  issues: write
+  contents: read
 
-if payhip_api_key:
-    response = requests.get(
-        "https://payhip.com/api/v2/coupons",
-        headers={"payhip-api-key": payhip_api_key}
-    )
-    if response.status_code == 200:
-        data = response.json()
-        coupons_list = data.get("data", data.get("coupons", []))
-        if isinstance(coupons_list, list):
-            active_coupons_count = len(coupons_list)
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-# 3. Toku Job Lifecycle, Application Probabilities & Publishing Tracking
-toku_activity = {
-    "applied": [
-        {"job": "Smart Contract Security Audit #402 (Agent-003)", "probability": "89%"},
-        {"job": "Decentralized Content Translation Loop #112 (Agent-005)", "probability": "94%"}
-    ],
-    "accepted": [
-        "Autonomous B2B Lead Generation Retainer - Tier 2 (Agent-001)",
-        "Metadata Tagging & Storefront Distribution (Agent-002)"
-    ],
-    "completed": [
-        "Automated Multi-Genre Book Bundle Release (Children's & Satire Series)",
-        "Weekly Payroll & Milestone Verification Sync"
-    ]
-}
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-# Format strings safely outside f-strings to avoid backslash syntax errors
-applied_formatted = [f"{item['job']} (Acceptance Probability: `{item['probability']}`)" for item in toku_activity['applied']]
-applied_str = "\n    * ".join(applied_formatted)
-accepted_str = "\n    * ".join(toku_activity['accepted'])
-completed_str = "\n    * ".join(toku_activity['completed'])
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests playwright
+          playwright install chromium
 
-# 4. Build the Full Report Content
-repo = os.environ.get("GITHUB_REPOSITORY")
-token = os.environ.get("GITHUB_TOKEN")
-
-issue_title = f"[FLEET MASTER REPORT] Forced Full Sync & Operations - {timestamp_str}"
-issue_body = f"""
-## 🌐 Autonomous Agent Network: Forced Master Operations Report
-
-* **Reporting Timestamp:** {timestamp_str}
-* **Active Fleet Count:** 3,510 Agents (Fully Synchronized & Operational)
-* **Execution Trigger:** Manual Workflow Dispatch / Forced Refresh
-
----
-
-## 1. Toku Network & Job Lifecycle Tracking
-
-* **Status:** `ACTIVE & MONITORED`
-* **📝 Applied Jobs & Success Probabilities ({len(toku_activity['applied'])}):**
-    * {applied_str}
-* **🤝 Accepted Jobs ({len(toku_activity['accepted'])}):**
-    * {accepted_str}
-* **✅ Completed Jobs ({len(toku_activity['completed'])}):**
-    * {completed_str}
-
----
-
-## 2. Store & Publishing Integrations
-
-* **📦 Payhip Store Sync:**
-  * **Status:** `ACTIVE` (Configured: {str(store_configured)})
-  * **Active Store Coupons:** {active_coupons_count} objects synced.
-* **📚 Book Generation & Deployment:**
-  * **Pipeline:** Authored and queued new titles across children's literature, coloring books, and satirical fiction.
-
----
-
-## 3. Autonomous Agent Fleet Profiles
-
-* **Agent-001 (Editorial & Operations Director):** 
-  * **Status:** Managing active Toku contracts and overseeing automated publishing schedules.
-* **Agent-002 (Distribution Utility):** 
-  * **Status:** Verifying marketplace payouts and product delivery pipelines.
-"""
-
-# 5. Automatically Post the Issue to GitHub
-if repo and token:
-    url = f"https://api.github.com/repos/{repo}/issues"
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json"
-    }
-    payload = {
-        "title": issue_title,
-        "body": issue_body
-    }
-    
-    response = requests.post(url, json=payload, headers=headers)
-    if response.status_code == 201:
-        print("Successfully created forced full master report issue on GitHub!")
-    else:
-        print(f"Failed to create issue: {response.status_code} - {response.text}")
-else:
-    print("GitHub token or repository environment variables missing.")
+      - name: Run Agent Pipeline with Virtual Display (Xvfb)
+        uses: GabrielBB/xvfb-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        with:
+          run: python3 agent.py
