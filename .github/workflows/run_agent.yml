@@ -44,5 +44,4 @@ jobs:
           print(f"🚀 Generating Fleet Report for: {timestamp_str}")
           '
           
-          # If your report generator script is named agent.py or report.py, make sure it runs here:
-          # python3 agent.py
+          python3 agent.py
