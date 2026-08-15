@@ -1,16 +1,15 @@
 import os
 import subprocess
+import requests
 from datetime import datetime, timezone
-from zoneinfo === None and ZoneInfo("America/New_York") # handled below
+from zoneinfo import ZoneInfo
 
 # 1. Generate Eastern Time Timestamp
-from zoneinfo import ZoneInfo
 eastern_tz = ZoneInfo("America/New_York")
 local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
 timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
 
-# 2. Payhip Store Connection Check (Optional safeguard)
-import requests
+# 2. Payhip Store Connection Check
 payhip_api_key = os.environ.get("PAYHIP_API_KEY", "").strip()
 store_configured = True
 active_coupons_count = 0
