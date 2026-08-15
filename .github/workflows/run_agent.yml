@@ -19,10 +19,10 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
-          pip install openai playwright
+          pip install groq playwright
           playwright install chromium
 
       - name: Run Agent Pipeline
         run: python agent.py
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
