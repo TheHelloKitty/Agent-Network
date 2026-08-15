@@ -1,28 +1,3 @@
-import os
-from openai import OpenAI  # or use any LLM client you prefer
-from datetime import datetime
-
-# ---------- CONFIG ----------
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # or your preferred LLM
-
-# Popular explicit romance tropes (you can expand this list)
-TRENDING_TROPES = [
-    "enemies to lovers",
-    "dark mafia romance",
-    "forced proximity",
-    "age gap",
-    "possessive anti-hero",
-    "one-night stand turns into more",
-    "secret identity",
-    "billionaire domination",
-    "why choose / reverse harem",
-    "vampire / supernatural erotic",
-    "stepbrother forbidden",
-    "coach / player",
-    "prisoner / captor",
-    "soulmates with a dark twist"
-]
-
 def generate_explicit_romance_novel(
     agent_name: str,
     trope: str = None,
@@ -40,7 +15,7 @@ def generate_explicit_romance_novel(
         trope = random.choice(TRENDING_TROPES)
 
     if main_characters is None:
-        main_characters = f"a strong-willed heroine and a dark, possessive hero"
+        main_characters = "a strong-willed heroine and a dark, possessive hero"
 
     system_prompt = f"""
 You are {agent_name}, a bestselling author who writes extremely steamy, sexually explicit romance novels.
@@ -67,7 +42,7 @@ Make the sex scenes detailed, graphic, and prolonged. Use strong language. Focus
 """
 
     response = client.chat.completions.create(
-        model="gpt-4o",  # or "gpt-4o-mini" for cheaper/faster
+        model="gpt-4o",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
@@ -79,6 +54,8 @@ Make the sex scenes detailed, graphic, and prolonged. Use strong language. Focus
     novel = response.choices[0].message.content
 
     # Save to file
+    from datetime import datetime
+    import os
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"novels/{agent_name}_{trope.replace(' ', '_')}_{timestamp}.txt"
     os.makedirs("novels", exist_ok=True)
@@ -88,13 +65,3 @@ Make the sex scenes detailed, graphic, and prolonged. Use strong language. Focus
 
     print(f"✅ Novel saved as: {filename}")
     return novel
-
-
-# ---------- EXAMPLE USAGE ----------
-if __name__ == "__main__":
-    # Example 1: Specific request
-    generate_explicit_romance_novel(
-        agent_name="Rose Bloom",
-        trope="dark mafia romance",
-        heat_level="extremely explicit",
-        main_characters="a fierce independent woman and a ruthless mafia boss
