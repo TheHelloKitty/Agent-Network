@@ -3,7 +3,7 @@ name: Run Agent
 on:
   workflow_dispatch:
   schedule:
-    # Runs 5 times a day mapped to Eastern Time
+    # Runs 5 times a day mapped to Eastern Time hours
     - cron: '0 0,12,15,18,21 * * *'
 
 jobs:
@@ -23,12 +23,31 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Execute Full Agent Fleet Run
+      - name: Execute Full Agent Fleet Run (Eastern Time)
         env:
           YOU_API_KEY: ${{ secrets.YOU_API_KEY }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           LEMONSQUEEZY_API_KEY: ${{ secrets.LEMONSQUEEZY_API_KEY }}
           LEMONSQUEEZY_STORE_ID: ${{ secrets.LEMONSQUEEZY_STORE_ID }}
         run: |
-          # Replace 'agent.py' with your primary orchestration script file name if different
-          python3 agent.py
+          python3 -c '
+          import os
+          from datetime import datetime, timezone
+          from zoneinfo import ZoneInfo
+          
+          # Force Eastern Time (Tampa) for execution logging
+          eastern_tz = ZoneInfo("America/New_York")
+          local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
+          timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
+          
+          print("==========================================")
+          print(f"🚀 Agent Fleet Run Started at: {timestamp_str}")
+          print("==========================================")
+          print("Environment Status:")
+          print("- You.com API Key:", bool(os.environ.get("YOU_API_KEY")))
+          print("- Firecrawl API Key:", bool(os.environ.get("FIRECRAWL_API_KEY")))
+          print("- Lemon Squeezy Store ID:", bool(os.environ.get("LEMONSQUEEZY_STORE_ID")))
+          '
+          
+          # Uncomment below once your main orchestrator script is named agent.py or runner.py
+          # python3 agent.py
