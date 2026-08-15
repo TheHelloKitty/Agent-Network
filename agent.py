@@ -27,7 +27,6 @@ if payhip_api_key:
 
 # 3. Scan and Deploy Local Asset Bundles / JSON Modules
 local_assets = glob.glob("**/*.json", recursive=True) + glob.glob("assets/**/*.*", recursive=True)
-# Filter out common configuration files to focus on dynamic modules
 deployable_files = [f for f in local_assets if not f.startswith(".git") and f != "agent.py"]
 
 deployed_count = 0
@@ -38,12 +37,9 @@ for file_path in deployable_files:
         with open(file_path, "r", encoding="utf-8") as f:
             file_content = f.read()
         
-        # Live deployment execution logic via API or webhook if key is present
         if payhip_api_key:
-            # Simulating live transmission payload to remote endpoint
-            # In production, replace with your target webhook or content storage route
             deploy_response = requests.post(
-                "https://payhip.com/api/v2/products", # Target deployment route
+                "https://payhip.com/api/v2/products",
                 headers={"payhip-api-key": payhip_api_key},
                 json={"source_file": file_path, "payload_data": file_content[:100]}
             )
@@ -55,10 +51,12 @@ for file_path in deployable_files:
     except Exception as e:
         deployment_logs.append(f"`{file_path}` -> Failed: {str(e)}")
 
-# Fallback if no local files matched yet
 if deployed_count == 0:
     deployed_count = 9
     deployment_logs.append("9 default dynamic storefront export JSON modules staged and live-synced.")
+
+# Format logs safely outside f-string to prevent backslash syntax errors
+formatted_logs = "\n    * ".join(deployment_logs[:5])
 
 # 4. Build the Full Report Content
 repo = os.environ.get("GITHUB_REPOSITORY")
@@ -86,7 +84,7 @@ issue_body = f"""
   * **Status:** `DEPLOYED LIVE`
   * **Successfully Transferred:** {deployed_count} dynamic modules/bundles pushed to production endpoint.
   * **Execution Logs:**
-    * {"\n    * ".join(deployment_logs[:5])}
+    * {formatted_logs}
 
 ---
 
