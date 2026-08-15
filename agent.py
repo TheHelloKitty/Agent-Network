@@ -40,7 +40,11 @@ toku_activity = {
     ]
 }
 
+# Format lists safely outside the f-string to prevent backslash syntax errors
 applied_formatted = [f"{item['job']} (Acceptance Probability: `{item['probability']}`)" for item in toku_activity['applied']]
+applied_str = "\n    * ".join(applied_formatted)
+accepted_str = "\n    * ".join(toku_activity['accepted'])
+completed_str = "\n    * ".join(toku_activity['completed'])
 
 # 4. Build the Full Report Content
 repo = os.environ.get("GITHUB_REPOSITORY")
@@ -59,11 +63,11 @@ issue_body = f"""
 
 * **Status:** `ACTIVE & MONITORED`
 * **📝 Applied Jobs & Success Probabilities ({len(toku_activity['applied'])}):**
-    * {"\n    * ".join(applied_formatted)}
+    * {applied_str}
 * **🤝 Accepted Jobs ({len(toku_activity['accepted'])}):**
-    * {"\n    * ".join(toku_activity['accepted'])}
+    * {accepted_str}
 * **✅ Completed Jobs ({len(toku_activity['completed'])}):**
-    * {"\n    * ".join(toku_activity['completed'])}
+    * {completed_str}
 
 ---
 
