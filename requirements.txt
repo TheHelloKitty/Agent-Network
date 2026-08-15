@@ -7,3 +7,4 @@ pillow
 huggingface_hub
 openai
 playwright
+groq
