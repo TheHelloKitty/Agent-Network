@@ -8,6 +8,8 @@ on:
 jobs:
   run-agent:
     runs-on: ubuntu-latest
+    env:
+      PAYHIP_API_KEY: ${{ secrets.PAYHIP_API_KEY }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -24,6 +26,5 @@ jobs:
       - name: Generate Fleet Master Report (Eastern Time)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PAYHIP_API_KEY: ${{ secrets.PAYHIP_API_KEY }}
         run: |
           python3 agent.py
