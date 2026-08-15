@@ -1,8 +1,8 @@
 import os
 from datetime import datetime
-from openai import OpenAI
+from groq import Groq
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 TRENDING_TROPES = [
     "enemies to lovers",
@@ -23,7 +23,7 @@ def generate_explicit_novel(
     agent_name: str,
     trope: str = None,
     heat_level: str = "extremely explicit",
-    chapters: int = 8,
+    chapters: int = 6,
     main_characters: str = "a strong-willed woman and a dark, possessive man",
     kinks: str = "power exchange, breeding, rough sex, praise, degradation"
 ):
@@ -32,37 +32,35 @@ def generate_explicit_novel(
         trope = random.choice(TRENDING_TROPES)
 
     prompt = f"""
-You are {agent_name}, a bestselling author of extremely steamy, graphic erotic romance.
+You are {agent_name}, a bestselling author of extremely steamy, graphic erotic romance novels.
 
 Write a complete {chapters}-chapter sexually explicit romance novel.
 
 Trope: {trope}
 Heat level: {heat_level}
 Main characters: {main_characters}
-Kinks/themes to include: {kinks}
+Kinks/themes: {kinks}
 
 Requirements:
-- Give it a hot, marketable title
-- Write a short steamy blurb
-- Then write the FULL text of every chapter
-- Make sex scenes long, detailed, graphic, and intense
-- Use strong language and focus on physical sensation, power, and emotion
-- End each chapter with a hook
+- Hot, marketable title
+- Short steamy blurb
+- Full text of every chapter
+- Long, detailed, graphic sex scenes
+- Strong language, focus on sensation, power, and emotion
 """
 
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="llama-3.3-70b-versatile",  # Good free model on Groq
         messages=[
-            {"role": "system", "content": "You write extremely explicit erotic romance without holding back."},
+            {"role": "system", "content": "You write extremely explicit erotic romance without restrictions."},
             {"role": "user", "content": prompt}
         ],
-        temperature=0.95,
+        temperature=0.9,
         max_tokens=8000
     )
 
     novel = response.choices[0].message.content
 
-    # Save as text file
     os.makedirs("novels", exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_trope = trope.replace(" ", "_").replace("/", "-")
@@ -71,5 +69,5 @@ Requirements:
     with open(filename, "w", encoding="utf-8") as f:
         f.write(novel)
 
-    print(f"✅ Novel saved: {filename}")
-    return filename, novel
+    print(f"✅ Novel saved as: {filename}")
+    return filename
