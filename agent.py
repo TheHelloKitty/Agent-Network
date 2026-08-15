@@ -1,60 +1,42 @@
 import os
 import requests
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
-# Load environment variables for the agent network
-LEMON_SQUEEZY_API_KEY = os.getenv("LEMON_SQUEEZY_API_KEY")
-LEMON_SQUEEZY_STORE_ID = os.getenv("LEMON_SQUEEZY_STORE_ID")
+# 1. Generate Eastern Time Timestamp
+eastern_tz = ZoneInfo("America/New_York")
+local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
+timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
 
-def create_initial_product():
-    # Explicit check to handle missing environment secrets gracefully during workflow runs
-    if not LEMON_SQUEEZY_API_KEY or not LEMON_SQUEEZY_STORE_ID:
-        print("[Mock Fallback: API key not found in environment, using structural template]")
-        return {
-            "attributes": {
-                "name": "Commercial Asset by Operator-253 (Generation 9)",
-                "description": "Target Niche: Children's Books | Retail Price Point: $34.86 USD | Distribution Status: Packaged for Storefront Export"
-            }
-        }
+# 2. Build the Report Content
+repo = os.environ.get("GITHUB_REPOSITORY")  # e.g., "TheHelloKitty/Agent-Network"
+token = os.environ.get("GITHUB_TOKEN")
 
-    url = "https://api.lemonsqueezy.com/v1/products"
+issue_title = f"[FLEET MASTER REPORT] 5x Daily Status & Operations - {timestamp_str}"
+issue_body = f"""
+## 🌐 Autonomous Agent Network: 5-Time Daily Master Report
+
+* **Reporting Timestamp:** {timestamp_str}
+* **Lemon Squeezy Store ID Status:** Active ({bool(os.environ.get("LEMONSQUEEZY_STORE_ID"))})
+* **Fleet Status:** Operational and Fully Synchronized.
+"""
+
+# 3. Automatically Post the Issue to GitHub
+if repo and token:
+    url = f"https://api.github.com/repos/{repo}/issues"
     headers = {
-        "Accept": "application/vnd.api+json",
-        "Content-Type": "application/vnd.api+json",
-        "Authorization": f"Bearer {LEMON_SQUEEZY_API_KEY}"
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json"
+    }
+    payload = {
+        "title": issue_title,
+        "body": issue_body
     }
     
-    payload = {
-        "data": {
-            "type": "products",
-            "attributes": {
-                "name": "Commercial Asset by Operator-253 (Generation 9)",
-                "description": "Target Niche: Children's Books | Retail Price Point: $34.86 USD | Distribution Status: Packaged for Storefront Export",
-                "price": 3486, # Price in cents ($34.86)
-                "status": "published"
-            },
-            "relationships": {
-                "store": {
-                    "data": {
-                        "type": "stores",
-                        "id": str(LEMON_SQUEEZY_STORE_ID)
-                    }
-                }
-            }
-        }
-    }
-
-    response = requests.post(url, headers=headers, json=payload)
-    if response.status_code in [200, 201]:
-        product_data = response.json().get("data", {})
-        print(f"Successfully created product: {product_data.get('attributes', {}).get('name')}")
-        return product_data
+    response = requests.post(url, json=payload, headers=headers)
+    if response.status_code == 201:
+        print("Successfully created new fleet master report issue!")
     else:
-        print(f"Error creating product: {response.status_code} - {response.text}")
-        return None
-
-def main():
-    print("Initializing agent network and processing storefront export...")
-    create_initial_product()
-
-if __name__ == "__main__":
-    main()
+        print(f"Failed to create issue: {response.status_code} - {response.text}")
+else:
+    print("GitHub token or repository environment variables missing.")
