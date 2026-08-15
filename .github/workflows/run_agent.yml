@@ -31,17 +31,4 @@ jobs:
           LEMONSQUEEZY_API_KEY: ${{ secrets.LEMONSQUEEZY_API_KEY }}
           LEMONSQUEEZY_STORE_ID: ${{ secrets.LEMONSQUEEZY_STORE_ID }}
         run: |
-          python3 -c '
-          import os
-          from datetime import datetime, timezone
-          from zoneinfo import ZoneInfo
-          
-          # Force Eastern Time (Tampa) for the report timestamp
-          eastern_tz = ZoneInfo("America/New_York")
-          local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
-          timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
-          
-          print(f"🚀 Generating Fleet Report for: {timestamp_str}")
-          '
-          
           python3 agent.py
