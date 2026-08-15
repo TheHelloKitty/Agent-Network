@@ -23,8 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Execute Full Agent Fleet Run (Eastern Time)
+      - name: Generate Fleet Master Report (Eastern Time)
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           YOU_API_KEY: ${{ secrets.YOU_API_KEY }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           LEMONSQUEEZY_API_KEY: ${{ secrets.LEMONSQUEEZY_API_KEY }}
@@ -35,19 +36,13 @@ jobs:
           from datetime import datetime, timezone
           from zoneinfo import ZoneInfo
           
-          # Force Eastern Time (Tampa) for execution logging
+          # Force Eastern Time (Tampa) for the report timestamp
           eastern_tz = ZoneInfo("America/New_York")
           local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
           timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
           
-          print("==========================================")
-          print(f"🚀 Agent Fleet Run Started at: {timestamp_str}")
-          print("==========================================")
-          print("Environment Status:")
-          print("- You.com API Key:", bool(os.environ.get("YOU_API_KEY")))
-          print("- Firecrawl API Key:", bool(os.environ.get("FIRECRAWL_API_KEY")))
-          print("- Lemon Squeezy Store ID:", bool(os.environ.get("LEMONSQUEEZY_STORE_ID")))
+          print(f"🚀 Generating Fleet Report for: {timestamp_str}")
           '
           
-          # Uncomment below once your main orchestrator script is named agent.py or runner.py
+          # If your report generator script is named agent.py or report.py, make sure it runs here:
           # python3 agent.py
