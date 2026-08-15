@@ -8,16 +8,16 @@ eastern_tz = ZoneInfo("America/New_York")
 local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
 timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
 
-# 2. Check Payhip Connection using your API Key
+# 2. Check Payhip Connection using your API Key and correct header
 payhip_api_key = os.environ.get("PAYHIP_API_KEY")
 store_configured = False
 active_products_count = 0
 
 if payhip_api_key:
-    # Payhip API endpoint for products
+    # Payhip API endpoint using the correct custom header format
     response = requests.get(
-        "https://payhip.com/api/v1/products",
-        headers={"Authorization": f"Bearer {payhip_api_key}"}
+        "https://payhip.com/api/v2/products",
+        headers={"payhip-api-key": payhip_api_key}
     )
     if response.status_code == 200:
         data = response.json()
