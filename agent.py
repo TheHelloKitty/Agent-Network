@@ -8,21 +8,23 @@ eastern_tz = ZoneInfo("America/New_York")
 local_time = datetime.now(timezone.utc).astimezone(eastern_tz)
 timestamp_str = local_time.strftime("%Y-%m-%d %H:%M %Z")
 
-# 2. Check Payhip Connection using your API Key and correct header
+# 2. Check Payhip Connection using Coupons Endpoint & Custom Header
 payhip_api_key = os.environ.get("PAYHIP_API_KEY")
 store_configured = False
-active_products_count = 0
+active_coupons_count = 0
 
 if payhip_api_key:
-    # Payhip API endpoint using the correct custom header format
     response = requests.get(
-        "https://payhip.com/api/v2/products",
+        "https://payhip.com/api/v2/coupons",
         headers={"payhip-api-key": payhip_api_key}
     )
     if response.status_code == 200:
         data = response.json()
         store_configured = True
-        active_products_count = len(data.get("products", data.get("data", [])))
+        # Payhip returns coupon resources under data or list structure
+        coupons_list = data.get("data", data.get("coupons", []))
+        if isinstance(coupons_list, list):
+            active_coupons_count = len(coupons_list)
 
 # 3. Build the Full Report Content
 repo = os.environ.get("GITHUB_REPOSITORY")
@@ -45,7 +47,7 @@ issue_body = f"""
   * **Frequency:** Configured for high-frequency automated posts, viral hooks, and product launches.
 * **📦 Payhip Store Sync:**
   * **Status:** `ACTIVE` (Configured: {store_configured})
-  * **Active Products Published:** {active_products_count} dynamic listings synced from Payhip.
+  * **Active Store Resources/Coupons:** {active_coupons_count} objects synced from Payhip API.
 * **✨ New Dynamic Creations:**
   * 9 brand new unique storefront export JSON modules and 2 viral marketing asset bundles committed in this cycle.
 
