@@ -1,12 +1,33 @@
-{
-  "mcpServers": {
-    "tavily": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "mcp-remote",
-        "https://mcp.tavily.com/mcp/?tavilyApiKey=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"
-      ]
-    }
-  }
-}
+name: Agent Fleet Reporting
+
+on:
+  schedule:
+    # Runs at 8:00, 12:00, 16:00, 20:00, and 00:00 UTC
+    - cron: '0 0,4,8,12,16,20 * * *'
+  workflow_dispatch:
+
+jobs:
+  build-report:
+    runs-on: ubuntu-latest
+    
+    # REQUIRED: Gives the GITHUB_TOKEN write access to push changes
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          
+      - name: Run Agent Script
+        run: python agent.py
+        
+      - name: Commit and push report changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Autonomous Agent Network: Automated Fleet Report Update"
+          file_pattern: "agent_outputs/* fleet-report.md"
