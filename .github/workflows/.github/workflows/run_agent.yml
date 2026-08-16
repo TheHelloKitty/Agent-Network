@@ -10,7 +10,6 @@ jobs:
   build-report:
     runs-on: ubuntu-latest
     
-    # REQUIRED: Gives the GITHUB_TOKEN write access to push changes
     permissions:
       contents: write
 
@@ -26,8 +25,10 @@ jobs:
       - name: Run Agent Script
         run: python agent.py
         
-      - name: Commit and push report changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Autonomous Agent Network: Automated Fleet Report Update"
-          file_pattern: "agent_outputs/* fleet-report.md"
+      - name: Commit and push changes manually
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add agent_outputs/ fleet-report.md
+          git diff --quiet && git diff --staged --quiet || git commit -m "Autonomous Agent Network: Automated Fleet Report Update"
+          git push
