@@ -32,4 +32,3 @@ def generate_fleet_report():
 
 if __name__ == "__main__":
     generate_fleet_report()
-p
