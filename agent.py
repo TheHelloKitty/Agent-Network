@@ -1,22 +1,22 @@
-import json
-
-# Load or define your Toku fleet directly in your agent initialization
-FLEET_CONFIG_PATH = "fleet_config.json"
-
-def load_toku_fleet():
-    try:
-        with open(FLEET_CONFIG_PATH, "r") as f:
-            fleet_data = json.load(f)
-            return fleet_data["agents"]
-    except FileNotFoundError:
-        # Fallback dictionary or inline registration if JSON isn't local yet
-        return []
-
-class TokuFleetManager:
-    def __init__(self):
-        self.agents = load_toku_fleet()
-        print(f"Loaded {len(self.agents)} agents into the Toku Fleet.")
-
-# Example instantiation inside agent.py
-if __name__ == "__main__":
-    manager = TokuFleetManager()
+{
+  "fleet_name": "Toku-Core-Production-Fleet",
+  "global_directive": "Continuous self-improvement, dynamic skill acquisition, and full operational proficiency across all assigned endeavors.",
+  "total_agents": 20,
+  "agents": [
+    {
+      "name": "Spin_xeonen_Alpha",
+      "tier": "Core Compute",
+      "status": "ACTIVE",
+      "learning_mode": "PROFICIENT_ALL_ENDEAVORS",
+      "description": "Engineered for heavy compute execution and multi-step automated routing operations, this agent slashes processing bottlenecks and guarantees seamless task flow under maximum load."
+    },
+    {
+      "name": "Spin_xeonen_Beta",
+      "tier": "Core Compute",
+      "status": "ACTIVE",
+      "learning_mode": "PROFICIENT_ALL_ENDEAVORS",
+      "description": "A high-capacity auxiliary compute engine designed to scale workflow queueing instantly, keeping your multi-threaded operations running at peak efficiency."
+    }
+    // ... (repeat for remaining agents)
+  ]
+}
