@@ -188,3 +188,45 @@ def write_report():
 
 if __name__ == "__main__":
     write_report()
+import argparse
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--report", action="store_true")
+    args = parser.parse_args()
+
+    if args.report:
+        from datetime import datetime, timedelta, timezone
+        from pathlib import Path
+        import json
+
+        HOURS = 4
+        now = datetime.now(timezone.utc)
+        cutoff = now - timedelta(hours=HOURS)
+        files = []
+
+        for folder in ["agent_outputs", "books", "storefront_exports", "novels", "toku"]:
+            if not os.path.isdir(folder):
+                continue
+            for path in Path(folder).rglob("*"):
+                if path.is_file():
+                    mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
+                    if mtime >= cutoff:
+                        files.append(f"- {path}")
+
+        lines = [
+            "# Fleet Report",
+            f"Generated: {now.isoformat()}",
+            f"Window: last {HOURS} hours",
+            f"Files found: {len(files)}",
+            "",
+            "## Created in the last 4 hours",
+        ]
+        lines.extend(files or ["None"])
+
+        with open("fleet-report.md", "w", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
+
+        print("✅ Updated fleet-report.md")
+    else:
+        run_publishing_network()
