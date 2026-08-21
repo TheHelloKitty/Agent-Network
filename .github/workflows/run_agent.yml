@@ -23,6 +23,11 @@ jobs:
           pip install -r requirements.txt
           pip install groq
 
+      - name: Run Agent Script
+        run: python agent.py
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
       - name: Generate report
         run: python agent.py --report
         env:
