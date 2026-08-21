@@ -69,7 +69,15 @@ CATEGORIES = {
             "infamous heist"
         ]
     },
-    "thriller": {
+       "thriller": {
         "folder": "books/thriller",
         "age": "adult",
-        "style": "fast-paced,
+        "style": "fast-paced, twists, high stakes",
+        "topics": [
+            "missing wife",
+            "witness protection",
+            "serial killer hunt",
+            "spy betrayal",
+            "locked-room mystery"
+        ]
+    },
