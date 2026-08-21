@@ -150,4 +150,120 @@ def write_book(agent_name, category_key, topic, source_text=None):
         )
 
     response = generate_with_fallback([
-        {"
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt}
+    ])
+
+    book_text = response.choices[0].message.content
+    os.makedirs(cat["folder"], exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    mode = "rewrite" if source_text else "original"
+    filename = f"{cat['folder']}/{safe_name(agent_name)}_{safe_name(topic)}_{mode}_{timestamp}.txt"
+
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(book_text)
+
+    print("Saved:", filename)
+    return {
+        "agent": agent_name,
+        "category": category_key,
+        "topic": topic,
+        "mode": mode,
+        "file": filename,
+        "created_at": timestamp
+    }
+
+def update_category_file(category_key, book_info):
+    cat = CATEGORIES[category_key]
+    os.makedirs(cat["folder"], exist_ok=True)
+    index_path = f"{cat['folder']}/CATEGORY.json"
+    if os.path.exists(index_path):
+        with open(index_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    else:
+        data = {"category": category_key, "books": []}
+    data["books"].append(book_info)
+    with open(index_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+def run_publishing_network(agent_names=None):
+    if not agent_names:
+        agent_names = [f"Agent_{i:04d}" for i in range(1, 21)]
+
+    all_results = []
+    for category_key, cat in CATEGORIES.items():
+        for _ in range(BOOKS_PER_CATEGORY):
+            agent = random.choice(agent_names)
+            topic = random.choice(cat["topics"])
+            source_text = None
+            if cat["public_domain"] and random.random() < REWRITE_CHANCE:
+                book_id = random.choice(cat["public_domain"])
+                source_text = fetch_public_domain(book_id)
+            book_info = write_book(agent, category_key, topic, source_text)
+            update_category_file(category_key, book_info)
+            all_results.append(book_info)
+
+    os.makedirs("books", exist_ok=True)
+    with open("books/MASTER_CATALOG.json", "w", encoding="utf-8") as f:
+        json.dump({"total_books": len(all_results), "books": all_results}, f, indent=2)
+    print("Created", len(all_results), "books")
+    return all_results
+
+def write_fleet_report():
+    hours = 4
+    now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(hours=hours)
+    created = []
+    for folder in ["agent_outputs", "books", "storefront_exports", "novels", "toku"]:
+        if not os.path.isdir(folder):
+            continue
+        for path in Path(folder).rglob("*"):
+            if path.is_file():
+                mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
+                if mtime >= cutoff:
+                    created.append(f"- {path.stem.split('_')[0]} | {folder} | {path}")
+
+    toku_jobs = {"applied": [], "accepted": [], "completed": []}
+    jobs_path = Path("toku/jobs.json")
+    if jobs_path.exists():
+        with open(jobs_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        jobs = data.get("jobs", data if isinstance(data, list) else [])
+        for job in jobs:
+            status = str(job.get("status", "")).lower()
+            if status in toku_jobs:
+                toku_jobs[status].append(job)
+
+    lines = [
+        "# Fleet Report",
+        f"Generated: {now.strftime('%Y-%m-%d %H:%M UTC')}",
+        f"Window: last {hours} hours",
+        f"Files created: {len(created)}",
+        f"Toku applied: {len(toku_jobs['applied'])}",
+        f"Toku accepted: {len(toku_jobs['accepted'])}",
+        f"Toku completed: {len(toku_jobs['completed'])}",
+        "",
+        "## Created in the last 4 hours"
+    ]
+    lines.extend(created or ["None"])
+    lines += ["", "## Toku jobs"]
+    for status in ("applied", "accepted", "completed"):
+        lines.append("### " + status.title())
+        if toku_jobs[status]:
+            for job in toku_jobs[status]:
+                lines.append(f"- {job.get('agent', 'unknown')} | {job.get('title', 'untitled')}")
+        else:
+            lines.append("None")
+
+    with open("fleet-report.md", "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    print("Updated fleet-report.md")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--report", action="store_true")
+    args = parser.parse_args()
+    if args.report:
+        write_fleet_report()
+    else:
+        run_publishing_network()
