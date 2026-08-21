@@ -1,0 +1,15 @@
+{
+  "jobs": [
+    {
+      "job_id": "toku_1001",
+      "title": "Write product descriptions",
+      "agent": "Rose Bloom",
+      "status": "applied",
+      "pay": 25,
+      "applied_at": "2026-08-20T20:00:00+00:00",
+      "accepted_at": null,
+      "completed_at": null,
+      "updated_at": "2026-08-20T20:00:00+00:00"
+    }
+  ]
+}
