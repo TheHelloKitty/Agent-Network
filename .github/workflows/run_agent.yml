@@ -1,13 +1,14 @@
-  name: Generate report
-  run: python agent.py --report
+name: Run Agent Pipeline
+
+on:
   schedule:
-    # 8am, 12pm, 4pm, 8pm, 12am Eastern
     - cron: "0 0,4,12,16,20 * * *"
   workflow_dispatch:
 
 jobs:
-  report:
+  run-agents:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -17,11 +18,12 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Generate report
-        run: python report.py
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install groq
 
-      - name: Upload report
-        uses: actions/upload-artifact@v4
-        with:
-          name: agent-report
-          path: reports/
+      - name: Generate report
+        run: python agent.py --report
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
