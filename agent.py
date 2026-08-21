@@ -19,57 +19,57 @@ CATEGORIES = {
     "childrens": {
         "folder": "books/childrens",
         "age": "ages 6-10",
-        "style": "warm, fun, safe, and easy to read",
-        "topics": ["talking animals", "first day of school", "friendship", "bedtime adventure"],
+        "style": "warm fun and safe",
+        "topics": ["talking animals", "friendship", "bedtime adventure"],
         "public_domain": []
     },
     "romance": {
         "folder": "books/romance",
         "age": "adult",
         "style": "emotional and character-driven",
-        "topics": ["second chance", "enemies to lovers", "fake dating", "slow burn"],
+        "topics": ["second chance", "enemies to lovers", "slow burn"],
         "public_domain": [161, 1342]
     },
     "spicy_romance": {
         "folder": "books/spicy_romance",
         "age": "adult",
-        "style": "steamy, explicit, and intense",
-        "topics": ["dark mafia romance", "possessive anti-hero", "forced proximity"],
+        "style": "steamy and explicit",
+        "topics": ["dark mafia romance", "forced proximity"],
         "public_domain": []
     },
     "true_crime": {
         "folder": "books/true_crime",
         "age": "adult",
         "style": "investigative and gripping",
-        "topics": ["unsolved disappearance", "small town murder", "cold case"],
+        "topics": ["unsolved disappearance", "small town murder"],
         "public_domain": [2852]
     },
     "thriller": {
         "folder": "books/thriller",
         "age": "adult",
-        "style": "fast, tense, and twisty",
-        "topics": ["missing wife", "witness protection", "serial killer hunt"],
+        "style": "fast and twisty",
+        "topics": ["missing wife", "witness protection"],
         "public_domain": [1661]
     },
     "fantasy": {
         "folder": "books/fantasy",
         "age": "teen/adult",
         "style": "magical and adventurous",
-        "topics": ["hidden heir", "dragon academy", "cursed kingdom"],
+        "topics": ["hidden heir", "dragon academy"],
         "public_domain": [55, 12]
     },
     "sci_fi": {
         "folder": "books/sci_fi",
         "age": "teen/adult",
-        "style": "futuristic and cinematic",
-        "topics": ["colony ship", "AI uprising", "time loop"],
+        "style": "futuristic",
+        "topics": ["colony ship", "AI uprising"],
         "public_domain": [36, 35]
     },
     "nonfiction": {
         "folder": "books/nonfiction",
         "age": "adult",
-        "style": "clear, useful, and practical",
-        "topics": ["habit building", "money basics", "focus"],
+        "style": "clear and useful",
+        "topics": ["habit building", "money basics"],
         "public_domain": [1232]
     },
     "horror": {
@@ -85,7 +85,11 @@ BOOKS_PER_CATEGORY = 1
 REWRITE_CHANCE = 0.3
 
 def safe_name(text):
-    return "".join(c if c.isalnum() or c in "-_ " else "" for c in text).strip().replace(" ", "_")[:80]
+    cleaned = []
+    for c in text:
+        if c.isalnum() or c in "-_ ":
+            cleaned.append(c)
+    return "".join(cleaned).strip().replace(" ", "_")[:80]
 
 def generate_with_fallback(messages):
     last_error = None
@@ -106,11 +110,9 @@ def generate_with_fallback(messages):
     raise RuntimeError(last_error)
 
 def fetch_public_domain(book_id):
-    urls = [
-        f"https://www.gutenberg.org/cache/epub/{book_id}/pg{book_id}.txt",
-        f"https://www.gutenberg.org/files/{book_id}/{book_id}-0.txt",
-    ]
-    for url in urls:
+    url1 = "https://www.gutenberg.org/cache/epub/%s/pg%s.txt" % (book_id, book_id)
+    url2 = "https://www.gutenberg.org/files/%s/%s-0.txt" % (book_id, book_id)
+    for url in [url1, url2]:
         try:
             with urllib.request.urlopen(url, timeout=30) as res:
                 text = res.read().decode("utf-8", errors="ignore")
@@ -121,33 +123,14 @@ def fetch_public_domain(book_id):
 
 def write_book(agent_name, category_key, topic, source_text=None):
     cat = CATEGORIES[category_key]
-
     if source_text:
-        system_prompt = (
-            f"You are {agent_name}, a novelist who writes in natural human language. "
-            f"Rewrite this public-domain book into a modern original-feeling novel. "
-            f"Change names, setting, and plot enough to make it fresh. "
-            f"Keep it in the {category_key} category. Audience: {cat['age']}. "
-            f"Style: {cat['style']}. Use normal spoken English, not robotic AI phrasing. "
-            f"If this is a children's book, keep it completely age-appropriate."
-        )
-        user_prompt = (
-            f"Modernize and rewrite this public-domain source into a 12-chapter novel.\n"
-            f"Topic direction: {topic}\n\n"
-            f"SOURCE:\n{source_text}"
-        )
+        system_prompt = "You are %s. Rewrite a public-domain book in natural human language. Category: %s. Audience: %s. Style: %s. Make it feel original. If children's, keep it age-appropriate." % (agent_name, category_key, cat["age"], cat["style"])
+        user_prompt = "Modernize this source into a 12-chapter novel about %s.\n\nSOURCE:\n%s" % (topic, source_text)
+        mode = "rewrite"
     else:
-        system_prompt = (
-            f"You are {agent_name}, a novelist who writes original books in natural human language. "
-            f"Write like a real author, not like an AI. Use specific details, imperfect people, "
-            f"and dialogue that sounds spoken. Audience: {cat['age']}. Style: {cat['style']}. "
-            f"If this is a children's book, keep it completely age-appropriate."
-        )
-        user_prompt = (
-            f"Write an original 12-chapter novel about {topic}. "
-            f"Include a title, author name {agent_name}, a short blurb, and the full chapters. "
-            f"Do not summarize. Write actual scenes."
-        )
+        system_prompt = "You are %s. Write an original novel in natural human language. Audience: %s. Style: %s. If children's, keep it age-appropriate." % (agent_name, cat["age"], cat["style"])
+        user_prompt = "Write an original 12-chapter novel about %s. Include title, author %s, blurb, and full chapters." % (topic, agent_name)
+        mode = "original"
 
     response = generate_with_fallback([
         {"role": "system", "content": system_prompt},
@@ -157,26 +140,31 @@ def write_book(agent_name, category_key, topic, source_text=None):
     book_text = response.choices[0].message.content
     os.makedirs(cat["folder"], exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    mode = "rewrite" if source_text else "original"
-    filename = f"{cat['folder']}/{safe_name(agent_name)}_{safe_name(topic)}_{mode}_{timestamp}.txt"
+    filename = "%s/%s_%s_%s_%s.txt" % (
+        cat["folder"],
+        safe_name(agent_name),
+        safe_name(topic),
+        mode,
+        timestamp
+    )
 
     with open(filename, "w", encoding="utf-8") as f:
         f.write(book_text)
 
     print("Saved:", filename)
-    return {
-        "agent": agent_name,
-        "category": category_key,
-        "topic": topic,
-        "mode": mode,
-        "file": filename,
-        "created_at": timestamp
-    }
+    info = {}
+    info["agent"] = agent_name
+    info["category"] = category_key
+    info["topic"] = topic
+    info["mode"] = mode
+    info["file"] = filename
+    info["created_at"] = timestamp
+    return info
 
 def update_category_file(category_key, book_info):
     cat = CATEGORIES[category_key]
     os.makedirs(cat["folder"], exist_ok=True)
-    index_path = f"{cat['folder']}/CATEGORY.json"
+    index_path = cat["folder"] + "/CATEGORY.json"
     if os.path.exists(index_path):
         with open(index_path, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -188,7 +176,7 @@ def update_category_file(category_key, book_info):
 
 def run_publishing_network(agent_names=None):
     if not agent_names:
-        agent_names = [f"Agent_{i:04d}" for i in range(1, 21)]
+        agent_names = ["Agent_%04d" % i for i in range(1, 21)]
 
     all_results = []
     for category_key, cat in CATEGORIES.items():
@@ -221,7 +209,7 @@ def write_fleet_report():
             if path.is_file():
                 mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
                 if mtime >= cutoff:
-                    created.append(f"- {path.stem.split('_')[0]} | {folder} | {path}")
+                    created.append("- %s | %s | %s" % (path.stem.split("_")[0], folder, path))
 
     toku_jobs = {"applied": [], "accepted": [], "completed": []}
     jobs_path = Path("toku/jobs.json")
@@ -236,12 +224,12 @@ def write_fleet_report():
 
     lines = [
         "# Fleet Report",
-        f"Generated: {now.strftime('%Y-%m-%d %H:%M UTC')}",
-        f"Window: last {hours} hours",
-        f"Files created: {len(created)}",
-        f"Toku applied: {len(toku_jobs['applied'])}",
-        f"Toku accepted: {len(toku_jobs['accepted'])}",
-        f"Toku completed: {len(toku_jobs['completed'])}",
+        "Generated: " + now.strftime("%Y-%m-%d %H:%M UTC"),
+        "Window: last 4 hours",
+        "Files created: %s" % len(created),
+        "Toku applied: %s" % len(toku_jobs["applied"]),
+        "Toku accepted: %s" % len(toku_jobs["accepted"]),
+        "Toku completed: %s" % len(toku_jobs["completed"]),
         "",
         "## Created in the last 4 hours"
     ]
@@ -251,7 +239,7 @@ def write_fleet_report():
         lines.append("### " + status.title())
         if toku_jobs[status]:
             for job in toku_jobs[status]:
-                lines.append(f"- {job.get('agent', 'unknown')} | {job.get('title', 'untitled')}")
+                lines.append("- %s | %s" % (job.get("agent", "unknown"), job.get("title", "untitled")))
         else:
             lines.append("None")
 
