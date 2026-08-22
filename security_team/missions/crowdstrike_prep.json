@@ -1,0 +1,18 @@
+{
+  "mission_id": "crowdstrike_prep_001",
+  "title": "CrowdStrike Agents of Chaos Prep",
+  "scope": "authorized contest preparation only",
+  "rules": [
+    "Use only public rules and public educational material",
+    "Do not attack live systems outside the contest",
+    "Do not generate exploits for unauthorized targets",
+    "Stay inside legal contest practice"
+  ],
+  "tasks": [
+    "Summarize official contest rules and schedule",
+    "Build a 14-day practice plan",
+    "List major prompt-injection categories at a high level",
+    "List common agent defense weaknesses",
+    "Produce a one-page team brief"
+  ]
+}
