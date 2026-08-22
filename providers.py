@@ -8,7 +8,6 @@ PROVIDERS = [
         "api_key_env": "OPENROUTER_API_KEY",
         "base_url": "https://openrouter.ai/api/v1",
         "models": [
-            "google/gemini-2.0-flash-001",
             "meta-llama/llama-3.3-70b-instruct",
             "qwen/qwen-2.5-72b-instruct",
         ],
