@@ -8,6 +8,16 @@
       "mode": "original",
       "file": "books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt",
       "created_at": "20260822_000317"
+    },
+    {
+      "agent": "Agent_0015",
+      "category": "childrens",
+      "topic": "friendship",
+      "mode": "original",
+      "file": "books/childrens/Agent_0015_friendship_original_20260822_004553.txt",
+      "pdf": "books/childrens/Agent_0015_friendship_original_20260822_004553.pdf",
+      "docx": "books/childrens/Agent_0015_friendship_original_20260822_004553.docx",
+      "created_at": "20260822_004553"
     }
   ]
 }

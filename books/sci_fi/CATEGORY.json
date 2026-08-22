@@ -8,6 +8,16 @@
       "mode": "original",
       "file": "books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt",
       "created_at": "20260822_000421"
+    },
+    {
+      "agent": "Agent_0003",
+      "category": "sci_fi",
+      "topic": "colony ship",
+      "mode": "rewrite",
+      "file": "books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.txt",
+      "pdf": "books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.pdf",
+      "docx": "books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.docx",
+      "created_at": "20260822_004748"
     }
   ]
 }

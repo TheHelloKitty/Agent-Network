@@ -8,6 +8,16 @@
       "mode": "original",
       "file": "books/fantasy/Agent_0016_hidden_heir_original_20260822_000418.txt",
       "created_at": "20260822_000418"
+    },
+    {
+      "agent": "Agent_0016",
+      "category": "fantasy",
+      "topic": "hidden heir",
+      "mode": "original",
+      "file": "books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.txt",
+      "pdf": "books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.pdf",
+      "docx": "books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.docx",
+      "created_at": "20260822_004741"
     }
   ]
 }

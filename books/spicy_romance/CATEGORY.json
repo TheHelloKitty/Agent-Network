@@ -8,6 +8,16 @@
       "mode": "original",
       "file": "books/spicy_romance/Agent_0009_forced_proximity_original_20260822_000326.txt",
       "created_at": "20260822_000326"
+    },
+    {
+      "agent": "Agent_0009",
+      "category": "spicy_romance",
+      "topic": "dark mafia romance",
+      "mode": "original",
+      "file": "books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.txt",
+      "pdf": "books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.pdf",
+      "docx": "books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.docx",
+      "created_at": "20260822_004624"
     }
   ]
 }

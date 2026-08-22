@@ -8,6 +8,16 @@
       "mode": "original",
       "file": "books/thriller/Agent_0001_missing_wife_original_20260822_000405.txt",
       "created_at": "20260822_000405"
+    },
+    {
+      "agent": "Agent_0007",
+      "category": "thriller",
+      "topic": "witness protection",
+      "mode": "original",
+      "file": "books/thriller/Agent_0007_witness_protection_original_20260822_004716.txt",
+      "pdf": "books/thriller/Agent_0007_witness_protection_original_20260822_004716.pdf",
+      "docx": "books/thriller/Agent_0007_witness_protection_original_20260822_004716.docx",
+      "created_at": "20260822_004716"
     }
   ]
 }

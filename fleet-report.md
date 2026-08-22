@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-22 00:40 UTC
+Generated: 2026-08-22 00:48 UTC
 Window: last 4 hours
-Files created: 185
+Files created: 212
 Toku applied: 1
 Toku accepted: 0
 Toku completed: 0
@@ -153,22 +153,49 @@ Toku completed: 0
 - fleet-report-latest | agent_outputs | agent_outputs/fleet-report-latest.json
 - Gen13 | agent_outputs | agent_outputs/Gen13_Agent_3_product.md
 - MASTER | books | books/MASTER_CATALOG.json
+- Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.txt
+- Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.docx
 - CATEGORY | books | books/romance/CATEGORY.json
 - Agent | books | books/romance/Agent_0018_second_chance_original_20260822_000324.txt
+- Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.pdf
+- Agent | books | books/nonfiction/Agent_0003_habit_building_original_20260822_004814.pdf
 - Agent | books | books/nonfiction/Agent_0009_habit_building_original_20260822_000446.txt
+- Agent | books | books/nonfiction/Agent_0003_habit_building_original_20260822_004814.txt
 - CATEGORY | books | books/nonfiction/CATEGORY.json
+- Agent | books | books/nonfiction/Agent_0003_habit_building_original_20260822_004814.docx
+- Agent | books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.pdf
 - Agent | books | books/horror/Agent_0020_haunted_lake_house_original_20260822_000514.txt
+- Agent | books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.docx
 - CATEGORY | books | books/horror/CATEGORY.json
+- Agent | books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.txt
+- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.docx
+- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.txt
 - CATEGORY | books | books/thriller/CATEGORY.json
+- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.pdf
 - Agent | books | books/thriller/Agent_0001_missing_wife_original_20260822_000405.txt
+- Agent | books | books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.docx
 - Agent | books | books/fantasy/Agent_0016_hidden_heir_original_20260822_000418.txt
+- Agent | books | books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.pdf
 - CATEGORY | books | books/fantasy/CATEGORY.json
+- Agent | books | books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.txt
 - Agent | books | books/spicy_romance/Agent_0009_forced_proximity_original_20260822_000326.txt
+- Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.txt
+- Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.pdf
 - CATEGORY | books | books/spicy_romance/CATEGORY.json
+- Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.docx
+- Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.txt
+- Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.docx
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351.txt
 - CATEGORY | books | books/true_crime/CATEGORY.json
+- Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.pdf
+- Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.docx
 - Agent | books | books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt
+- Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.txt
+- Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.pdf
 - CATEGORY | books | books/sci_fi/CATEGORY.json
+- Agent | books | books/childrens/Agent_0015_friendship_original_20260822_004553.pdf
+- Agent | books | books/childrens/Agent_0015_friendship_original_20260822_004553.txt
+- Agent | books | books/childrens/Agent_0015_friendship_original_20260822_004553.docx
 - Agent | books | books/childrens/Agent_0013_bedtime_adventure_original_20260822_004021.txt
 - Agent | books | books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt
 - CATEGORY | books | books/childrens/CATEGORY.json

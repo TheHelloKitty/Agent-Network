@@ -8,6 +8,16 @@
       "mode": "original",
       "file": "books/true_crime/Agent_0003_small_town_murder_original_20260822_000351.txt",
       "created_at": "20260822_000351"
+    },
+    {
+      "agent": "Agent_0001",
+      "category": "true_crime",
+      "topic": "small town murder",
+      "mode": "original",
+      "file": "books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.txt",
+      "pdf": "books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.pdf",
+      "docx": "books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.docx",
+      "created_at": "20260822_004648"
     }
   ]
 }

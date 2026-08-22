@@ -8,6 +8,16 @@
       "mode": "original",
       "file": "books/nonfiction/Agent_0009_habit_building_original_20260822_000446.txt",
       "created_at": "20260822_000446"
+    },
+    {
+      "agent": "Agent_0003",
+      "category": "nonfiction",
+      "topic": "habit building",
+      "mode": "original",
+      "file": "books/nonfiction/Agent_0003_habit_building_original_20260822_004814.txt",
+      "pdf": "books/nonfiction/Agent_0003_habit_building_original_20260822_004814.pdf",
+      "docx": "books/nonfiction/Agent_0003_habit_building_original_20260822_004814.docx",
+      "created_at": "20260822_004814"
     }
   ]
 }

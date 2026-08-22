@@ -2,76 +2,94 @@
   "total_books": 9,
   "books": [
     {
-      "agent": "Agent_0003",
+      "agent": "Agent_0015",
       "category": "childrens",
-      "topic": "talking animals",
+      "topic": "friendship",
       "mode": "original",
-      "file": "books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt",
-      "created_at": "20260822_000317"
+      "file": "books/childrens/Agent_0015_friendship_original_20260822_004553.txt",
+      "pdf": "books/childrens/Agent_0015_friendship_original_20260822_004553.pdf",
+      "docx": "books/childrens/Agent_0015_friendship_original_20260822_004553.docx",
+      "created_at": "20260822_004553"
     },
     {
-      "agent": "Agent_0018",
+      "agent": "Agent_0010",
       "category": "romance",
-      "topic": "second chance",
+      "topic": "slow burn",
       "mode": "original",
-      "file": "books/romance/Agent_0018_second_chance_original_20260822_000324.txt",
-      "created_at": "20260822_000324"
+      "file": "books/romance/Agent_0010_slow_burn_original_20260822_004603.txt",
+      "pdf": "books/romance/Agent_0010_slow_burn_original_20260822_004603.pdf",
+      "docx": "books/romance/Agent_0010_slow_burn_original_20260822_004603.docx",
+      "created_at": "20260822_004603"
     },
     {
       "agent": "Agent_0009",
       "category": "spicy_romance",
-      "topic": "forced proximity",
+      "topic": "dark mafia romance",
       "mode": "original",
-      "file": "books/spicy_romance/Agent_0009_forced_proximity_original_20260822_000326.txt",
-      "created_at": "20260822_000326"
-    },
-    {
-      "agent": "Agent_0003",
-      "category": "true_crime",
-      "topic": "small town murder",
-      "mode": "original",
-      "file": "books/true_crime/Agent_0003_small_town_murder_original_20260822_000351.txt",
-      "created_at": "20260822_000351"
+      "file": "books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.txt",
+      "pdf": "books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.pdf",
+      "docx": "books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.docx",
+      "created_at": "20260822_004624"
     },
     {
       "agent": "Agent_0001",
-      "category": "thriller",
-      "topic": "missing wife",
+      "category": "true_crime",
+      "topic": "small town murder",
       "mode": "original",
-      "file": "books/thriller/Agent_0001_missing_wife_original_20260822_000405.txt",
-      "created_at": "20260822_000405"
+      "file": "books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.txt",
+      "pdf": "books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.pdf",
+      "docx": "books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.docx",
+      "created_at": "20260822_004648"
+    },
+    {
+      "agent": "Agent_0007",
+      "category": "thriller",
+      "topic": "witness protection",
+      "mode": "original",
+      "file": "books/thriller/Agent_0007_witness_protection_original_20260822_004716.txt",
+      "pdf": "books/thriller/Agent_0007_witness_protection_original_20260822_004716.pdf",
+      "docx": "books/thriller/Agent_0007_witness_protection_original_20260822_004716.docx",
+      "created_at": "20260822_004716"
     },
     {
       "agent": "Agent_0016",
       "category": "fantasy",
       "topic": "hidden heir",
       "mode": "original",
-      "file": "books/fantasy/Agent_0016_hidden_heir_original_20260822_000418.txt",
-      "created_at": "20260822_000418"
+      "file": "books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.txt",
+      "pdf": "books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.pdf",
+      "docx": "books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.docx",
+      "created_at": "20260822_004741"
     },
     {
-      "agent": "Agent_0012",
+      "agent": "Agent_0003",
       "category": "sci_fi",
-      "topic": "AI uprising",
-      "mode": "original",
-      "file": "books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt",
-      "created_at": "20260822_000421"
+      "topic": "colony ship",
+      "mode": "rewrite",
+      "file": "books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.txt",
+      "pdf": "books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.pdf",
+      "docx": "books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.docx",
+      "created_at": "20260822_004748"
     },
     {
-      "agent": "Agent_0009",
+      "agent": "Agent_0003",
       "category": "nonfiction",
       "topic": "habit building",
       "mode": "original",
-      "file": "books/nonfiction/Agent_0009_habit_building_original_20260822_000446.txt",
-      "created_at": "20260822_000446"
+      "file": "books/nonfiction/Agent_0003_habit_building_original_20260822_004814.txt",
+      "pdf": "books/nonfiction/Agent_0003_habit_building_original_20260822_004814.pdf",
+      "docx": "books/nonfiction/Agent_0003_habit_building_original_20260822_004814.docx",
+      "created_at": "20260822_004814"
     },
     {
-      "agent": "Agent_0020",
+      "agent": "Agent_0015",
       "category": "horror",
       "topic": "haunted lake house",
       "mode": "original",
-      "file": "books/horror/Agent_0020_haunted_lake_house_original_20260822_000514.txt",
-      "created_at": "20260822_000514"
+      "file": "books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.txt",
+      "pdf": "books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.pdf",
+      "docx": "books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.docx",
+      "created_at": "20260822_004838"
     }
   ]
 }

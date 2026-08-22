@@ -8,6 +8,16 @@
       "mode": "original",
       "file": "books/romance/Agent_0018_second_chance_original_20260822_000324.txt",
       "created_at": "20260822_000324"
+    },
+    {
+      "agent": "Agent_0010",
+      "category": "romance",
+      "topic": "slow burn",
+      "mode": "original",
+      "file": "books/romance/Agent_0010_slow_burn_original_20260822_004603.txt",
+      "pdf": "books/romance/Agent_0010_slow_burn_original_20260822_004603.pdf",
+      "docx": "books/romance/Agent_0010_slow_burn_original_20260822_004603.docx",
+      "created_at": "20260822_004603"
     }
   ]
 }
