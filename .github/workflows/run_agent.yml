@@ -58,4 +58,27 @@ jobs:
           path: books/
           if-no-files-found: warn
 
-      - name: Upload
+      - name: Upload security team notes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-team
+          path: security_team/
+          if-no-files-found: warn
+
+      - name: Upload fleet report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fleet-report
+          path: fleet-report.md
+          if-no-files-found: warn
+
+      - name: Save outputs to repo
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add books security_team fleet-report.md || true
+          git diff --cached --quiet || git commit -m "Add books, security team notes, and fleet report"
+          git push || true
