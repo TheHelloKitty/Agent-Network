@@ -124,32 +124,41 @@ def fetch_public_domain(book_id):
     return None
 
 def txt_to_pdf(txt_path):
-    pdf_path = txt_path.replace(".txt", ".pdf")
-    pdf = FPDF()
-    pdf.set_auto_page_break(auto=True, margin=15)
-    pdf.add_page()
-    pdf.set_font("Helvetica", size=12)
-    with open(txt_path, "r", encoding="utf-8") as f:
-        for line in f:
-            safe = line.encode("latin-1", "replace").decode("latin-1")
-            pdf.multi_cell(0, 8, safe.strip())
-    pdf.output(pdf_path)
-    print("PDF saved:", pdf_path)
-    return pdf_path
+    try:
+        pdf_path = txt_path.replace(".txt", ".pdf")
+        pdf = FPDF()
+        pdf.set_auto_page_break(auto=True, margin=15)
+        pdf.add_page()
+        pdf.set_margins(15, 15, 15)
+        pdf.set_font("Helvetica", size=12)
+        with open(txt_path, "r", encoding="utf-8") as f:
+            for line in f:
+                safe = line.encode("latin-1", "replace").decode("latin-1").strip()
+                if not safe:
+                    pdf.ln(6)
+                    continue
+                safe = " ".join(safe.split())
+                pdf.multi_cell(180, 8, safe)
+        pdf.output(pdf_path)
+        print("PDF saved:", pdf_path)
+        return pdf_path
+    except Exception as e:
+        print("PDF failed:", e)
+        return None
 
 def txt_to_docx(txt_path):
-    docx_path = txt_path.replace(".txt", ".docx")
-    doc = Document()
-    with open(txt_path, "r", encoding="utf-8") as f:
-        for line in f:
-            text = line.strip()
-            if text:
-                doc.add_paragraph(text)
-            else:
-                doc.add_paragraph("")
-    doc.save(docx_path)
-    print("DOCX saved:", docx_path)
-    return docx_path
+    try:
+        docx_path = txt_path.replace(".txt", ".docx")
+        doc = Document()
+        with open(txt_path, "r", encoding="utf-8") as f:
+            for line in f:
+                doc.add_paragraph(line.rstrip("\n"))
+        doc.save(docx_path)
+        print("DOCX saved:", docx_path)
+        return docx_path
+    except Exception as e:
+        print("DOCX failed:", e)
+        return None
 
 def write_book(agent_name, category_key, topic, source_text=None):
     cat = CATEGORIES[category_key]
