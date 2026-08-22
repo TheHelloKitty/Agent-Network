@@ -9,11 +9,6 @@ from openai import OpenAI
 from fpdf import FPDF
 from docx import Document
 
-client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key=os.getenv("OPENROUTER_API_KEY"),
-)
-
 OPENROUTER_MODELS = [
     "google/gemini-2.0-flash-001",
     "meta-llama/llama-3.3-70b-instruct",
@@ -82,6 +77,15 @@ CHAPTERS = 20
 TARGET_WORDS = 90000
 WORDS_PER_CHAPTER = 4500
 
+def get_client():
+    api_key = os.getenv("OPENROUTER_API_KEY")
+    if not api_key:
+        raise RuntimeError("OPENROUTER_API_KEY is missing. Add it in GitHub Secrets.")
+    return OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key=api_key,
+    )
+
 def safe_name(text):
     cleaned = []
     for c in text:
@@ -94,6 +98,7 @@ def word_count(text):
 
 def generate_with_fallback(messages):
     last_error = None
+    client = get_client()
     for model in OPENROUTER_MODELS:
         try:
             print("Trying model:", model)
@@ -194,91 +199,4 @@ def write_full_novel(agent_name, category_key, topic):
         with open(filename, "a", encoding="utf-8") as f:
             f.write(header + chapter_text + "\n")
         parts.append(header + chapter_text)
-        print("Chapter %s saved. Words so far: %s" % (chapter, word_count("\n".join(parts))))
-        if word_count("\n".join(parts)) >= TARGET_WORDS:
-            break
-
-    txt_to_pdf(filename)
-    txt_to_docx(filename)
-
-    info = {
-        "agent": agent_name,
-        "category": category_key,
-        "topic": topic,
-        "file": filename,
-        "words": word_count("\n".join(parts)),
-        "created_at": timestamp
-    }
-    print("Novel saved:", filename, "words:", info["words"])
-    return info
-
-def update_category_file(category_key, book_info):
-    cat = CATEGORIES[category_key]
-    index_path = cat["folder"] + "/CATEGORY.json"
-    if os.path.exists(index_path):
-        with open(index_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    else:
-        data = {"category": category_key, "books": []}
-    data["books"].append(book_info)
-    with open(index_path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
-
-def run_publishing_network():
-    category_key = os.getenv("BOOK_CATEGORY")
-    if category_key not in CATEGORIES:
-        category_key = random.choice(list(CATEGORIES.keys()))
-
-    cat = CATEGORIES[category_key]
-    agent = os.getenv("BOOK_AGENT", "Agent_%04d" % random.randint(1, 3510))
-    topic = random.choice(cat["topics"])
-    book_info = write_full_novel(agent, category_key, topic)
-    update_category_file(category_key, book_info)
-
-    os.makedirs("books", exist_ok=True)
-    catalog_path = "books/MASTER_CATALOG.json"
-    if os.path.exists(catalog_path):
-        with open(catalog_path, "r", encoding="utf-8") as f:
-            catalog = json.load(f)
-    else:
-        catalog = {"books": []}
-    catalog.setdefault("books", []).append(book_info)
-    catalog["total_books"] = len(catalog["books"])
-    with open(catalog_path, "w", encoding="utf-8") as f:
-        json.dump(catalog, f, indent=2)
-    return book_info
-
-def write_fleet_report():
-    hours = 4
-    now = datetime.now(timezone.utc)
-    cutoff = now - timedelta(hours=hours)
-    created = []
-    for folder in ["agent_outputs", "books", "storefront_exports", "novels", "toku"]:
-        if not os.path.isdir(folder):
-            continue
-        for path in Path(folder).rglob("*"):
-            if path.is_file():
-                mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
-                if mtime >= cutoff:
-                    created.append("- %s | %s | %s" % (path.stem.split("_")[0], folder, path))
-    lines = [
-        "# Fleet Report",
-        "Generated: " + now.strftime("%Y-%m-%d %H:%M UTC"),
-        "Window: last 4 hours",
-        "Files created: %s" % len(created),
-        "",
-        "## Created in the last 4 hours"
-    ]
-    lines.extend(created or ["None"])
-    with open("fleet-report.md", "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
-    print("Updated fleet-report.md")
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--report", action="store_true")
-    args = parser.parse_args()
-    if args.report:
-        write_fleet_report()
-    else:
-        run_publishing_network()
+        print("Chapter %s saved. Words so far: %s" % (chapter,
