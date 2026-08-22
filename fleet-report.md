@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-22 13:47 UTC
+Generated: 2026-08-22 16:38 UTC
 Window: last 4 hours
-Files created: 216
+Files created: 226
 
 ## Created in the last 4 hours
 - Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
@@ -150,6 +150,7 @@ Files created: 216
 - fleet-report-latest | agent_outputs | agent_outputs/fleet-report-latest.json
 - Gen13 | agent_outputs | agent_outputs/Gen13_Agent_3_product.md
 - MASTER | books | books/MASTER_CATALOG.json
+- Agent | books | books/romance/Agent_0671_second_chance_full_20260822_161746.txt
 - Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.txt
 - Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.docx
 - CATEGORY | books | books/romance/CATEGORY.json
@@ -165,9 +166,15 @@ Files created: 216
 - Agent | books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.docx
 - CATEGORY | books | books/horror/CATEGORY.json
 - Agent | books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.txt
+- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716_refined.txt
+- Agent | books | books/thriller/Agent_0001_missing_wife_original_20260822_000405_refined.txt
 - Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.docx
 - Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.txt
+- Agent | books | books/thriller/Agent_0001_missing_wife_original_20260822_000405_refined.docx
+- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716_refined.pdf
 - CATEGORY | books | books/thriller/CATEGORY.json
+- Agent | books | books/thriller/Agent_0001_missing_wife_original_20260822_000405_refined.pdf
+- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716_refined.docx
 - Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.pdf
 - Agent | books | books/thriller/Agent_0001_missing_wife_original_20260822_000405.txt
 - Agent | books | books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.docx
@@ -183,10 +190,13 @@ Files created: 216
 - Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.pdf
 - CATEGORY | books | books/spicy_romance/CATEGORY.json
 - Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.docx
+- Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.pdf
+- Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.docx
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.docx
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351.txt
 - CATEGORY | books | books/true_crime/CATEGORY.json
+- Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.pdf
 - Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.docx
 - Agent | books | books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt
