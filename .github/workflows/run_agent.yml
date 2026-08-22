@@ -32,6 +32,12 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           BOOK_CATEGORY: romance
 
+      - name: Refine up to 5 books
+        if: always()
+        run: python agent.py --refine --limit 5
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
       - name: Generate report
         if: always()
         run: python agent.py --report
