@@ -1,10 +1,7 @@
 # Fleet Report
-Generated: 2026-08-22 00:48 UTC
+Generated: 2026-08-22 02:00 UTC
 Window: last 4 hours
-Files created: 212
-Toku applied: 1
-Toku accepted: 0
-Toku completed: 0
+Files created: 215
 
 ## Created in the last 4 hours
 - Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
@@ -179,7 +176,10 @@ Toku completed: 0
 - CATEGORY | books | books/fantasy/CATEGORY.json
 - Agent | books | books/fantasy/Agent_0016_hidden_heir_original_20260822_004741.txt
 - Agent | books | books/spicy_romance/Agent_0009_forced_proximity_original_20260822_000326.txt
+- Agent | books | books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.docx
 - Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.txt
+- Agent | books | books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.pdf
+- Agent | books | books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt
 - Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.pdf
 - CATEGORY | books | books/spicy_romance/CATEGORY.json
 - Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.docx
@@ -219,11 +219,3 @@ Toku completed: 0
 - Gen17 | storefront_exports | storefront_exports/Gen17_Agent_2_listing.json
 - Gen17 | storefront_exports | storefront_exports/Gen17_Agent_7_listing.json
 - jobs | toku | toku/jobs.json
-
-## Toku jobs
-### Applied
-- Rose Bloom | Write product descriptions
-### Accepted
-None
-### Completed
-None

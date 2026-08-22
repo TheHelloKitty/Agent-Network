@@ -18,6 +18,14 @@
       "pdf": "books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.pdf",
       "docx": "books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.docx",
       "created_at": "20260822_004624"
+    },
+    {
+      "agent": "Agent_0451",
+      "category": "spicy_romance",
+      "topic": "dark mafia romance",
+      "file": "books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt",
+      "words": 91680,
+      "created_at": "20260822_011036"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "total_books": 9,
+  "total_books": 10,
   "books": [
     {
       "agent": "Agent_0015",
@@ -90,6 +90,14 @@
       "pdf": "books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.pdf",
       "docx": "books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.docx",
       "created_at": "20260822_004838"
+    },
+    {
+      "agent": "Agent_0451",
+      "category": "spicy_romance",
+      "topic": "dark mafia romance",
+      "file": "books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt",
+      "words": 91680,
+      "created_at": "20260822_011036"
     }
   ]
 }
