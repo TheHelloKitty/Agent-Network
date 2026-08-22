@@ -5,16 +5,20 @@ import time
 import argparse
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from groq import Groq
+from openai import OpenAI
 from fpdf import FPDF
 from docx import Document
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.getenv("OPENROUTER_API_KEY"),
+)
 
-GROQ_MODELS = [
-    "openai/gpt-oss-20b",
-    "openai/gpt-oss-120b",
-    "qwen/qwen3.6-27b",
+OPENROUTER_MODELS = [
+    "google/gemini-2.0-flash-001",
+    "meta-llama/llama-3.3-70b-instruct",
+    "qwen/qwen-2.5-72b-instruct",
+    "mistralai/mistral-small-3.1-24b-instruct",
 ]
 
 CATEGORIES = {
@@ -90,7 +94,7 @@ def word_count(text):
 
 def generate_with_fallback(messages):
     last_error = None
-    for model in GROQ_MODELS:
+    for model in OPENROUTER_MODELS:
         try:
             print("Trying model:", model)
             response = client.chat.completions.create(
@@ -156,10 +160,7 @@ def write_full_novel(agent_name, category_key, topic):
     ]
     outline = generate_with_fallback(outline_prompt)
 
-    parts = []
-    parts.append(outline)
-    parts.append("\n\n")
-
+    parts = [outline]
     with open(filename, "w", encoding="utf-8") as f:
         f.write(outline + "\n\n")
 
@@ -173,7 +174,6 @@ def write_full_novel(agent_name, category_key, topic):
                 "Category: %s\nTopic: %s\nStyle: %s\n"
                 "Use natural dialogue and physical description.\n"
                 "Do not summarize. Write actual scenes.\n"
-                "If children's, keep it age-appropriate.\n"
                 "Continue from this:\n%s"
             ) % (chapter, category_key, topic, cat["style"], previous)
 
