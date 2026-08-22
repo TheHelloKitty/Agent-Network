@@ -33,7 +33,7 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          BOOK_CATEGORY: romance
+          BOOK_CATEGORY: true_crime
 
       - name: Refine up to 5 books
         if: always()
