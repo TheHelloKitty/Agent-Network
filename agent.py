@@ -265,6 +265,129 @@ def update_category_file(category_key, book_info):
     with open(index_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
+def list_book_files(limit=5):
+    files = []
+    books_root = Path("books")
+    if not books_root.exists():
+        return []
+    for path in books_root.rglob("*.txt"):
+        name = path.name.lower()
+        if "refined" in name:
+            continue
+        if name == "category.json":
+            continue
+        files.append(path)
+    files = sorted(files, key=lambda p: p.stat().st_mtime, reverse=True)
+    return files[:limit]
+
+def chunk_text(text, max_chars=6000):
+    chunks = []
+    current = []
+    size = 0
+    for para in text.split("\n\n"):
+        para = para.strip()
+        if not para:
+            continue
+        if size + len(para) > max_chars and current:
+            chunks.append("\n\n".join(current))
+            current = [para]
+            size = len(para)
+        else:
+            current.append(para)
+            size += len(para)
+    if current:
+        chunks.append("\n\n".join(current))
+    return chunks
+
+def refine_book(txt_path):
+    print("Refining:", txt_path)
+    with open(txt_path, "r", encoding="utf-8") as f:
+        original = f.read()
+
+    bible_prompt = [
+        {
+            "role": "system",
+            "content": "You are a continuity editor. Extract stable character facts only."
+        },
+        {
+            "role": "user",
+            "content": (
+                "From this novel draft, create a short character continuity bible.\n"
+                "For each important character list:\n"
+                "- name\n- age if known\n- appearance\n- personality\n- relationships\n- goals\n"
+                "- facts that must stay consistent\n\n"
+                "DRAFT:\n%s" % original[:12000]
+            )
+        }
+    ]
+    character_bible = generate_with_fallback(bible_prompt)
+
+    refined_parts = []
+    refined_parts.append(character_bible)
+    refined_parts.append("\n\n--- REFINED NOVEL ---\n\n")
+
+    chunks = chunk_text(original, max_chars=6000)
+    previous_summary = "Beginning of book."
+
+    for i, chunk in enumerate(chunks, start=1):
+        prompt = [
+            {
+                "role": "system",
+                "content": (
+                    "You are a professional fiction editor. "
+                    "Improve clarity, dialogue, pacing, and character continuity. "
+                    "Do not invent a totally new plot. Keep the same story. "
+                    "Preserve chapter structure when present."
+                )
+            },
+            {
+                "role": "user",
+                "content": (
+                    "Edit this section into stronger prose.\n"
+                    "Requirements:\n"
+                    "1. Keep character continuity exact to the bible below\n"
+                    "2. Improve dialogue so it sounds spoken\n"
+                    "3. Cut repetition\n"
+                    "4. Strengthen scene goals\n"
+                    "5. Keep children's content age-appropriate if this is a children's book\n"
+                    "6. Do not summarize. Return full rewritten scenes\n\n"
+                    "CHARACTER BIBLE:\n%s\n\n"
+                    "PREVIOUS CONTEXT:\n%s\n\n"
+                    "SECTION %s:\n%s"
+                ) % (character_bible, previous_summary, i, chunk)
+            }
+        ]
+        edited = generate_with_fallback(prompt)
+        refined_parts.append(edited)
+        previous_summary = edited[-1200:]
+        print("Refined section", i, "of", len(chunks))
+        time.sleep(1)
+
+    refined_text = "\n\n".join(refined_parts)
+    out_path = str(txt_path).replace(".txt", "_refined.txt")
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(refined_text)
+
+    add_table_of_contents(out_path, CHAPTERS)
+    txt_to_pdf(out_path)
+    txt_to_docx(out_path)
+    print("Refined book saved:", out_path)
+    return out_path
+
+def run_refine(limit=5):
+    files = list_book_files(limit=limit)
+    if not files:
+        print("No books found to refine")
+        return []
+    results = []
+    for path in files:
+        try:
+            results.append(refine_book(path))
+        except Exception as e:
+            print("Failed to refine", path, e)
+    print("Refined", len(results), "books")
+    return results
+
 def run_publishing_network():
     category_key = os.getenv("BOOK_CATEGORY")
     if category_key not in CATEGORIES:
@@ -318,8 +441,13 @@ def write_fleet_report():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--report", action="store_true")
+    parser.add_argument("--refine", action="store_true")
+    parser.add_argument("--limit", type=int, default=5)
     args = parser.parse_args()
+
     if args.report:
         write_fleet_report()
+    elif args.refine:
+        run_refine(limit=args.limit)
     else:
         run_publishing_network()
