@@ -18,6 +18,15 @@
       "pdf": "books/romance/Agent_0010_slow_burn_original_20260822_004603.pdf",
       "docx": "books/romance/Agent_0010_slow_burn_original_20260822_004603.docx",
       "created_at": "20260822_004603"
+    },
+    {
+      "agent": "Agent_1508",
+      "category": "romance",
+      "topic": "second chance",
+      "file": "books/romance/Agent_1508_second_chance_full_20260822_183236.txt",
+      "words": 8477,
+      "chapters": 20,
+      "created_at": "20260822_183236"
     }
   ]
 }

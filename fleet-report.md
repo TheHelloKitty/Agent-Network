@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-22 16:38 UTC
+Generated: 2026-08-22 19:52 UTC
 Window: last 4 hours
-Files created: 226
+Files created: 238
 
 ## Created in the last 4 hours
 - Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
@@ -149,10 +149,17 @@ Files created: 226
 - Gen15 | agent_outputs | agent_outputs/Gen15_Agent_9_product.md
 - fleet-report-latest | agent_outputs | agent_outputs/fleet-report-latest.json
 - Gen13 | agent_outputs | agent_outputs/Gen13_Agent_3_product.md
+- offer | books | books/offer_pack.py
 - MASTER | books | books/MASTER_CATALOG.json
+- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236.txt
 - Agent | books | books/romance/Agent_0671_second_chance_full_20260822_161746.txt
+- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236.pdf
 - Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.txt
 - Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.docx
+- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236.docx
+- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.pdf
+- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.docx
+- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.txt
 - CATEGORY | books | books/romance/CATEGORY.json
 - Agent | books | books/romance/Agent_0018_second_chance_original_20260822_000324.txt
 - Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.pdf
@@ -192,10 +199,13 @@ Files created: 226
 - Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.docx
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.pdf
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.docx
+- Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.txt
+- Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.docx
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.docx
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351.txt
 - CATEGORY | books | books/true_crime/CATEGORY.json
+- Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.pdf
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.pdf
 - Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.docx
@@ -230,3 +240,5 @@ Files created: 226
 - Gen17 | storefront_exports | storefront_exports/Gen17_Agent_2_listing.json
 - Gen17 | storefront_exports | storefront_exports/Gen17_Agent_7_listing.json
 - jobs | toku | toku/jobs.json
+- crowdstrike | security_team | security_team/missions/crowdstrike_prep.json
+- security | security_team | security_team/missions/security_team.py
