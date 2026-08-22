@@ -148,6 +148,26 @@ def txt_to_docx(txt_path):
     except Exception as e:
         print("DOCX failed:", e)
 
+def add_table_of_contents(filename, chapter_count):
+    with open(filename, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    toc_lines = ["TABLE OF CONTENTS", ""]
+    for i in range(1, chapter_count + 1):
+        toc_lines.append("Chapter %s" % i)
+    toc_lines.append("")
+    toc_text = "\n".join(toc_lines)
+
+    parts = content.split("\n\n", 1)
+    if len(parts) == 2:
+        new_content = parts[0] + "\n\n" + toc_text + "\n\n" + parts[1]
+    else:
+        new_content = toc_text + "\n\n" + content
+
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(new_content)
+    print("Table of contents added")
+
 def write_full_novel(agent_name, category_key, topic):
     cat = CATEGORIES[category_key]
     os.makedirs(cat["folder"], exist_ok=True)
@@ -176,6 +196,7 @@ def write_full_novel(agent_name, category_key, topic):
         f.write(outline + "\n\n")
 
     previous = outline[-1500:]
+    last_chapter = 0
 
     for chapter in range(1, CHAPTERS + 1):
         chapter_text = ""
@@ -210,11 +231,13 @@ def write_full_novel(agent_name, category_key, topic):
         with open(filename, "a", encoding="utf-8") as f:
             f.write(header + chapter_text + "\n")
         parts.append(header + chapter_text)
+        last_chapter = chapter
         total_words = word_count("\n".join(parts))
         print("Chapter", chapter, "saved. Words so far:", total_words)
         if total_words >= TARGET_WORDS:
             break
 
+    add_table_of_contents(filename, last_chapter)
     txt_to_pdf(filename)
     txt_to_docx(filename)
 
@@ -224,6 +247,7 @@ def write_full_novel(agent_name, category_key, topic):
         "topic": topic,
         "file": filename,
         "words": word_count("\n".join(parts)),
+        "chapters": last_chapter,
         "created_at": timestamp
     }
     print("Novel saved:", filename, "words:", info["words"])
