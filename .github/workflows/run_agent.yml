@@ -24,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
-          pip install groq
+          pip install groq fpdf2 python-docx
 
       - name: Run Agent Script
         run: python agent.py
