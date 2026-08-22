@@ -24,18 +24,19 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
-          pip install groq fpdf2 python-docx
+          pip install openai fpdf2 python-docx
 
       - name: Run Agent Script
         run: python agent.py
         env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          BOOK_CATEGORY: romance
 
       - name: Generate report
         if: always()
         run: python agent.py --report
         env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
       - name: Upload books
         if: always()
