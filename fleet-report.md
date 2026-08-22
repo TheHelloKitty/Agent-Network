@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-22 00:05 UTC
+Generated: 2026-08-22 00:40 UTC
 Window: last 4 hours
-Files created: 184
+Files created: 185
 Toku applied: 1
 Toku accepted: 0
 Toku completed: 0
@@ -169,6 +169,7 @@ Toku completed: 0
 - CATEGORY | books | books/true_crime/CATEGORY.json
 - Agent | books | books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt
 - CATEGORY | books | books/sci_fi/CATEGORY.json
+- Agent | books | books/childrens/Agent_0013_bedtime_adventure_original_20260822_004021.txt
 - Agent | books | books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt
 - CATEGORY | books | books/childrens/CATEGORY.json
 - Gen16 | storefront_exports | storefront_exports/Gen16_Agent_6_listing.json
