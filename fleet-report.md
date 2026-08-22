@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-22 02:00 UTC
+Generated: 2026-08-22 04:42 UTC
 Window: last 4 hours
-Files created: 215
+Files created: 216
 
 ## Created in the last 4 hours
 - Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
@@ -193,6 +193,7 @@ Files created: 215
 - Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.txt
 - Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.pdf
 - CATEGORY | books | books/sci_fi/CATEGORY.json
+- Agent | books | books/sci_fi/Agent_1794_AI_uprising_full_20260822_042558.txt
 - Agent | books | books/childrens/Agent_0015_friendship_original_20260822_004553.pdf
 - Agent | books | books/childrens/Agent_0015_friendship_original_20260822_004553.txt
 - Agent | books | books/childrens/Agent_0015_friendship_original_20260822_004553.docx
