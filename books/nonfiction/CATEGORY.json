@@ -1,0 +1,13 @@
+{
+  "category": "nonfiction",
+  "books": [
+    {
+      "agent": "Agent_0009",
+      "category": "nonfiction",
+      "topic": "habit building",
+      "mode": "original",
+      "file": "books/nonfiction/Agent_0009_habit_building_original_20260822_000446.txt",
+      "created_at": "20260822_000446"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "category": "thriller",
+  "books": [
+    {
+      "agent": "Agent_0001",
+      "category": "thriller",
+      "topic": "missing wife",
+      "mode": "original",
+      "file": "books/thriller/Agent_0001_missing_wife_original_20260822_000405.txt",
+      "created_at": "20260822_000405"
+    }
+  ]
+}

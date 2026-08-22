@@ -1,0 +1,13 @@
+{
+  "category": "horror",
+  "books": [
+    {
+      "agent": "Agent_0020",
+      "category": "horror",
+      "topic": "haunted lake house",
+      "mode": "original",
+      "file": "books/horror/Agent_0020_haunted_lake_house_original_20260822_000514.txt",
+      "created_at": "20260822_000514"
+    }
+  ]
+}

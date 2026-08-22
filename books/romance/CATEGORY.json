@@ -1,0 +1,13 @@
+{
+  "category": "romance",
+  "books": [
+    {
+      "agent": "Agent_0018",
+      "category": "romance",
+      "topic": "second chance",
+      "mode": "original",
+      "file": "books/romance/Agent_0018_second_chance_original_20260822_000324.txt",
+      "created_at": "20260822_000324"
+    }
+  ]
+}

@@ -1,16 +1,201 @@
-# Autonomous Agent Network: Master Operations Report
+# Fleet Report
+Generated: 2026-08-22 00:05 UTC
+Window: last 4 hours
+Files created: 184
+Toku applied: 1
+Toku accepted: 0
+Toku completed: 0
 
-* **Reporting Timestamp:** 2026-08-20 20:20:00 UTC
-* **Active Fleet Count:** 3,510 Agents (Fully Synchronized & Operational)
+## Created in the last 4 hours
+- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
+- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_8_product.md
+- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_6_product.md
+- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_7_product.md
+- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_2_product.md
+- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_1_product.md
+- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_1_product.md
+- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_4_product.md
+- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_9_product.md
+- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_4_product.md
+- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_8_product.md
+- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_2_product.md
+- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_8_product.md
+- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_2_product.md
+- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_6_product.md
+- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_6_product.md
+- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_6_product.md
+- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_6_product.md
+- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_4_product.md
+- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_7_product.md
+- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_1_product.md
+- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_6_product.md
+- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_3_product.md
+- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_4_product.md
+- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_7_product.md
+- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_9_product.md
+- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_9_product.md
+- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_3_product.md
+- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_2_product.md
+- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_3_product.md
+- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_9_product.md
+- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_8_product.md
+- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_4_product.md
+- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_8_product.md
+- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_9_product.md
+- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_9_product.md
+- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_4_product.md
+- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_4_product.md
+- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_3_product.md
+- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_2_product.md
+- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_4_product.md
+- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_7_product.md
+- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_7_product.md
+- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_7_product.md
+- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_5_product.md
+- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_1_product.md
+- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_9_product.md
+- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_7_product.md
+- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_1_product.md
+- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_1_product.md
+- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_4_product.md
+- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_2_product.md
+- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_6_product.md
+- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_9_product.md
+- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_3_product.md
+- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_6_product.md
+- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_6_product.md
+- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_4_product.md
+- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_7_product.md
+- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_2_product.md
+- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_4_product.md
+- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_5_product.md
+- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_2_product.md
+- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_8_product.md
+- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_3_product.md
+- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_8_product.md
+- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_8_product.md
+- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_8_product.md
+- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_8_product.md
+- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_5_product.md
+- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_3_product.md
+- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_1_product.md
+- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_5_product.md
+- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_3_product.md
+- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_5_product.md
+- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_2_product.md
+- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_7_product.md
+- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_2_product.md
+- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_1_product.md
+- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_2_product.md
+- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_1_product.md
+- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_8_product.md
+- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_8_product.md
+- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_5_product.md
+- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_2_product.md
+- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_7_product.md
+- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_9_product.md
+- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_5_product.md
+- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_5_product.md
+- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_1_product.md
+- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_4_product.md
+- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_5_product.md
+- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_3_product.md
+- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_6_product.md
+- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_1_product.md
+- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_4_product.md
+- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_6_product.md
+- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_9_product.md
+- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_7_product.md
+- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_5_product.md
+- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_5_product.md
+- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_6_product.md
+- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_5_product.md
+- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_1_product.md
+- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_9_product.md
+- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_9_product.md
+- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_3_product.md
+- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_3_product.md
+- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_2_product.md
+- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_7_product.md
+- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_7_product.md
+- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_5_product.md
+- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_8_product.md
+- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_6_product.md
+- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_4_product.md
+- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_5_product.md
+- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_6_product.md
+- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_6_product.md
+- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_8_product.md
+- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_2_product.md
+- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_8_product.md
+- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_1_product.md
+- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_1_product.md
+- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_4_product.md
+- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_3_product.md
+- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_5_product.md
+- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_2_product.md
+- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_4_product.md
+- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_7_product.md
+- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_1_product.md
+- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_3_product.md
+- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_9_product.md
+- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_3_product.md
+- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_7_product.md
+- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_5_product.md
+- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_1_product.md
+- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_9_product.md
+- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_9_product.md
+- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_3_product.md
+- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_8_product.md
+- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_2_product.md
+- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_7_product.md
+- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_9_product.md
+- fleet-report-latest | agent_outputs | agent_outputs/fleet-report-latest.json
+- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_3_product.md
+- MASTER | books | books/MASTER_CATALOG.json
+- CATEGORY | books | books/romance/CATEGORY.json
+- Agent | books | books/romance/Agent_0018_second_chance_original_20260822_000324.txt
+- Agent | books | books/nonfiction/Agent_0009_habit_building_original_20260822_000446.txt
+- CATEGORY | books | books/nonfiction/CATEGORY.json
+- Agent | books | books/horror/Agent_0020_haunted_lake_house_original_20260822_000514.txt
+- CATEGORY | books | books/horror/CATEGORY.json
+- CATEGORY | books | books/thriller/CATEGORY.json
+- Agent | books | books/thriller/Agent_0001_missing_wife_original_20260822_000405.txt
+- Agent | books | books/fantasy/Agent_0016_hidden_heir_original_20260822_000418.txt
+- CATEGORY | books | books/fantasy/CATEGORY.json
+- Agent | books | books/spicy_romance/Agent_0009_forced_proximity_original_20260822_000326.txt
+- CATEGORY | books | books/spicy_romance/CATEGORY.json
+- Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351.txt
+- CATEGORY | books | books/true_crime/CATEGORY.json
+- Agent | books | books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt
+- CATEGORY | books | books/sci_fi/CATEGORY.json
+- Agent | books | books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt
+- CATEGORY | books | books/childrens/CATEGORY.json
+- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_6_listing.json
+- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_5_listing.json
+- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_9_listing.json
+- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_5_listing.json
+- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_4_listing.json
+- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_4_listing.json
+- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_8_listing.json
+- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_3_listing.json
+- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_7_listing.json
+- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_9_listing.json
+- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_1_listing.json
+- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_1_listing.json
+- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_3_listing.json
+- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_6_listing.json
+- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_8_listing.json
+- Pipeline | storefront_exports | storefront_exports/Pipeline_Execution_2026-08-14_181732.json
+- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_2_listing.json
+- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_2_listing.json
+- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_7_listing.json
+- jobs | toku | toku/jobs.json
 
-## 1. Toku Network & Job Lifecycle Tracking
-
-* **Status:** `ACTIVE & MONITORED`
-* **Applied Jobs & Success Probabilities (2):**
-  * Smart Contract Security Audit #402 (Agent-003) *(Acceptance Probability: 94%)*
-  * Decentralized Indexing Pipeline (Agent-012) *(Acceptance Probability: 89%)*
-
-## 2. System Diagnostics & Health
-* **Core CPU Load:** 14.2%
-* **Memory Allocation:** 4.1 GB / 16.0 GB
-* **Network Latency:** 24ms (Optimal)
+## Toku jobs
+### Applied
+- Rose Bloom | Write product descriptions
+### Accepted
+None
+### Completed
+None

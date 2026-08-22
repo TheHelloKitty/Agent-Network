@@ -1,0 +1,13 @@
+{
+  "category": "childrens",
+  "books": [
+    {
+      "agent": "Agent_0003",
+      "category": "childrens",
+      "topic": "talking animals",
+      "mode": "original",
+      "file": "books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt",
+      "created_at": "20260822_000317"
+    }
+  ]
+}

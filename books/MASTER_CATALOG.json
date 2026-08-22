@@ -1,0 +1,77 @@
+{
+  "total_books": 9,
+  "books": [
+    {
+      "agent": "Agent_0003",
+      "category": "childrens",
+      "topic": "talking animals",
+      "mode": "original",
+      "file": "books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt",
+      "created_at": "20260822_000317"
+    },
+    {
+      "agent": "Agent_0018",
+      "category": "romance",
+      "topic": "second chance",
+      "mode": "original",
+      "file": "books/romance/Agent_0018_second_chance_original_20260822_000324.txt",
+      "created_at": "20260822_000324"
+    },
+    {
+      "agent": "Agent_0009",
+      "category": "spicy_romance",
+      "topic": "forced proximity",
+      "mode": "original",
+      "file": "books/spicy_romance/Agent_0009_forced_proximity_original_20260822_000326.txt",
+      "created_at": "20260822_000326"
+    },
+    {
+      "agent": "Agent_0003",
+      "category": "true_crime",
+      "topic": "small town murder",
+      "mode": "original",
+      "file": "books/true_crime/Agent_0003_small_town_murder_original_20260822_000351.txt",
+      "created_at": "20260822_000351"
+    },
+    {
+      "agent": "Agent_0001",
+      "category": "thriller",
+      "topic": "missing wife",
+      "mode": "original",
+      "file": "books/thriller/Agent_0001_missing_wife_original_20260822_000405.txt",
+      "created_at": "20260822_000405"
+    },
+    {
+      "agent": "Agent_0016",
+      "category": "fantasy",
+      "topic": "hidden heir",
+      "mode": "original",
+      "file": "books/fantasy/Agent_0016_hidden_heir_original_20260822_000418.txt",
+      "created_at": "20260822_000418"
+    },
+    {
+      "agent": "Agent_0012",
+      "category": "sci_fi",
+      "topic": "AI uprising",
+      "mode": "original",
+      "file": "books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt",
+      "created_at": "20260822_000421"
+    },
+    {
+      "agent": "Agent_0009",
+      "category": "nonfiction",
+      "topic": "habit building",
+      "mode": "original",
+      "file": "books/nonfiction/Agent_0009_habit_building_original_20260822_000446.txt",
+      "created_at": "20260822_000446"
+    },
+    {
+      "agent": "Agent_0020",
+      "category": "horror",
+      "topic": "haunted lake house",
+      "mode": "original",
+      "file": "books/horror/Agent_0020_haunted_lake_house_original_20260822_000514.txt",
+      "created_at": "20260822_000514"
+    }
+  ]
+}

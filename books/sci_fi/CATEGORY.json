@@ -1,0 +1,13 @@
+{
+  "category": "sci_fi",
+  "books": [
+    {
+      "agent": "Agent_0012",
+      "category": "sci_fi",
+      "topic": "AI uprising",
+      "mode": "original",
+      "file": "books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt",
+      "created_at": "20260822_000421"
+    }
+  ]
+}
