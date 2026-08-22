@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-22 19:52 UTC
+Generated: 2026-08-22 23:34 UTC
 Window: last 4 hours
-Files created: 238
+Files created: 250
 
 ## Created in the last 4 hours
 - Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
@@ -151,16 +151,22 @@ Files created: 238
 - Gen13 | agent_outputs | agent_outputs/Gen13_Agent_3_product.md
 - offer | books | books/offer_pack.py
 - MASTER | books | books/MASTER_CATALOG.json
+- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208_refined.txt
 - Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236.txt
 - Agent | books | books/romance/Agent_0671_second_chance_full_20260822_161746.txt
 - Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236.pdf
 - Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.txt
 - Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.docx
+- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208.txt
+- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208.pdf
 - Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236.docx
+- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208_refined.docx
 - Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.pdf
 - Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.docx
 - Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.txt
+- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208.docx
 - CATEGORY | books | books/romance/CATEGORY.json
+- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208_refined.pdf
 - Agent | books | books/romance/Agent_0018_second_chance_original_20260822_000324.txt
 - Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.pdf
 - Agent | books | books/nonfiction/Agent_0003_habit_building_original_20260822_004814.pdf
@@ -239,6 +245,12 @@ Files created: 238
 - Gen16 | storefront_exports | storefront_exports/Gen16_Agent_2_listing.json
 - Gen17 | storefront_exports | storefront_exports/Gen17_Agent_2_listing.json
 - Gen17 | storefront_exports | storefront_exports/Gen17_Agent_7_listing.json
+- meta | storefront_exports | storefront_exports/pack_20260822_233049/meta.json
+- bundle | storefront_exports | storefront_exports/pack_20260822_233049/bundle_ideas.txt
+- blurb | storefront_exports | storefront_exports/pack_20260822_233049/blurb.txt
+- payhip | storefront_exports | storefront_exports/pack_20260822_233049/payhip_page_copy.txt
+- titles | storefront_exports | storefront_exports/pack_20260822_233049/titles.txt
+- promo | storefront_exports | storefront_exports/pack_20260822_233049/promo_posts.txt
 - jobs | toku | toku/jobs.json
 - crowdstrike | security_team | security_team/missions/crowdstrike_prep.json
 - security | security_team | security_team/missions/security_team.py

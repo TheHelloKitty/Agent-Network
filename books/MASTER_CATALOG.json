@@ -1,5 +1,5 @@
 {
-  "total_books": 11,
+  "total_books": 12,
   "books": [
     {
       "agent": "Agent_0015",
@@ -107,6 +107,15 @@
       "words": 8477,
       "chapters": 20,
       "created_at": "20260822_183236"
+    },
+    {
+      "agent": "Agent_0871",
+      "category": "romance",
+      "topic": "slow burn",
+      "file": "books/romance/Agent_0871_slow_burn_full_20260822_221208.txt",
+      "words": 13472,
+      "chapters": 20,
+      "created_at": "20260822_221208"
     }
   ]
 }
