@@ -1,74 +1,89 @@
 import os
+import json
+import random
 import time
-from openai import OpenAI
+import argparse
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from fpdf import FPDF
+from docx import Document
+from providers import generate_with_failover
 
-# Optional: Gemini uses google-genai or OpenAI-compatible endpoint
-# We use OpenAI-compatible calls where possible.
-
-PROVIDERS = [
-    {
-        "name": "openrouter",
-        "api_key_env": "OPENROUTER_API_KEY",
-        "base_url": "https://openrouter.ai/api/v1",
-        "models": [
-            "google/gemini-2.0-flash-001",
-            "meta-llama/llama-3.3-70b-instruct",
-            "qwen/qwen-2.5-72b-instruct",
-        ],
-    },
-    {
-        "name": "groq",
-        "api_key_env": "GROQ_API_KEY",
-        "base_url": "https://api.groq.com/openai/v1",
-        "models": [
-            "openai/gpt-oss-20b",
-            "openai/gpt-oss-120b",
-            "qwen/qwen3.6-27b",
-        ],
-    },
-    {
-        "name": "gemini",
-        "api_key_env": "GEMINI_API_KEY",
-        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-        "models": [
-            "gemini-2.0-flash",
-            "gemini-1.5-flash",
-        ],
-    },
+OPENROUTER_MODELS = [
+    "google/gemini-2.0-flash-001",
+    "meta-llama/llama-3.3-70b-instruct",
+    "qwen/qwen-2.5-72b-instruct",
+    "mistralai/mistral-small-3.1-24b-instruct",
 ]
 
-def get_client(provider):
-    api_key = os.getenv(provider["api_key_env"])
-    if not api_key:
-        return None
-    return OpenAI(
-        base_url=provider["base_url"],
-        api_key=api_key,
+CATEGORIES = {
+    "childrens": {
+        "folder": "books/childrens",
+        "age": "ages 6-10",
+        "style": "warm, fun, safe, lots of talk and simple scenes",
+        "topics": ["talking animals", "friendship", "bedtime adventure"],
+    },
+    "romance": {
+        "folder": "books/romance",
+        "age": "adult",
+        "style": "emotional, dialogue-heavy, detailed settings",
+        "topics": ["second chance", "enemies to lovers", "slow burn"],
+    },
+    "spicy_romance": {
+        "folder": "books/spicy_romance",
+        "age": "adult",
+        "style": "steamy, explicit, intense dialogue and physical detail",
+        "topics": ["dark mafia romance", "forced proximity"],
+    },
+    "true_crime": {
+        "folder": "books/true_crime",
+        "age": "adult",
+        "style": "investigative, scene-by-scene, spoken interviews",
+        "topics": ["unsolved disappearance", "small town murder"],
+    },
+    "thriller": {
+        "folder": "books/thriller",
+        "age": "adult",
+        "style": "tense dialogue, sharp description, short scenes",
+        "topics": ["missing wife", "witness protection"],
+    },
+    "fantasy": {
+        "folder": "books/fantasy",
+        "age": "teen/adult",
+        "style": "vivid places, spoken voices, quest scenes",
+        "topics": ["hidden heir", "dragon academy"],
+    },
+    "sci_fi": {
+        "folder": "books/sci_fi",
+        "age": "teen/adult",
+        "style": "futuristic detail and human conversation",
+        "topics": ["colony ship", "AI uprising"],
+    },
+    "nonfiction": {
+        "folder": "books/nonfiction",
+        "age": "adult",
+        "style": "clear examples, plain talk, useful stories",
+        "topics": ["habit building", "money basics"],
+    },
+    "horror": {
+        "folder": "books/horror",
+        "age": "adult",
+        "style": "creepy description and uneasy dialogue",
+        "topics": ["haunted lake house", "cult in the woods"],
+    }
+}
+
+CHAPTERS = 20
+TARGET_WORDS = 90000
+WORDS_PER_CHAPTER = 4500
+
+def generate_with_fallback(messages, temperature=0.95, max_tokens=3000):
+    return generate_with_failover(
+        messages,
+        temperature=temperature,
+        max_tokens=max_tokens
     )
 
-def generate_with_failover(messages, temperature=0.7, max_tokens=3000):
-    last_error = None
-
-    for provider in PROVIDERS:
-        client = get_client(provider)
-        if client is None:
-            print("Skipping", provider["name"], "- no API key")
-            continue
-
-        for model in provider["models"]:
-            try:
-                print("Trying", provider["name"], model)
-                response = client.chat.completions.create(
-                    model=model,
-                    messages=messages,
-                    temperature=temperature,
-                    max_tokens=max_tokens,
-                )
-                print("Using", provider["name"], model)
-                return response.choices[0].message.content
-            except Exception as e:
-                print("Failed", provider["name"], model, e)
-                last_error = e
-                time.sleep(1)
-
-    raise RuntimeError("All providers failed. Last error: %s" % last_error)
+def safe_name(text):
+    cleaned = []
+    for c in text:
