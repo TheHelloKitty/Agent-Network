@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-23 18:10 UTC
+Generated: 2026-08-23 22:16 UTC
 Window: last 4 hours
-Files created: 286
+Files created: 292
 
 ## Created in the last 4 hours
 - Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
@@ -216,11 +216,13 @@ Files created: 286
 - Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.pdf
 - Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.txt
 - Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934.docx
+- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.pdf
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.pdf
 - Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.docx
 - Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.pdf
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.txt
+- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.docx
 - Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.pdf
 - Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.docx
@@ -229,14 +231,18 @@ Files created: 286
 - Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934.txt
 - Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.txt
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351.txt
+- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.docx
 - CATEGORY | books | books/true_crime/CATEGORY.json
+- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.pdf
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.docx
 - Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.pdf
 - Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934.pdf
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.txt
+- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.docx
 - Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.pdf
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.docx
+- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.pdf
 - Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.docx
 - Agent | books | books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt
