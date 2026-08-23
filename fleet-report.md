@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-22 23:34 UTC
+Generated: 2026-08-23 02:50 UTC
 Window: last 4 hours
-Files created: 250
+Files created: 268
 
 ## Created in the last 4 hours
 - Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
@@ -203,12 +203,18 @@ Files created: 250
 - Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.pdf
 - CATEGORY | books | books/spicy_romance/CATEGORY.json
 - Agent | books | books/spicy_romance/Agent_0009_dark_mafia_romance_original_20260822_004624.docx
+- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.pdf
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.pdf
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.docx
+- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.txt
+- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.docx
+- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.pdf
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.docx
+- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.docx
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.docx
+- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.txt
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351.txt
 - CATEGORY | books | books/true_crime/CATEGORY.json
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.pdf
@@ -251,6 +257,18 @@ Files created: 250
 - payhip | storefront_exports | storefront_exports/pack_20260822_233049/payhip_page_copy.txt
 - titles | storefront_exports | storefront_exports/pack_20260822_233049/titles.txt
 - promo | storefront_exports | storefront_exports/pack_20260822_233049/promo_posts.txt
+- meta | storefront_exports | storefront_exports/pack_20260822_235452/meta.json
+- bundle | storefront_exports | storefront_exports/pack_20260822_235452/bundle_ideas.txt
+- blurb | storefront_exports | storefront_exports/pack_20260822_235452/blurb.txt
+- payhip | storefront_exports | storefront_exports/pack_20260822_235452/payhip_page_copy.txt
+- titles | storefront_exports | storefront_exports/pack_20260822_235452/titles.txt
+- promo | storefront_exports | storefront_exports/pack_20260822_235452/promo_posts.txt
+- meta | storefront_exports | storefront_exports/pack_20260823_005838/meta.json
+- bundle | storefront_exports | storefront_exports/pack_20260823_005838/bundle_ideas.txt
+- blurb | storefront_exports | storefront_exports/pack_20260823_005838/blurb.txt
+- payhip | storefront_exports | storefront_exports/pack_20260823_005838/payhip_page_copy.txt
+- titles | storefront_exports | storefront_exports/pack_20260823_005838/titles.txt
+- promo | storefront_exports | storefront_exports/pack_20260823_005838/promo_posts.txt
 - jobs | toku | toku/jobs.json
 - crowdstrike | security_team | security_team/missions/crowdstrike_prep.json
 - security | security_team | security_team/missions/security_team.py
