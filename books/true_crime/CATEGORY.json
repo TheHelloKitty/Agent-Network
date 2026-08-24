@@ -81,6 +81,15 @@
       "words": 13247,
       "chapters": 20,
       "created_at": "20260824_044008"
+    },
+    {
+      "agent": "Agent_2481",
+      "category": "true_crime",
+      "topic": "Julio Foolio case public timeline",
+      "file": "books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802.txt",
+      "words": 37293,
+      "chapters": 20,
+      "created_at": "20260824_123802"
     }
   ]
 }

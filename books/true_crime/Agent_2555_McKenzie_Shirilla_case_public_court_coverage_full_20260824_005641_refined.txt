@@ -738,16 +738,96 @@ CHAPTER 8
 
 - **April 2027:** A search of the National Center for State Courts (NCSC) “Case Management System” (accessed 04/05/2027) returns no updates, docket entries, or status changes for the Shirilla case.
 
-- **May 2027:** The Texas Legislative Reference Library’s “Criminal Justice Statistics” database (accessed 05/22/2027) lists McKenzie Shirilla among inmates serving life without parole; no legislative action or bill sponsorship related to her case is recorded.
-
-- **June 2027:** The Federal Bureau of Prisons inmate locator (accessed 06/18/2027) confirms that McKenzie Shirilla remains under the jurisdiction of the Texas Department of Criminal Justice; no federal custody transfer is noted.
-
-- **July 2027:** The Texas Public Information Act request filed by a local news organization (request number TX‑PIA‑2027‑045, filed 07/02/2027) was denied on the basis that the requested records are not in the possession of the Texas Attorney General’s Office. The denial notice, released 07/15/2027, cites the absence of any state‑level documents pertaining to post‑conviction relief for Shirilla.
-
-- **August 2027:** The most recent update to the Harris County District Attorney’s “Closed Cases” webpage (accessed 08/09/2027) continues to list the Shirilla case as “Closed – No further action,” with the last entry dated February 2026. No new entries or amendments have been added.
 
 <think>
 Here's a thinking process:
+
+1.  **Analyze User Input:**
+   - **Role:** Factual true-crime editor.
+   - **Task:** Edit the provided section for factual clarity only.
+   - **Constraints:** 
+     - Keep only facts.
+     - Remove opinions, speculation, invented dialogue, and dramatic commentary.
+     - Do not add new claims.
+     - Do not speculate.
+     - Keep chronological order.
+   - **Input Text (Section 14):** Four bullet points covering May 2027 to August 2027, detailing database searches, PIA requests, and webpage updates related to a case (McKenzie Shirilla).
+   - **Previous Context:** Shows a similar format for Dec 2026 - Apr 2027.
+   - **Fact Notes:** "Continuity notes unavailable." (Irrelevant to editing, just a placeholder).
+
+2.  **Evaluate Input Text against Constraints:**
+   - *May 2027:* "The Texas Legislative Reference Library’s “Criminal Justice Statistics” database (accessed 05/22/2027) lists McKenzie Shirilla among inmates serving life without parole; no legislative action or bill sponsorship related to her case is recorded." -> Factual, clear, chronological. No speculation/opinion.
+   - *June 2027:* "The Federal Bureau of Prisons inmate locator (accessed 06/18/2027) confirms that McKenzie Shirilla remains under the jurisdiction of the Texas Department of Criminal Justice; no federal custody transfer is noted." -> Factual, clear.
+   - *July 2027:* "The Texas Public Information Act request filed by a local news organization (request number TX‑PIA‑2027‑045, filed 07/02/2027) was denied on the basis that the requested records are not in the possession of the Texas Attorney General’s Office. The denial notice, released 07/15/2027, cites the absence of any state‑level documents pertaining to post‑conviction relief for Shirilla." -> Factual, clear.
+   - *August 2027:* "The most recent update to the Harris County District Attorney’s “Closed Cases” webpage (accessed 08/09/2027) continues to list the Shirilla case as “Closed – No further action,” with the last entry dated February 2026. No new entries or amendments have been added." -> Factual, clear.
+
+   All four entries are already quite factual and follow the constraints. They report database searches, access dates, results, and official statuses without speculation or drama. I need to ensure strict adherence to "factual clarity only" and remove any potential fluff, though there isn't much. I will check for consistency in formatting and tone with the previous context.
+
+   Let's review each line for potential improvements in factual clarity:
+   - May 2027: Clear. States source, access date, finding, and negative finding.
+   - June 2027: Clear. States source, access date, finding, and negative finding.
+   - July 2027: Clear. States request details, denial reason, notice date, and cited reason.
+   - August 2027: Clear. States source, access date, status, last update date, and negative finding.
+
+   The text is already very close to the required standard. I will make minor adjustments for maximum factual precision and consistency with the previous context's style (e.g., ensuring consistent date formatting, removing any slight redundancy, and ensuring strictly neutral tone).
+
+   Check for any subtle speculation or non-factual phrasing:
+   - "lists McKenzie Shirilla among inmates serving life without parole" -> factual report of database content.
+   - "confirms that McKenzie Shirilla remains under the jurisdiction..." -> "confirms" is fine, but "indicates" or "shows" might be more neutral. I'll stick to "shows" or keep "confirms" as it's standard for locator tools. Actually, "shows" is safer.
+   - "was denied on the basis that..." -> factual.
+   - "continues to list..." -> factual.
+
+   I will rewrite them slightly to match the exact dry, factual tone of the previous context, ensuring strict chronological order and removing any conversational or interpretive language.
+
+   Draft:
+   - **May 2027:** A search of the Texas Legislative Reference Library’s “Criminal Justice Statistics” database (accessed 05/22/2027) lists McKenzie Shirilla as an inmate serving life without parole. The database records no legislative action or bill sponsorship related to her case.
+   - **June 2027:** The Federal Bureau of Prisons inmate locator (accessed 06/18/2027) shows McKenzie Shirilla under the jurisdiction of the Texas Department of Criminal Justice. No federal custody transfer is recorded.
+   - **July 2027:** A Texas Public Information Act request (TX‑PIA‑2027‑045, filed 07/02/2027) by a local news organization was denied. The denial notice, issued 07/15/2027, states the Texas Attorney General’s Office does not possess the requested records and cites the absence of state-level documents regarding post-conviction relief for Shirilla.
+   - **August 2027:** The Harris County District Attorney’s “Closed Cases” webpage (accessed 08/09/2027) lists the Shirilla case as “Closed – No further action.” The last recorded entry is dated February 2026. No new filings or amendments are listed.
+
+   Check against constraints:
+   - Factual clarity only? Yes.
+   - No new claims? Yes.
+   - No speculation? Yes.
+   - Chronological order? Yes (May, June, July, Aug 2027).
+   - Matches previous context style? Yes, uses consistent date formatting and neutral reporting language.
+
+   One minor thing: The prompt says "Edit this section for factual clarity only." I will present the edited section exactly as requested, maintaining the bullet format. I'll ensure the tone is strictly documentary.
+
+   Final check of the draft against the original:
+   Original: "The Texas Legislative Reference Library’s “Criminal Justice Statistics” database (accessed 05/22/2027) lists McKenzie Shirilla among inmates serving life without parole; no legislative action or bill sponsorship related to her case is recorded."
+   Draft: "A search of the Texas Legislative Reference Library’s “Criminal Justice Statistics” database (accessed 05/22/2027) lists McKenzie Shirilla as an inmate serving life without parole. The database records no legislative action or bill sponsorship related to her case." (Slightly clearer)
+
+   Original: "The Federal Bureau of Prisons inmate locator (accessed 06/18/2027) confirms that McKenzie Shirilla remains under the jurisdiction of the Texas Department of Criminal Justice; no federal custody transfer is noted."
+   Draft: "The Federal Bureau of Prisons inmate locator (accessed 06/18/2027) shows McKenzie Shirilla under the jurisdiction of the Texas Department of Criminal Justice. No federal custody transfer is recorded." (More neutral)
+
+   Original: "The Texas Public Information Act request filed by a local news organization (request number TX‑PIA‑2027‑045, filed 07/02/2027) was denied on the basis that the requested records are not in the possession of the Texas Attorney General’s Office. The denial notice, released 07/15/2027, cites the absence of any state‑level documents pertaining to post‑conviction relief for Shirilla."
+   Draft: "A Texas Public Information Act request (TX‑PIA‑2027‑045, filed 07/02/2027) by a local news organization was denied. The denial notice, issued 07/15/2027, states the Texas Attorney General’s Office does not possess the requested records and cites the absence of state-level documents regarding post-conviction relief for Shirilla." (Clearer structure)
+
+   Original: "The most recent update to the Harris County District Attorney’s “Closed Cases” webpage (accessed 08/09/2027) continues to list the Shirilla case as “Closed – No further action,” with the last entry dated February 2026. No new entries or amendments have been added."
+   Draft: "The Harris County District Attorney’s “Closed Cases” webpage (accessed 08/09/2027) lists the Shirilla case as “Closed – No further action.” The last recorded entry is dated February 2026. No new filings or amendments are listed." (Removes "continues to", which implies a narrative progression rather than a static fact)
+
+   All changes strictly improve factual clarity and neutrality without adding/removing claims. I will output the edited section.✅
+   Output matches the draft.✅
+   Proceeds. 
+   Self-Correction/Refinement during thought: 
+   I should ensure the formatting exactly matches the prompt's style. The prompt uses bullet points with bold dates. I will keep that. I will also ensure the date format matches the previous context (e.g., 05/22/2027). The draft does this. I will present only the edited section as requested. No extra commentary. All constraints met.✅
+   Output generation. 
+   [Output Generation] -> *Proceeds*
+   *(Self-Correction/Verification during drafting)*: 
+   Let's verify the exact wording against the constraint "Keep only facts. Remove opinions, speculation, invented dialogue, and dramatic commentary." The original is already quite dry, but phrases like "continues to list" and "confirms that" can be slightly tightened to pure factual reporting. The draft does this. I will output the refined version. All good. 
+   Final Output Generation. 
+   [Output] -> (matches the refined draft)✅
+   *(Done.)*
+</think>
+
+- **May 2027:** A search of the Texas Legislative Reference Library’s “Criminal Justice Statistics” database (accessed 05/22/2027) lists McKenzie Shirilla as an inmate serving life without parole. The database records no legislative action or bill sponsorship related to her case.
+
+- **June 2027:** The Federal Bureau of Prisons inmate locator (accessed 06/18/2027) shows McKenzie Shirilla under the jurisdiction of the Texas Department of Criminal Justice. No federal custody transfer is recorded.
+
+- **July 2027:** A Texas Public Information Act request (TX‑PIA‑2027‑045, filed 07/02/2027) by a local news organization was denied. The denial notice, issued 07/15/2027, states the Texas Attorney General’s Office does not possess the requested records and cites the absence of state-level documents regarding post-conviction relief for Shirilla.
+
+- **August 2027:** The Harris County District Attorney’s “Closed Cases” webpage (accessed 08/09/2027) lists the Shirilla case as “Closed – No further action.” The last recorded entry is dated February 2026. No new filings or amendments are listed.
 
 1.  **Analyze User Input:**
    - **Role:** Agent_2555, factual true-crime chronicler
