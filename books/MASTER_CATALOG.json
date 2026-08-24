@@ -1,5 +1,5 @@
 {
-  "total_books": 17,
+  "total_books": 18,
   "books": [
     {
       "agent": "Agent_0015",
@@ -161,6 +161,15 @@
       "words": 11907,
       "chapters": 20,
       "created_at": "20260823_201629"
+    },
+    {
+      "agent": "Agent_2555",
+      "category": "true_crime",
+      "topic": "McKenzie Shirilla case public court coverage",
+      "file": "books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt",
+      "words": 14979,
+      "chapters": 20,
+      "created_at": "20260824_005641"
     }
   ]
 }
