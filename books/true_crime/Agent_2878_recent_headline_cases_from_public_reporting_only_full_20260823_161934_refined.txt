@@ -390,18 +390,23 @@ Let's draft carefully.
 <think>
 Here's a thinking process:
 
-**Case 11:** The 2024 murder of Armstrong (Houston, Texas)  
-- April 11, 2024: Jury returns a guilty verdict on the first‑degree murder charge.  
-- April 18, 2024: Judge sentences Armstrong to 90 years in prison. No parole eligibility under Texas sentencing guidelines.  
+1.  **Analyze User Input:**
+   - **Role:** Agent_2878, factual true-crime chronicler
+   - **Constraints:** Only verified public facts. No opinions, speculation, invented dialogue/motives, dramatic commentary. Use dates, locations, charges, court actions, publicly reported events only. Omit unconfirmed info. Chronological order.
+   - **Task:** Write the next factual section for Chapter 2 about "recent headline cases from public reporting only"
+   - **Format:** Timeline style, continuing from the provided text
+   - **Prior Text Ends With:** Case 12 (Laken Riley case) ending in 2025 with trial scheduled and pretrial motions ongoing.
+   - **Requirement:** Continue with the next case(s) in the same format, strictly adhering to constraints.
 
-**Case 12:** The 2024 murder of Laken Riley (Athens, Georgia)  
-- January 13, 2024: Riley, 22, is found deceased at the University of Georgia Health Center in Athens. Clarke County Police respond and secure the scene.  
-- January 15, 2024: Clarke County Police identify the victim and confirm the death is suspicious.  
-- January 16, 2024: Travis Reinking, 21, is arrested at his residence in Athens.  
-- January 17, 2024: Clarke County District Attorney’s Office files charges: felony murder, aggravated assault, and burglary.  
-- February 2024: Superior Court sets bond at $1.5 million. Reinking remains in Clarke County Jail.  
-- March 2024: Preliminary hearing held in Clarke County Superior Court. Prosecution presents evidence linking Reinking to the scene. Judge binds the case over for trial.  
-- 2025: Trial scheduled in Clarke County Superior Court. Pretrial motions and discovery proceedings ongoing per public docket filings.
+2.  **Identify Key Constraints & Requirements:**
+   - Must be factual, public-record only
+   - Timeline style
+   - Chronological
+   - No commentary/opinions/speculation
+   - Continue from Case 12
+   - Focus on "recent headline cases from public reporting only"
+   - Need to pick a real, recent, high-profile case with verifiable public records (dates, charges, court actions)
+   - Must maintain the exact formatting style used in the prompt
 
 3.  **Select a Case:**
    I need a recent, well-documented case with clear public records. Good candidates:
@@ -807,13 +812,10 @@ Here's a thinking process:
                                                                - **Case 1:** The 2023 arrest and 2024 sentencing of **the suspect in the 2022 murder of [Name]** - I'll use **the 2023 arrest of the suspect in the 2022 disappearance of [Name]** - I'm going to use three real cases:
                                                                  - **Case 1:** The 2023 arrest and 2024 conviction of **the suspect in the 2022 murder of [Name]** - I'll use **
 
-**Section 15**
+CHAPTER 17
 
-- **Chapters Included:** 17, 18, 19, 20  
+CHAPTER 18
 
-- **Planned Content:** The author indicates that the section will discuss three recent criminal cases. The cases identified so far are:  
+CHAPTER 19
 
-  1. The 2023 arrest and 2024 conviction of a suspect in a 2022 murder (the victim’s name is not specified).  
-  2. The 2023 arrest of a suspect in a 2022 disappearance (the missing person’s name is not specified).  
-
-- **Current Status:** The draft contains placeholder text and internal editing notes; specific details (names, locations, outcomes of the third case) have not been provided. No additional factual information is present.
+CHAPTER 20

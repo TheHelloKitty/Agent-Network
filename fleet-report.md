@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-24 14:27 UTC
+Generated: 2026-08-24 18:21 UTC
 Window: last 4 hours
-Files created: 310
+Files created: 316
 
 ## Created in the last 4 hours
 - Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
@@ -224,13 +224,16 @@ Files created: 310
 - Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.pdf
 - Agent | books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802_refined.pdf
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.pdf
+- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.pdf
 - Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt
 - Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.docx
 - Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.docx
 - Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.txt
+- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.txt
 - Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.pdf
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.txt
 - Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.pdf
+- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.docx
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.txt
 - Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.docx
@@ -249,6 +252,7 @@ Files created: 310
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351.txt
 - Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.docx
 - CATEGORY | books | books/true_crime/CATEGORY.json
+- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.txt
 - Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.pdf
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.docx
 - Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.txt
@@ -259,9 +263,11 @@ Files created: 310
 - Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008_refined.docx
 - Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.docx
 - Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.pdf
+- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.pdf
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.docx
 - Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.pdf
+- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.docx
 - Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.docx
 - Agent | books | books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt
 - Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.txt
