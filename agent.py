@@ -3,7 +3,10 @@ import random
 import requests
 from datetime import datetime
 
-# Automatically picks up the secret passed from the workflow
+# Pulling from your exact GitHub secret setup
+X_CLIENT_ID = os.environ.get("X_CLIENT_ID", "")
+X_CLIENT_SECRET = os.environ.get("X_CLIENT_SECRET", "")
+# Fallback option if you also want to support a direct bearer token
 X_BEARER_TOKEN = os.environ.get("X_BEARER_TOKEN", "")
 
 def post_agent_advertising_to_x():
@@ -31,12 +34,17 @@ def post_agent_advertising_to_x():
     active_campaign = random.choice(campaigns)
     tweet_text = f"🤖 Autonomous Fleet Update ({active_campaign['agent']} - {active_campaign['role']}):\n\n{active_campaign['pitch']}"
     
-    # Post live to X via API v2
-    post_status = "Skipped / Token Missing"
-    if X_BEARER_TOKEN:
+    post_status = "Skipped / Missing Token"
+    
+    # Determine authentication method based on available secrets
+    token_to_use = X_BEARER_TOKEN
+    
+    # If using Client ID/Secret, you can hook up token generation here, 
+    # or make sure you have a Bearer token secret added if required by your API app.
+    if token_to_use:
         url = "https://api.x.com/2/tweets"
         headers = {
-            "Authorization": f"Bearer {X_BEARER_TOKEN}",
+            "Authorization": f"Bearer {token_to_use}",
             "Content-Type": "application/json"
         }
         payload = {"text": tweet_text}
@@ -53,7 +61,7 @@ def post_agent_advertising_to_x():
             post_status = f"ERROR ({e})"
             print(f"Network error while connecting to X API: {e}")
     else:
-        print("X_BEARER_TOKEN environment variable not found.")
+        print("Active X token variable not found in environment.")
 
     # Update master report
     report_content = f"""# Autonomous Agent Network: Master Operations Report
