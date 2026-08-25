@@ -1,0 +1,62 @@
+## 5 Ready‑to‑Launch Payhip Bundles for Your True‑Crime Ebook  
+*(All bundles are 100 % digital – instant download, no shipping required. Prices are suggested “sweet‑spot” points based on typical Payhip traffic for indie‑author true‑crime releases. Feel free to adjust up or down after you see how your audience reacts.)*  
+
+| # | Bundle Name | What’s Inside | Why It Sells | Suggested Price |
+|---|--------------|---------------|--------------|-----------------|
+| 1 | **“The First Clue” Starter Pack** | • The current **draft PDF** of the ebook (≈ 20 KB, 20‑chapter teaser)  <br>• A **one‑page “What’s Next?” roadmap** that outlines the remaining chapters, character arcs, and the timeline you plan to follow.  <br>• A **PDF printable bookmark** featuring the book’s logo and a short true‑crime quote. | • Low‑ticket entry point grabs readers who are curious but hesitant to spend much on an unfinished manuscript. <br>• The roadmap shows you’re actively working on the project → builds trust and anticipation for the final release. | **$4.99** |
+| 2 | **“Case File” Research Bundle** | • All of #1 + **Full research notes** (PDF) – police reports, court transcripts, newspaper clippings (public‑domain) that inspired each chapter. <br>• **Annotated maps** of the key locations (PDF, high‑resolution). <br>• **Character dossiers** (PDF) – bios, timelines, and “secret” facts that didn’t make it into the story but fans love to dissect. | • True‑crime readers love the raw source material. <br>• Gives them a “behind‑the‑scenes” feeling, turning a simple ebook into a mini‑investigation kit. | **$9.99** |
+| 3 | **“Audio Evidence” Narrated Edition** | • All of #2 + **Full‑length audiobook** (MP3, ~4 hrs) narrated in a gritty, noir‑style voice (you can hire a freelancer on Fiverr/Upwork for $150‑$250). <br>• **Chapter‑by‑chapter timestamps** to sync reading & listening. | • Audiobooks command a premium price and reach commuters, gym‑goers, and visually‑impaired readers. <br>• The noir narration fits the rain‑slicked, jazz‑filled vibe of your opening scene. | **$14.99** |
+| 4 | **“Investigator’s Workbook” Interactive Pack** | • All of #3 + **Interactive PDF workbook** (fillable fields) with: <br> – “Evidence Log” sheets to copy‑paste clues from each chapter. <br> – “Suspect Ranking” tables. <br> – “Your Theory” space for readers to draft their own conclusions. <br>• **Printable “Evidence Board”** (A4 PDF) that fans can print and pin on a wall. | • Turns passive reading into an active mystery‑solving experience. <br>• Perfect for book clubs, classrooms, or true‑crime fan groups that love to discuss theories. | **$24.99** |
+| 5 | **“The Complete Crime Lab” Deluxe Bundle** | • All of #4 + **Mini‑video masterclass** (2 × 15‑min MP4) where you: <br> – Walk through your research process. <br> – Explain how you turned police reports into narrative tension. <br> – Reveal a “secret chapter” that will **only be available to Deluxe buyers** (extra 5‑page epilogue). <br>• **Exclusive Q&A PDF** – 20 of the most‑asked reader questions (with your answers). <br>• **Lifetime updates** – any future revisions of the ebook (final version, extra chapters, errata) are automatically added to the buyer’s account. | • The highest‑value bundle for superfans who want the full experience and want to see the author’s process. <br>• The promise of future updates makes it feel like a “membership” rather than a one‑off purchase, encouraging higher conversion. | **$39.99** |
+
+---
+
+### Quick How‑To‑Set‑Up Each Bundle on Payhip  
+
+1. **Create a Product** → “Digital product” → upload the primary file (PDF for the ebook).  
+2. **Add “Add‑ons”** (Payhip lets you bundle multiple files under one product). Upload the extra PDFs, MP3, and MP4 files for the higher‑tier bundles.  
+3. **Set the Price** (use the numbers above).  
+4. **Write a Compelling Description** – copy the “Why It Sells” bullet points above, add a short teaser from Chapter 1, and include a *“What you’ll get”* checklist (e.g., “✔️ Full draft PDF, ✔️ Research notes, ✔️ Audio narration…”).  
+5. **Enable “Instant download”** and turn on “Allow customers to download updates” for the Deluxe bundle (this is the feature that delivers future revisions automatically).  
+6. **Add a Cover Image** – even a simple “Untitled – True Crime Draft” mock‑up works; later you can replace it with the final cover once it’s designed.  
+
+---
+
+### Pricing Rationale (in case you want to experiment)
+
+| Tier | Typical Payhip Conversion | Expected Revenue per 100 visits* |
+|------|---------------------------|---------------------------------|
+| $4.99 | 3‑5 % | $15‑$25 |
+| $9.99 | 2‑3 % | $20‑$30 |
+| $14.99| 1.5‑2 %| $15‑$30 |
+| $24.99| 1‑1.5 %| $25‑$38 |
+| $39.99| 0.5‑1 %| $20‑$40 |
+
+\*Assumes 100 unique visitors to the product page.  
+If one bundle outperforms another, you can always **A/B test** by cloning the product and tweaking the price ± $1‑$2 to see where the sweet spot lands.
+
+---
+
+### Bonus Tips for Maximising Sales  
+
+| Tip | How to Execute |
+|-----|----------------|
+| **Launch a “pre‑order” for the final version** | Offer the $4.99 Starter Pack now, promising a free upgrade to the final, polished ebook once it’s finished. Payhip automatically sends the new file to existing buyers. |
+| **Cross‑promote on true‑crime forums & subreddits** | Share a short excerpt (the opening scene you posted) and a link to the $4.99 starter. Include a “Ask Me Anything” thread where you reveal a hidden clue from Chapter 7 – drives traffic and credibility. |
+| **Email capture** | Add a simple opt‑in form (Mailchimp, ConvertKit) on the product page offering a **free “True‑Crime Checklist” PDF**. Use the list to announce bundle upgrades later. |
+| **Limited‑time “bundle discount”** | Run a 48‑hour flash sale on the Deluxe bundle (e.g., $34.99) to create urgency. Payhip’s “Coupon” feature makes this a one‑click setup. |
+| **Upsell at checkout** | When someone buys the $4.99 starter, show a one‑click “Add the Research Bundle for $5 more?” – Payhip’s “Add‑on” option works like a mini‑checkout upsell. |
+
+---
+
+### TL;DR – Your 5 Ready‑to‑Sell Bundles  
+
+| Bundle | Core + Extras | Price |
+|--------|---------------|-------|
+| **The First Clue** | Draft PDF + Roadmap + Bookmark | **$4.99** |
+| **Case File** | + Research notes, maps, character dossiers | **$9.99** |
+| **Audio Evidence** | + Full narrated audiobook | **$14.99** |
+| **Investigator’s Workbook** | + Interactive workbook & printable evidence board | **$24.99** |
+| **The Complete Crime Lab** | + Mini‑video masterclass, secret epilogue, Q&A, lifetime updates | **$39.99** |
+
+Launch the starter pack now to start building an audience,
