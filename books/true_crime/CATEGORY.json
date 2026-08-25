@@ -108,6 +108,15 @@
       "words": 11605,
       "chapters": 20,
       "created_at": "20260824_202406"
+    },
+    {
+      "agent": "Agent_0991",
+      "category": "true_crime",
+      "topic": "recent headline cases from public reporting only",
+      "file": "books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.txt",
+      "words": 6744,
+      "chapters": 20,
+      "created_at": "20260825_014614"
     }
   ]
 }
