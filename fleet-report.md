@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-25 14:41 UTC
+Generated: 2026-08-25 18:33 UTC
 Window: last 4 hours
-Files created: 358
+Files created: 370
 
 ## Created in the last 4 hours
 - Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
@@ -217,9 +217,12 @@ Files created: 358
 - Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.txt
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt
 - Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.docx
+- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.docx
 - Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.docx
 - Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.docx
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.pdf
+- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt
+- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.docx
 - Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008_refined.pdf
 - Agent | books | books/true_crime/Agent_0003_small_town_murder_original_20260822_000351_refined.docx
 - Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008_refined.txt
@@ -236,11 +239,14 @@ Files created: 358
 - Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt
 - Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.txt
 - Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614_refined.docx
+- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.pdf
+- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.txt
 - Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.docx
 - Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.txt
 - Agent | books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707_refined.txt
 - Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.pdf
 - Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406.docx
+- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.pdf
 - Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.txt
 - Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.pdf
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.txt
@@ -359,6 +365,12 @@ Files created: 358
 - payhip | storefront_exports | storefront_exports/pack_20260823_005838/payhip_page_copy.txt
 - titles | storefront_exports | storefront_exports/pack_20260823_005838/titles.txt
 - promo | storefront_exports | storefront_exports/pack_20260823_005838/promo_posts.txt
+- meta | storefront_exports | storefront_exports/pack_20260825_183220/meta.json
+- bundle | storefront_exports | storefront_exports/pack_20260825_183220/bundle_ideas.txt
+- blurb | storefront_exports | storefront_exports/pack_20260825_183220/blurb.txt
+- payhip | storefront_exports | storefront_exports/pack_20260825_183220/payhip_page_copy.txt
+- titles | storefront_exports | storefront_exports/pack_20260825_183220/titles.txt
+- promo | storefront_exports | storefront_exports/pack_20260825_183220/promo_posts.txt
 - jobs | toku | toku/jobs.json
 - crowdstrike | security_team | security_team/missions/crowdstrike_prep.json
 - security | security_team | security_team/missions/security_team.py

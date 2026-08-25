@@ -1,5 +1,5 @@
 {
-  "total_books": 25,
+  "total_books": 26,
   "books": [
     {
       "agent": "Agent_0015",
@@ -233,6 +233,15 @@
       "words": 33600,
       "chapters": 20,
       "created_at": "20260825_123707"
+    },
+    {
+      "agent": "Agent_3203",
+      "category": "true_crime",
+      "topic": "Julio Foolio case public timeline",
+      "file": "books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt",
+      "words": 13916,
+      "chapters": 20,
+      "created_at": "20260825_163122"
     }
   ]
 }

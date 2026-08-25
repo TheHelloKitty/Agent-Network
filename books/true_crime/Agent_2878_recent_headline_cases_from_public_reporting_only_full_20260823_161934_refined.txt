@@ -812,10 +812,19 @@ Here's a thinking process:
                                                                - **Case 1:** The 2023 arrest and 2024 sentencing of **the suspect in the 2022 murder of [Name]** - I'll use **the 2023 arrest of the suspect in the 2022 disappearance of [Name]** - I'm going to use three real cases:
                                                                  - **Case 1:** The 2023 arrest and 2024 conviction of **the suspect in the 2022 murder of [Name]** - I'll use **
 
-CHAPTER 17
+**SECTION 15**
 
-CHAPTER 18
+**CHAPTER 17**
 
-CHAPTER 19
+**CHAPTER 18**
 
-CHAPTER 20
+**CHAPTER 19**
+
+**CHAPTER 20**
+
+**Case 1**  
+- The suspect in the 2022 murder of [Name] was arrested in 2023.  
+- The suspect was convicted in 2024.  
+
+**Case 2**  
+- The suspect in the 2022 disappearance of [Name] was arrested in 2023.
