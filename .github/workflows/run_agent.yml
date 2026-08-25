@@ -1,130 +1,36 @@
-name: Run Agent Pipeline
+name: Agent Fleet Reporting
 
 on:
   schedule:
-    - cron: "0 0,4,12,16,20 * * *"
+    # Runs at 8:00, 12:00, 16:00, 20:00, and 00:00 UTC
+    - cron: '0 0,4,8,12,16,20 * * *'
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  run-agents:
+  build-report:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-          cache: "pip"
-
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install openai fpdf2 python-docx requests
-
+          python-version: '3.10'
+          
       - name: Run Agent Script
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: python agent.py
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          BOOK_CATEGORY: true_crime
-
-      - name: Refine up to 5 books
-        if: always()
-        run: python agent.py --refine --limit 5
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-
-      - name: Build offer pack
-        if: always()
+        
+      - name: Commit and push changes manually
         run: |
-          BOOK=$(find books -type f -name "*.txt" ! -name "*refined*" | head -n 1)
-          if [ -n "$BOOK" ]; then
-            echo "Building offer pack for $BOOK"
-            python offer_pack.py --book "$BOOK" --category true_crime --price 6.99 || echo "Offer pack skipped due to provider limits"
-          else
-            echo "No book found for offer pack"
-          fi
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-
-      - name: Toku hire scan
-        if: always()
-        run: python toku_hire.py --min-budget 40 || echo "Toku hire scan skipped"
-        env:
-          TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_KEY }}
-          TOKU_INKFORGE_KEY: ${{ secrets.TOKU_INKFORGE_KEY }}
-          TOKU_POLISH_KEY: ${{ secrets.TOKU_POLISH_KEY }}
-          TOKU_SIGNAL_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
-          TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
-
-      - name: Run Security Team Session
-        if: always()
-        run: python security_team.py || echo "Security team skipped"
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-
-      - name: Generate report
-        if: always()
-        run: python agent.py --report
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-
-      - name: Upload books
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: books
-          path: books/
-          if-no-files-found: warn
-
-      - name: Upload offer packs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: storefront-exports
-          path: storefront_exports/
-          if-no-files-found: warn
-
-      - name: Upload toku logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: toku-logs
-          path: toku/
-          if-no-files-found: warn
-
-      - name: Upload security team notes
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: security-team
-          path: security_team/
-          if-no-files-found: warn
-
-      - name: Upload fleet report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: fleet-report
-          path: fleet-report.md
-          if-no-files-found: warn
-
-      - name: Save outputs to repo
-        if: always()
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-          git add books storefront_exports toku security_team fleet-report.md || true
-          git diff --cached --quiet || git commit -m "Add books, offer packs, toku logs, security notes, and fleet report"
-          git push || true
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --quiet && git diff --staged --quiet || git commit -m "Autonomous Agent Network: Automated Fleet Report & X Campaign Update"
+          git push
