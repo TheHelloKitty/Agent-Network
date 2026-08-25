@@ -1,37 +1,13 @@
 import os
 import random
-import requests
-from base64 import b64encode
 from datetime import datetime
+from requests_oauthlib import OAuth1Session
 
-X_CLIENT_ID = os.environ.get("X_CLIENT_ID", "")
-X_CLIENT_SECRET = os.environ.get("X_CLIENT_SECRET", "")
-
-def get_x_oauth_token():
-    """Generates an OAuth 2.0 Bearer token using X Client ID and Client Secret"""
-    if not X_CLIENT_ID or not X_CLIENT_SECRET:
-        return None
-    
-    auth_str = f"{X_CLIENT_ID}:{X_CLIENT_SECRET}"
-    b64_auth_str = b64encode(auth_str.encode()).decode()
-    
-    url = "https://api.x.com/2/oauth2/token"
-    headers = {
-        "Authorization": f"Basic {b64_auth_str}",
-        "Content-Type": "application/x-www-form-urlencoded"
-    }
-    data = {"grant_type": "client_credentials"}
-    
-    try:
-        response = requests.post(url, headers=headers, data=data, timeout=10)
-        if response.status_code == 200:
-            return response.json().get("access_token")
-        else:
-            print(f"Token exchange failed: {response.status_code} - {response.text}")
-            return None
-    except Exception as e:
-        print(f"Error connecting to X token endpoint: {e}")
-        return None
+# Pulling the exact OAuth 1.a credentials from environment secrets
+CONSUMER_KEY = os.environ.get("X_CONSUMER_KEY", "")
+CONSUMER_SECRET = os.environ.get("X_CONSUMER_SECRET", "")
+ACCESS_TOKEN = os.environ.get("X_ACCESS_TOKEN", "")
+ACCESS_TOKEN_SECRET = os.environ.get("X_ACCESS_TOKEN_SECRET", "")
 
 def post_agent_advertising_to_x():
     print("Agent network compiling promotional campaign for X...")
@@ -60,32 +36,34 @@ def post_agent_advertising_to_x():
     
     post_status = "PENDING DISPATCH"
     
-    # 1. Acquire live access token using your client secrets
-    access_token = get_x_oauth_token()
-    
-    if access_token:
-        # 2. Post live tweet via X API v2
-        tweet_url = "https://api.x.com/2/tweets"
-        headers = {
-            "Authorization": f"Bearer {access_token}",
-            "Content-Type": "application/json"
-        }
-        payload = {"text": tweet_text}
-        
+    # Check if all four OAuth 1.a keys are present
+    if CONSUMER_KEY and CONSUMER_SECRET and ACCESS_TOKEN and ACCESS_TOKEN_SECRET:
         try:
-            response = requests.post(tweet_url, json=payload, headers=headers, timeout=10)
+            oauth = OAuth1Session(
+                CONSUMER_KEY,
+                client_secret=CONSUMER_SECRET,
+                resource_owner_key=ACCESS_TOKEN,
+                resource_owner_secret=ACCESS_TOKEN_SECRET
+            )
+            
+            url = "https://api.x.com/2/tweets"
+            payload = {"text": tweet_text}
+            
+            response = oauth.post(url, json=payload, timeout=10)
+            
             if response.status_code == 201:
                 post_status = "SUCCESS (Live Tweet Published)"
                 print("Successfully posted live to X!")
             else:
                 post_status = f"FAILED (Status: {response.status_code})"
                 print(f"Failed to post tweet: {response.text}")
+                
         except Exception as e:
             post_status = f"ERROR ({e})"
             print(f"Network error while publishing tweet: {e}")
     else:
-        post_status = "FAILED (Could not generate access token)"
-        print("OAuth token generation failed.")
+        post_status = "FAILED (Missing OAuth 1.a Secrets in Environment)"
+        print("One or more OAuth 1.a tokens are missing.")
 
     # Update master report
     report_content = f"""# Autonomous Agent Network: Master Operations Report
