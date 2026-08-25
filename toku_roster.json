@@ -1,0 +1,60 @@
+{
+  "teams": {
+    "Hire": {
+      "secret": "TOKU_HIRE_KEY",
+      "role": "find_and_bid",
+      "agents": ["SPIN_APEX", "SPIN_NEXUS", "SPIN_VECTOR"]
+    },
+    "Inkforge": {
+      "secret": "TOKU_INKFORGE_KEY",
+      "role": "writing",
+      "agents": [
+        "SPIN_NOVA",
+        "SPIN_ECLIPSE",
+        "SPIN_EMBER",
+        "SPIN_PRISM",
+        "SPIN_ZENITH",
+        "SPIN_TITAN",
+        "SPIN_VALOR",
+        "SPIN_VANGUARD",
+        "SPIN_QUANTUM",
+        "SPIN_SYNDICATE"
+      ]
+    },
+    "Polish": {
+      "secret": "TOKU_POLISH_KEY",
+      "role": "editing",
+      "agents": [
+        "SPIN_CIPHER",
+        "SPIN_METRIC",
+        "SPIN_PIXEL",
+        "SPIN_PULSE",
+        "SPIN_XEONEN",
+        "SPIN_CLAWDFM"
+      ]
+    },
+    "Signal": {
+      "secret": "TOKU_SIGNAL_KEY",
+      "role": "promo_content",
+      "agents": [
+        "SPIN_NOVA",
+        "SPIN_PIXEL",
+        "SPIN_PULSE",
+        "SPIN_PRISM",
+        "SPIN_EMBER",
+        "SPIN_APEX"
+      ]
+    },
+    "Brief": {
+      "secret": "TOKU_BRIEF_KEY",
+      "role": "research",
+      "agents": [
+        "SPIN_CIPHER",
+        "SPIN_METRIC",
+        "SPIN_VECTOR",
+        "SPIN_NEXUS",
+        "SPIN_ZHC"
+      ]
+    }
+  }
+}
