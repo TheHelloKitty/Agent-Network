@@ -2,12 +2,16 @@ import os
 import time
 from openai import OpenAI
 
+# OpenRouter first, Groq only as backup
 PROVIDERS = [
     {
         "name": "openrouter",
         "api_key_env": "OPENROUTER_API_KEY",
         "base_url": "https://openrouter.ai/api/v1",
         "models": [
+            "meta-llama/llama-3.3-70b-instruct:free",
+            "qwen/qwen-2.5-72b-instruct:free",
+            "google/gemma-2-9b-it:free",
             "meta-llama/llama-3.3-70b-instruct",
             "qwen/qwen-2.5-72b-instruct",
         ],
