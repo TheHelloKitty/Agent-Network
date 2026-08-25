@@ -1,5 +1,5 @@
 {
-  "total_books": 23,
+  "total_books": 24,
   "books": [
     {
       "agent": "Agent_0015",
@@ -215,6 +215,15 @@
       "words": 6744,
       "chapters": 20,
       "created_at": "20260825_014614"
+    },
+    {
+      "agent": "Agent_0767",
+      "category": "true_crime",
+      "topic": "recent headline cases from public reporting only",
+      "file": "books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt",
+      "words": 9849,
+      "chapters": 20,
+      "created_at": "20260825_043448"
     }
   ]
 }

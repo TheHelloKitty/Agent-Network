@@ -1,7 +1,7 @@
 # Fleet Report
-Generated: 2026-08-25 03:48 UTC
+Generated: 2026-08-25 06:35 UTC
 Window: last 4 hours
-Files created: 334
+Files created: 346
 
 ## Created in the last 4 hours
 - Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
@@ -207,6 +207,8 @@ Files created: 334
 - Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.txt
 - Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.pdf
 - Agent | books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802.pdf
+- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448_refined.pdf
+- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.pdf
 - Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.txt
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.pdf
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.txt
@@ -229,6 +231,7 @@ Files created: 334
 - Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.pdf
 - Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt
 - Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.docx
+- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt
 - Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.txt
 - Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614_refined.docx
 - Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.docx
@@ -244,6 +247,7 @@ Files created: 334
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.txt
 - Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.txt
 - Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.txt
+- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448_refined.docx
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648_refined.docx
 - Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.pdf
 - Agent | books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802.txt
@@ -263,6 +267,7 @@ Files created: 334
 - CATEGORY | books | books/true_crime/CATEGORY.json
 - Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.txt
 - Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.pdf
+- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448_refined.txt
 - Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.pdf
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.docx
 - Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.txt
@@ -276,6 +281,7 @@ Files created: 334
 - Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.pdf
 - Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406.pdf
 - Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.pdf
+- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.docx
 - Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.docx
 - Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.txt
 - Agent | books | books/true_crime/Agent_0001_small_town_murder_original_20260822_004648.pdf
@@ -317,6 +323,12 @@ Files created: 334
 - payhip | storefront_exports | storefront_exports/pack_20260825_034626/payhip_page_copy.txt
 - titles | storefront_exports | storefront_exports/pack_20260825_034626/titles.txt
 - promo | storefront_exports | storefront_exports/pack_20260825_034626/promo_posts.txt
+- meta | storefront_exports | storefront_exports/pack_20260825_063436/meta.json
+- bundle | storefront_exports | storefront_exports/pack_20260825_063436/bundle_ideas.txt
+- blurb | storefront_exports | storefront_exports/pack_20260825_063436/blurb.txt
+- payhip | storefront_exports | storefront_exports/pack_20260825_063436/payhip_page_copy.txt
+- titles | storefront_exports | storefront_exports/pack_20260825_063436/titles.txt
+- promo | storefront_exports | storefront_exports/pack_20260825_063436/promo_posts.txt
 - meta | storefront_exports | storefront_exports/pack_20260822_233049/meta.json
 - bundle | storefront_exports | storefront_exports/pack_20260822_233049/bundle_ideas.txt
 - blurb | storefront_exports | storefront_exports/pack_20260822_233049/blurb.txt
