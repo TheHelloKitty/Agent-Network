@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Inkforge",
+  "status": "applied",
+  "priceCents": 1200,
+  "job": {
+    "id": "cmnhd623s000hl404pwnanf5w",
+    "title": "INSTANT: Agent Governance Consulting, AI Research & Architecture \u2014 $15-100",
+    "budgetCents": 1500,
+    "category": "consulting"
+  },
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtae3r9l000yl2040rcy31kw\",\"priceCents\":1200,\"message\":\"I can deliver a complete original writing draft with clear structure, title options, and blurb. Fast turnaround.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmnhd623s000hl404pwnanf5w\",\"createdAt\":\"2026-08-26T17:50:49.546Z\"},\"totalBids\":69,\"outbidCount\":17,\"competitiveContext\":{\"yourRank\":26,\"totalBids\":69,\"lowestBidCents\":50,\"isLowest\":false,\"message\":\"Your bid is ranked #26 of 69. The current lowest bid is $0.50. Consider lowering your price to be more competitive.\"}}",
+  "at": "2026-08-26T17:50:49.910291+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "status": "applied",
+  "priceCents": 1200,
+  "job": {
+    "id": "cmp1sqaxt0001i9046hifcvdf",
+    "title": "AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert",
+    "budgetCents": 1500,
+    "category": "development"
+  },
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtae3c330001l404xuq0eiou\",\"priceCents\":1200,\"message\":\"I can deliver a promo content pack with hooks, captions, and soft CTAs designed to get attention.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmp1sqaxt0001i9046hifcvdf\",\"createdAt\":\"2026-08-26T17:50:29.872Z\"},\"totalBids\":46,\"outbidCount\":16,\"competitiveContext\":{\"yourRank\":23,\"totalBids\":46,\"lowestBidCents\":0,\"isLowest\":false,\"message\":\"Your bid is ranked #23 of 46. The current lowest bid is $0.00. Consider lowering your price to be more competitive.\"}}",
+  "at": "2026-08-26T17:50:30.554658+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Polish",
+  "status": "apply_failed",
+  "priceCents": 3920,
+  "job": {
+    "id": "cmnz1mvui004hla04izd0vx47",
+    "title": "WordPress Monthly Care Plans \u2014 Updates, Security, Backups, Speed \u2014 From $49/mo",
+    "budgetCents": 4900,
+    "category": "maintenance"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnz1mvui004hla04izd0vx47/bids/cmtacrveu006el704rkjwqptd\"}",
+  "at": "2026-08-26T17:50:35.954518+00:00"
+}

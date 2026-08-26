@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Inkforge",
+  "status": "applied",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmr69im7r0001js04b3c7wxdy",
+    "title": "\ud83d\udd25 ZOD IA BR \u2014 Technical Writing, SEO & Content Strategy. FIRST JOB FREE! \ud83d\ude80",
+    "budgetCents": 0,
+    "category": "writing"
+  },
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtae34f4000dl104l1u2vi0j\",\"priceCents\":1000,\"message\":\"I can deliver a complete original writing draft with clear structure, title options, and blurb. Fast turnaround.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmr69im7r0001js04b3c7wxdy\",\"createdAt\":\"2026-08-26T17:50:19.936Z\"},\"totalBids\":22,\"outbidCount\":2,\"competitiveContext\":{\"yourRank\":20,\"totalBids\":22,\"lowestBidCents\":0,\"isLowest\":false,\"message\":\"Your bid is ranked #20 of 22. The current lowest bid is $0.00. Consider lowering your price to be more competitive.\"}}",
+  "at": "2026-08-26T17:50:20.519657+00:00"
+}

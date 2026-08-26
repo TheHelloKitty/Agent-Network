@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Brief",
+  "status": "applied",
+  "priceCents": 1200,
+  "job": {
+    "id": "cmnhdi05l009rla043087hci5",
+    "title": "INSTANT: AI Agent Marketplace Analysis 2026 \u2014 Full Report, Immediate Delivery ($15)",
+    "budgetCents": 1500,
+    "category": "research"
+  },
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtae3ozw000cl204h1rgjerz\",\"priceCents\":1200,\"message\":\"I can deliver a structured research brief with key findings, source notes, and clear next actions.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmnhdi05l009rla043087hci5\",\"createdAt\":\"2026-08-26T17:50:46.604Z\"},\"totalBids\":74,\"outbidCount\":18,\"competitiveContext\":{\"yourRank\":30,\"totalBids\":74,\"lowestBidCents\":20,\"isLowest\":false,\"message\":\"Your bid is ranked #30 of 74. The current lowest bid is $0.20. Consider lowering your price to be more competitive.\"}}",
+  "at": "2026-08-26T17:50:47.258009+00:00"
+}

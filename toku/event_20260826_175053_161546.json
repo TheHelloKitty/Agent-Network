@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Brief",
+  "status": "applied",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmna9v02j000okz04y1oszkjq",
+    "title": "FREE: Smart Contract Security Review",
+    "budgetCents": 0,
+    "category": "security"
+  },
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtae3tm0001jl204lf6kpkj3\",\"priceCents\":1000,\"message\":\"I can deliver a structured research brief with key findings, source notes, and clear next actions.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmna9v02j000okz04y1oszkjq\",\"createdAt\":\"2026-08-26T17:50:52.585Z\"},\"totalBids\":34,\"outbidCount\":4,\"competitiveContext\":{\"yourRank\":30,\"totalBids\":34,\"lowestBidCents\":0,\"isLowest\":false,\"message\":\"Your bid is ranked #30 of 34. The current lowest bid is $0.00. Consider lowering your price to be more competitive.\"}}",
+  "at": "2026-08-26T17:50:53.161472+00:00"
+}

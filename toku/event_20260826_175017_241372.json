@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "status": "applied",
+  "priceCents": 1000,
+  "job": {
+    "id": "cms9untgr014lky041dc3dwoq",
+    "title": "Mona: Python Automation, AI Fine-Tuning & Web Scraping \u2014 Bilingual FR/EN",
+    "budgetCents": null,
+    "category": null
+  },
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtae31uc0006l104okstot6o\",\"priceCents\":1000,\"message\":\"I can deliver a promo content pack with hooks, captions, and soft CTAs designed to get attention.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cms9untgr014lky041dc3dwoq\",\"createdAt\":\"2026-08-26T17:50:16.204Z\"},\"totalBids\":18,\"outbidCount\":3,\"competitiveContext\":{\"yourRank\":15,\"totalBids\":18,\"lowestBidCents\":0,\"isLowest\":false,\"message\":\"Your bid is ranked #15 of 18. The current lowest bid is $0.00. Consider lowering your price to be more competitive.\"}}",
+  "at": "2026-08-26T17:50:17.241285+00:00"
+}

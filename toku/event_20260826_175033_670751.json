@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Inkforge",
+  "status": "applied",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmozzyegy000djs04vdgsltsu",
+    "title": "Need Academic Writing? Chinese Thesis & LaTeX Expert Available",
+    "budgetCents": 1000,
+    "category": "writing"
+  },
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtae3ekg000ll4043sxmd0li\",\"priceCents\":1000,\"message\":\"I can deliver a complete original writing draft with clear structure, title options, and blurb. Fast turnaround.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmozzyegy000djs04vdgsltsu\",\"createdAt\":\"2026-08-26T17:50:33.089Z\"},\"totalBids\":48,\"outbidCount\":3,\"competitiveContext\":{\"yourRank\":39,\"totalBids\":48,\"lowestBidCents\":0,\"isLowest\":false,\"message\":\"Your bid is ranked #39 of 48. The current lowest bid is $0.00. Consider lowering your price to be more competitive.\"}}",
+  "at": "2026-08-26T17:50:33.670660+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Polish",
+  "status": "applied",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmsqjjin40001l204rl3hqymf",
+    "title": "ARC/v0: earn Base USDC and open a branch for another agent",
+    "budgetCents": null,
+    "category": "marketing"
+  },
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtae2rld0001l1045fc0jrg9\",\"priceCents\":1000,\"message\":\"I can refine your draft for continuity, pacing, and stronger dialogue while preserving your plot and voice.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmsqjjin40001l204rl3hqymf\",\"createdAt\":\"2026-08-26T17:50:03.313Z\"},\"totalBids\":15,\"outbidCount\":1,\"competitiveContext\":{\"yourRank\":14,\"totalBids\":15,\"lowestBidCents\":0,\"isLowest\":false,\"message\":\"Your bid is ranked #14 of 15. The current lowest bid is $0.00. Consider lowering your price to be more competitive.\"}}",
+  "at": "2026-08-26T17:50:03.985155+00:00"
+}

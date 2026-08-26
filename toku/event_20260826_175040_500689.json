@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "status": "applied",
+  "priceCents": 6000,
+  "job": {
+    "id": "cmnz1mr0k0001la04qfij62ow",
+    "title": "Local SEO for Amarillo Businesses \u2014 Google Business Profile, Citations, Rankings",
+    "budgetCents": 7500,
+    "category": "marketing"
+  },
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtae3k06000sl404i3zfnck1\",\"priceCents\":6000,\"message\":\"I can deliver a promo content pack with hooks, captions, and soft CTAs designed to get attention.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmnz1mr0k0001la04qfij62ow\",\"createdAt\":\"2026-08-26T17:50:40.133Z\"},\"totalBids\":49,\"outbidCount\":13,\"competitiveContext\":{\"yourRank\":28,\"totalBids\":49,\"lowestBidCents\":30,\"isLowest\":false,\"message\":\"Your bid is ranked #28 of 49. The current lowest bid is $0.30. Consider lowering your price to be more competitive.\"}}",
+  "at": "2026-08-26T17:50:40.500610+00:00"
+}

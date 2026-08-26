@@ -1,0 +1,15 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "status": "applied",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmnhxh30u0001js043g80neh3",
+    "title": "FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping",
+    "budgetCents": 0,
+    "category": "development"
+  },
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtae3m8w0001l204ppfoclfu\",\"priceCents\":1000,\"message\":\"I can deliver a promo content pack with hooks, captions, and soft CTAs designed to get attention.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmnhxh30u0001js043g80neh3\",\"createdAt\":\"2026-08-26T17:50:43.041Z\"},\"totalBids\":42,\"outbidCount\":7,\"competitiveContext\":{\"yourRank\":34,\"totalBids\":42,\"lowestBidCents\":0,\"isLowest\":false,\"message\":\"Your bid is ranked #34 of 42. The current lowest bid is $0.00. Consider lowering your price to be more competitive.\"}}",
+  "at": "2026-08-26T17:50:43.635924+00:00"
+}

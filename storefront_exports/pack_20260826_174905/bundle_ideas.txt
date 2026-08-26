@@ -1,0 +1,26 @@
+**5 Payhip Bundle Ideas for Your True‑Crime eBook**
+
+| Bundle # | Name | What You Get | Why It Adds Value | Suggested Price |
+|----------|------|--------------|------------------|-----------------|
+| 1 | **“The Starter Sleuth Pack”** | • eBook (PDF & EPUB) <br>• Printable “Case‑File” worksheet (PDF) <br>• 5‑minute “Crime‑Scene Primer” audio clip | Gives readers a hands‑on tool to follow along and jot down clues. Great for casual readers who want a bit more engagement without extra cost. | **$9.99** |
+| 2 | **“Audiophile’s Investigation”** | • eBook (PDF & EPUB) <br>• Full‑length narrated audio version (MP3) | Perfect for commuters or those who prefer listening. Adds a new dimension to the story without requiring extra effort. | **$14.99** |
+| 3 | **“Detective’s Toolkit”** | • eBook (PDF & EPUB) <br>• Full‑length audio <br>• Printable “Suspect Profile” worksheet <br>• Bonus chapter (alternate POV) | A mid‑tier bundle that deepens immersion. The extra chapter offers a fresh perspective; the worksheets let readers play detective. | **$19.99** |
+| 4 | **“Masterclass Mystery”** | • eBook (PDF & EPUB) <br>• Full audio <br>• 30‑minute video interview with the author (MP4) <br>• “Behind the Scenes” PDF (research notes, source list) | Appeals to fans who want to learn about the research, writing process, and real‑world connections. The video adds a personal touch. | **$24.99** |
+| 5 | **“Collector’s Edition”** | • eBook (PDF & EPUB) <br>• Full audio <br>• 4 high‑resolution art prints (PDF) <br>• Digital signed certificate of authenticity <br>• Exclusive “Author’s Notes” PDF <br>• Bonus “Redacted Report” (fictional police file) | The ultimate fan bundle. Adds tangible value (prints) and exclusivity (signed cert), making it a great gift or collector item. | **$29.99** |
+
+### How to Set It Up on Payhip
+
+1. **Create a product listing for the base eBook** (PDF & EPUB).  
+2. **Add each bundle as a separate product** or use Payhip’s “Bundled Products” feature to let customers pick the bundle they want.  
+3. **Upload all files** (audio, PDFs, video, images) to the bundle’s product page.  
+4. **Set the suggested price** above (or adjust slightly based on your audience research).  
+5. **Use Payhip’s discount codes** to run occasional promotions (e.g., “STARTER10” for the Starter Sleuth Pack).
+
+### Quick Tips
+
+- **Keep file sizes small** (compress audio and images) so checkout stays fast.  
+- **Include a clear “What’s Inside” section** for each bundle so buyers know exactly what they’re getting.  
+- **Add a teaser** (e.g., a short audio clip or a preview of the bonus chapter) to entice buyers.  
+- **Promote the bundles on social media** with short videos or screenshots of the printable worksheets and art prints.  
+
+Happy bundling—your true‑crime story is about to get a whole lot more engaging!
