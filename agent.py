@@ -1,13 +1,11 @@
 import os
 from datetime import datetime
 import requests
-from requests.auth import HTTPBasicAuth
 
-CLIENT_ID = os.environ.get("X_CLIENT_ID", "")
-CLIENT_SECRET = os.environ.get("X_CLIENT_SECRET", "")
+BEARER_TOKEN = os.environ.get("X_BEARER_TOKEN", "")
 
 def execute_autonomous_campaign():
-    print("Agent network initializing live social campaign...")
+    print("Agent network initializing live social campaign via direct Bearer Token...")
     timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
     
     post_status = "PENDING DISPATCH"
@@ -21,69 +19,38 @@ def execute_autonomous_campaign():
         "#Web3 #SmartContracts"
     )
     
-    if CLIENT_ID and CLIENT_SECRET:
+    if BEARER_TOKEN:
         try:
-            token_url = "https://api.x.com/2/oauth2/token"
-            
-            # Standard confidential client credentials payload (auth handled via header)
-            payload = {
-                "grant_type": "client_credentials",
-                "scope": "tweet.read tweet.write users.read offline.access"
+            tweet_url = "https://api.x.com/2/tweets"
+            tweet_headers = {
+                "Authorization": f"Bearer {BEARER_TOKEN}",
+                "Content-Type": "application/json"
             }
+            tweet_payload = {"text": tweet_content}
             
-            # 1. Request the OAuth 2.0 Access Token using HTTP Basic Auth header
-            auth_response = requests.post(
-                token_url,
-                auth=HTTPBasicAuth(CLIENT_ID, CLIENT_SECRET),
-                data=payload,
-                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            tweet_response = requests.post(
+                tweet_url,
+                json=tweet_payload,
+                headers=tweet_headers,
                 timeout=10
             )
             
-            api_response_text = auth_response.text
+            api_response_text = tweet_response.text
             
-            if auth_response.status_code == 200:
-                token_data = auth_response.json()
-                access_token = token_data.get("access_token")
-                
-                if access_token:
-                    # 2. Use the token to post the live tweet
-                    tweet_url = "https://api.x.com/2/tweets"
-                    tweet_headers = {
-                        "Authorization": f"Bearer {access_token}",
-                        "Content-Type": "application/json"
-                    }
-                    tweet_payload = {"text": tweet_content}
-                    
-                    tweet_response = requests.post(
-                        tweet_url,
-                        json=tweet_payload,
-                        headers=tweet_headers,
-                        timeout=10
-                    )
-                    
-                    api_response_text = tweet_response.text
-                    
-                    if tweet_response.status_code == 201:
-                        post_status = "SUCCESS (Live Post Dispatched)"
-                        print("Tweet successfully published to X!")
-                    else:
-                        post_status = f"FAILED (Tweet Dispatch Status: {tweet_response.status_code})"
-                        print(f"Failed to post tweet: {tweet_response.text}")
-                else:
-                    post_status = "FAILED (Token Missing in Response)"
-                    print("Access token was not found in the OAuth response.")
+            if tweet_response.status_code == 201:
+                post_status = "SUCCESS (Live Post Dispatched)"
+                print("Tweet successfully published to X!")
             else:
-                post_status = f"FAILED (Token Request Status: {auth_response.status_code})"
-                print(f"Token acquisition failed: {auth_response.text}")
+                post_status = f"FAILED (Dispatch Status: {tweet_response.status_code})"
+                print(f"Failed to post tweet: {tweet_response.text}")
                 
         except Exception as e:
             post_status = f"ERROR ({e})"
             api_response_text = str(e)
             print(f"Network error: {e}")
     else:
-        post_status = "FAILED (Missing OAuth 2.0 Client ID or Secret)"
-        print("OAuth 2.0 credentials are missing from environment.")
+        post_status = "FAILED (Missing X_BEARER_TOKEN secret)"
+        print("Bearer token is missing from environment secrets.")
 
     formatted_tweet = tweet_content.replace('\n', '\n  > ')
 
