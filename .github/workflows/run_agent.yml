@@ -1,36 +1,43 @@
-name: Agent Fleet Reporting
+name: Autonomous Agent Network
 
 on:
-  schedule:
-    # Runs at 8:00, 12:00, 16:00, 20:00, and 00:00 UTC
-    - cron: '0 0,4,8,12,16,20 * * *'
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
 
 jobs:
-  build-report:
+  run-agent:
     runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-      
+        uses: actions/checkout@v3
+
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-          
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests requests-oauthlib
+
       - name: Run Agent Script
         env:
-          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          X_CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
+          X_CLIENT_SECRET: ${{ secrets.X_CLIENT_SECRET }}
         run: python agent.py
-        
-      - name: Commit and push changes manually
+
+      - name: Configure Git User
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --quiet && git diff --staged --quiet || git commit -m "Autonomous Agent Network: Automated Fleet Report & X Campaign Update"
-          git push
+
+      - name: Stash, Pull, and Push changes
+        run: |
+          git stash
+          git pull origin main --rebase
+          git stash pop || true
+          git add fleet-report.md agent.py
+          git commit -m "chore: update autonomous agent network report and script [skip ci]" || echo "No changes to commit"
+          git push origin main
