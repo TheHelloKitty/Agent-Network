@@ -1,7 +1,6 @@
 import os
 from datetime import datetime
 import requests
-from requests.auth import HTTPBasicAuth
 
 CLIENT_ID = os.environ.get("X_CLIENT_ID", "")
 CLIENT_SECRET = os.environ.get("X_CLIENT_SECRET", "")
@@ -17,15 +16,16 @@ def test_oauth2_authentication():
         try:
             token_url = "https://api.x.com/2/oauth2/token"
             
-            # Payload strictly limited to grant_type and scope; credentials go in Basic Auth header
+            # Explicitly providing all required parameters in the payload body
             payload = {
                 "grant_type": "client_credentials",
+                "client_id": CLIENT_ID,
+                "client_secret": CLIENT_SECRET,
                 "scope": "tweet.read tweet.write users.read offline.access"
             }
             
             auth_response = requests.post(
                 token_url,
-                auth=HTTPBasicAuth(CLIENT_ID, CLIENT_SECRET),
                 data=payload,
                 headers={"Content-Type": "application/x-www-form-urlencoded"},
                 timeout=10
