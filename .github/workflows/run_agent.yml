@@ -38,6 +38,6 @@ jobs:
           git stash
           git pull origin main --rebase
           git stash pop || true
-          git add fleet-report.md
-          git commit -m "chore: update autonomous agent network report [skip ci]" || echo "No changes to commit"
+          git add fleet-report.md agent.py
+          git commit -m "chore: update autonomous agent network report and script [skip ci]" || echo "No changes to commit"
           git push origin main
