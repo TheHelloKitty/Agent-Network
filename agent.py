@@ -25,15 +25,13 @@ def execute_autonomous_campaign():
         try:
             token_url = "https://api.x.com/2/oauth2/token"
             
+            # Standard confidential client credentials payload (auth handled via header)
             payload = {
                 "grant_type": "client_credentials",
-                "client_id": CLIENT_ID,
-                "client_secret": CLIENT_SECRET,
-                "client_type": "confidential",
                 "scope": "tweet.read tweet.write users.read offline.access"
             }
             
-            # 1. Request the OAuth 2.0 Access Token
+            # 1. Request the OAuth 2.0 Access Token using HTTP Basic Auth header
             auth_response = requests.post(
                 token_url,
                 auth=HTTPBasicAuth(CLIENT_ID, CLIENT_SECRET),
@@ -41,6 +39,8 @@ def execute_autonomous_campaign():
                 headers={"Content-Type": "application/x-www-form-urlencoded"},
                 timeout=10
             )
+            
+            api_response_text = auth_response.text
             
             if auth_response.status_code == 200:
                 token_data = auth_response.json()
@@ -75,7 +75,6 @@ def execute_autonomous_campaign():
                     print("Access token was not found in the OAuth response.")
             else:
                 post_status = f"FAILED (Token Request Status: {auth_response.status_code})"
-                api_response_text = auth_response.text
                 print(f"Token acquisition failed: {auth_response.text}")
                 
         except Exception as e:
@@ -86,7 +85,6 @@ def execute_autonomous_campaign():
         post_status = "FAILED (Missing OAuth 2.0 Client ID or Secret)"
         print("OAuth 2.0 credentials are missing from environment.")
 
-    # Format the blockquote content safely outside the f-string
     formatted_tweet = tweet_content.replace('\n', '\n  > ')
 
     report_content = f"""# Autonomous Agent Network: Master Operations Report
