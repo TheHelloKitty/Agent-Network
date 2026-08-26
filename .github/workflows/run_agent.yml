@@ -33,11 +33,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Pull latest remote changes
-        run: git pull origin main --rebase
-
-      - name: Commit and push changes
+      - name: Stash, Pull, and Push changes
         run: |
+          git stash
+          git pull origin main --rebase
+          git stash pop || true
           git add fleet-report.md
           git commit -m "chore: update autonomous agent network report [skip ci]" || echo "No changes to commit"
           git push origin main
