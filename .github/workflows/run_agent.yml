@@ -7,7 +7,6 @@ on:
 
 jobs:
   run-agent:
-  - name: Set up environment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
