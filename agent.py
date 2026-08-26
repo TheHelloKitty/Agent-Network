@@ -17,7 +17,7 @@ def test_oauth2_authentication():
         try:
             token_url = "https://api.x.com/2/oauth2/token"
             
-            # Using HTTP Basic Auth header for credentials, payload only contains grant_type and scope
+            # Payload strictly limited to grant_type and scope; credentials go in Basic Auth header
             payload = {
                 "grant_type": "client_credentials",
                 "scope": "tweet.read tweet.write users.read offline.access"
