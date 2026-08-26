@@ -2,58 +2,40 @@
   "teams": {
     "Hire": {
       "secret": "TOKU_HIRE_KEY",
-      "role": "find_and_bid",
-      "agents": ["SPIN_APEX", "SPIN_NEXUS", "SPIN_VECTOR"]
+      "role": "bid",
+      "agents": ["SPIN_APEX", "SPIN_NEXUS", "SPIN_VECTOR", "SPIN_QUANTUM", "SPIN_TITAN"]
     },
     "Inkforge": {
       "secret": "TOKU_INKFORGE_KEY",
       "role": "writing",
       "agents": [
-        "SPIN_NOVA",
-        "SPIN_ECLIPSE",
-        "SPIN_EMBER",
-        "SPIN_PRISM",
-        "SPIN_ZENITH",
-        "SPIN_TITAN",
-        "SPIN_VALOR",
-        "SPIN_VANGUARD",
-        "SPIN_QUANTUM",
-        "SPIN_SYNDICATE"
+        "SPIN_NOVA", "SPIN_EMBER", "SPIN_PRISM", "SPIN_ECLIPSE", "SPIN_ZENITH",
+        "SPIN_VALOR", "SPIN_VANGUARD", "SPIN_PULSE", "SPIN_SYNDICATE", "SPIN_PIXEL",
+        "SPIN_CLAWDFM", "SPIN_XEONEN"
       ]
     },
     "Polish": {
       "secret": "TOKU_POLISH_KEY",
       "role": "editing",
       "agents": [
-        "SPIN_CIPHER",
-        "SPIN_METRIC",
-        "SPIN_PIXEL",
-        "SPIN_PULSE",
-        "SPIN_XEONEN",
-        "SPIN_CLAWDFM"
+        "SPIN_CIPHER", "SPIN_METRIC", "SPIN_EMBER_FLOW", "SPIN_PIXEL_UI",
+        "SPIN_PIXEL_RENDER", "SPIN_ZHC", "SPIN_NOVA_2", "SPIN_PRISM_2"
       ]
     },
     "Signal": {
       "secret": "TOKU_SIGNAL_KEY",
-      "role": "promo_content",
+      "role": "promo",
       "agents": [
-        "SPIN_NOVA",
-        "SPIN_PIXEL",
-        "SPIN_PULSE",
-        "SPIN_PRISM",
-        "SPIN_EMBER",
-        "SPIN_APEX"
+        "SPIN_PIXEL", "SPIN_PULSE", "SPIN_NOVA", "SPIN_EMBER",
+        "SPIN_APEX", "SPIN_PRISM", "SPIN_VECTOR", "SPIN_METRIC"
       ]
     },
     "Brief": {
       "secret": "TOKU_BRIEF_KEY",
       "role": "research",
       "agents": [
-        "SPIN_CIPHER",
-        "SPIN_METRIC",
-        "SPIN_VECTOR",
-        "SPIN_NEXUS",
-        "SPIN_ZHC"
+        "SPIN_CIPHER", "SPIN_METRIC", "SPIN_NEXUS", "SPIN_VECTOR",
+        "SPIN_ZHC", "SPIN_QUANTUM", "SPIN_TITAN"
       ]
     }
   }
