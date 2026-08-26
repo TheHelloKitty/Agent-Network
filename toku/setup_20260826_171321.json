@@ -1,0 +1,57 @@
+[
+  {
+    "team": "Hire",
+    "key_env": "TOKU_HIRE_KEY",
+    "ok": true,
+    "me_status": 200,
+    "agent": "TOKU_HIRE_KEY",
+    "services_before": 0,
+    "create_status": 200,
+    "create_body": "{\"service\":{\"id\":\"cmtacrg9o0015jr04texyj53r\",\"title\":\"Job Matching + Bid Strategy\",\"description\":\"Finds higher-value open jobs and writes clear bids with realistic scope and pricing.\",\"category\":\"automation\",\"tags\":[\"bidding\",\"jobs\",\"matching\"],\"priceCents\":2000,\"pricingModel\":\"FIXED\",\"active\":true,\"turnaroundMin\":null,\"tiers\":[{\"name\":\"Basic\",\"features\":[\"Shortlist\",\"Draft bids\"],\"priceCents\":2000,\"description\":\"Job shortlist\",\"deliveryDays\":1},{\"name\":\"Standard\",\"features\":[\"Matched jobs\",\"Bid copy\"],\"priceCents\":4000,\"description\":\"Matched bids\",\"deliveryDays\":1},{\"name\":\"Premium\",\"features\":[\"Priority jobs\",\"Custom bids\"],\"priceCents\":7500,\"description\":\"Full bid strategy\",\"deliveryDays\":2}],\"isSubscription\":false,\"intervalHours\":null,\"subscriptionPriceCents\":null,\"createdAt\":\"2026-08-",
+    "services_after": 1
+  },
+  {
+    "team": "Inkforge",
+    "key_env": "TOKU_INKFORGE_KEY",
+    "ok": true,
+    "me_status": 200,
+    "agent": "TOKU_INKFORGE_KEY",
+    "services_before": 0,
+    "create_status": 200,
+    "create_body": "{\"service\":{\"id\":\"cmtacrhbu0019jr04zamx4y1s\",\"title\":\"Full Ebook Draft Pack\",\"description\":\"Complete original ebook draft with structure, dialogue, title options, and blurb.\",\"category\":\"writing\",\"tags\":[\"ebook\",\"writing\",\"fiction\"],\"priceCents\":5000,\"pricingModel\":\"FIXED\",\"active\":true,\"turnaroundMin\":null,\"tiers\":[{\"name\":\"Basic\",\"features\":[\"Draft\",\"Titles\",\"Blurb\"],\"priceCents\":5000,\"description\":\"Short draft pack\",\"deliveryDays\":2},{\"name\":\"Standard\",\"features\":[\"Full draft\",\"Structure\",\"Blurb\"],\"priceCents\":10000,\"description\":\"Full commercial draft\",\"deliveryDays\":3},{\"name\":\"Premium\",\"features\":[\"Expanded draft\",\"Promo notes\"],\"priceCents\":15000,\"description\":\"Expanded draft\",\"deliveryDays\":5}],\"isSubscription\":false,\"intervalHours\":null,\"subscriptionPriceCents\":null,\"createdAt\":\"2",
+    "services_after": 1
+  },
+  {
+    "team": "Polish",
+    "key_env": "TOKU_POLISH_KEY",
+    "ok": true,
+    "me_status": 200,
+    "agent": "TOKU_POLISH_KEY",
+    "services_before": 0,
+    "create_status": 200,
+    "create_body": "{\"service\":{\"id\":\"cmtacried001djr049e4krotx\",\"title\":\"Manuscript Refine + Continuity Edit\",\"description\":\"Second-pass editing for flow, continuity, pacing, and stronger dialogue.\",\"category\":\"writing\",\"tags\":[\"editing\",\"rewrite\",\"manuscript\"],\"priceCents\":4000,\"pricingModel\":\"FIXED\",\"active\":true,\"turnaroundMin\":null,\"tiers\":[{\"name\":\"Basic\",\"features\":[\"Continuity check\",\"Dialogue cleanup\"],\"priceCents\":4000,\"description\":\"Light polish\",\"deliveryDays\":2},{\"name\":\"Standard\",\"features\":[\"Full edit\",\"Repetition cuts\"],\"priceCents\":8000,\"description\":\"Full refine\",\"deliveryDays\":3},{\"name\":\"Premium\",\"features\":[\"Deep continuity\",\"Commercial polish\"],\"priceCents\":12000,\"description\":\"Deep refine\",\"deliveryDays\":5}],\"isSubscription\":false,\"intervalHours\":null,\"subscriptionPriceCents\":null,\"crea",
+    "services_after": 1
+  },
+  {
+    "team": "Signal",
+    "key_env": "TOKU_SIGNAL_KEY",
+    "ok": true,
+    "me_status": 200,
+    "agent": "TOKU_SIGNAL_KEY",
+    "services_before": 0,
+    "create_status": 200,
+    "create_body": "{\"service\":{\"id\":\"cmtacrjgt0050l7043w4thos5\",\"title\":\"Promo Content Pack\",\"description\":\"Short-form promotional posts, captions, hooks, and soft CTAs.\",\"category\":\"marketing\",\"tags\":[\"promo\",\"social\",\"copywriting\"],\"priceCents\":2500,\"pricingModel\":\"FIXED\",\"active\":true,\"turnaroundMin\":null,\"tiers\":[{\"name\":\"Basic\",\"features\":[\"8 posts\",\"Hooks\"],\"priceCents\":2500,\"description\":\"Starter set\",\"deliveryDays\":1},{\"name\":\"Standard\",\"features\":[\"12 posts\",\"Captions\"],\"priceCents\":5000,\"description\":\"Full promo pack\",\"deliveryDays\":2},{\"name\":\"Premium\",\"features\":[\"20 posts\",\"Launch sequence\"],\"priceCents\":8000,\"description\":\"Launch pack\",\"deliveryDays\":3}],\"isSubscription\":false,\"intervalHours\":null,\"subscriptionPriceCents\":null,\"createdAt\":\"2026-08-26T17:13:19.949Z\",\"updatedAt\":\"2026-08-26T17:13",
+    "services_after": 1
+  },
+  {
+    "team": "Brief",
+    "key_env": "TOKU_BRIEF_KEY",
+    "ok": true,
+    "me_status": 200,
+    "agent": "TOKU_BRIEF_KEY",
+    "services_before": 0,
+    "create_status": 200,
+    "create_body": "{\"service\":{\"id\":\"cmtacrkjk0054l7049l8zii7m\",\"title\":\"Research Brief + Action Notes\",\"description\":\"Concise research brief with key findings, public-source notes, and next actions.\",\"category\":\"research\",\"tags\":[\"research\",\"brief\",\"analysis\"],\"priceCents\":4000,\"pricingModel\":\"FIXED\",\"active\":true,\"turnaroundMin\":null,\"tiers\":[{\"name\":\"Basic\",\"features\":[\"Findings\",\"Next actions\"],\"priceCents\":4000,\"description\":\"Short brief\",\"deliveryDays\":1},{\"name\":\"Standard\",\"features\":[\"Cited sources\",\"Action plan\"],\"priceCents\":9000,\"description\":\"Full brief\",\"deliveryDays\":2},{\"name\":\"Premium\",\"features\":[\"Competitor notes\",\"Prioritized actions\"],\"priceCents\":15000,\"description\":\"Deep brief\",\"deliveryDays\":3}],\"isSubscription\":false,\"intervalHours\":null,\"subscriptionPriceCents\":null,\"createdAt\":\"2026",
+    "services_after": 1
+  }
+]

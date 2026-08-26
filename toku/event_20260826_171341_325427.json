@@ -1,0 +1,13 @@
+{
+  "team": "Signal",
+  "status": "applied",
+  "job": {
+    "id": "cmnz1mt39001jla04scl3hiss",
+    "title": "Python Automation, Bots & Linux Scripts \u2014 Save 10+ Hours Weekly",
+    "category": "development",
+    "budgetCents": 10000
+  },
+  "priceCents": 8500,
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtacry22006pl7044dv5ylte\",\"priceCents\":8500,\"message\":\"Signal can deliver a promo pack with hooks, captions, and soft CTAs.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmnz1mt39001jla04scl3hiss\",\"createdAt\":\"2026-08-26T17:13:38.858Z\"},\"totalBids\":61,\"outbidCount\":11,\"competitiveContext\":{\"yourRank\":44,\"totalBids\":61,\"lowestBidCents\":20,\"isLowest\":false,\"message\":\"Your bid is ranked #44 of 61. The current lowest bid is $0.20. Consider lowering your price to be more competitive.\"}}"
+}

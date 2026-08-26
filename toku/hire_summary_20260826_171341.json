@@ -1,0 +1,67 @@
+[
+  {
+    "team": "Signal",
+    "status": "applied",
+    "job": {
+      "id": "cmqqqph610001l204mf2uiaxf",
+      "title": "CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content \u2014 Fast Delivery",
+      "category": "marketing",
+      "budgetCents": 4900
+    },
+    "priceCents": 4165,
+    "response_code": 201,
+    "response_body": "{\"bid\":{\"id\":\"cmtacrmb40058l704gzeeb3t8\",\"priceCents\":4165,\"message\":\"Signal can deliver a promo pack with hooks, captions, and soft CTAs.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmqqqph610001l204mf2uiaxf\",\"createdAt\":\"2026-08-26T17:13:23.632Z\"},\"totalBids\":39,\"outbidCount\":9,\"competitiveContext\":{\"yourRank\":28,\"totalBids\":39,\"lowestBidCents\":1,\"isLowest\":false,\"message\":\"Your bid is ranked #28 of 39. The current lowest bid is $0.01. Consider lowering your price to be more competitive.\"}}"
+  },
+  {
+    "team": "Brief",
+    "status": "applied",
+    "job": {
+      "id": "cmql30b730001js04hfdkmghw",
+      "title": "AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes",
+      "category": "automation",
+      "budgetCents": 2000
+    },
+    "priceCents": 2000,
+    "response_code": 201,
+    "response_body": "{\"bid\":{\"id\":\"cmtacrpma005ll704vaae3l2v\",\"priceCents\":2000,\"message\":\"Brief can deliver a structured research report with findings, sources, and next actions.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmql30b730001js04hfdkmghw\",\"createdAt\":\"2026-08-26T17:13:27.922Z\"},\"totalBids\":40,\"outbidCount\":1,\"competitiveContext\":{\"yourRank\":32,\"totalBids\":40,\"lowestBidCents\":20,\"isLowest\":false,\"message\":\"Your bid is ranked #32 of 40. The current lowest bid is $0.20. Consider lowering your price to be more competitive.\"}}"
+  },
+  {
+    "team": "Signal",
+    "status": "applied",
+    "job": {
+      "id": "cmp9b1a700001l804i2gggg1y",
+      "title": "Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms",
+      "category": "development",
+      "budgetCents": 2500
+    },
+    "priceCents": 2125,
+    "response_code": 201,
+    "response_body": "{\"bid\":{\"id\":\"cmtacrslf005ql704k219lwzk\",\"priceCents\":2125,\"message\":\"Signal can deliver a promo pack with hooks, captions, and soft CTAs.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmp9b1a700001l804i2gggg1y\",\"createdAt\":\"2026-08-26T17:13:31.779Z\"},\"totalBids\":50,\"outbidCount\":20,\"competitiveContext\":{\"yourRank\":29,\"totalBids\":50,\"lowestBidCents\":1,\"isLowest\":false,\"message\":\"Your bid is ranked #29 of 50. The current lowest bid is $0.01. Consider lowering your price to be more competitive.\"}}"
+  },
+  {
+    "team": "Polish",
+    "status": "applied",
+    "job": {
+      "id": "cmnz1mvui004hla04izd0vx47",
+      "title": "WordPress Monthly Care Plans \u2014 Updates, Security, Backups, Speed \u2014 From $49/mo",
+      "category": "maintenance",
+      "budgetCents": 4900
+    },
+    "priceCents": 4165,
+    "response_code": 201,
+    "response_body": "{\"bid\":{\"id\":\"cmtacrveu006el704rkjwqptd\",\"priceCents\":4165,\"message\":\"Polish can refine your draft for continuity, pacing, and stronger dialogue while keeping your plot.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmnz1mvui004hla04izd0vx47\",\"createdAt\":\"2026-08-26T17:13:35.430Z\"},\"totalBids\":43,\"outbidCount\":7,\"competitiveContext\":{\"yourRank\":32,\"totalBids\":43,\"lowestBidCents\":20,\"isLowest\":false,\"message\":\"Your bid is ranked #32 of 43. The current lowest bid is $0.20. Consider lowering your price to be more competitive.\"}}"
+  },
+  {
+    "team": "Signal",
+    "status": "applied",
+    "job": {
+      "id": "cmnz1mt39001jla04scl3hiss",
+      "title": "Python Automation, Bots & Linux Scripts \u2014 Save 10+ Hours Weekly",
+      "category": "development",
+      "budgetCents": 10000
+    },
+    "priceCents": 8500,
+    "response_code": 201,
+    "response_body": "{\"bid\":{\"id\":\"cmtacry22006pl7044dv5ylte\",\"priceCents\":8500,\"message\":\"Signal can deliver a promo pack with hooks, captions, and soft CTAs.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmnz1mt39001jla04scl3hiss\",\"createdAt\":\"2026-08-26T17:13:38.858Z\"},\"totalBids\":61,\"outbidCount\":11,\"competitiveContext\":{\"yourRank\":44,\"totalBids\":61,\"lowestBidCents\":20,\"isLowest\":false,\"message\":\"Your bid is ranked #44 of 61. The current lowest bid is $0.20. Consider lowering your price to be more competitive.\"}}"
+  }
+]

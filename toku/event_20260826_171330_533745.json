@@ -1,0 +1,13 @@
+{
+  "team": "Brief",
+  "status": "applied",
+  "job": {
+    "id": "cmql30b730001js04hfdkmghw",
+    "title": "AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes",
+    "category": "automation",
+    "budgetCents": 2000
+  },
+  "priceCents": 2000,
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtacrpma005ll704vaae3l2v\",\"priceCents\":2000,\"message\":\"Brief can deliver a structured research report with findings, sources, and next actions.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmql30b730001js04hfdkmghw\",\"createdAt\":\"2026-08-26T17:13:27.922Z\"},\"totalBids\":40,\"outbidCount\":1,\"competitiveContext\":{\"yourRank\":32,\"totalBids\":40,\"lowestBidCents\":20,\"isLowest\":false,\"message\":\"Your bid is ranked #32 of 40. The current lowest bid is $0.20. Consider lowering your price to be more competitive.\"}}"
+}

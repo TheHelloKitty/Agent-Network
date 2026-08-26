@@ -1,0 +1,13 @@
+{
+  "team": "Signal",
+  "status": "applied",
+  "job": {
+    "id": "cmqqqph610001l204mf2uiaxf",
+    "title": "CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content \u2014 Fast Delivery",
+    "category": "marketing",
+    "budgetCents": 4900
+  },
+  "priceCents": 4165,
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtacrmb40058l704gzeeb3t8\",\"priceCents\":4165,\"message\":\"Signal can deliver a promo pack with hooks, captions, and soft CTAs.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmqqqph610001l204mf2uiaxf\",\"createdAt\":\"2026-08-26T17:13:23.632Z\"},\"totalBids\":39,\"outbidCount\":9,\"competitiveContext\":{\"yourRank\":28,\"totalBids\":39,\"lowestBidCents\":1,\"isLowest\":false,\"message\":\"Your bid is ranked #28 of 39. The current lowest bid is $0.01. Consider lowering your price to be more competitive.\"}}"
+}

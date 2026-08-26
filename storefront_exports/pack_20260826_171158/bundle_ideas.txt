@@ -1,0 +1,30 @@
+**Five Payhip Bundle Ideas for Your True‑Crime eBook**
+
+| # | Bundle Name | What You Get | Why It Sells | Suggested Price |
+|---|-------------|--------------|--------------|-----------------|
+| 1 | **Crime‑Scene Starter Pack** | • eBook (PDF/epub) <br>• 30‑min narrated “Case Overview” audio <br>• Printable “Evidence Log” sheet | Gives readers an immediate, tactile way to engage with the story—great for binge‑readers who love to annotate and keep track of clues. | **$12.99** |
+| 2 | **Investigative Toolkit** | • eBook <br>• Interactive timeline (HTML/JavaScript, downloadable as PDF) <br>• Printable suspect & alibi sheets <br>• Author Q&A (PDF) | Turns the book into a “live” investigation. Readers can play detective, cross‑reference dates, and feel like they’re part of the mystery. | **$18.99** |
+| 3 | **True‑Crime Enthusiast Bundle** | • eBook <br>• Full‑length audiobook (MP3) <br>• Bonus “Unpublished Chapter” <br>• Behind‑the‑Scenes blog post (PDF) | The perfect all‑in‑one for die‑hard fans: read, listen, and dive deeper into the author’s process. | **$24.99** |
+| 4 | **Author’s Insight Pack** | • eBook <br>• 1‑hour interview video (hosted on Vimeo, embedded in Payhip) <br>• 10 exclusive “Side Notes” (PDF) <br>• Downloadable “Research Guide” (PDF) | Adds value by giving readers a window into the creative mind and the research that built the story. Great for aspiring writers and true‑crime scholars. | **$29.99** |
+| 5 | **Collector’s Edition** | • eBook <br>• Signed PDF cover art (PDF) <br>• Exclusive 5‑page epilogue (PDF) <br>• Author’s handwritten note (image, 8.5″×11″) | Limited‑edition feel. The signed cover and personal note create a tangible, collectible experience that’s worth a higher price point. | **$49.99** |
+
+---
+
+### How to Set It Up on Payhip
+
+1. **Create a product for the core eBook** – keep the base price low (e.g., $9.99) so customers see value in upgrading.
+2. **Add “bundles”** as separate products. In the product description, list each included item and highlight the added value (audio, printable, video, etc.).
+3. **Use Payhip’s “Add-ons” feature** if you want customers to be able to add extra items to the base eBook at checkout (e.g., “Add the audiobook for $15”).
+4. **Provide preview links** (e.g., a short audio clip, a sample page of the evidence log) so buyers feel confident.
+5. **Offer a limited‑time discount** (e.g., 10% off the Investigator’s Toolkit during launch week) to drive early sales.
+
+---
+
+### Quick Tips for Maximizing Sales
+
+- **Tagging & SEO**: Use relevant tags like `true crime`, `mystery`, `crime fiction`, `investigation`, `audio book`, etc.
+- **Email Upsell**: After a purchase, send a thank‑you email offering the next bundle at a small discount.
+- **Social Proof**: Add a brief testimonial or quote from a satisfied reader in each bundle description.
+- **Bundle Size**: Keep each bundle small enough that buyers feel they’re getting a “complete” package, but large enough to justify the price.
+
+Feel free to tweak the bundle contents and prices to match your audience’s preferences and your production costs. Happy selling on Payhip!

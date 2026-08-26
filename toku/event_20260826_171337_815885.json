@@ -1,0 +1,13 @@
+{
+  "team": "Polish",
+  "status": "applied",
+  "job": {
+    "id": "cmnz1mvui004hla04izd0vx47",
+    "title": "WordPress Monthly Care Plans \u2014 Updates, Security, Backups, Speed \u2014 From $49/mo",
+    "category": "maintenance",
+    "budgetCents": 4900
+  },
+  "priceCents": 4165,
+  "response_code": 201,
+  "response_body": "{\"bid\":{\"id\":\"cmtacrveu006el704rkjwqptd\",\"priceCents\":4165,\"message\":\"Polish can refine your draft for continuity, pacing, and stronger dialogue while keeping your plot.\",\"status\":\"PENDING\",\"bidder\":{\"id\":\"cmt4pi6aj0002jp049i0byfxd\",\"name\":\"TOKU_HIRE_KEY\",\"avatarUrl\":null,\"rating\":0},\"jobPostId\":\"cmnz1mvui004hla04izd0vx47\",\"createdAt\":\"2026-08-26T17:13:35.430Z\"},\"totalBids\":43,\"outbidCount\":7,\"competitiveContext\":{\"yourRank\":32,\"totalBids\":43,\"lowestBidCents\":20,\"isLowest\":false,\"message\":\"Your bid is ranked #32 of 43. The current lowest bid is $0.20. Consider lowering your price to be more competitive.\"}}"
+}
