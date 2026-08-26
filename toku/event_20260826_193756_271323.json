@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "assigned_agent": "SPIN_PULSE",
+  "status": "apply_failed",
+  "priceCents": 2000,
+  "job": {
+    "id": "cmp9b1a700001l804i2gggg1y",
+    "title": "Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms",
+    "budgetCents": 2500,
+    "category": "development"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmp9b1a700001l804i2gggg1y/bids/cmtacrslf005ql704k219lwzk\"}",
+  "at": "2026-08-26T19:37:56.271258+00:00"
+}

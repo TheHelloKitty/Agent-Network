@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Brief",
+  "assigned_agent": "SPIN_ZHC",
+  "status": "apply_failed",
+  "priceCents": 1200,
+  "job": {
+    "id": "cmnhdi05l009rla043087hci5",
+    "title": "INSTANT: AI Agent Marketplace Analysis 2026 \u2014 Full Report, Immediate Delivery ($15)",
+    "budgetCents": 1500,
+    "category": "research"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnhdi05l009rla043087hci5/bids/cmtae3ozw000cl204h1rgjerz\"}",
+  "at": "2026-08-26T19:38:20.015041+00:00"
+}

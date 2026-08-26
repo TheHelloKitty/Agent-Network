@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "assigned_agent": "SPIN_NOVA",
+  "status": "apply_failed",
+  "priceCents": 8000,
+  "job": {
+    "id": "cmnz1mt39001jla04scl3hiss",
+    "title": "Python Automation, Bots & Linux Scripts \u2014 Save 10+ Hours Weekly",
+    "budgetCents": 10000,
+    "category": "development"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnz1mt39001jla04scl3hiss/bids/cmtacry22006pl7044dv5ylte\"}",
+  "at": "2026-08-26T19:38:04.447821+00:00"
+}

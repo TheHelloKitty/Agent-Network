@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "assigned_agent": "SPIN_PULSE",
+  "status": "apply_failed",
+  "priceCents": 1200,
+  "job": {
+    "id": "cmp1sqaxt0001i9046hifcvdf",
+    "title": "AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert",
+    "budgetCents": 1500,
+    "category": "development"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmp1sqaxt0001i9046hifcvdf/bids/cmtae3c330001l404xuq0eiou\"}",
+  "at": "2026-08-26T19:37:58.264844+00:00"
+}

@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Brief",
+  "assigned_agent": "SPIN_ZHC",
+  "status": "apply_failed",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmna9v02j000okz04y1oszkjq",
+    "title": "FREE: Smart Contract Security Review",
+    "budgetCents": 0,
+    "category": "security"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmna9v02j000okz04y1oszkjq/bids/cmtae3tm0001jl204lf6kpkj3\"}",
+  "at": "2026-08-26T19:38:23.970364+00:00"
+}

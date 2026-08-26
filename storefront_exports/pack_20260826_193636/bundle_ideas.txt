@@ -1,0 +1,37 @@
+**5 Sellable Bundle Ideas for Your True‑Crime eBook on Payhip**
+
+| # | Bundle Name | What You Get | Why It Sells | Suggested Price |
+|---|-------------|--------------|--------------|-----------------|
+| **1** | *The “Crime‑Scene Starter Pack”* | • Main eBook (PDF) <br>• 30‑min narrated audio version <br>• “Quick‑Read” 2‑page synopsis (PDF) | Perfect for casual readers who want a bite‑size intro or a listening experience while commuting. | **$9.99** |
+| **2** | *The “Deep‑Dive Investigation Bundle”* | • Main eBook <br>• Full‑length audio (≈3 hrs) <br>• 5‑page “Case File” worksheet (printable) <br>• Bonus chapter: “The Police Interview” (PDF) | Gives readers the tools to act like detectives—printable worksheets, extra content, and audio to keep them engaged. | **$14.99** |
+| **3** | *The “Collector’s Edition”* | • Main eBook <br>• Audio + full‑screen transcript (PDF) <br>• 10‑page “Behind‑the‑Scenes” author interview (PDF) <br>• Digital “Cover Art” set (PNG/PSD) | Appeals to fans who want everything the author offered, including raw interview material and high‑quality artwork they can use. | **$19.99** |
+| **4** | *The “True‑Crime Masterclass”* | • Main eBook <br>• 90‑min video lecture (hosted on Vimeo/YouTube) <br>• 20‑page “Legal & Investigative Glossary” (PDF) <br>• 3‑hour “Case Analysis” audio podcast (MP3) | Combines learning with entertainment—great for true‑crime enthusiasts who love a deeper understanding of crime‑scene procedures. | **$24.99** |
+| **5** | *The “All‑Inclusive True‑Crime Kit”* | • Main eBook <br>• Audio + transcript <br>• Video lecture <br>• Case File worksheet <br>• Bonus chapter “The Witness’s Tale” (PDF) <br>• 5‑year “License” to resell (for resellers) | The ultimate value‑add for collectors, resellers, or those who want everything in one package. | **$29.99** |
+
+---
+
+### Why These Bundles Work
+
+| Feature | Benefit for Buyers | Payhip Advantage |
+|---------|-------------------|------------------|
+| **Multi‑format content** | Readers can choose how they consume (text, audio, video). | Payhip’s download manager handles multiple file types in one transaction. |
+| **Bonus content** | Adds perceived value and justifies a higher price point. | You can create a “bonus” folder that only unlocks after purchase. |
+| **Printable worksheets** | Gives a hands‑on investigative feel; great for discussion groups or study. | PDFs are instant and require no extra software. |
+| **Reseller license** | Opens a new revenue channel—resellers can re‑sell the bundle. | Payhip allows you to set a “reseller” license with a simple toggle. |
+| **Tiered pricing** | Lets you capture different willingness‑to‑pay segments. | Payhip supports multiple product prices and automatic upsell offers. |
+
+---
+
+### Quick Setup Tips for Payhip
+
+1. **Create a separate product** for each bundle.  
+2. Use the *“Bundle”* feature to attach all files (eBook PDF, audio MP3, video MP4, PDFs, etc.).  
+3. Add a compelling product description that highlights the bundle’s unique perks.  
+4. Enable *“Instant Download”* so buyers get the full bundle immediately after payment.  
+5. Promote the bundles via your email list, social media teasers (“Did you know you can listen while driving?”), and Payhip’s built‑in coupons to drive conversions.
+
+---
+
+### Final Thought
+
+By bundling the core eBook with complementary formats and exclusive extras, you create multiple purchase touchpoints that appeal to a wide spectrum of true‑crime fans—from the casual reader to the hardcore detective. The price points above balance affordability with perceived value, and the tiered approach encourages upsells and repeat purchases. Happy bundling!
