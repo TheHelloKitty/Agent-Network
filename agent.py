@@ -16,12 +16,13 @@ def test_oauth2_authentication():
         try:
             token_url = "https://api.x.com/2/oauth2/token"
             
-            # Including client_type as required by X's OAuth 2.0 endpoint
+            # Including the required scope parameter for X API v2
             payload = {
                 "grant_type": "client_credentials",
                 "client_id": CLIENT_ID,
                 "client_secret": CLIENT_SECRET,
-                "client_type": "confidential"
+                "client_type": "confidential",
+                "scope": "tweet.read tweet.write users.read offline.access"
             }
             
             auth_response = requests.post(
