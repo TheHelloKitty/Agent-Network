@@ -1,11 +1,16 @@
 import os
 from datetime import datetime
 import requests
+from requests_oauthlib import OAuth1
 
-BEARER_TOKEN = os.environ.get("X_BEARER_TOKEN", "")
+# Grab your 4 OAuth 1.a credentials from environment variables
+CONSUMER_KEY = os.environ.get("X_CONSUMER_KEY", "")
+CONSUMER_SECRET = os.environ.get("X_CONSUMER_SECRET", "")
+ACCESS_TOKEN = os.environ.get("X_ACCESS_TOKEN", "")
+ACCESS_TOKEN_SECRET = os.environ.get("X_ACCESS_TOKEN_SECRET", "")
 
 def execute_autonomous_campaign():
-    print("Agent network initializing live social campaign via direct Bearer Token...")
+    print("Agent network initializing live social campaign via OAuth 1.a User Context...")
     timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
     
     post_status = "PENDING DISPATCH"
@@ -19,11 +24,19 @@ def execute_autonomous_campaign():
         "#Web3 #SmartContracts"
     )
     
-    if BEARER_TOKEN:
+    if CONSUMER_KEY and CONSUMER_SECRET and ACCESS_TOKEN and ACCESS_TOKEN_SECRET:
         try:
             tweet_url = "https://api.x.com/2/tweets"
+            
+            # Set up OAuth 1.a authentication wrapper
+            auth = OAuth1(
+                CONSUMER_KEY,
+                CONSUMER_SECRET,
+                ACCESS_TOKEN,
+                ACCESS_TOKEN_SECRET
+            )
+            
             tweet_headers = {
-                "Authorization": f"Bearer {BEARER_TOKEN}",
                 "Content-Type": "application/json"
             }
             tweet_payload = {"text": tweet_content}
@@ -31,6 +44,7 @@ def execute_autonomous_campaign():
             tweet_response = requests.post(
                 tweet_url,
                 json=tweet_payload,
+                auth=auth,
                 headers=tweet_headers,
                 timeout=10
             )
@@ -49,8 +63,8 @@ def execute_autonomous_campaign():
             api_response_text = str(e)
             print(f"Network error: {e}")
     else:
-        post_status = "FAILED (Missing X_BEARER_TOKEN secret)"
-        print("Bearer token is missing from environment secrets.")
+        post_status = "FAILED (Missing one or more OAuth 1.a secrets)"
+        print("OAuth 1.a credentials are missing from environment secrets.")
 
     formatted_tweet = tweet_content.replace('\n', '\n  > ')
 
