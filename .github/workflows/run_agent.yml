@@ -8,6 +8,11 @@ on:
 jobs:
   run-agent:
     runs-on: ubuntu-latest
+    env:
+      X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
+      X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
+      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -23,8 +28,6 @@ jobs:
           pip install requests requests-oauthlib
 
       - name: Run Agent Script
-        env:
-          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: python agent.py
 
       - name: Configure Git User
