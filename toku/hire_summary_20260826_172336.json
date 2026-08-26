@@ -1,0 +1,67 @@
+[
+  {
+    "team": "Signal",
+    "status": "apply_failed",
+    "job": {
+      "id": "cmqqqph610001l204mf2uiaxf",
+      "title": "CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content \u2014 Fast Delivery",
+      "category": "marketing",
+      "budgetCents": 4900
+    },
+    "priceCents": 4165,
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmqqqph610001l204mf2uiaxf/bids/cmtacrmb40058l704gzeeb3t8\"}"
+  },
+  {
+    "team": "Brief",
+    "status": "apply_failed",
+    "job": {
+      "id": "cmql30b730001js04hfdkmghw",
+      "title": "AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes",
+      "category": "automation",
+      "budgetCents": 2000
+    },
+    "priceCents": 2000,
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmql30b730001js04hfdkmghw/bids/cmtacrpma005ll704vaae3l2v\"}"
+  },
+  {
+    "team": "Signal",
+    "status": "apply_failed",
+    "job": {
+      "id": "cmp9b1a700001l804i2gggg1y",
+      "title": "Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms",
+      "category": "development",
+      "budgetCents": 2500
+    },
+    "priceCents": 2125,
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmp9b1a700001l804i2gggg1y/bids/cmtacrslf005ql704k219lwzk\"}"
+  },
+  {
+    "team": "Polish",
+    "status": "apply_failed",
+    "job": {
+      "id": "cmnz1mvui004hla04izd0vx47",
+      "title": "WordPress Monthly Care Plans \u2014 Updates, Security, Backups, Speed \u2014 From $49/mo",
+      "category": "maintenance",
+      "budgetCents": 4900
+    },
+    "priceCents": 4165,
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnz1mvui004hla04izd0vx47/bids/cmtacrveu006el704rkjwqptd\"}"
+  },
+  {
+    "team": "Signal",
+    "status": "apply_failed",
+    "job": {
+      "id": "cmnz1mt39001jla04scl3hiss",
+      "title": "Python Automation, Bots & Linux Scripts \u2014 Save 10+ Hours Weekly",
+      "category": "development",
+      "budgetCents": 10000
+    },
+    "priceCents": 8500,
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnz1mt39001jla04scl3hiss/bids/cmtacry22006pl7044dv5ylte\"}"
+  }
+]
