@@ -1,0 +1,47 @@
+**5 Sellable Bundle Ideas for Your True‑Crime Ebook (Payhip‑Ready)**  
+
+| # | Bundle Name | What You’ll Get | Why It Adds Value | Suggested Price |
+|---|-------------|-----------------|-------------------|-----------------|
+| 1 | **Starter Bundle** | • PDF/EPUB version of the ebook (up‑to‑date draft) | • Perfect for readers who just want the story on their device. | **$7.99** |
+| 2 | **Audio‑First Bundle** | • PDF/EPUB + 1‑hour narrated audio version (MP3) | • Ideal for commuters or “audio‑only” fans – you can listen while driving, cooking, or exercising. | **$12.99** |
+| 3 | **Deep‑Dive Bundle** | • PDF/EPUB + audio + 2 bonus “behind‑the‑scene” chapters (exclusive material not in the main draft) | • Gives readers a deeper look into the research, interviews, and creative process – a real value‑add for the dedicated fan. | **$18.99** |
+| 4 | **Collector’s Edition** | • PDF/EPUB + audio + bonus chapters + 1‑hour “Author‑and‑Detective” interview (video or audio) + printable “Case File” PDF (clues & timeline) | • Turn the story into a full‑blown experience. The interview gives personal insight, the printable case file lets readers act like detectives. | **$24.99** |
+| 5 | **Ultimate Fan Bundle** | • PDF/EPUB + audio + bonus chapters + interview + case file + **monthly newsletter** (with updates, new clues, Q&A, and a “Reader’s Forum” invite) | • Keeps the community engaged. Monthly newsletters create a sense of exclusivity and ongoing value. | **$29.99** |
+
+---
+
+### How to Build & Sell These Bundles on Payhip
+
+1. **Package everything in a single ZIP file**  
+   - Inside: PDF, EPUB, MP3(s), video file (if applicable), and any supplementary PDFs.  
+   - Name the ZIP after the bundle (e.g., `TrueCrime_Collector_Edition.zip`) to avoid confusion.
+
+2. **Set up the product on Payhip**  
+   - Create a new product for each bundle.  
+   - Upload the ZIP, add a compelling description that highlights the extra content.  
+   - Use the “Bundling” feature (or just create separate products and let customers choose) – Payhip automatically handles the download links.
+
+3. **Promote the bundles**  
+   - Highlight the added value in your marketing copy: “Unlock the full mystery—bonus chapters, an exclusive interview, and a printable case file!”  
+   - Offer a **limited‑time discount** on the first bundle to kick‑start sales (e.g., 20% off for the first week).
+
+4. **Collect email addresses**  
+   - For the Ultimate Fan Bundle, ask buyers to provide an email for the monthly newsletter.  
+   - Use a simple form or Payhip’s “Buyers” export to start building a mailing list.
+
+5. **Keep content fresh**  
+   - For the monthly newsletter bundle, schedule a 2‑3 week turnaround so you can keep the community engaged without overwhelming yourself.
+
+---
+
+### Quick Pricing Rationale
+
+| Bundle | Price | Reasoning |
+|--------|-------|-----------|
+| Starter | $7.99 | Low entry point; mirrors standard ebook prices. |
+| Audio‑First | $12.99 | Audio adds ~$5 value; keeps price below typical audiobook cost. |
+| Deep‑Dive | $18.99 | Adds exclusive chapters (~$5) and keeps it under the $20 mark for a premium feel. |
+| Collector’s | $24.99 | Adds interview + printable case file (~$10 extra); premium packaging. |
+| Ultimate | $29.99 | Adds recurring newsletter value (~$2/month); top‑tier for superfans. |
+
+Feel free to tweak the prices slightly based on your audience’s willingness to pay or local market rates. Good luck launching your bundles on Payhip!
