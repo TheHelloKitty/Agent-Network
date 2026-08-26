@@ -1,20 +1,20 @@
-name: Build Report and Post to X
+name: Autonomous Agent Network
 
 on:
-  push:
-    branches: [ main, master ]
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
 
 jobs:
-  build:
+  run-agent:
+  - name: Set up environment
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
@@ -25,15 +25,20 @@ jobs:
 
       - name: Run Agent Script
         env:
-          X_CONSUMER_KEY: ${{ secrets.X_CLIENT_ID }}
-          X_CONSUMER_SECRET: ${{ secrets.X_CLIENT_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          X_CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
+          X_CLIENT_SECRET: ${{ secrets.X_CLIENT_SECRET }}
         run: python agent.py
 
-      - name: Commit and push changes manually
+      - name: Configure Git User
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull latest remote changes
+        run: git pull origin main --rebase
+
+      - name: Commit and push changes
+        run: |
           git add fleet-report.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update autonomous fleet report [skip ci]" && git push)
+          git commit -m "chore: update autonomous agent network report [skip ci]" || echo "No changes to commit"
+          git push origin main
