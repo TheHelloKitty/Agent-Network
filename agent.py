@@ -17,9 +17,11 @@ def test_oauth2_authentication():
         try:
             token_url = "https://api.x.com/2/oauth2/token"
             
-            # Credentials go via Basic Auth header; only grant_type and scope live in the body
+            # Providing client_secret in both the payload body and the Basic Auth header to satisfy X's strict requirements
             payload = {
                 "grant_type": "client_credentials",
+                "client_id": CLIENT_ID,
+                "client_secret": CLIENT_SECRET,
                 "scope": "tweet.read tweet.write users.read offline.access"
             }
             
