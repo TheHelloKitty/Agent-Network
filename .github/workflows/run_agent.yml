@@ -1,47 +1,140 @@
-name: Autonomous Agent Network
+name: Run Agent Pipeline
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: "0 0,4,12,16,20 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  run-agent:
+  run-agents:
     runs-on: ubuntu-latest
-    env:
-      TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
-      TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
-      TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_KEY }}
-      TOKU_INKFO_KEY: ${{ secrets.TOKU_INKFORGE_KEY }}
-      TOKU_POLIS_KEY: ${{ secrets.TOKU_POLISH_KEY }}
-      TOKU_SIGNA_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.11"
+          cache: "pip"
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests requests-oauthlib
+          pip install -r requirements.txt
+          pip install openai fpdf2 python-docx requests
 
-      - name: Run Agent Revenue Engine
+      - name: Run Agent Script
         run: python agent.py
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          BOOK_CATEGORY: true_crime
 
-      - name: Configure Git User
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Refine up to 5 books
+        if: always()
+        run: python agent.py --refine --limit 5
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
-      - name: Stash, Pull, and Push changes
+      - name: Build offer pack
+        if: always()
         run: |
-          git stash
-          git pull origin main --rebase
-          git stash pop || true
-          git add fleet-report.md agent.py
-          git commit -m "chore: update live toku revenue report and bidding ledger [skip ci]" || echo "No changes to commit"
-          git push origin main
+          BOOK=$(find books -type f -name "*.txt" ! -name "*refined*" | head -n 1)
+          if [ -n "$BOOK" ]; then
+            echo "Building offer pack for $BOOK"
+            python offer_pack.py --book "$BOOK" --category true_crime --price 6.99 || echo "Offer pack skipped due to provider limits"
+          else
+            echo "No book found for offer pack"
+          fi
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      - name: Toku setup services
+        if: always()
+        run: python toku_setup.py || echo "Toku setup skipped"
+        env:
+          TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_KEY }}
+          TOKU_INKFORGE_KEY: ${{ secrets.TOKU_INKFORGE_KEY }}
+          TOKU_POLISH_KEY: ${{ secrets.TOKU_POLISH_KEY }}
+          TOKU_SIGNAL_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
+          TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
+
+      - name: Toku hire scan
+        if: always()
+        run: python toku_hire.py --min-budget 20 --max-bids 8 || echo "Toku hire scan skipped"
+        env:
+          TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_KEY }}
+          TOKU_INKFORGE_KEY: ${{ secrets.TOKU_INKFORGE_KEY }}
+          TOKU_POLISH_KEY: ${{ secrets.TOKU_POLISH_KEY }}
+          TOKU_SIGNAL_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
+          TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
+
+      - name: Run Security Team Session
+        if: always()
+        run: python security_team.py || echo "Security team skipped"
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      - name: Generate report
+        if: always()
+        run: python agent.py --report
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      - name: Upload books
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: books
+          path: books/
+          if-no-files-found: warn
+
+      - name: Upload offer packs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: storefront-exports
+          path: storefront_exports/
+          if-no-files-found: warn
+
+      - name: Upload toku logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: toku-logs
+          path: toku/
+          if-no-files-found: warn
+
+      - name: Upload security team notes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-team
+          path: security_team/
+          if-no-files-found: warn
+
+      - name: Upload fleet report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fleet-report
+          path: fleet-report.md
+          if-no-files-found: warn
+
+      - name: Save outputs to repo
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add books storefront_exports toku security_team fleet-report.md || true
+          git diff --cached --quiet || git commit -m "Add books, offer packs, toku logs, security notes, and fleet report"
+          git push || true
