@@ -7,14 +7,7 @@ from pathlib import Path
 import requests
 
 BASE = "https://www.toku.agency"
-
-KEYS = {
-    "Hire": os.getenv("TOKU_HIRE_KEY"),
-    "Inkforge": os.getenv("TOKU_INKFORGE_KEY"),
-    "Polish": os.getenv("TOKU_POLISH_KEY"),
-    "Signal": os.getenv("TOKU_SIGNAL_KEY"),
-    "Brief": os.getenv("TOKU_BRIEF_KEY"),
-}
+ROSTER_PATH = Path("toku_roster.json")
 
 KEYWORDS = {
     "Inkforge": ["ebook", "book", "novel", "write", "writing", "story", "manuscript", "draft", "fiction", "blog", "article"],
@@ -24,22 +17,35 @@ KEYWORDS = {
 }
 
 MSG = {
-    "Inkforge": "I can deliver a complete original writing draft with clear structure, title options, and blurb. Fast turnaround.",
-    "Polish": "I can refine your draft for continuity, pacing, and stronger dialogue while preserving your plot and voice.",
-    "Signal": "I can deliver a promo content pack with hooks, captions, and soft CTAs designed to get attention.",
-    "Brief": "I can deliver a structured research brief with key findings, source notes, and clear next actions.",
+    "Inkforge": "I can deliver a complete original writing draft with clear structure, title options, and blurb.",
+    "Polish": "I can refine your draft for continuity, pacing, and stronger dialogue while preserving your voice.",
+    "Signal": "I can deliver a promo content pack with hooks, captions, and soft CTAs.",
+    "Brief": "I can deliver a structured research brief with findings, source notes, and next actions.",
 }
 
-def H(key):
+def load_roster():
+    if not ROSTER_PATH.exists():
+        raise RuntimeError("toku_roster.json missing")
+    with open(ROSTER_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def team_key(roster, team):
+    secret_name = roster["teams"][team]["secret"]
+    key = os.getenv(secret_name)
+    if not key:
+        raise RuntimeError("Missing secret: %s" % secret_name)
+    return key
+
+def headers(key):
     return {"Authorization": "Bearer %s" % key, "Content-Type": "application/json"}
 
-def log(event):
+def log_event(event):
     Path("toku").mkdir(exist_ok=True)
-    p = Path("toku") / ("event_%s.json" % datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S_%f"))
-    with open(p, "w", encoding="utf-8") as f:
+    path = Path("toku") / ("event_%s.json" % datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S_%f"))
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(event, f, indent=2)
-    print("Logged", p)
-    return str(p)
+    print("Logged", path)
+    return str(path)
 
 def open_jobs(limit=50):
     r = requests.get("%s/api/agents/jobs" % BASE, params={"status": "OPEN", "limit": limit}, timeout=30)
@@ -50,7 +56,7 @@ def open_jobs(limit=50):
     print("open jobs", len(jobs))
     return jobs
 
-def match(job):
+def match_team(job):
     text = " ".join([
         str(job.get("title", "")),
         str(job.get("description", "")),
@@ -61,18 +67,23 @@ def match(job):
         for w in words:
             if w in text:
                 return team
-    # fallback: any writing-ish category
     cat = str(job.get("category", "")).lower()
-    if cat in ("writing", "content", "marketing", "research"):
-        return {
-            "writing": "Inkforge",
-            "content": "Signal",
-            "marketing": "Signal",
-            "research": "Brief",
-        }.get(cat)
-    return None
+    return {
+        "writing": "Inkforge",
+        "content": "Signal",
+        "marketing": "Signal",
+        "research": "Brief",
+    }.get(cat)
 
-def price(job, min_cents):
+def pick_agent(roster, team):
+    agents = roster["teams"][team].get("agents") or []
+    if not agents:
+        return None
+    # simple rotate by minute
+    idx = int(time.time() // 60) % len(agents)
+    return agents[idx]
+
+def price_for(job, min_cents):
     budget = int(job.get("budgetCents") or 0)
     if budget <= 0:
         return min_cents
@@ -89,40 +100,42 @@ def price(job, min_cents):
             pass
     return p
 
-def bid(job_id, cents, message, key):
+def submit_bid(job_id, cents, message, key):
     r = requests.post(
         "%s/api/agents/jobs/%s/bids" % (BASE, job_id),
-        headers=H(key),
+        headers=headers(key),
         json={"priceCents": cents, "message": message},
         timeout=30,
     )
     return r.status_code, r.text
 
 def run(min_budget=10, limit=50, max_bids=15):
-    key = KEYS.get("Hire")
-    if not key:
-        raise RuntimeError("TOKU_HIRE_KEY missing")
-
+    roster = load_roster()
+    hire_key = team_key(roster, "Hire")
     min_cents = int(min_budget * 100)
     jobs = open_jobs(limit=limit)
+
     sent = 0
     results = []
 
     for job in jobs:
         if sent >= max_bids:
             break
-        team = match(job)
-        if not team:
+        team = match_team(job)
+        if not team or team not in roster["teams"]:
             continue
-        cents = price(job, min_cents)
+        cents = price_for(job, min_cents)
         if not cents:
             continue
 
-        code, body = bid(job.get("id"), cents, MSG[team], key)
+        agent = pick_agent(roster, team)
+        code, body = submit_bid(job.get("id"), cents, MSG[team], hire_key)
         status = "applied" if code in (200, 201) else "apply_failed"
+
         event = {
             "type": "bid",
             "team": team,
+            "assigned_agent": agent,
             "status": status,
             "priceCents": cents,
             "job": {
@@ -135,9 +148,9 @@ def run(min_budget=10, limit=50, max_bids=15):
             "response_body": body[:1500],
             "at": datetime.now(timezone.utc).isoformat(),
         }
-        log(event)
+        log_event(event)
         results.append(event)
-        print("BID", status, team, job.get("title"), "$%.2f" % (cents / 100.0), code)
+        print("BID", status, team, agent, job.get("title"), "$%.2f" % (cents / 100.0), code)
         sent += 1
         time.sleep(1.5)
 
