@@ -1,86 +1,45 @@
-name: Run Agent Pipeline
+name: Autonomous Agent Network
 
 on:
-  schedule:
-    - cron: "0 0,4,12,16,20 * * *"
   workflow_dispatch:
-
-permissions:
-  contents: write
+  schedule:
+    - cron: '0 * * * *'
 
 jobs:
-  run-agents:
+  run-agent:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
-          cache: "pip"
+          python-version: '3.10'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install openai fpdf2 python-docx
+          pip install requests requests-oauthlib
 
       - name: Run Agent Script
+        env:
+          X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
+          X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
         run: python agent.py
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          BOOK_CATEGORY: romance
 
-      - name: Refine up to 5 books
-        if: always()
-        run: python agent.py --refine --limit 5
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-
-      - name: Run Security Team Session
-        if: always()
-        run: python security_team.py
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-
-      - name: Generate report
-        if: always()
-        run: python agent.py --report
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-
-      - name: Upload books
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: books
-          path: books/
-          if-no-files-found: warn
-
-      - name: Upload security team notes
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: security-team
-          path: security_team/
-          if-no-files-found: warn
-
-      - name: Upload fleet report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: fleet-report
-          path: fleet-report.md
-          if-no-files-found: warn
-
-      - name: Save outputs to repo
-        if: always()
+      - name: Configure Git User
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-          git add books security_team fleet-report.md || true
-          git diff --cached --quiet || git commit -m "Add books, security team notes, and fleet report"
-          git push || true
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Stash, Pull, and Push changes
+        run: |
+          git stash
+          git pull origin main --rebase
+          git stash pop || true
+          git add fleet-report.md agent.py
+          git commit -m "chore: update autonomous agent network report and script [skip ci]" || echo "No changes to commit"
+          git push origin main
