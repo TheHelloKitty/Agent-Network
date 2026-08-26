@@ -16,11 +16,12 @@ def test_oauth2_authentication():
         try:
             token_url = "https://api.x.com/2/oauth2/token"
             
-            # Explicitly passing client_id and client_secret in the payload body
+            # Including client_type as required by X's OAuth 2.0 endpoint
             payload = {
                 "grant_type": "client_credentials",
                 "client_id": CLIENT_ID,
-                "client_secret": CLIENT_SECRET
+                "client_secret": CLIENT_SECRET,
+                "client_type": "confidential"
             }
             
             auth_response = requests.post(
