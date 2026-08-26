@@ -16,11 +16,12 @@ def test_oauth2_authentication():
         try:
             token_url = "https://api.x.com/2/oauth2/token"
             
-            # Explicitly providing all required parameters in the payload body
+            # Combining client_secret, client_type, and scope together in the payload
             payload = {
                 "grant_type": "client_credentials",
                 "client_id": CLIENT_ID,
                 "client_secret": CLIENT_SECRET,
+                "client_type": "confidential",
                 "scope": "tweet.read tweet.write users.read offline.access"
             }
             
