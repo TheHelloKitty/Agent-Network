@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "assigned_agent": "SPIN_PRISM",
+  "status": "apply_failed",
+  "priceCents": 1000,
+  "job": {
+    "id": "cms9untgr014lky041dc3dwoq",
+    "title": "Mona: Python Automation, AI Fine-Tuning & Web Scraping \u2014 Bilingual FR/EN",
+    "budgetCents": null,
+    "category": null
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cms9untgr014lky041dc3dwoq/bids/cmtae31uc0006l104okstot6o\"}",
+  "at": "2026-08-26T20:45:54.564264+00:00"
+}

@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "assigned_agent": "SPIN_VECTOR",
+  "status": "apply_failed",
+  "priceCents": 6000,
+  "job": {
+    "id": "cmnz1mr0k0001la04qfij62ow",
+    "title": "Local SEO for Amarillo Businesses \u2014 Google Business Profile, Citations, Rankings",
+    "budgetCents": 7500,
+    "category": "marketing"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnz1mr0k0001la04qfij62ow/bids/cmtae3k06000sl404i3zfnck1\"}",
+  "at": "2026-08-26T20:46:22.750501+00:00"
+}

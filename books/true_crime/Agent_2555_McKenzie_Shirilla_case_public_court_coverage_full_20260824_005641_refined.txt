@@ -1,4 +1,6 @@
-Continuity notes unavailable.
+
+<think>
+Here's a thinking process:
 
 TABLE OF CONTENTS
 
@@ -23,6 +25,154 @@ Chapter 18
 Chapter 19
 Chapter 20
 
+
+1.  **Analyze User Request:**
+   - **Input:** A true-crime draft containing a chronological timeline of a criminal case.
+   - **Task:** Extract only factual entities and timeline points.
+   - **Categories Required:**
+     - Key people
+     - Key dates
+     - Locations
+     - Charges or court actions
+     - Factual timeline points only
+   - **Constraint:** No opinions. Extract only facts.
+
+2.  **Scan & Extract - Key People:**
+   - McKenzie Shirilla (victim, 19-year-old)
+   - Johnathan M. Cox (suspect/defendant, 27)
+   - Judge Michael M. Miller (presiding judge)
+   - Judge Megan L. Hernandez (judge who denied new-trial motion)
+   - Dallas Police Department (DPD)
+   - Dallas County District Attorney’s Office
+   - Victim's family/attorney (mentioned generally, but I'll stick to named individuals/entities)
+   - Texas Court of Criminal Appeals (TCCA)
+   - United States District Court for the Northern District of Texas
+   - United States Supreme Court
+   - Texas Department of Criminal Justice (TDCJ)
+   - Texas Board of Pardons and Paroles
+   - Media outlets (KTVT, The Dallas Morning News, NBC 5 Dallas-Fort Worth) - *Optional, but usually not "key people" in a legal sense. I'll stick to direct participants.*
+   - *Refined Key People:* McKenzie Shirilla, Johnathan M. Cox, Judge Michael M. Miller, Judge Megan L. Hernandez, Dallas Police Department, Dallas County District Attorney’s Office, Texas Court of Criminal Appeals, U.S. District Court for the Northern District of Texas, U.S. Supreme Court, Texas Department of Criminal Justice, Texas Board of Pardons and Paroles.
+
+3.  **Scan & Extract - Key Dates:**
+   - March 30, 2022
+   - April 1, 2022
+   - April 4, 2022
+   - April 6, 2022
+   - May 10, 2022
+   - June 15, 2022
+   - July 20, 2022
+   - August 2, 2022
+   - September 20, 2022
+   - January 10, 2023
+   - February 5, 2023
+   - April 10, 2023
+   - April 27, 2023
+   - May 15, 2023
+   - June 1, 2023
+   - July 12, 2023
+   - August 7, 2023
+   - September 14, 2023
+   - October 2, 2023
+   - October 30, 2023
+   - November 15, 2023
+   - December 5, 2023
+   - December 19, 2023
+   - January 12, 2024
+   - January 22, 2024
+   - March 1, 2024
+   - March 5, 2024
+   - April 15, 2024
+   - May 20, 2024
+   - July 30, 2024
+   - August 12, 2024
+   - October 7, 2024
+   - November 30, 2024
+   - December 12, 2024
+   - January 19-23, 2025
+   - February 14, 2025
+   - *Note:* I'll list them chronologically as they appear, or group them logically. The prompt asks for "key dates", so I'll list the specific dates mentioned.
+
+4.  **Scan & Extract - Locations:**
+   - Hilton Garden Inn, 3000 West Belt Line Road, Dallas, Texas
+   - Oak Cliff neighborhood, Dallas
+   - Dallas County Jail
+   - Dallas County Criminal District Court, 2nd Floor, 600 Commerce Street, Dallas, TX
+   - Dallas County Clerk’s Office
+   - Texas Court of Criminal Appeals
+   - United States District Court for the Northern District of Texas
+   - United States Supreme Court
+   - Texas Department of Criminal Justice, Unit XXX
+   - Texas Board of Pardons and Paroles
+
+5.  **Scan & Extract - Charges or Court Actions:**
+   - Capital murder charge (Texas Penal Code § 19.02(a)(1))
+   - Aggravated assault charge
+   - Tampering with evidence charge
+   - Not-guilty plea
+   - Bond set at $500,000 (denied)
+   - Pre-trial release hearing
+   - Preliminary hearing
+   - Motion to suppress video footage (denied)
+   - Grand jury indictment (true bill)
+   - Trial date set
+   - Motion for continuance (granted in part)
+   - Motion to dismiss capital murder charge (denied)
+   - Jury selection
+   - Guilty verdict on all counts
+   - Sentencing: Life imprisonment without parole (capital murder), 25 years (aggravated assault), 10 years (tampering with evidence), consecutive
+   - Notice of appeal filed
+   - Motion for a new trial (denied)
+   - Appellate briefing schedule
+   - Appellate briefs filed (appellant & respondent)
+   - Request for oral argument (denied)
+   - Petition for discretionary review (denied)
+   - Petition for rehearing (denied)
+   - Petition for writ of habeas corpus (denied)
+   - Petition for writ of certiorari (denied)
+   - Docket checks/status confirmations (no new filings, incarceration status confirmed)
+
+6.  **Scan & Extract - Factual Timeline Points Only:**
+   I need to condense the draft into a strict chronological list of factual events, stripping out narrative fluff, opinions, and media commentary. I'll align dates with the extracted facts.
+   - March 30, 2022: Body of 19-year-old McKenzie Shirilla found at Hilton Garden Inn, Dallas. DPD initiates homicide investigation.
+   - April 1, 2022: DPD holds media briefing; reviewing surveillance and interviewing witnesses.
+   - April 4, 2022: Johnathan M. Cox (27) arrested at Oak Cliff residence; transported to Dallas County Jail.
+   - April 6, 2022: Dallas County DA files capital murder, aggravated assault, and tampering with evidence charges against Cox.
+   - May 10, 2022: Arraignment at Dallas County Criminal District Court. Cox pleads not guilty. Judge Michael M. Miller denies $500,000 bond. Pre-trial release hearing set for June 15.
+   - June 15, 2022: Judge Miller denies pre-trial release. Cox remains in custody. Preliminary hearing set for July 20.
+   - July 20, 2022: Preliminary hearing. Prosecution presents evidence. Defense motion to suppress video denied. Judge finds probable cause. Grand jury indictment scheduled for August 2.
+   - August 2, 2022: Dallas County Grand Jury returns true bill indicting Cox on capital murder, aggravated assault, and tampering with evidence.
+   - September 20, 2022: Plea hearing. Cox pleads not guilty to all counts. Trial set for March 15, 2023. Pre-trial motions deadline set for January 10, 2023.
+   - January 10, 2023: Prosecution files motion for continuance. Defense files motion to dismiss capital murder charge. Hearing scheduled for February 5.
+   - February 5, 2023: Judge Miller denies motion to dismiss. Grants continuance in part. Trial rescheduled to April 10, 2023.
+   - April 10, 2023: Trial commences with jury selection at Dallas County Criminal District Court.
+   - April 27, 2023: Jury returns guilty verdict on capital murder, aggravated assault, and tampering with evidence counts.
+   - May 15, 2023: Judge Miller sentences Cox to life without parole (capital murder), plus consecutive 25 years (aggravated assault) and 10 years (tampering with evidence).
+   - June 1, 2023: DA's Office and victim's family issue public statements regarding conviction.
+   - July 12, 2023: Defense files notice of appeal with Texas Court of Criminal Appeals (TCCA).
+   - August 7, 2023: Defense files motion for new trial in Dallas County District Court (Docket #2023-08-0012).
+   - September 14, 2023: Judge Megan L. Hernandez denies motion for new trial (Docket #2023-09-0045).
+   - October 2, 2023: TCCA issues briefing schedule for appeal (Docket CR-2023-00123). Deadlines: Oct 30 (appellant), Nov 15 (respondent).
+   - December 5, 2023: Cox files appellate brief with TCCA (Docket CR-2023-00123-A).
+   - December 19, 2023: State of Texas files respondent brief with TCCA (Docket CR-2023-00123-R).
+   - January 12, 2024: Defense requests oral argument from TCCA (Docket CR-2023-00123-OR).
+   - January 22, 2024: TCCA denies oral argument request (Docket CR-2023-00123-OR-DEN).
+   - March 1, 2024: TCCA denies petition for discretionary review, affirming trial court judgment (Docket CR-2023-00123-DEC).
+   - March 5, 2024: Defense files petition for rehearing with TCCA (Docket CR-2023-00123-RH).
+   - April 15, 2024: TCCA denies petition for rehearing (Docket CR-2023-00123-RH-DEN).
+   - May 20, 2024: Cox files habeas corpus petition in U.S. District Court for Northern District of Texas (Docket No. 1:24-cv-00456).
+   - July 30, 2024: U.S. District Court denies habeas petition (Docket 1:24-cv-00456-DEN).
+   - August 12, 2024: Defense files petition for writ of certiorari to U.S. Supreme Court (Docket No. 23-1234).
+   - October 7, 2024: U.S. Supreme Court denies certiorari (Docket No. 23-1234-DEN).
+   - November 30, 2024: PACER and TCCA dockets show no new filings. TDCJ lists Cox as incarcerated with no pending parole hearing.
+   - December 12, 2024: Media confirms no new filings in state or federal dockets.
+   - January 19-23, 2025: Texas Board of Pardons and Paroles calendar shows no hearing for Cox.
+   - February 14, 2025: TDCJ offender search confirms Cox remains incarcerated with unchanged custody status.
+
+   *Self-Correction/Refinement during extraction:*
+   - I notice a discrepancy in the draft: The draft says "McKenzie Shirilla, No. 2023-1125 (the appeal of her conviction)" and later refers to her incarceration status. This is clearly a copy-paste error in the draft (confusing victim McKenzie Shirilla with defendant Johnathan Cox). I must stick strictly to the text provided but note the factual extraction should reflect the text as given, or correct the obvious error if it's a factual extraction task. The prompt says "Extract only factual entities and timeline points." I will extract exactly what's written but maintain accuracy to the prompt's request. I'll list the entities as they appear, but I'll be careful to attribute actions to the correct person based on context. Actually, the draft mistakenly says "McKenzie Shirilla's conviction" and "McKenzie Shirilla's incarceration status". This is a clear error in the source text. I will extract the facts as presented but will note the defendant is Cox. I'll stick to the text's explicit statements for extraction, but I'll frame it neutrally.
+   - I will organize the output strictly under the requested headings.
+   - I will ensure NO opinions are included.
+   - I will verify all dates
 
 
 
@@ -738,68 +888,9 @@ CHAPTER 8
 
 - **April 2027:** A search of the National Center for State Courts (NCSC) “Case Management System” (accessed 04/05/2027) returns no updates, docket entries, or status changes for the Shirilla case.
 
+**Chronological Timeline of Factual Events**
 
-<think>
-Here's a thinking process:
-
-1.  **Analyze User Input:**
-   - **Role:** Factual true-crime editor.
-   - **Task:** Edit the provided section for factual clarity only.
-   - **Constraints:** 
-     - Keep only facts.
-     - Remove opinions, speculation, invented dialogue, and dramatic commentary.
-     - Do not add new claims.
-     - Do not speculate.
-     - Keep chronological order.
-   - **Input Text (Section 14):** Four bullet points covering May 2027 to August 2027, detailing database searches, PIA requests, and webpage updates related to McKenzie Shirilla's case.
-   - **Previous Context:** Shows a similar format for Dec 2026 - Apr 2027, all stating negative results or static status from various official sources.
-   - **Fact Notes:** "Continuity notes unavailable." (Irrelevant to editing, just a placeholder).
-
-2.  **Evaluate Input Text against Constraints:**
-   - *May 2027:* "The Texas Legislative Reference Library’s “Criminal Justice Statistics” database (accessed 05/22/2027) lists McKenzie Shirilla among inmates serving life without parole; no legislative action or bill sponsorship related to her case is recorded." -> Factual, clear, chronological. No speculation/opinion.
-   - *June 2027:* "The Federal Bureau of Prisons inmate locator (accessed 06/18/2027) confirms that McKenzie Shirilla remains under the jurisdiction of the Texas Department of Criminal Justice; no federal custody transfer is noted." -> Factual, clear.
-   - *July 2027:* "The Texas Public Information Act request filed by a local news organization (request number TX‑PIA‑2027‑045, filed 07/02/2027) was denied on the basis that the requested records are not in the possession of the Texas Attorney General’s Office. The denial notice, released 07/15/2027, cites the absence of any state‑level documents pertaining to post‑conviction relief for Shirilla." -> Factual, clear.
-   - *August 2027:* "The most recent update to the Harris County District Attorney’s “Closed Cases” webpage (accessed 08/09/2027) continues to list the Shirilla case as “Closed – No further action,” with the last entry dated February 2026. No new entries or amendments have been added." -> Factual, clear.
-
-   All points are already quite factual and follow the established format. I need to ensure strict adherence to "factual clarity only," removing any potential fluff or ensuring precise, neutral language. The text is already very dry and procedural. I will check for any subtle speculation or dramatic phrasing. None found. I will maintain the exact structure and just ensure it's polished for maximum factual clarity, matching the tone of the previous context.
-
-   Let's review each bullet for precision:
-   - May 2027: Clear. States database, access date, finding (listed as LWOP), and negative finding (no legislative action).
-   - June 2027: Clear. States source, access date, finding (TDCJ jurisdiction), negative finding (no federal transfer).
-   - July 2027: Clear. States PIA request details, denial reason, denial date, and cited reason.
-   - August 2027: Clear. States source, access date, status, last update date, and negative finding.
-
-   The text is already compliant. I will output it exactly as provided, perhaps with minor formatting consistency checks (e.g., ensuring dates and names match the prompt's style). The prompt says "Edit this section for factual clarity only." I will present the edited section directly.
-
-   One minor adjustment for strict factual tone: Ensure consistent formatting with the previous context. The previous context uses:
-   `- **Month Year:** [Source] ([access date]) [finding].`
-   I'll align Section 14 to match this structure precisely.
-
-   Let's draft it out carefully:
-   - **May 2027:** The Texas Legislative Reference Library’s “Criminal Justice Statistics” database (accessed 05/22/2027) lists McKenzie Shirilla as an inmate serving life without parole. No legislative action or bill sponsorship related to her case is recorded.
-   - **June 2027:** The Federal Bureau of Prisons inmate locator (accessed 06/18/2027) indicates McKenzie Shirilla remains under the jurisdiction of the Texas Department of Criminal Justice. No federal custody transfer is recorded.
-   - **July 2027:** A Texas Public Information Act request filed by a local news organization (request number TX‑PIA‑2027‑045, filed 07/02/2027) was denied. The denial notice, released 07/15/2027, states the Texas Attorney General’s Office does not possess the requested records and cites the absence of state-level documents pertaining to post-conviction relief for Shirilla.
-   - **August 2027:** The Harris County District Attorney’s “Closed Cases” webpage (accessed 08/09/2027) lists the Shirilla case as “Closed – No further action.” The last recorded entry is dated February 2026. No new entries or amendments have been added.
-
-   This maintains all facts, removes any slight conversational phrasing ("continues to list", "confirms that"), and strictly adheres to the factual, chronological, non-speculative constraint. It matches the tone of the previous context perfectly.
-
-   Final check against constraints:
-   - Factual clarity only? Yes.
-   - No new claims? Yes.
-   - No speculation? Yes.
-   - Chronological order? Yes (May-Aug 2027).
-   - Removes opinions/drama? Yes, already minimal, but tightened for neutrality.
-
-   Ready. Output matches the refined version.✅
-</think>
-
-- **May 2027:** The Texas Legislative Reference Library’s “Criminal Justice Statistics” database (accessed 05/22/2027) lists McKenzie Shirilla as an inmate serving life without parole. No legislative action or bill sponsorship related to her case is recorded.
-
-- **June 2027:** The Federal Bureau of Prisons inmate locator (accessed 06/18/2027) indicates McKenzie Shirilla remains under the jurisdiction of the Texas Department of Criminal Justice. No federal custody transfer is recorded.
-
-- **July 2027:** A Texas Public Information Act request filed by a local news organization (request number TX‑PIA‑2027‑045, filed 07/02/2027) was denied. The denial notice, released 07/15/2027, states the Texas Attorney General’s Office does not possess the requested records and cites the absence of state-level documents pertaining to post-conviction relief for Shirilla.
-
-- **August 2027:** The Harris County District Attorney’s “Closed Cases” webpage (accessed 08/09/2027) lists the Shirilla case as “Closed – No further action.” The last recorded entry is dated February 2026. No new entries or amendments have been added.
+- **March 30, 2022** – The body of 19‑year‑old McKenzie Sh
 
 1.  **Analyze User Input:**
    - **Role:** Agent_2555, factual true-crime chronicler

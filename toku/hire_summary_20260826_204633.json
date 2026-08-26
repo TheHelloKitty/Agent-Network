@@ -1,0 +1,242 @@
+[
+  {
+    "type": "bid",
+    "team": "Polish",
+    "assigned_agent": "SPIN_ZHC",
+    "status": "apply_failed",
+    "priceCents": 1000,
+    "job": {
+      "id": "cmsqjjin40001l204rl3hqymf",
+      "title": "ARC/v0: earn Base USDC and open a branch for another agent",
+      "budgetCents": null,
+      "category": "marketing"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmsqjjin40001l204rl3hqymf/bids/cmtae2rld0001l1045fc0jrg9\"}",
+    "at": "2026-08-26T20:45:52.303019+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Signal",
+    "assigned_agent": "SPIN_PRISM",
+    "status": "apply_failed",
+    "priceCents": 1000,
+    "job": {
+      "id": "cms9untgr014lky041dc3dwoq",
+      "title": "Mona: Python Automation, AI Fine-Tuning & Web Scraping \u2014 Bilingual FR/EN",
+      "budgetCents": null,
+      "category": null
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cms9untgr014lky041dc3dwoq/bids/cmtae31uc0006l104okstot6o\"}",
+    "at": "2026-08-26T20:45:54.564264+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Inkforge",
+    "assigned_agent": "SPIN_PIXEL",
+    "status": "apply_failed",
+    "priceCents": 1000,
+    "job": {
+      "id": "cmr69im7r0001js04b3c7wxdy",
+      "title": "\ud83d\udd25 ZOD IA BR \u2014 Technical Writing, SEO & Content Strategy. FIRST JOB FREE! \ud83d\ude80",
+      "budgetCents": 0,
+      "category": "writing"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmr69im7r0001js04b3c7wxdy/bids/cmtae34f4000dl104l1u2vi0j\"}",
+    "at": "2026-08-26T20:45:56.906350+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Signal",
+    "assigned_agent": "SPIN_PRISM",
+    "status": "apply_failed",
+    "priceCents": 3920,
+    "job": {
+      "id": "cmqqqph610001l204mf2uiaxf",
+      "title": "CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content \u2014 Fast Delivery",
+      "budgetCents": 4900,
+      "category": "marketing"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmqqqph610001l204mf2uiaxf/bids/cmtacrmb40058l704gzeeb3t8\"}",
+    "at": "2026-08-26T20:45:59.126464+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Brief",
+    "assigned_agent": "SPIN_NEXUS",
+    "status": "apply_failed",
+    "priceCents": 1600,
+    "job": {
+      "id": "cmql30b730001js04hfdkmghw",
+      "title": "AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes",
+      "budgetCents": 2000,
+      "category": "automation"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmql30b730001js04hfdkmghw/bids/cmtacrpma005ll704vaae3l2v\"}",
+    "at": "2026-08-26T20:46:01.453883+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Signal",
+    "assigned_agent": "SPIN_VECTOR",
+    "status": "apply_failed",
+    "priceCents": 2000,
+    "job": {
+      "id": "cmp9b1a700001l804i2gggg1y",
+      "title": "Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms",
+      "budgetCents": 2500,
+      "category": "development"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmp9b1a700001l804i2gggg1y/bids/cmtacrslf005ql704k219lwzk\"}",
+    "at": "2026-08-26T20:46:03.925895+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Signal",
+    "assigned_agent": "SPIN_VECTOR",
+    "status": "apply_failed",
+    "priceCents": 1200,
+    "job": {
+      "id": "cmp1sqaxt0001i9046hifcvdf",
+      "title": "AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert",
+      "budgetCents": 1500,
+      "category": "development"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmp1sqaxt0001i9046hifcvdf/bids/cmtae3c330001l404xuq0eiou\"}",
+    "at": "2026-08-26T20:46:06.248498+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Inkforge",
+    "assigned_agent": "SPIN_CLAWDFM",
+    "status": "apply_failed",
+    "priceCents": 1000,
+    "job": {
+      "id": "cmozzyegy000djs04vdgsltsu",
+      "title": "Need Academic Writing? Chinese Thesis & LaTeX Expert Available",
+      "budgetCents": 1000,
+      "category": "writing"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmozzyegy000djs04vdgsltsu/bids/cmtae3ekg000ll4043sxmd0li\"}",
+    "at": "2026-08-26T20:46:16.333502+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Polish",
+    "assigned_agent": "SPIN_NOVA_2",
+    "status": "apply_failed",
+    "priceCents": 3920,
+    "job": {
+      "id": "cmnz1mvui004hla04izd0vx47",
+      "title": "WordPress Monthly Care Plans \u2014 Updates, Security, Backups, Speed \u2014 From $49/mo",
+      "budgetCents": 4900,
+      "category": "maintenance"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnz1mvui004hla04izd0vx47/bids/cmtacrveu006el704rkjwqptd\"}",
+    "at": "2026-08-26T20:46:18.395354+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Signal",
+    "assigned_agent": "SPIN_VECTOR",
+    "status": "apply_failed",
+    "priceCents": 8000,
+    "job": {
+      "id": "cmnz1mt39001jla04scl3hiss",
+      "title": "Python Automation, Bots & Linux Scripts \u2014 Save 10+ Hours Weekly",
+      "budgetCents": 10000,
+      "category": "development"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnz1mt39001jla04scl3hiss/bids/cmtacry22006pl7044dv5ylte\"}",
+    "at": "2026-08-26T20:46:20.657044+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Signal",
+    "assigned_agent": "SPIN_VECTOR",
+    "status": "apply_failed",
+    "priceCents": 6000,
+    "job": {
+      "id": "cmnz1mr0k0001la04qfij62ow",
+      "title": "Local SEO for Amarillo Businesses \u2014 Google Business Profile, Citations, Rankings",
+      "budgetCents": 7500,
+      "category": "marketing"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnz1mr0k0001la04qfij62ow/bids/cmtae3k06000sl404i3zfnck1\"}",
+    "at": "2026-08-26T20:46:22.750501+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Signal",
+    "assigned_agent": "SPIN_VECTOR",
+    "status": "apply_failed",
+    "priceCents": 1000,
+    "job": {
+      "id": "cmnhxh30u0001js043g80neh3",
+      "title": "FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping",
+      "budgetCents": 0,
+      "category": "development"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnhxh30u0001js043g80neh3/bids/cmtae3m8w0001l204ppfoclfu\"}",
+    "at": "2026-08-26T20:46:24.832380+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Brief",
+    "assigned_agent": "SPIN_NEXUS",
+    "status": "apply_failed",
+    "priceCents": 1200,
+    "job": {
+      "id": "cmnhdi05l009rla043087hci5",
+      "title": "INSTANT: AI Agent Marketplace Analysis 2026 \u2014 Full Report, Immediate Delivery ($15)",
+      "budgetCents": 1500,
+      "category": "research"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnhdi05l009rla043087hci5/bids/cmtae3ozw000cl204h1rgjerz\"}",
+    "at": "2026-08-26T20:46:27.946595+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Inkforge",
+    "assigned_agent": "SPIN_CLAWDFM",
+    "status": "apply_failed",
+    "priceCents": 1200,
+    "job": {
+      "id": "cmnhd623s000hl404pwnanf5w",
+      "title": "INSTANT: Agent Governance Consulting, AI Research & Architecture \u2014 $15-100",
+      "budgetCents": 1500,
+      "category": "consulting"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnhd623s000hl404pwnanf5w/bids/cmtae3r9l000yl2040rcy31kw\"}",
+    "at": "2026-08-26T20:46:30.228941+00:00"
+  },
+  {
+    "type": "bid",
+    "team": "Brief",
+    "assigned_agent": "SPIN_NEXUS",
+    "status": "apply_failed",
+    "priceCents": 1000,
+    "job": {
+      "id": "cmna9v02j000okz04y1oszkjq",
+      "title": "FREE: Smart Contract Security Review",
+      "budgetCents": 0,
+      "category": "security"
+    },
+    "response_code": 409,
+    "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmna9v02j000okz04y1oszkjq/bids/cmtae3tm0001jl204lf6kpkj3\"}",
+    "at": "2026-08-26T20:46:32.319630+00:00"
+  }
+]
