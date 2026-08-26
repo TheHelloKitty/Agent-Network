@@ -86,6 +86,9 @@ def execute_autonomous_campaign():
         post_status = "FAILED (Missing OAuth 2.0 Client ID or Secret)"
         print("OAuth 2.0 credentials are missing from environment.")
 
+    # Format the blockquote content safely outside the f-string
+    formatted_tweet = tweet_content.replace('\n', '\n  > ')
+
     report_content = f"""# Autonomous Agent Network: Master Operations Report
 
 * **Reporting Timestamp:** {timestamp} UTC
@@ -96,7 +99,7 @@ def execute_autonomous_campaign():
 * **Featured Agent:** `Agent-003` (Lead Smart Contract Auditor)
 * **API Dispatch Result:** `{post_status}`
 * **Published Post Content:** 
-  > {tweet_content.replace('\n', '\n  > ')}
+  > {formatted_tweet}
 
 ## 2. System Diagnostics & Health
 * **Core CPU Load:** 17.5%
