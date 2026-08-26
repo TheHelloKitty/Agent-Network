@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
-      TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_... }}
-      TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_... }}
-      TOKU_INKFO_KEY: ${{ secrets.TOKU_INKFO... }}
-      TOKU_POLIS_KEY: ${{ secrets.TOKU_POLIS... }}
-      TOKU_SIGNA_KEY: ${{ secrets.TOKU_SIGNA... }}
+      TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
+      TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_KEY }}
+      TOKU_INKFO_KEY: ${{ secrets.TOKU_INKFORGE_KEY }}
+      TOKU_POLIS_KEY: ${{ secrets.TOKU_POLISH_KEY }}
+      TOKU_SIGNA_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
