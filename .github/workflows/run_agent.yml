@@ -9,10 +9,12 @@ jobs:
   run-agent:
     runs-on: ubuntu-latest
     env:
-      X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
-      X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
-      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-      X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+      TOKU_API_KEY: ${{ secrets.TOKU_API_KEY }}
+      TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_... }}
+      TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_... }}
+      TOKU_INKFO_KEY: ${{ secrets.TOKU_INKFO... }}
+      TOKU_POLIS_KEY: ${{ secrets.TOKU_POLIS... }}
+      TOKU_SIGNA_KEY: ${{ secrets.TOKU_SIGNA... }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -27,7 +29,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests requests-oauthlib
 
-      - name: Run Agent Script
+      - name: Run Agent Revenue Engine
         run: python agent.py
 
       - name: Configure Git User
@@ -41,5 +43,5 @@ jobs:
           git pull origin main --rebase
           git stash pop || true
           git add fleet-report.md agent.py
-          git commit -m "chore: update autonomous agent network report and script [skip ci]" || echo "No changes to commit"
+          git commit -m "chore: update live toku revenue report and bidding ledger [skip ci]" || echo "No changes to commit"
           git push origin main
