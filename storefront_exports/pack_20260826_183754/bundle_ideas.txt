@@ -1,0 +1,41 @@
+## 5 Payhip Bundle Ideas for Your True‑Crime eBook  
+*(All bundles are designed to add real value, encourage upsells, and keep the price points attractive to the true‑crime fanbase.)*
+
+| # | Bundle Name | What’s Included | Why It Sells | Suggested Price |
+|---|-------------|-----------------|--------------|-----------------|
+| 1 | **“The Full Case” Bundle** | • The complete 20‑chapter eBook (PDF & ePub) <br>• 1‑hour “Case Breakdown” audio narration (high‑quality MP3) <br>• 5 exclusive “Behind‑the‑Scenes” notes (PDF) | Fans want the whole story plus a deeper look at the investigation. The audio lets them consume on the go. | **$12.99** |
+| 2 | **“Detective’s Toolkit” Bundle** | • The eBook (PDF & ePub) <br>• “Detective’s Field Guide” – a printable PDF with a timeline, suspect profiles, and investigative tools <br>• 30‑second “Crime Scene Photo” collection (high‑res JPGs) | Adds tangible, reusable material that feels like a professional resource. Great for students, hobbyists, or fans who love to “solve” the case. | **$9.99** |
+| 3 | **“True‑Crime Immersion” Bundle** | • The eBook (PDF & ePub) <br>• 2‑hour “Crime‑Scene Walk‑through” audio (ambient sounds + narration) <br>• 3‑minute “Interview with an Expert” video (MP4) | Creates an immersive, multi‑sensory experience. The audio + video make the story feel lived‑in. | **$14.99** |
+| 4 | **“Collector’s Edition” Bundle** | • The eBook (PDF & ePub) <br>• 2‑page “Illustrated Map” of the key locations (PDF) <br>• 1‑page “Artistic Sketch” of the main suspect (JPEG) <br>• 1‑year subscription to an exclusive newsletter with monthly crime trivia | Appeals to collectors and superfans who want unique, aesthetic items. The newsletter keeps them engaged over time. | **$16.99** |
+| 5 | **“Study & Discuss” Bundle** | • The eBook (PDF & ePub) <br>• 10‑page “Discussion Guide” (questions, analysis prompts, debate topics) <br>• 1‑hour “Live Q&A” session (Zoom link) with the author | Perfect for book clubs, classrooms, or fan communities. The live Q&A adds a personal touch and encourages word‑of‑mouth. | **$19.99** |
+
+---
+
+### How to Set It Up on Payhip
+
+1. **Create the Digital Products**  
+   - Upload the PDF, ePub, MP3, MP4, JPEG, and any other files as separate “files” under the product.  
+   - For the Live Q&A, upload a placeholder “Zoom Link” that you’ll update before the session.
+
+2. **Bundle Construction**  
+   - In Payhip, use the “Bundle” feature (or create a product with multiple downloadable files).  
+   - Label each bundle clearly (e.g., “The Full Case Bundle”) and write a short, benefit‑focused description.
+
+3. **Pricing Strategy**  
+   - The base eBook can be sold at a lower price (e.g., $4.99) to capture impulse buyers.  
+   - Bundles should be priced at a “sweet spot”—high enough to cover added content, low enough that buyers feel they’re getting a discount versus buying each component separately.
+
+4. **Upsell & Cross‑Sell**  
+   - After a purchase, show a “Would you like to upgrade to the next bundle?” pop‑up.  
+   - Offer a small discount if they buy a bundle within 48 h of the base eBook purchase.
+
+5. **Marketing Tips**  
+   - Use the 5‑chapter teaser you already have as a lead magnet.  
+   - Post on true‑crime forums, Reddit, Discord servers, and Facebook groups.  
+   - Highlight the exclusive audio/video content in your ads—people love “behind‑the‑scenes” material.  
+   - Run a limited‑time “Early‑Bird” discount for the first 50 buyers of each bundle.
+
+---
+
+### Final Thought
+By offering a mix of audio, visual, and interactive content, you turn a single story into a multi‑layered experience that appeals to different learning styles and price sensitivities. The bundles above are designed to keep the perceived value high while making the purchase process simple and enticing for true‑crime fans on Payhip. Happy selling!

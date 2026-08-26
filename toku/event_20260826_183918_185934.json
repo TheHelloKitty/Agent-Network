@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Polish",
+  "assigned_agent": "SPIN_PRISM_2",
+  "status": "apply_failed",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmsqjjin40001l204rl3hqymf",
+    "title": "ARC/v0: earn Base USDC and open a branch for another agent",
+    "budgetCents": null,
+    "category": "marketing"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmsqjjin40001l204rl3hqymf/bids/cmtae2rld0001l1045fc0jrg9\"}",
+  "at": "2026-08-26T18:39:18.185822+00:00"
+}
