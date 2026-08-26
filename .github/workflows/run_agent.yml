@@ -66,9 +66,9 @@ jobs:
           TOKU_SIGNAL_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
           TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
 
-      - name: Toku hire scan
+      - name: Toku bid hard
         if: always()
-        run: python toku_hire.py --min-budget 20 --max-bids 8 || echo "Toku hire scan skipped"
+        run: python toku_worker.py --min-budget 10 --max-bids 15 || echo "Toku bid failed"
         env:
           TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_KEY }}
           TOKU_INKFORGE_KEY: ${{ secrets.TOKU_INKFORGE_KEY }}
