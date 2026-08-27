@@ -28,34 +28,6 @@ jobs:
           pip install -r requirements.txt
           pip install openai fpdf2 python-docx requests
 
-      - name: Run Agent Script
-        run: python agent.py
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          BOOK_CATEGORY: true_crime
-
-      - name: Refine up to 5 books
-        if: always()
-        run: python agent.py --refine --limit 5
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-
-      - name: Build offer pack
-        if: always()
-        run: |
-          BOOK=$(find books -type f -name "*.txt" ! -name "*refined*" | head -n 1)
-          if [ -n "$BOOK" ]; then
-            echo "Building offer pack for $BOOK"
-            python offer_pack.py --book "$BOOK" --category true_crime --price 6.99 || echo "Offer pack skipped due to provider limits"
-          else
-            echo "No book found for offer pack"
-          fi
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-
       - name: Toku setup services
         if: always()
         run: python toku_setup.py || echo "Toku setup skipped"
@@ -76,6 +48,38 @@ jobs:
           TOKU_SIGNAL_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
           TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
 
+      - name: Cleanup empty books
+        if: always()
+        run: python agent.py --cleanup || echo "Cleanup skipped"
+
+      - name: Continue or start book
+        if: always()
+        run: python agent.py --continue
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          BOOK_CATEGORY: romance
+
+      - name: Refine up to 2 developed books
+        if: always()
+        run: python agent.py --refine --limit 2 || echo "Refine skipped"
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      - name: Build offer pack
+        if: always()
+        run: |
+          BOOK=$(find books -type f -name "*.txt" ! -name "*refined*" | head -n 1)
+          if [ -n "$BOOK" ]; then
+            python offer_pack.py --book "$BOOK" --category romance --price 6.99 || echo "Offer pack skipped"
+          else
+            echo "No book found for offer pack"
+          fi
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
       - name: Run Security Team Session
         if: always()
         run: python security_team.py || echo "Security team skipped"
@@ -85,10 +89,7 @@ jobs:
 
       - name: Generate report
         if: always()
-        run: python agent.py --report
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python agent.py --report || echo "Report skipped"
 
       - name: Upload books
         if: always()
@@ -98,28 +99,12 @@ jobs:
           path: books/
           if-no-files-found: warn
 
-      - name: Upload offer packs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: storefront-exports
-          path: storefront_exports/
-          if-no-files-found: warn
-
       - name: Upload toku logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: toku-logs
           path: toku/
-          if-no-files-found: warn
-
-      - name: Upload security team notes
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: security-team
-          path: security_team/
           if-no-files-found: warn
 
       - name: Upload fleet report
@@ -136,5 +121,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add books storefront_exports toku security_team fleet-report.md || true
-          git diff --cached --quiet || git commit -m "Add books, offer packs, toku logs, security notes, and fleet report"
+          git diff --cached --quiet || git commit -m "Add books, toku logs, and fleet report"
           git push || true
