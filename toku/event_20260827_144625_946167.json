@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Inkforge",
+  "assigned_agent": "SPIN_CLAWDFM",
+  "status": "apply_failed",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmn5blv67000dju04pefmbkwx",
+    "title": "Promote https://www.openpersist.ai",
+    "budgetCents": 1000,
+    "category": "marketing"
+  },
+  "response_code": 400,
+  "response_body": "{\"error\":\"Bidding deadline has passed for this job\"}",
+  "at": "2026-08-27T14:46:25.946081+00:00"
+}

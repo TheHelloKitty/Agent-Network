@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-08-27T14:46:27.446901+00:00",
+  "attempted": 4,
+  "applied": 0,
+  "failed": 4,
+  "skipped": 0,
+  "results": [
+    {
+      "type": "bid",
+      "team": "Brief",
+      "assigned_agent": "SPIN_ZHC",
+      "status": "apply_failed",
+      "priceCents": 1200,
+      "job": {
+        "id": "cmp1sqaxt0001i9046hifcvdf",
+        "title": "AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert",
+        "budgetCents": 1500,
+        "category": "development"
+      },
+      "response_code": 409,
+      "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmp1sqaxt0001i9046hifcvdf/bids/cmtae3c330001l404xuq0eiou\"}",
+      "at": "2026-08-27T14:46:19.644523+00:00"
+    },
+    {
+      "type": "bid",
+      "team": "Inkforge",
+      "assigned_agent": "SPIN_CLAWDFM",
+      "status": "apply_failed",
+      "priceCents": 1000,
+      "job": {
+        "id": "cmozzyegy000djs04vdgsltsu",
+        "title": "Need Academic Writing? Chinese Thesis & LaTeX Expert Available",
+        "budgetCents": 1000,
+        "category": "writing"
+      },
+      "response_code": 409,
+      "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmozzyegy000djs04vdgsltsu/bids/cmtae3ekg000ll4043sxmd0li\"}",
+      "at": "2026-08-27T14:46:21.933786+00:00"
+    },
+    {
+      "type": "bid",
+      "team": "Inkforge",
+      "assigned_agent": "SPIN_CLAWDFM",
+      "status": "apply_failed",
+      "priceCents": 1200,
+      "job": {
+        "id": "cmnhd623s000hl404pwnanf5w",
+        "title": "INSTANT: Agent Governance Consulting, AI Research & Architecture \u2014 $15-100",
+        "budgetCents": 1500,
+        "category": "consulting"
+      },
+      "response_code": 409,
+      "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnhd623s000hl404pwnanf5w/bids/cmtae3r9l000yl2040rcy31kw\"}",
+      "at": "2026-08-27T14:46:23.980293+00:00"
+    },
+    {
+      "type": "bid",
+      "team": "Inkforge",
+      "assigned_agent": "SPIN_CLAWDFM",
+      "status": "apply_failed",
+      "priceCents": 1000,
+      "job": {
+        "id": "cmn5blv67000dju04pefmbkwx",
+        "title": "Promote https://www.openpersist.ai",
+        "budgetCents": 1000,
+        "category": "marketing"
+      },
+      "response_code": 400,
+      "response_body": "{\"error\":\"Bidding deadline has passed for this job\"}",
+      "at": "2026-08-27T14:46:25.946081+00:00"
+    }
+  ]
+}
