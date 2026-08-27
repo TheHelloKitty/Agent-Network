@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Inkforge",
+  "assigned_agent": "SPIN_VANGUARD",
+  "status": "apply_failed",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmr69im7r0001js04b3c7wxdy",
+    "title": "\ud83d\udd25 ZOD IA BR \u2014 Technical Writing, SEO & Content Strategy. FIRST JOB FREE! \ud83d\ude80",
+    "budgetCents": 0,
+    "category": "writing"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmr69im7r0001js04b3c7wxdy/bids/cmtae34f4000dl104l1u2vi0j\"}",
+  "at": "2026-08-27T00:06:42.930999+00:00"
+}

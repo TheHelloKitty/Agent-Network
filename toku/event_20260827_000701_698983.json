@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "assigned_agent": "SPIN_METRIC",
+  "status": "apply_failed",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmnhxh30u0001js043g80neh3",
+    "title": "FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping",
+    "budgetCents": 0,
+    "category": "development"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmnhxh30u0001js043g80neh3/bids/cmtae3m8w0001l204ppfoclfu\"}",
+  "at": "2026-08-27T00:07:01.698915+00:00"
+}

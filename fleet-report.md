@@ -1,518 +1,394 @@
 # Fleet Report
-Generated: 2026-08-26 20:46 UTC
-Window: last 4 hours
+Generated: 2026-08-27 00:12 UTC
 
 ## Summary
-Files created: 502
-Developed books completed: 30
-Books refined: 17
-Toku job events: 186
+Files created: 380
+Books touched: 30
+Toku events: 221
 
-## Created in the last 4 hours
-- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_6_product.md
-- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_8_product.md
-- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_6_product.md
-- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_7_product.md
-- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_2_product.md
-- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_1_product.md
-- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_1_product.md
-- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_4_product.md
-- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_9_product.md
-- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_4_product.md
-- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_8_product.md
-- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_2_product.md
-- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_8_product.md
-- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_2_product.md
-- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_6_product.md
-- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_6_product.md
-- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_6_product.md
-- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_6_product.md
-- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_4_product.md
-- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_7_product.md
-- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_1_product.md
-- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_6_product.md
-- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_3_product.md
-- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_4_product.md
-- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_7_product.md
-- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_9_product.md
-- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_9_product.md
-- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_3_product.md
-- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_2_product.md
-- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_3_product.md
-- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_9_product.md
-- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_8_product.md
-- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_4_product.md
-- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_8_product.md
-- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_9_product.md
-- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_9_product.md
-- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_4_product.md
-- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_4_product.md
-- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_3_product.md
-- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_2_product.md
-- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_4_product.md
-- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_7_product.md
-- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_7_product.md
-- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_7_product.md
-- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_5_product.md
-- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_1_product.md
-- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_9_product.md
-- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_7_product.md
-- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_1_product.md
-- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_1_product.md
-- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_4_product.md
-- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_2_product.md
-- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_6_product.md
-- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_9_product.md
-- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_3_product.md
-- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_6_product.md
-- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_6_product.md
-- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_4_product.md
-- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_7_product.md
-- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_2_product.md
-- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_4_product.md
-- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_5_product.md
-- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_2_product.md
-- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_8_product.md
-- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_3_product.md
-- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_8_product.md
-- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_8_product.md
-- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_8_product.md
-- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_8_product.md
-- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_5_product.md
-- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_3_product.md
-- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_1_product.md
-- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_5_product.md
-- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_3_product.md
-- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_5_product.md
-- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_2_product.md
-- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_7_product.md
-- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_2_product.md
-- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_1_product.md
-- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_2_product.md
-- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_1_product.md
-- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_8_product.md
-- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_8_product.md
-- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_5_product.md
-- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_2_product.md
-- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_7_product.md
-- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_9_product.md
-- Gen10 | agent_outputs | agent_outputs/Gen10_Agent_5_product.md
-- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_5_product.md
-- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_1_product.md
-- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_4_product.md
-- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_5_product.md
-- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_3_product.md
-- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_6_product.md
-- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_1_product.md
-- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_4_product.md
-- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_6_product.md
-- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_9_product.md
-- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_7_product.md
-- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_5_product.md
-- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_5_product.md
-- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_6_product.md
-- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_5_product.md
-- Gen5 | agent_outputs | agent_outputs/Gen5_Agent_1_product.md
-- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_9_product.md
-- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_9_product.md
-- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_3_product.md
-- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_3_product.md
-- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_2_product.md
-- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_7_product.md
-- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_7_product.md
-- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_5_product.md
-- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_8_product.md
-- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_6_product.md
-- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_4_product.md
-- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_5_product.md
-- Gen2 | agent_outputs | agent_outputs/Gen2_Agent_6_product.md
-- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_6_product.md
-- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_8_product.md
-- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_2_product.md
-- Gen17 | agent_outputs | agent_outputs/Gen17_Agent_8_product.md
-- Gen7 | agent_outputs | agent_outputs/Gen7_Agent_1_product.md
-- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_1_product.md
-- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_4_product.md
-- Gen6 | agent_outputs | agent_outputs/Gen6_Agent_3_product.md
-- Gen3 | agent_outputs | agent_outputs/Gen3_Agent_5_product.md
-- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_2_product.md
-- Gen16 | agent_outputs | agent_outputs/Gen16_Agent_4_product.md
-- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_7_product.md
-- Gen9 | agent_outputs | agent_outputs/Gen9_Agent_1_product.md
-- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_3_product.md
-- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_9_product.md
-- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_3_product.md
-- Gen12 | agent_outputs | agent_outputs/Gen12_Agent_7_product.md
-- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_5_product.md
-- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_1_product.md
-- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_9_product.md
-- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_9_product.md
-- Gen11 | agent_outputs | agent_outputs/Gen11_Agent_3_product.md
-- Gen8 | agent_outputs | agent_outputs/Gen8_Agent_8_product.md
-- Gen14 | agent_outputs | agent_outputs/Gen14_Agent_2_product.md
-- Gen4 | agent_outputs | agent_outputs/Gen4_Agent_7_product.md
-- Gen15 | agent_outputs | agent_outputs/Gen15_Agent_9_product.md
-- fleet-report-latest | agent_outputs | agent_outputs/fleet-report-latest.json
-- Gen13 | agent_outputs | agent_outputs/Gen13_Agent_3_product.md
-- offer | books | books/offer_pack.py
-- MASTER | books | books/MASTER_CATALOG.json
-- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208_refined.txt
-- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236.txt
-- Agent | books | books/romance/Agent_0671_second_chance_full_20260822_161746.txt
-- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236.pdf
-- Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.txt
-- Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.docx
-- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208.txt
-- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208.pdf
-- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236.docx
-- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208_refined.docx
-- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.pdf
-- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.docx
-- Agent | books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.txt
-- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208.docx
-- CATEGORY | books | books/romance/CATEGORY.json
-- Agent | books | books/romance/Agent_0871_slow_burn_full_20260822_221208_refined.pdf
-- Agent | books | books/romance/Agent_0010_slow_burn_original_20260822_004603.pdf
-- Agent | books | books/nonfiction/Agent_0003_habit_building_original_20260822_004814.pdf
-- Agent | books | books/nonfiction/Agent_0003_habit_building_original_20260822_004814.txt
-- CATEGORY | books | books/nonfiction/CATEGORY.json
-- Agent | books | books/nonfiction/Agent_0003_habit_building_original_20260822_004814.docx
-- Agent | books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.pdf
-- Agent | books | books/horror/Agent_0020_haunted_lake_house_original_20260822_000514.txt
-- Agent | books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.docx
-- CATEGORY | books | books/horror/CATEGORY.json
-- Agent | books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.txt
-- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716_refined.txt
-- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.docx
-- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.txt
-- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716_refined.pdf
-- CATEGORY | books | books/thriller/CATEGORY.json
-- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716_refined.docx
-- Agent | books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.pdf
-- Agent | books | books/fantasy/Agent_0016_hidden_heir_original_20260822_000418.txt
-- CATEGORY | books | books/fantasy/CATEGORY.json
-- Agent | books | books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.docx
-- Agent | books | books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.pdf
-- Agent | books | books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt
-- CATEGORY | books | books/spicy_romance/CATEGORY.json
-- Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.docx
-- Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.txt
-- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.pdf
-- Agent | books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707_refined.pdf
-- Agent | books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802.pdf
-- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448_refined.pdf
-- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.pdf
-- Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.txt
-- Agent | books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707_refined.docx
-- Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.pdf
-- Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.txt
-- Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.txt
-- Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt
-- Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.docx
-- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.docx
-- Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.docx
-- Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.docx
-- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt
-- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.docx
-- Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008_refined.pdf
-- Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008_refined.txt
-- Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.pdf
-- Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.pdf
-- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.txt
-- Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934.docx
-- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.pdf
-- Agent | books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802_refined.pdf
-- Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.pdf
-- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.pdf
-- Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt
-- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.docx
-- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt
-- Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.txt
-- Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614_refined.docx
-- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.pdf
-- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.txt
-- Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.docx
-- Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.txt
-- Agent | books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707_refined.txt
-- Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.pdf
-- Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406.docx
-- Agent | books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.pdf
-- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.txt
-- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.pdf
-- Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.pdf
-- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.docx
-- Agent | books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707.docx
-- Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406.txt
-- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.txt
-- Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.txt
-- Agent | books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707.txt
-- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448_refined.docx
-- Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.pdf
-- Agent | books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802.txt
-- Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.docx
-- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.docx
-- Agent | books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802_refined.txt
-- Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.pdf
-- Agent | books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802_refined.docx
-- Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614_refined.pdf
-- Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934.txt
-- Agent | books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.txt
-- Agent | books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.docx
-- Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.docx
-- Agent | books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707.pdf
-- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.docx
-- CATEGORY | books | books/true_crime/CATEGORY.json
-- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.txt
-- Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.pdf
-- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448_refined.txt
-- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.pdf
-- Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.docx
-- Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.txt
-- Agent | books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934.pdf
-- Agent | books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802.docx
-- Agent | books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008_refined.docx
-- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.docx
-- Agent | books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614_refined.txt
-- Agent | books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.pdf
-- Agent | books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406.pdf
-- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.pdf
-- Agent | books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.docx
-- Agent | books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.docx
-- Agent | books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.txt
-- Agent | books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.docx
-- Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.docx
-- Agent | books | books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt
-- Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.txt
-- Agent | books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.pdf
-- CATEGORY | books | books/sci_fi/CATEGORY.json
-- Agent | books | books/sci_fi/Agent_1794_AI_uprising_full_20260822_042558.txt
-- Agent | books | books/childrens/Agent_0015_friendship_original_20260822_004553.pdf
-- Agent | books | books/childrens/Agent_0015_friendship_original_20260822_004553.txt
-- Agent | books | books/childrens/Agent_0015_friendship_original_20260822_004553.docx
-- Agent | books | books/childrens/Agent_0013_bedtime_adventure_original_20260822_004021.txt
-- Agent | books | books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt
-- CATEGORY | books | books/childrens/CATEGORY.json
-- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_6_listing.json
-- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_5_listing.json
-- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_9_listing.json
-- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_5_listing.json
-- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_4_listing.json
-- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_4_listing.json
-- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_8_listing.json
-- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_3_listing.json
-- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_7_listing.json
-- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_9_listing.json
-- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_1_listing.json
-- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_1_listing.json
-- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_3_listing.json
-- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_6_listing.json
-- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_8_listing.json
-- Pipeline | storefront_exports | storefront_exports/Pipeline_Execution_2026-08-14_181732.json
-- Gen16 | storefront_exports | storefront_exports/Gen16_Agent_2_listing.json
-- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_2_listing.json
-- Gen17 | storefront_exports | storefront_exports/Gen17_Agent_7_listing.json
-- meta | storefront_exports | storefront_exports/pack_20260825_034626/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260825_034626/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260825_034626/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260825_034626/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260825_034626/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260825_034626/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260826_193636/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260826_193636/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260826_193636/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260826_193636/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260826_193636/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260826_193636/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260825_144023/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260825_144023/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260825_144023/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260825_144023/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260825_144023/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260825_144023/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260825_063436/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260825_063436/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260825_063436/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260825_063436/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260825_063436/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260825_063436/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260822_233049/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260822_233049/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260822_233049/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260822_233049/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260822_233049/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260822_233049/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260822_235452/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260822_235452/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260822_235452/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260822_235452/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260822_235452/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260822_235452/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260826_171158/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260826_171158/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260826_171158/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260826_171158/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260826_171158/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260826_171158/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260826_173412/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260826_173412/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260826_173412/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260826_173412/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260826_173412/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260826_173412/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260825_204441/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260825_204441/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260825_204441/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260825_204441/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260825_204441/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260825_204441/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260826_172211/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260826_172211/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260826_172211/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260826_172211/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260826_172211/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260826_172211/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260826_183754/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260826_183754/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260826_183754/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260826_183754/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260826_183754/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260826_183754/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260823_005838/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260823_005838/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260823_005838/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260823_005838/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260823_005838/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260823_005838/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260825_204946/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260825_204946/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260825_204946/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260825_204946/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260825_204946/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260825_204946/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260826_174905/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260826_174905/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260826_174905/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260826_174905/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260826_174905/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260826_174905/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260825_205850/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260825_205850/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260825_205850/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260825_205850/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260825_205850/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260825_205850/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260825_203423/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260825_203423/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260825_203423/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260825_203423/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260825_203423/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260825_203423/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260826_204458/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260826_204458/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260826_204458/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260826_204458/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260826_204458/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260826_204458/promo_posts.txt
-- meta | storefront_exports | storefront_exports/pack_20260825_183220/meta.json
-- bundle | storefront_exports | storefront_exports/pack_20260825_183220/bundle_ideas.txt
-- blurb | storefront_exports | storefront_exports/pack_20260825_183220/blurb.txt
-- payhip | storefront_exports | storefront_exports/pack_20260825_183220/payhip_page_copy.txt
-- titles | storefront_exports | storefront_exports/pack_20260825_183220/titles.txt
-- promo | storefront_exports | storefront_exports/pack_20260825_183220/promo_posts.txt
-- event | toku | toku/event_20260826_204620_657121.json
-- setup | toku | toku/setup_20260826_173535.json
-- event | toku | toku/event_20260826_193820_015126.json
-- event | toku | toku/event_20260826_171326_311318.json
-- event | toku | toku/event_20260826_193758_264914.json
-- event | toku | toku/event_20260826_183922_569280.json
-- event | toku | toku/event_20260826_204556_906433.json
-- event | toku | toku/event_20260826_193823_970429.json
-- event | toku | toku/event_20260826_175040_500689.json
-- setup | toku | toku/setup_20260826_183916.json
-- event | toku | toku/event_20260826_171334_528552.json
-- event | toku | toku/event_20260826_183934_929855.json
-- event | toku | toku/event_20260826_193818_072191.json
-- event | toku | toku/event_20260826_183924_581321.json
-- event | toku | toku/event_20260826_183918_185934.json
-- event | toku | toku/event_20260826_183943_427706.json
-- event | toku | toku/event_20260826_183926_837478.json
-- event | toku | toku/event_20260826_175030_554739.json
-- event | toku | toku/event_20260826_204622_750578.json
-- event | toku | toku/event_20260826_183947_630711.json
-- event | toku | toku/event_20260826_175035_954601.json
-- event | toku | toku/event_20260826_183932_918609.json
-- event | toku | toku/event_20260826_183941_233755.json
-- event | toku | toku/event_20260826_171341_325427.json
-- event | toku | toku/event_20260826_172325_905685.json
-- event | toku | toku/event_20260826_193756_271323.json
-- event | toku | toku/event_20260826_175003_985256.json
-- event | toku | toku/event_20260826_183939_226279.json
-- event | toku | toku/event_20260826_173546_193401.json
-- event | toku | toku/event_20260826_193745_009503.json
-- event | toku | toku/event_20260826_173538_280670.json
-- event | toku | toku/event_20260826_183930_909407.json
-- event | toku | toku/event_20260826_204552_303117.json
-- event | toku | toku/event_20260826_193821_995565.json
-- event | toku | toku/event_20260826_204624_832458.json
-- hire | toku | toku/hire_summary_20260826_204633.json
-- event | toku | toku/event_20260826_175033_670751.json
-- event | toku | toku/event_20260826_171330_533745.json
-- event | toku | toku/event_20260826_204559_126544.json
-- setup | toku | toku/setup_20260826_172322.json
-- event | toku | toku/event_20260826_183928_900259.json
-- event | toku | toku/event_20260826_175053_161546.json
-- event | toku | toku/event_20260826_193754_297430.json
-- setup | toku | toku/setup_20260826_204550.json
-- event | toku | toku/event_20260826_175022_728904.json
-- setup | toku | toku/setup_20260826_175001.json
-- event | toku | toku/event_20260826_183920_565083.json
-- event | toku | toku/event_20260826_193800_207578.json
-- event | toku | toku/event_20260826_183936_967635.json
-- event | toku | toku/event_20260826_172331_204005.json
-- event | toku | toku/event_20260826_175043_636006.json
-- event | toku | toku/event_20260826_183945_596270.json
-- event | toku | toku/event_20260826_193747_772887.json
-- event | toku | toku/event_20260826_175017_241372.json
-- event | toku | toku/event_20260826_193802_292494.json
-- event | toku | toku/event_20260826_193749_991250.json
-- event | toku | toku/event_20260826_172333_957014.json
-- event | toku | toku/event_20260826_204618_395433.json
-- event | toku | toku/event_20260826_175037_989251.json
-- hire | toku | toku/hire_summary_20260826_173548.json
-- event | toku | toku/event_20260826_175047_258110.json
-- event | toku | toku/event_20260826_204627_946674.json
-- hire | toku | toku/hire_summary_20260826_172336.json
-- event | toku | toku/event_20260826_204554_564347.json
-- event | toku | toku/event_20260826_193804_447890.json
-- event | toku | toku/event_20260826_204630_229018.json
-- event | toku | toku/event_20260826_172336_467950.json
-- event | toku | toku/event_20260826_175049_910371.json
-- hire | toku | toku/hire_summary_20260826_175054.json
-- event | toku | toku/event_20260826_193816_035035.json
-- event | toku | toku/event_20260826_175027_214966.json
-- event | toku | toku/event_20260826_175024_906978.json
-- event | toku | toku/event_20260826_172328_697288.json
-- event | toku | toku/event_20260826_175020_519741.json
-- event | toku | toku/event_20260826_173540_844962.json
-- setup | toku | toku/setup_20260826_171321.json
-- event | toku | toku/event_20260826_193752_186025.json
-- hire | toku | toku/hire_summary_20260826_171341.json
-- event | toku | toku/event_20260826_204603_925975.json
-- jobs | toku | toku/jobs.json
-- hire | toku | toku/hire_summary_20260826_183949.json
-- event | toku | toku/event_20260826_204616_333603.json
-- setup | toku | toku/setup_20260826_193743.json
-- event | toku | toku/event_20260826_204601_453962.json
-- event | toku | toku/event_20260826_173543_462596.json
-- event | toku | toku/event_20260826_173548_704857.json
-- event | toku | toku/event_20260826_171337_815885.json
-- hire | toku | toku/hire_summary_20260826_193825.json
-- event | toku | toku/event_20260826_204632_319709.json
-- event | toku | toku/event_20260826_204606_248581.json
-- crowdstrike | security_team | security_team/missions/crowdstrike_prep.json
-- security | security_team | security_team/missions/security_team.py
+## Created
+- books | books/offer_pack.py
+- books | books/MASTER_CATALOG.json
+- books | books/romance/Agent_0871_slow_burn_full_20260822_221208_refined.txt
+- books | books/romance/Agent_1508_second_chance_full_20260822_183236.txt
+- books | books/romance/Agent_0671_second_chance_full_20260822_161746.txt
+- books | books/romance/Agent_1508_second_chance_full_20260822_183236.pdf
+- books | books/romance/Agent_0010_slow_burn_original_20260822_004603.txt
+- books | books/romance/Agent_0010_slow_burn_original_20260822_004603.docx
+- books | books/romance/Agent_0871_slow_burn_full_20260822_221208.txt
+- books | books/romance/Agent_0871_slow_burn_full_20260822_221208.pdf
+- books | books/romance/Agent_1508_second_chance_full_20260822_183236.docx
+- books | books/romance/Agent_0871_slow_burn_full_20260822_221208_refined.docx
+- books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.pdf
+- books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.docx
+- books | books/romance/Agent_1508_second_chance_full_20260822_183236_refined.txt
+- books | books/romance/Agent_0871_slow_burn_full_20260822_221208.docx
+- books | books/romance/CATEGORY.json
+- books | books/romance/Agent_0871_slow_burn_full_20260822_221208_refined.pdf
+- books | books/romance/Agent_0010_slow_burn_original_20260822_004603.pdf
+- books | books/nonfiction/Agent_0003_habit_building_original_20260822_004814.pdf
+- books | books/nonfiction/Agent_0003_habit_building_original_20260822_004814.txt
+- books | books/nonfiction/CATEGORY.json
+- books | books/nonfiction/Agent_0003_habit_building_original_20260822_004814.docx
+- books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.pdf
+- books | books/horror/Agent_0020_haunted_lake_house_original_20260822_000514.txt
+- books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.docx
+- books | books/horror/CATEGORY.json
+- books | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.txt
+- books | books/thriller/Agent_0007_witness_protection_original_20260822_004716_refined.txt
+- books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.docx
+- books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.txt
+- books | books/thriller/Agent_0007_witness_protection_original_20260822_004716_refined.pdf
+- books | books/thriller/CATEGORY.json
+- books | books/thriller/Agent_0007_witness_protection_original_20260822_004716_refined.docx
+- books | books/thriller/Agent_0007_witness_protection_original_20260822_004716.pdf
+- books | books/fantasy/Agent_0016_hidden_heir_original_20260822_000418.txt
+- books | books/fantasy/CATEGORY.json
+- books | books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.docx
+- books | books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.pdf
+- books | books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt
+- books | books/spicy_romance/CATEGORY.json
+- books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.docx
+- books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.txt
+- books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.pdf
+- books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707_refined.pdf
+- books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802.pdf
+- books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448_refined.pdf
+- books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.pdf
+- books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.txt
+- books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707_refined.docx
+- books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.pdf
+- books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.txt
+- books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.txt
+- books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt
+- books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.docx
+- books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.docx
+- books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.docx
+- books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.docx
+- books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt
+- books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.docx
+- books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008_refined.pdf
+- books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008_refined.txt
+- books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.pdf
+- books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.pdf
+- books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.txt
+- books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934.docx
+- books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.pdf
+- books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802_refined.pdf
+- books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.pdf
+- books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.pdf
+- books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt
+- books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.docx
+- books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt
+- books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.txt
+- books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614_refined.docx
+- books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.pdf
+- books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.txt
+- books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.docx
+- books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.txt
+- books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707_refined.txt
+- books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.pdf
+- books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406.docx
+- books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.pdf
+- books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.txt
+- books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.pdf
+- books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.pdf
+- books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.docx
+- books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707.docx
+- books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406.txt
+- books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.txt
+- books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.txt
+- books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707.txt
+- books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448_refined.docx
+- books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.pdf
+- books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802.txt
+- books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.docx
+- books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.docx
+- books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802_refined.txt
+- books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.pdf
+- books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802_refined.docx
+- books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614_refined.pdf
+- books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934.txt
+- books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.txt
+- books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.docx
+- books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.docx
+- books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707.pdf
+- books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.docx
+- books | books/true_crime/CATEGORY.json
+- books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.txt
+- books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.pdf
+- books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448_refined.txt
+- books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629.pdf
+- books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.docx
+- books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.txt
+- books | books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934.pdf
+- books | books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802.docx
+- books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008_refined.docx
+- books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.docx
+- books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614_refined.txt
+- books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.pdf
+- books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406.pdf
+- books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.pdf
+- books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.docx
+- books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.docx
+- books | books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.txt
+- books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.docx
+- books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.docx
+- books | books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt
+- books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.txt
+- books | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.pdf
+- books | books/sci_fi/CATEGORY.json
+- books | books/sci_fi/Agent_1794_AI_uprising_full_20260822_042558.txt
+- books | books/childrens/Agent_0015_friendship_original_20260822_004553.pdf
+- books | books/childrens/Agent_0015_friendship_original_20260822_004553.txt
+- books | books/childrens/Agent_0015_friendship_original_20260822_004553.docx
+- books | books/childrens/Agent_0013_bedtime_adventure_original_20260822_004021.txt
+- books | books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt
+- books | books/childrens/CATEGORY.json
+- storefront_exports | storefront_exports/Gen16_Agent_6_listing.json
+- storefront_exports | storefront_exports/Gen17_Agent_5_listing.json
+- storefront_exports | storefront_exports/Gen16_Agent_9_listing.json
+- storefront_exports | storefront_exports/Gen16_Agent_5_listing.json
+- storefront_exports | storefront_exports/Gen17_Agent_4_listing.json
+- storefront_exports | storefront_exports/Gen16_Agent_4_listing.json
+- storefront_exports | storefront_exports/Gen16_Agent_8_listing.json
+- storefront_exports | storefront_exports/Gen17_Agent_3_listing.json
+- storefront_exports | storefront_exports/Gen16_Agent_7_listing.json
+- storefront_exports | storefront_exports/Gen17_Agent_9_listing.json
+- storefront_exports | storefront_exports/Gen16_Agent_1_listing.json
+- storefront_exports | storefront_exports/Gen17_Agent_1_listing.json
+- storefront_exports | storefront_exports/Gen16_Agent_3_listing.json
+- storefront_exports | storefront_exports/Gen17_Agent_6_listing.json
+- storefront_exports | storefront_exports/Gen17_Agent_8_listing.json
+- storefront_exports | storefront_exports/Pipeline_Execution_2026-08-14_181732.json
+- storefront_exports | storefront_exports/Gen16_Agent_2_listing.json
+- storefront_exports | storefront_exports/Gen17_Agent_2_listing.json
+- storefront_exports | storefront_exports/Gen17_Agent_7_listing.json
+- storefront_exports | storefront_exports/pack_20260825_034626/meta.json
+- storefront_exports | storefront_exports/pack_20260825_034626/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260825_034626/blurb.txt
+- storefront_exports | storefront_exports/pack_20260825_034626/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260825_034626/titles.txt
+- storefront_exports | storefront_exports/pack_20260825_034626/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260826_193636/meta.json
+- storefront_exports | storefront_exports/pack_20260826_193636/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260826_193636/blurb.txt
+- storefront_exports | storefront_exports/pack_20260826_193636/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260826_193636/titles.txt
+- storefront_exports | storefront_exports/pack_20260826_193636/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260825_144023/meta.json
+- storefront_exports | storefront_exports/pack_20260825_144023/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260825_144023/blurb.txt
+- storefront_exports | storefront_exports/pack_20260825_144023/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260825_144023/titles.txt
+- storefront_exports | storefront_exports/pack_20260825_144023/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260825_063436/meta.json
+- storefront_exports | storefront_exports/pack_20260825_063436/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260825_063436/blurb.txt
+- storefront_exports | storefront_exports/pack_20260825_063436/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260825_063436/titles.txt
+- storefront_exports | storefront_exports/pack_20260825_063436/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260827_000931/meta.json
+- storefront_exports | storefront_exports/pack_20260827_000931/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260827_000931/blurb.txt
+- storefront_exports | storefront_exports/pack_20260827_000931/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260827_000931/titles.txt
+- storefront_exports | storefront_exports/pack_20260827_000931/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260822_233049/meta.json
+- storefront_exports | storefront_exports/pack_20260822_233049/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260822_233049/blurb.txt
+- storefront_exports | storefront_exports/pack_20260822_233049/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260822_233049/titles.txt
+- storefront_exports | storefront_exports/pack_20260822_233049/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260822_235452/meta.json
+- storefront_exports | storefront_exports/pack_20260822_235452/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260822_235452/blurb.txt
+- storefront_exports | storefront_exports/pack_20260822_235452/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260822_235452/titles.txt
+- storefront_exports | storefront_exports/pack_20260822_235452/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260826_171158/meta.json
+- storefront_exports | storefront_exports/pack_20260826_171158/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260826_171158/blurb.txt
+- storefront_exports | storefront_exports/pack_20260826_171158/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260826_171158/titles.txt
+- storefront_exports | storefront_exports/pack_20260826_171158/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260826_173412/meta.json
+- storefront_exports | storefront_exports/pack_20260826_173412/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260826_173412/blurb.txt
+- storefront_exports | storefront_exports/pack_20260826_173412/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260826_173412/titles.txt
+- storefront_exports | storefront_exports/pack_20260826_173412/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260825_204441/meta.json
+- storefront_exports | storefront_exports/pack_20260825_204441/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260825_204441/blurb.txt
+- storefront_exports | storefront_exports/pack_20260825_204441/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260825_204441/titles.txt
+- storefront_exports | storefront_exports/pack_20260825_204441/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260826_172211/meta.json
+- storefront_exports | storefront_exports/pack_20260826_172211/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260826_172211/blurb.txt
+- storefront_exports | storefront_exports/pack_20260826_172211/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260826_172211/titles.txt
+- storefront_exports | storefront_exports/pack_20260826_172211/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260826_183754/meta.json
+- storefront_exports | storefront_exports/pack_20260826_183754/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260826_183754/blurb.txt
+- storefront_exports | storefront_exports/pack_20260826_183754/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260826_183754/titles.txt
+- storefront_exports | storefront_exports/pack_20260826_183754/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260823_005838/meta.json
+- storefront_exports | storefront_exports/pack_20260823_005838/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260823_005838/blurb.txt
+- storefront_exports | storefront_exports/pack_20260823_005838/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260823_005838/titles.txt
+- storefront_exports | storefront_exports/pack_20260823_005838/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260825_204946/meta.json
+- storefront_exports | storefront_exports/pack_20260825_204946/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260825_204946/blurb.txt
+- storefront_exports | storefront_exports/pack_20260825_204946/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260825_204946/titles.txt
+- storefront_exports | storefront_exports/pack_20260825_204946/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260826_174905/meta.json
+- storefront_exports | storefront_exports/pack_20260826_174905/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260826_174905/blurb.txt
+- storefront_exports | storefront_exports/pack_20260826_174905/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260826_174905/titles.txt
+- storefront_exports | storefront_exports/pack_20260826_174905/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260825_205850/meta.json
+- storefront_exports | storefront_exports/pack_20260825_205850/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260825_205850/blurb.txt
+- storefront_exports | storefront_exports/pack_20260825_205850/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260825_205850/titles.txt
+- storefront_exports | storefront_exports/pack_20260825_205850/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260825_203423/meta.json
+- storefront_exports | storefront_exports/pack_20260825_203423/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260825_203423/blurb.txt
+- storefront_exports | storefront_exports/pack_20260825_203423/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260825_203423/titles.txt
+- storefront_exports | storefront_exports/pack_20260825_203423/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260826_204458/meta.json
+- storefront_exports | storefront_exports/pack_20260826_204458/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260826_204458/blurb.txt
+- storefront_exports | storefront_exports/pack_20260826_204458/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260826_204458/titles.txt
+- storefront_exports | storefront_exports/pack_20260826_204458/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260825_183220/meta.json
+- storefront_exports | storefront_exports/pack_20260825_183220/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260825_183220/blurb.txt
+- storefront_exports | storefront_exports/pack_20260825_183220/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260825_183220/titles.txt
+- storefront_exports | storefront_exports/pack_20260825_183220/promo_posts.txt
+- toku | toku/event_20260826_204620_657121.json
+- toku | toku/setup_20260826_173535.json
+- toku | toku/event_20260826_193820_015126.json
+- toku | toku/event_20260826_171326_311318.json
+- toku | toku/event_20260826_193758_264914.json
+- toku | toku/event_20260827_000642_931077.json
+- toku | toku/event_20260826_183922_569280.json
+- toku | toku/event_20260826_204556_906433.json
+- toku | toku/event_20260826_193823_970429.json
+- toku | toku/event_20260827_000638_799259.json
+- toku | toku/event_20260826_175040_500689.json
+- toku | toku/setup_20260826_183916.json
+- toku | toku/event_20260826_171334_528552.json
+- toku | toku/event_20260826_183934_929855.json
+- toku | toku/event_20260826_193818_072191.json
+- toku | toku/event_20260826_183924_581321.json
+- toku | toku/event_20260826_183918_185934.json
+- toku | toku/event_20260826_183943_427706.json
+- toku | toku/event_20260826_183926_837478.json
+- toku | toku/event_20260826_175030_554739.json
+- toku | toku/event_20260826_204622_750578.json
+- toku | toku/event_20260826_183947_630711.json
+- toku | toku/event_20260826_175035_954601.json
+- toku | toku/event_20260826_183932_918609.json
+- toku | toku/event_20260826_183941_233755.json
+- toku | toku/event_20260826_171341_325427.json
+- toku | toku/event_20260826_172325_905685.json
+- toku | toku/event_20260826_193756_271323.json
+- toku | toku/event_20260827_000644_944368.json
+- toku | toku/event_20260826_175003_985256.json
+- toku | toku/event_20260827_000640_782840.json
+- toku | toku/event_20260826_183939_226279.json
+- toku | toku/setup_20260827_000637.json
+- toku | toku/event_20260826_173546_193401.json
+- toku | toku/event_20260826_193745_009503.json
+- toku | toku/event_20260826_173538_280670.json
+- toku | toku/event_20260826_183930_909407.json
+- toku | toku/event_20260826_204552_303117.json
+- toku | toku/event_20260826_193821_995565.json
+- toku | toku/event_20260826_204624_832458.json
+- toku | toku/hire_summary_20260826_204633.json
+- toku | toku/event_20260826_175033_670751.json
+- toku | toku/event_20260826_171330_533745.json
+- toku | toku/event_20260826_204559_126544.json
+- toku | toku/setup_20260826_172322.json
+- toku | toku/event_20260826_183928_900259.json
+- toku | toku/event_20260826_175053_161546.json
+- toku | toku/event_20260826_193754_297430.json
+- toku | toku/event_20260827_000646_939276.json
+- toku | toku/setup_20260826_204550.json
+- toku | toku/event_20260826_175022_728904.json
+- toku | toku/setup_20260826_175001.json
+- toku | toku/event_20260826_183920_565083.json
+- toku | toku/event_20260826_193800_207578.json
+- toku | toku/event_20260826_183936_967635.json
+- toku | toku/event_20260826_172331_204005.json
+- toku | toku/event_20260826_175043_636006.json
+- toku | toku/event_20260827_000659_209820.json
+- toku | toku/event_20260826_183945_596270.json
+- toku | toku/event_20260826_193747_772887.json
+- toku | toku/event_20260826_175017_241372.json
+- toku | toku/event_20260827_000648_900181.json
+- toku | toku/event_20260826_193802_292494.json
+- toku | toku/event_20260826_193749_991250.json
+- toku | toku/event_20260826_172333_957014.json
+- toku | toku/event_20260826_204618_395433.json
+- toku | toku/event_20260826_175037_989251.json
+- toku | toku/hire_summary_20260826_173548.json
+- toku | toku/event_20260826_175047_258110.json
+- toku | toku/event_20260826_204627_946674.json
+- toku | toku/hire_summary_20260826_172336.json
+- toku | toku/event_20260826_204554_564347.json
+- toku | toku/event_20260826_193804_447890.json
+- toku | toku/event_20260826_204630_229018.json
+- toku | toku/event_20260826_172336_467950.json
+- toku | toku/event_20260827_000703_997309.json
+- toku | toku/event_20260826_175049_910371.json
+- toku | toku/hire_summary_20260826_175054.json
+- toku | toku/event_20260827_000715_643060.json
+- toku | toku/event_20260826_193816_035035.json
+- toku | toku/event_20260826_175027_214966.json
+- toku | toku/event_20260827_000657_008612.json
+- toku | toku/event_20260826_175024_906978.json
+- toku | toku/event_20260826_172328_697288.json
+- toku | toku/event_20260827_000654_832142.json
+- toku | toku/event_20260827_000652_876228.json
+- toku | toku/event_20260827_000701_698983.json
+- toku | toku/event_20260826_175020_519741.json
+- toku | toku/event_20260826_173540_844962.json
+- toku | toku/setup_20260826_171321.json
+- toku | toku/event_20260826_193752_186025.json
+- toku | toku/hire_summary_20260826_171341.json
+- toku | toku/event_20260826_204603_925975.json
+- toku | toku/jobs.json
+- toku | toku/hire_summary_20260826_183949.json
+- toku | toku/event_20260826_204616_333603.json
+- toku | toku/setup_20260826_193743.json
+- toku | toku/event_20260826_204601_453962.json
+- toku | toku/event_20260826_173543_462596.json
+- toku | toku/event_20260826_173548_704857.json
+- toku | toku/hire_summary_20260827_000719.json
+- toku | toku/event_20260826_171337_815885.json
+- toku | toku/event_20260827_000717_687358.json
+- toku | toku/hire_summary_20260826_193825.json
+- toku | toku/event_20260826_204632_319709.json
+- toku | toku/event_20260827_000650_920524.json
+- toku | toku/event_20260826_204606_248581.json
+- security_team | security_team/missions/crowdstrike_prep.json
+- security_team | security_team/missions/security_team.py
 
-## Developed books completed
+## Books
 - books/romance/Agent_1508_second_chance_full_20260822_183236.txt (8520 words)
 - books/romance/Agent_0671_second_chance_full_20260822_161746.txt (10300 words)
 - books/romance/Agent_0010_slow_burn_original_20260822_004603.txt (1859 words)
@@ -525,7 +401,7 @@ Toku job events: 186
 - books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt (91680 words)
 - books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.txt (11210 words)
 - books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt (31726 words)
-- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (13959 words)
+- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (14631 words)
 - books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt (15022 words)
 - books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt (9892 words)
 - books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.txt (13290 words)
@@ -544,209 +420,225 @@ Toku job events: 186
 - books/childrens/Agent_0013_bedtime_adventure_original_20260822_004021.txt (1880 words)
 - books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt (1822 words)
 
-## Successful books after refine pass
-- books/romance/Agent_0871_slow_burn_full_20260822_221208_refined.txt
-- books/romance/Agent_1508_second_chance_full_20260822_183236_refined.txt
-- books/thriller/Agent_0007_witness_protection_original_20260822_004716_refined.txt
-- books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.txt
-- books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822_refined.txt
-- books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.txt
-- books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008_refined.txt
-- books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.txt
-- books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.txt
-- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.txt
-- books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707_refined.txt
-- books/true_crime/Agent_2481_Julio_Foolio_case_public_timeline_full_20260824_123802_refined.txt
-- books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.txt
-- books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448_refined.txt
-- books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934_refined.txt
-- books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614_refined.txt
-- books/true_crime/Agent_2476_recent_headline_cases_from_public_reporting_only_full_20260823_201629_refined.txt
-
-## Toku jobs (applied / accepted / completed)
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=event_20260826_204620_657121.json
-- team=Hire | status=unknown | job=untitled job | file=setup_20260826_173535.json
-- team=Inkforge | status=unknown | job=untitled job | file=setup_20260826_173535.json
-- team=Polish | status=unknown | job=untitled job | file=setup_20260826_173535.json
-- team=Signal | status=unknown | job=untitled job | file=setup_20260826_173535.json
-- team=Brief | status=unknown | job=untitled job | file=setup_20260826_173535.json
-- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15) | file=event_20260826_193820_015126.json
-- team=Signal | status=applied | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=event_20260826_171326_311318.json
-- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert | file=event_20260826_193758_264914.json
-- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀 | file=event_20260826_183922_569280.json
-- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀 | file=event_20260826_204556_906433.json
-- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review | file=event_20260826_193823_970429.json
-- team=Signal | status=applied | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings | file=event_20260826_175040_500689.json
-- team=Hire | status=unknown | job=untitled job | file=setup_20260826_183916.json
-- team=Inkforge | status=unknown | job=untitled job | file=setup_20260826_183916.json
-- team=Polish | status=unknown | job=untitled job | file=setup_20260826_183916.json
-- team=Signal | status=unknown | job=untitled job | file=setup_20260826_183916.json
-- team=Brief | status=unknown | job=untitled job | file=setup_20260826_183916.json
-- team=Signal | status=applied | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=event_20260826_171334_528552.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=event_20260826_183934_929855.json
-- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping | file=event_20260826_193818_072191.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=event_20260826_183924_581321.json
-- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent | file=event_20260826_183918_185934.json
-- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15) | file=event_20260826_183943_427706.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=event_20260826_183926_837478.json
-- team=Signal | status=applied | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert | file=event_20260826_175030_554739.json
-- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings | file=event_20260826_204622_750578.json
-- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review | file=event_20260826_183947_630711.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=event_20260826_175035_954601.json
-- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available | file=event_20260826_183932_918609.json
-- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping | file=event_20260826_183941_233755.json
-- team=Signal | status=applied | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=event_20260826_171341_325427.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=event_20260826_172325_905685.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=event_20260826_193756_271323.json
-- team=Polish | status=applied | job=ARC/v0: earn Base USDC and open a branch for another agent | file=event_20260826_175003_985256.json
-- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings | file=event_20260826_183939_226279.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=event_20260826_173546_193401.json
-- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent | file=event_20260826_193745_009503.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=event_20260826_173538_280670.json
-- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert | file=event_20260826_183930_909407.json
-- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent | file=event_20260826_204552_303117.json
-- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100 | file=event_20260826_193821_995565.json
-- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping | file=event_20260826_204624_832458.json
-- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent | file=hire_summary_20260826_204633.json
-- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN | file=hire_summary_20260826_204633.json
-- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀 | file=hire_summary_20260826_204633.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=hire_summary_20260826_204633.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=hire_summary_20260826_204633.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=hire_summary_20260826_204633.json
-- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert | file=hire_summary_20260826_204633.json
-- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available | file=hire_summary_20260826_204633.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=hire_summary_20260826_204633.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=hire_summary_20260826_204633.json
-- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings | file=hire_summary_20260826_204633.json
-- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping | file=hire_summary_20260826_204633.json
-- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15) | file=hire_summary_20260826_204633.json
-- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100 | file=hire_summary_20260826_204633.json
-- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review | file=hire_summary_20260826_204633.json
-- team=Inkforge | status=applied | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available | file=event_20260826_175033_670751.json
-- team=Brief | status=applied | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=event_20260826_171330_533745.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=event_20260826_204559_126544.json
-- team=Hire | status=unknown | job=untitled job | file=setup_20260826_172322.json
-- team=Inkforge | status=unknown | job=untitled job | file=setup_20260826_172322.json
-- team=Polish | status=unknown | job=untitled job | file=setup_20260826_172322.json
-- team=Signal | status=unknown | job=untitled job | file=setup_20260826_172322.json
-- team=Brief | status=unknown | job=untitled job | file=setup_20260826_172322.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=event_20260826_183928_900259.json
-- team=Brief | status=applied | job=FREE: Smart Contract Security Review | file=event_20260826_175053_161546.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=event_20260826_193754_297430.json
-- team=Hire | status=unknown | job=untitled job | file=setup_20260826_204550.json
-- team=Inkforge | status=unknown | job=untitled job | file=setup_20260826_204550.json
-- team=Polish | status=unknown | job=untitled job | file=setup_20260826_204550.json
-- team=Signal | status=unknown | job=untitled job | file=setup_20260826_204550.json
-- team=Brief | status=unknown | job=untitled job | file=setup_20260826_204550.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=event_20260826_175022_728904.json
-- team=Hire | status=unknown | job=untitled job | file=setup_20260826_175001.json
-- team=Inkforge | status=unknown | job=untitled job | file=setup_20260826_175001.json
-- team=Polish | status=unknown | job=untitled job | file=setup_20260826_175001.json
-- team=Signal | status=unknown | job=untitled job | file=setup_20260826_175001.json
-- team=Brief | status=unknown | job=untitled job | file=setup_20260826_175001.json
-- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN | file=event_20260826_183920_565083.json
-- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available | file=event_20260826_193800_207578.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=event_20260826_183936_967635.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=event_20260826_172331_204005.json
-- team=Signal | status=applied | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping | file=event_20260826_175043_636006.json
-- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100 | file=event_20260826_183945_596270.json
-- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN | file=event_20260826_193747_772887.json
-- team=Signal | status=applied | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN | file=event_20260826_175017_241372.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=event_20260826_193802_292494.json
-- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀 | file=event_20260826_193749_991250.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=event_20260826_172333_957014.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=event_20260826_204618_395433.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=event_20260826_175037_989251.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=hire_summary_20260826_173548.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=hire_summary_20260826_173548.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=hire_summary_20260826_173548.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=hire_summary_20260826_173548.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=hire_summary_20260826_173548.json
-- team=Brief | status=applied | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15) | file=event_20260826_175047_258110.json
-- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15) | file=event_20260826_204627_946674.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=hire_summary_20260826_172336.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=hire_summary_20260826_172336.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=hire_summary_20260826_172336.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=hire_summary_20260826_172336.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=hire_summary_20260826_172336.json
-- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN | file=event_20260826_204554_564347.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=event_20260826_193804_447890.json
-- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100 | file=event_20260826_204630_229018.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=event_20260826_172336_467950.json
-- team=Inkforge | status=applied | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100 | file=event_20260826_175049_910371.json
-- team=Polish | status=applied | job=ARC/v0: earn Base USDC and open a branch for another agent | file=hire_summary_20260826_175054.json
-- team=Signal | status=applied | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN | file=hire_summary_20260826_175054.json
-- team=Inkforge | status=applied | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀 | file=hire_summary_20260826_175054.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=hire_summary_20260826_175054.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=hire_summary_20260826_175054.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=hire_summary_20260826_175054.json
-- team=Signal | status=applied | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert | file=hire_summary_20260826_175054.json
-- team=Inkforge | status=applied | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available | file=hire_summary_20260826_175054.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=hire_summary_20260826_175054.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=hire_summary_20260826_175054.json
-- team=Signal | status=applied | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings | file=hire_summary_20260826_175054.json
-- team=Signal | status=applied | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping | file=hire_summary_20260826_175054.json
-- team=Brief | status=applied | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15) | file=hire_summary_20260826_175054.json
-- team=Inkforge | status=applied | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100 | file=hire_summary_20260826_175054.json
-- team=Brief | status=applied | job=FREE: Smart Contract Security Review | file=hire_summary_20260826_175054.json
-- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings | file=event_20260826_193816_035035.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=event_20260826_175027_214966.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=event_20260826_175024_906978.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=event_20260826_172328_697288.json
-- team=Inkforge | status=applied | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀 | file=event_20260826_175020_519741.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=event_20260826_173540_844962.json
-- team=Hire | status=unknown | job=untitled job | file=setup_20260826_171321.json
-- team=Inkforge | status=unknown | job=untitled job | file=setup_20260826_171321.json
-- team=Polish | status=unknown | job=untitled job | file=setup_20260826_171321.json
-- team=Signal | status=unknown | job=untitled job | file=setup_20260826_171321.json
-- team=Brief | status=unknown | job=untitled job | file=setup_20260826_171321.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=event_20260826_193752_186025.json
-- team=Signal | status=applied | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=hire_summary_20260826_171341.json
-- team=Brief | status=applied | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=hire_summary_20260826_171341.json
-- team=Signal | status=applied | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=hire_summary_20260826_171341.json
-- team=Polish | status=applied | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=hire_summary_20260826_171341.json
-- team=Signal | status=applied | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=hire_summary_20260826_171341.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=event_20260826_204603_925975.json
-- team=unknown | status=unknown | job=untitled job | file=jobs.json
-- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent | file=hire_summary_20260826_183949.json
-- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN | file=hire_summary_20260826_183949.json
-- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀 | file=hire_summary_20260826_183949.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=hire_summary_20260826_183949.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=hire_summary_20260826_183949.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=hire_summary_20260826_183949.json
-- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert | file=hire_summary_20260826_183949.json
-- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available | file=hire_summary_20260826_183949.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=hire_summary_20260826_183949.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=hire_summary_20260826_183949.json
-- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings | file=hire_summary_20260826_183949.json
-- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping | file=hire_summary_20260826_183949.json
-- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15) | file=hire_summary_20260826_183949.json
-- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100 | file=hire_summary_20260826_183949.json
-- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review | file=hire_summary_20260826_183949.json
-- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available | file=event_20260826_204616_333603.json
-- team=Hire | status=unknown | job=untitled job | file=setup_20260826_193743.json
-- team=Inkforge | status=unknown | job=untitled job | file=setup_20260826_193743.json
-- team=Polish | status=unknown | job=untitled job | file=setup_20260826_193743.json
-- team=Signal | status=unknown | job=untitled job | file=setup_20260826_193743.json
-- team=Brief | status=unknown | job=untitled job | file=setup_20260826_193743.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=event_20260826_204601_453962.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=event_20260826_173543_462596.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=event_20260826_173548_704857.json
-- team=Polish | status=applied | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=event_20260826_171337_815885.json
-- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent | file=hire_summary_20260826_193825.json
-- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN | file=hire_summary_20260826_193825.json
-- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀 | file=hire_summary_20260826_193825.json
-- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery | file=hire_summary_20260826_193825.json
-- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes | file=hire_summary_20260826_193825.json
-- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms | file=hire_summary_20260826_193825.json
-- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert | file=hire_summary_20260826_193825.json
-- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available | file=hire_summary_20260826_193825.json
-- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo | file=hire_summary_20260826_193825.json
-- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly | file=hire_summary_20260826_193825.json
-- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings | file=hire_summary_20260826_193825.json
-- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping | file=hire_summary_20260826_193825.json
-- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15) | file=hire_summary_20260826_193825.json
-- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100 | file=hire_summary_20260826_193825.json
-- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review | file=hire_summary_20260826_193825.json
-- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review | file=event_20260826_204632_319709.json
-- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert | file=event_20260826_204606_248581.json
+## Toku
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
+- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Signal | status=applied | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
+- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Signal | status=applied | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
+- team=Signal | status=applied | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=applied | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Signal | status=applied | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Polish | status=applied | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
+- team=Inkforge | status=applied | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Brief | status=applied | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Brief | status=applied | job=FREE: Smart Contract Security Review
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
+- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Signal | status=applied | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Signal | status=applied | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Brief | status=applied | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Inkforge | status=applied | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Polish | status=applied | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Signal | status=applied | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Inkforge | status=applied | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Signal | status=applied | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Inkforge | status=applied | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=applied | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Signal | status=applied | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Brief | status=applied | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Inkforge | status=applied | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Brief | status=applied | job=FREE: Smart Contract Security Review
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Inkforge | status=applied | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Signal | status=applied | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Brief | status=applied | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=applied | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Polish | status=applied | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=applied | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=unknown | status=unknown | job=untitled
+- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
+- team=Polish | status=applied | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
+- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
+- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
+- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
