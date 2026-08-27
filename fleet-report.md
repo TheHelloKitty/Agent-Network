@@ -1,10 +1,10 @@
 # Fleet Report
-Generated: 2026-08-27 00:12 UTC
+Generated: 2026-08-27 00:44 UTC
 
 ## Summary
-Files created: 380
+Files created: 403
 Books touched: 30
-Toku events: 221
+Toku events: 256
 
 ## Created
 - books | books/offer_pack.py
@@ -224,6 +224,12 @@ Toku events: 221
 - storefront_exports | storefront_exports/pack_20260825_204441/payhip_page_copy.txt
 - storefront_exports | storefront_exports/pack_20260825_204441/titles.txt
 - storefront_exports | storefront_exports/pack_20260825_204441/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260827_004126/meta.json
+- storefront_exports | storefront_exports/pack_20260827_004126/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260827_004126/blurb.txt
+- storefront_exports | storefront_exports/pack_20260827_004126/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260827_004126/titles.txt
+- storefront_exports | storefront_exports/pack_20260827_004126/promo_posts.txt
 - storefront_exports | storefront_exports/pack_20260826_172211/meta.json
 - storefront_exports | storefront_exports/pack_20260826_172211/bundle_ideas.txt
 - storefront_exports | storefront_exports/pack_20260826_172211/blurb.txt
@@ -284,9 +290,11 @@ Toku events: 221
 - toku | toku/event_20260826_171326_311318.json
 - toku | toku/event_20260826_193758_264914.json
 - toku | toku/event_20260827_000642_931077.json
+- toku | toku/event_20260827_003735_128653.json
 - toku | toku/event_20260826_183922_569280.json
 - toku | toku/event_20260826_204556_906433.json
 - toku | toku/event_20260826_193823_970429.json
+- toku | toku/event_20260827_003744_081280.json
 - toku | toku/event_20260827_000638_799259.json
 - toku | toku/event_20260826_175040_500689.json
 - toku | toku/setup_20260826_183916.json
@@ -294,24 +302,30 @@ Toku events: 221
 - toku | toku/event_20260826_183934_929855.json
 - toku | toku/event_20260826_193818_072191.json
 - toku | toku/event_20260826_183924_581321.json
+- toku | toku/event_20260827_003752_453175.json
 - toku | toku/event_20260826_183918_185934.json
 - toku | toku/event_20260826_183943_427706.json
 - toku | toku/event_20260826_183926_837478.json
 - toku | toku/event_20260826_175030_554739.json
 - toku | toku/event_20260826_204622_750578.json
+- toku | toku/event_20260827_003729_535463.json
 - toku | toku/event_20260826_183947_630711.json
 - toku | toku/event_20260826_175035_954601.json
 - toku | toku/event_20260826_183932_918609.json
+- toku | toku/event_20260827_003739_826689.json
 - toku | toku/event_20260826_183941_233755.json
 - toku | toku/event_20260826_171341_325427.json
 - toku | toku/event_20260826_172325_905685.json
 - toku | toku/event_20260826_193756_271323.json
 - toku | toku/event_20260827_000644_944368.json
+- toku | toku/setup_20260827_003723.json
 - toku | toku/event_20260826_175003_985256.json
 - toku | toku/event_20260827_000640_782840.json
 - toku | toku/event_20260826_183939_226279.json
 - toku | toku/setup_20260827_000637.json
 - toku | toku/event_20260826_173546_193401.json
+- toku | toku/event_20260827_003748_236556.json
+- toku | toku/event_20260827_003732_279264.json
 - toku | toku/event_20260826_193745_009503.json
 - toku | toku/event_20260826_173538_280670.json
 - toku | toku/event_20260826_183930_909407.json
@@ -324,12 +338,14 @@ Toku events: 221
 - toku | toku/event_20260826_204559_126544.json
 - toku | toku/setup_20260826_172322.json
 - toku | toku/event_20260826_183928_900259.json
+- toku | toku/event_20260827_003756_584902.json
 - toku | toku/event_20260826_175053_161546.json
 - toku | toku/event_20260826_193754_297430.json
 - toku | toku/event_20260827_000646_939276.json
 - toku | toku/setup_20260826_204550.json
 - toku | toku/event_20260826_175022_728904.json
 - toku | toku/setup_20260826_175001.json
+- toku | toku/event_20260827_003742_011759.json
 - toku | toku/event_20260826_183920_565083.json
 - toku | toku/event_20260826_193800_207578.json
 - toku | toku/event_20260826_183936_967635.json
@@ -352,11 +368,13 @@ Toku events: 221
 - toku | toku/event_20260826_204554_564347.json
 - toku | toku/event_20260826_193804_447890.json
 - toku | toku/event_20260826_204630_229018.json
+- toku | toku/hire_summary_20260827_003758.json
 - toku | toku/event_20260826_172336_467950.json
 - toku | toku/event_20260827_000703_997309.json
 - toku | toku/event_20260826_175049_910371.json
 - toku | toku/hire_summary_20260826_175054.json
 - toku | toku/event_20260827_000715_643060.json
+- toku | toku/event_20260827_003737_334451.json
 - toku | toku/event_20260826_193816_035035.json
 - toku | toku/event_20260826_175027_214966.json
 - toku | toku/event_20260827_000657_008612.json
@@ -368,8 +386,12 @@ Toku events: 221
 - toku | toku/event_20260826_175020_519741.json
 - toku | toku/event_20260826_173540_844962.json
 - toku | toku/setup_20260826_171321.json
+- toku | toku/event_20260827_003754_489831.json
 - toku | toku/event_20260826_193752_186025.json
+- toku | toku/event_20260827_003746_169700.json
+- toku | toku/event_20260827_003727_452524.json
 - toku | toku/hire_summary_20260826_171341.json
+- toku | toku/event_20260827_003750_391607.json
 - toku | toku/event_20260826_204603_925975.json
 - toku | toku/jobs.json
 - toku | toku/hire_summary_20260826_183949.json
@@ -384,6 +406,7 @@ Toku events: 221
 - toku | toku/hire_summary_20260826_193825.json
 - toku | toku/event_20260826_204632_319709.json
 - toku | toku/event_20260827_000650_920524.json
+- toku | toku/event_20260827_003725_063918.json
 - toku | toku/event_20260826_204606_248581.json
 - security_team | security_team/missions/crowdstrike_prep.json
 - security_team | security_team/missions/security_team.py
@@ -401,7 +424,7 @@ Toku events: 221
 - books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt (91680 words)
 - books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.txt (11210 words)
 - books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt (31726 words)
-- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (14631 words)
+- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (15458 words)
 - books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt (15022 words)
 - books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt (9892 words)
 - books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.txt (13290 words)
@@ -431,9 +454,11 @@ Toku events: 221
 - team=Signal | status=applied | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
 - team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
 - team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
 - team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
 - team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
 - team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
 - team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
 - team=Signal | status=applied | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
 - team=Hire | status=unknown | job=untitled
@@ -445,19 +470,27 @@ Toku events: 221
 - team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
 - team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
 - team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
 - team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
 - team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
 - team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
 - team=Signal | status=applied | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
 - team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
 - team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
 - team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
 - team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
 - team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
 - team=Signal | status=applied | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
 - team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
 - team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
 - team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
 - team=Polish | status=applied | job=ARC/v0: earn Base USDC and open a branch for another agent
 - team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
 - team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
@@ -467,6 +500,8 @@ Toku events: 221
 - team=Signal | status=unknown | job=untitled
 - team=Brief | status=unknown | job=untitled
 - team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
 - team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
 - team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
 - team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
@@ -497,6 +532,7 @@ Toku events: 221
 - team=Signal | status=unknown | job=untitled
 - team=Brief | status=unknown | job=untitled
 - team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
 - team=Brief | status=applied | job=FREE: Smart Contract Security Review
 - team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
 - team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
@@ -511,6 +547,7 @@ Toku events: 221
 - team=Polish | status=unknown | job=untitled
 - team=Signal | status=unknown | job=untitled
 - team=Brief | status=unknown | job=untitled
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
 - team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
 - team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
 - team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
@@ -541,6 +578,21 @@ Toku events: 221
 - team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
 - team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
 - team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
+- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
+- team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
+- team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
+- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
+- team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
 - team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
 - team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
 - team=Inkforge | status=applied | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
@@ -560,6 +612,7 @@ Toku events: 221
 - team=Inkforge | status=applied | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
 - team=Brief | status=applied | job=FREE: Smart Contract Security Review
 - team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
 - team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
 - team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
 - team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
@@ -575,12 +628,16 @@ Toku events: 221
 - team=Polish | status=unknown | job=untitled
 - team=Signal | status=unknown | job=untitled
 - team=Brief | status=unknown | job=untitled
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
 - team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
 - team=Signal | status=applied | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
 - team=Brief | status=applied | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
 - team=Signal | status=applied | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
 - team=Polish | status=applied | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
 - team=Signal | status=applied | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
 - team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
 - team=unknown | status=unknown | job=untitled
 - team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
@@ -641,4 +698,5 @@ Toku events: 221
 - team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
 - team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
 - team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
+- team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
 - team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert

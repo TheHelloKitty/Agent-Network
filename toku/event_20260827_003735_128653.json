@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Brief",
+  "assigned_agent": "SPIN_NEXUS",
+  "status": "apply_failed",
+  "priceCents": 1600,
+  "job": {
+    "id": "cmql30b730001js04hfdkmghw",
+    "title": "AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes",
+    "budgetCents": 2000,
+    "category": "automation"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmql30b730001js04hfdkmghw/bids/cmtacrpma005ll704vaae3l2v\"}",
+  "at": "2026-08-27T00:37:35.128577+00:00"
+}

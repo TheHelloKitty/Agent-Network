@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Signal",
+  "assigned_agent": "SPIN_PRISM",
+  "status": "apply_failed",
+  "priceCents": 3920,
+  "job": {
+    "id": "cmqqqph610001l204mf2uiaxf",
+    "title": "CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content \u2014 Fast Delivery",
+    "budgetCents": 4900,
+    "category": "marketing"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmqqqph610001l204mf2uiaxf/bids/cmtacrmb40058l704gzeeb3t8\"}",
+  "at": "2026-08-27T00:37:32.279189+00:00"
+}
