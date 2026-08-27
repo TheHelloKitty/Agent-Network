@@ -1,10 +1,10 @@
 # Fleet Report
-Generated: 2026-08-27 01:51 UTC
+Generated: 2026-08-27 07:07 UTC
 
 ## Summary
-Files created: 415
+Files created: 423
 Books touched: 30
-Toku events: 266
+Toku events: 276
 
 ## Created
 - books | books/offer_pack.py
@@ -62,7 +62,6 @@ Toku events: 266
 - books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214_refined.txt
 - books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt
 - books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.docx
-- books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.docx
 - books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614.docx
 - books | books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.docx
 - books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt
@@ -78,11 +77,9 @@ Toku events: 266
 - books | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.pdf
 - books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959_refined.pdf
 - books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt
-- books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.docx
 - books | books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt
 - books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406_refined.txt
 - books | books/true_crime/Agent_0991_recent_headline_cases_from_public_reporting_only_full_20260825_014614_refined.docx
-- books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.pdf
 - books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122_refined.txt
 - books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641_refined.docx
 - books | books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.txt
@@ -91,7 +88,6 @@ Toku events: 266
 - books | books/true_crime/Agent_0966_Julio_Foolio_case_public_timeline_full_20260824_202406.docx
 - books | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.pdf
 - books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.txt
-- books | books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053_refined.pdf
 - books | books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.pdf
 - books | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.docx
 - books | books/true_crime/Agent_2442_Julio_Foolio_case_public_timeline_full_20260825_123707.docx
@@ -254,6 +250,12 @@ Toku events: 266
 - storefront_exports | storefront_exports/pack_20260825_204946/payhip_page_copy.txt
 - storefront_exports | storefront_exports/pack_20260825_204946/titles.txt
 - storefront_exports | storefront_exports/pack_20260825_204946/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260827_070402/meta.json
+- storefront_exports | storefront_exports/pack_20260827_070402/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260827_070402/blurb.txt
+- storefront_exports | storefront_exports/pack_20260827_070402/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260827_070402/titles.txt
+- storefront_exports | storefront_exports/pack_20260827_070402/promo_posts.txt
 - storefront_exports | storefront_exports/pack_20260826_174905/meta.json
 - storefront_exports | storefront_exports/pack_20260826_174905/bundle_ideas.txt
 - storefront_exports | storefront_exports/pack_20260826_174905/blurb.txt
@@ -305,6 +307,7 @@ Toku events: 266
 - toku | toku/event_20260827_000638_799259.json
 - toku | toku/event_20260826_175040_500689.json
 - toku | toku/setup_20260826_183916.json
+- toku | toku/event_20260827_065828_954445.json
 - toku | toku/event_20260826_171334_528552.json
 - toku | toku/event_20260826_183934_929855.json
 - toku | toku/event_20260826_193818_072191.json
@@ -336,11 +339,13 @@ Toku events: 266
 - toku | toku/event_20260826_193745_009503.json
 - toku | toku/event_20260826_173538_280670.json
 - toku | toku/event_20260827_014325_930337.json
+- toku | toku/hire_summary_20260827_065830.json
 - toku | toku/event_20260826_183930_909407.json
 - toku | toku/event_20260826_204552_303117.json
 - toku | toku/event_20260826_193821_995565.json
 - toku | toku/event_20260826_204624_832458.json
 - toku | toku/hire_summary_20260826_204633.json
+- toku | toku/event_20260827_065822_681999.json
 - toku | toku/event_20260826_175033_670751.json
 - toku | toku/event_20260826_171330_533745.json
 - toku | toku/event_20260827_014319_684060.json
@@ -360,6 +365,7 @@ Toku events: 266
 - toku | toku/event_20260826_193800_207578.json
 - toku | toku/event_20260826_183936_967635.json
 - toku | toku/event_20260826_172331_204005.json
+- toku | toku/event_20260827_065824_978431.json
 - toku | toku/event_20260826_175043_636006.json
 - toku | toku/event_20260827_000659_209820.json
 - toku | toku/event_20260826_183945_596270.json
@@ -370,6 +376,7 @@ Toku events: 266
 - toku | toku/hire_summary_20260827_014327.json
 - toku | toku/event_20260826_193749_991250.json
 - toku | toku/event_20260826_172333_957014.json
+- toku | toku/setup_20260827_065820.json
 - toku | toku/event_20260826_204618_395433.json
 - toku | toku/event_20260826_175037_989251.json
 - toku | toku/hire_summary_20260826_173548.json
@@ -411,6 +418,7 @@ Toku events: 266
 - toku | toku/setup_20260826_193743.json
 - toku | toku/event_20260826_204601_453962.json
 - toku | toku/event_20260826_173543_462596.json
+- toku | toku/event_20260827_065826_998540.json
 - toku | toku/event_20260826_173548_704857.json
 - toku | toku/hire_summary_20260827_000719.json
 - toku | toku/event_20260826_171337_815885.json
@@ -436,7 +444,7 @@ Toku events: 266
 - books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt (91680 words)
 - books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.txt (11210 words)
 - books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt (31726 words)
-- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (17333 words)
+- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (18750 words)
 - books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt (15022 words)
 - books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt (9892 words)
 - books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.txt (13290 words)
@@ -483,6 +491,7 @@ Toku events: 266
 - team=Polish | status=unknown | job=untitled
 - team=Signal | status=unknown | job=untitled
 - team=Brief | status=unknown | job=untitled
+- team=Inkforge | status=apply_failed | job=Promote https://www.openpersist.ai
 - team=Signal | status=applied | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
 - team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
 - team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
@@ -522,6 +531,7 @@ Toku events: 266
 - team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
 - team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
 - team=Inkforge | status=apply_failed | job=Promote https://www.openpersist.ai
+- team=unknown | status=unknown | job=untitled
 - team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
 - team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
 - team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
@@ -541,6 +551,7 @@ Toku events: 266
 - team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
 - team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
 - team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
 - team=Inkforge | status=applied | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
 - team=Brief | status=applied | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
 - team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
@@ -572,6 +583,7 @@ Toku events: 266
 - team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
 - team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
 - team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
 - team=Signal | status=applied | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
 - team=Signal | status=apply_failed | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
 - team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
@@ -582,6 +594,11 @@ Toku events: 266
 - team=unknown | status=unknown | job=untitled
 - team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
 - team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
 - team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
 - team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
 - team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
@@ -685,6 +702,7 @@ Toku events: 266
 - team=Brief | status=unknown | job=untitled
 - team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
 - team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
 - team=Signal | status=apply_failed | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
 - team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
 - team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
