@@ -54,11 +54,15 @@ jobs:
 
       - name: Continue or start book
         if: always()
-        run: python agent.py --continue
+        run: python agent.py --continue || echo "Book continue skipped"
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           BOOK_CATEGORY: romance
+
+      - name: Book status
+        if: always()
+        run: python agent.py --status || echo "Status skipped"
 
       - name: Refine up to 2 developed books
         if: always()
@@ -80,6 +84,13 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
+      - name: Generate cover and profile
+        if: always()
+        run: python image_gen.py || echo "Image gen skipped"
+        env:
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+          HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
+
       - name: Run Security Team Session
         if: always()
         run: python security_team.py || echo "Security team skipped"
@@ -99,6 +110,14 @@ jobs:
           path: books/
           if-no-files-found: warn
 
+      - name: Upload storefront
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: storefront-exports
+          path: storefront_exports/
+          if-no-files-found: warn
+
       - name: Upload toku logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -107,12 +126,14 @@ jobs:
           path: toku/
           if-no-files-found: warn
 
-      - name: Upload fleet report
+      - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: fleet-report
-          path: fleet-report.md
+          name: reports
+          path: |
+            fleet-report.md
+            book-status.md
           if-no-files-found: warn
 
       - name: Save outputs to repo
@@ -120,6 +141,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add books storefront_exports toku security_team fleet-report.md || true
-          git diff --cached --quiet || git commit -m "Add books, toku logs, and fleet report"
+          git add books storefront_exports toku security_team fleet-report.md book-status.md || true
+          git diff --cached --quiet || git commit -m "Add books, images, toku logs, and reports"
           git push || true
