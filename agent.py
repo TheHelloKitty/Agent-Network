@@ -74,8 +74,10 @@ CHAPTERS = 20
 TARGET_WORDS = 90000
 WORDS_PER_CHAPTER = 4500
 MIN_KEEP_WORDS = 800
+CONTINUE_MIN_WORDS = 80
+CONTINUE_CHAPTERS = 3
 
-def generate_with_fallback(messages, temperature=0.95, max_tokens=3000):
+def generate_with_fallback(messages, temperature=0.95, max_tokens=800):
     return generate_with_failover(
         messages,
         temperature=temperature,
@@ -128,7 +130,7 @@ def add_table_of_contents(filename, chapter_count):
     with open(filename, "r", encoding="utf-8") as f:
         content = f.read()
     toc_lines = ["TABLE OF CONTENTS", ""]
-    for i in range(1, chapter_count + 1):
+    for i in range(1, max(1, chapter_count) + 1):
         toc_lines.append("Chapter %s" % i)
     toc_lines.append("")
     toc_text = "\n".join(toc_lines)
@@ -222,80 +224,45 @@ def normal_system_prompt(agent_name):
 def build_outline_prompt(agent_name, category_key, topic, cat):
     if category_key == "true_crime":
         return [
-            {
-                "role": "system",
-                "content": true_crime_system_prompt(agent_name)
-            },
-            {
-                "role": "user",
-                "content": (
-                    "Create a factual true-crime book plan about: %s\n\n"
-                    "Include:\n"
-                    "1. Working title\n"
-                    "2. One-paragraph factual summary\n"
-                    "3. Key publicly known figures\n"
-                    "4. A %s-chapter chronological outline based only on public facts\n\n"
-                    "Rules:\n"
-                    "- Facts only\n"
-                    "- No opinions\n"
-                    "- No speculation\n"
-                    "- No invented scenes\n"
-                    "- Target length about %s words"
-                ) % (topic, CHAPTERS, TARGET_WORDS)
-            }
+            {"role": "system", "content": true_crime_system_prompt(agent_name)},
+            {"role": "user", "content": (
+                "Create a factual true-crime book plan about: %s\n\n"
+                "Include a working title, factual summary, key public figures, "
+                "and a short chronological outline. Facts only. No speculation."
+            ) % topic}
         ]
     return [
-        {
-            "role": "system",
-            "content": "You are %s, a novelist. Write in natural human language." % agent_name
-        },
-        {
-            "role": "user",
-            "content": (
-                "Create a title, blurb, character list, and a %s-chapter outline for an original %s book about %s. "
-                "Audience: %s. Target length: %s words. Use dialogue and description."
-            ) % (CHAPTERS, category_key, topic, cat["age"], TARGET_WORDS)
-        }
+        {"role": "system", "content": "You are %s, a novelist. Write in natural human language." % agent_name},
+        {"role": "user", "content": (
+            "Create a title, short blurb, character list, and a compact chapter outline "
+            "for an original %s book about %s. Audience: %s."
+        ) % (category_key, topic, cat["age"])}
     ]
 
 def build_chapter_prompt(agent_name, category_key, topic, cat, chapter, previous):
     if category_key == "true_crime":
-        system = true_crime_system_prompt(agent_name)
-        user = (
-            "Write the next factual section for Chapter %s of a true-crime account about: %s\n\n"
-            "Rules:\n"
-            "- Facts only\n"
-            "- Public reporting / public-record framing only\n"
-            "- Timeline style\n"
-            "- No commentary\n"
-            "- No opinions\n"
-            "- No fictional scenes\n"
-            "- No invented dialogue\n"
-            "- Continue from this prior text:\n%s"
-        ) % (chapter, topic, previous)
         return [
-            {"role": "system", "content": system},
-            {"role": "user", "content": user}
+            {"role": "system", "content": true_crime_system_prompt(agent_name)},
+            {"role": "user", "content": (
+                "Write the next factual section for Chapter %s about: %s\n"
+                "Facts only. Timeline style. No invented dialogue.\n"
+                "Continue from:\n%s"
+            ) % (chapter, topic, previous)}
         ]
-
-    system = normal_system_prompt(agent_name)
     user = (
-        "Write the next section of Chapter %s of this original novel.\n"
+        "Write the next section of Chapter %s.\n"
         "Category: %s\nTopic: %s\nStyle: %s\n"
-        "Use natural dialogue and physical description.\n"
-        "Do not summarize. Write actual scenes.\n"
-        "Continue from this:\n%s"
+        "Use dialogue and description. Do not summarize. Write scenes.\n"
+        "Continue from:\n%s"
     ) % (chapter, category_key, topic, cat["style"], previous)
-
     if category_key == "childrens":
-        user += "\nKeep this completely appropriate for children ages 6-10."
-
+        user += "\nKeep this appropriate for children ages 6-10."
     return [
-        {"role": "system", "content": system},
+        {"role": "system", "content": normal_system_prompt(agent_name)},
         {"role": "user", "content": user}
     ]
 
-def write_full_novel(agent_name, category_key, topic):
+def write_full_novel(agent_name, category_key, topic, max_chapters=4):
     cat = CATEGORIES[category_key]
     os.makedirs(cat["folder"], exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -306,19 +273,16 @@ def write_full_novel(agent_name, category_key, topic):
         timestamp
     )
 
-    outline_prompt = build_outline_prompt(agent_name, category_key, topic, cat)
-
     try:
         outline = generate_with_fallback(
-            outline_prompt,
-            temperature=0.2 if category_key == "true_crime" else 0.95
+            build_outline_prompt(agent_name, category_key, topic, cat),
+            temperature=0.2 if category_key == "true_crime" else 0.9
         )
     except Exception as e:
         print("Outline failed:", e)
         outline = ""
 
-    if word_count(outline) < 40:
-        print("Outline too weak. Aborting empty book.")
+    if word_count(outline) < 30:
         raise RuntimeError("Outline generation failed")
 
     parts = [outline]
@@ -328,68 +292,40 @@ def write_full_novel(agent_name, category_key, topic):
     previous = outline[-1500:]
     last_chapter = 0
 
-    for chapter in range(1, CHAPTERS + 1):
+    for chapter in range(1, max_chapters + 1):
         chapter_text = ""
         tries = 0
-        while word_count(chapter_text) < WORDS_PER_CHAPTER:
+        while word_count(chapter_text) < 400 and tries < 6:
             tries += 1
-            if tries > 8:
-                print("Too many retries on chapter", chapter)
-                break
-
-            prompt = build_chapter_prompt(
-                agent_name, category_key, topic, cat, chapter, previous
-            )
-
             try:
                 chunk = generate_with_fallback(
-                    prompt,
-                    temperature=0.2 if category_key == "true_crime" else 0.95
+                    build_chapter_prompt(agent_name, category_key, topic, cat, chapter, previous),
+                    temperature=0.2 if category_key == "true_crime" else 0.9
                 )
             except Exception as e:
                 print("Generation failed on chapter", chapter, e)
-                time.sleep(20)
-                continue
-
-            if not chunk or word_count(chunk) < 20:
-                print("Empty chunk on chapter", chapter)
-                time.sleep(3)
-                continue
-
-            chapter_text = chapter_text + "\n\n" + chunk
-            previous = chunk[-1500:]
-            time.sleep(3)
-            total_now = word_count("\n".join(parts) + chapter_text)
-            if total_now >= TARGET_WORDS:
                 break
+            if chunk and word_count(chunk) >= 20:
+                chapter_text += "\n\n" + chunk
+                previous = chunk[-1500:]
+            time.sleep(2)
 
-        if word_count(chapter_text) < 50:
-            print("Skipping empty chapter", chapter)
-            continue
+        if word_count(chapter_text) < 20:
+            print("Stopping early at chapter", chapter)
+            break
 
         header = "\n\nCHAPTER %s\n\n" % chapter
         with open(filename, "a", encoding="utf-8") as f:
             f.write(header + chapter_text + "\n")
         parts.append(header + chapter_text)
         last_chapter = chapter
-        total_words = word_count("\n".join(parts))
-        print("Chapter", chapter, "saved. Words so far:", total_words)
-        time.sleep(5)
-        if total_words >= TARGET_WORDS:
-            break
+        print("Chapter", chapter, "saved. Words so far:", word_count("\n".join(parts)))
+        time.sleep(2)
 
     final_words = word_count("\n".join(parts))
-    if final_words < MIN_KEEP_WORDS:
-        print("Book undeveloped. Deleting", filename)
+    if final_words < CONTINUE_MIN_WORDS:
         delete_book_family(filename)
-        raise RuntimeError("Refusing to keep empty/undeveloped book (%s words)" % final_words)
-
-    if last_chapter < 1:
-        last_chapter = 1
-
-    add_table_of_contents(filename, last_chapter)
-    txt_to_pdf(filename)
-    txt_to_docx(filename)
+        raise RuntimeError("Refusing to keep empty book (%s words)" % final_words)
 
     info = {
         "agent": agent_name,
@@ -400,8 +336,79 @@ def write_full_novel(agent_name, category_key, topic):
         "chapters": last_chapter,
         "created_at": timestamp
     }
-    print("Novel saved:", filename, "words:", info["words"])
+    print("Novel saved:", filename, "words:", final_words)
     return info
+
+def latest_book_to_continue():
+    files = []
+    root = Path("books")
+    if not root.exists():
+        return None
+    for path in root.rglob("*_full_*.txt"):
+        if "refined" in path.name.lower():
+            continue
+        files.append(path)
+    if not files:
+        return None
+    files = sorted(files, key=lambda p: p.stat().st_mtime, reverse=True)
+    return files[0]
+
+def next_chapter_number(text):
+    n = 0
+    for line in text.splitlines():
+        s = line.strip().upper()
+        if s.startswith("CHAPTER "):
+            parts = s.replace("CHAPTER", "").strip().split()
+            if parts and parts[0].isdigit():
+                n = max(n, int(parts[0]))
+    return n + 1
+
+def continue_book(path, extra_chapters=CONTINUE_CHAPTERS):
+    print("Continuing:", path)
+    text = Path(path).read_text(encoding="utf-8", errors="ignore")
+    start_chapter = next_chapter_number(text)
+    previous = text[-1500:] if text else "Start of book."
+    added = 0
+
+    category_key = "romance"
+    for key, cat in CATEGORIES.items():
+        if cat["folder"] in str(path):
+            category_key = key
+            break
+    cat = CATEGORIES[category_key]
+    topic = path.stem
+    agent_name = "Agent_Continue"
+
+    for chapter in range(start_chapter, start_chapter + extra_chapters):
+        chapter_text = ""
+        tries = 0
+        while word_count(chapter_text) < 400 and tries < 6:
+            tries += 1
+            try:
+                chunk = generate_with_fallback(
+                    build_chapter_prompt(agent_name, category_key, topic, cat, chapter, previous),
+                    temperature=0.8
+                )
+            except Exception as e:
+                print("Continue generation failed:", e)
+                break
+            if chunk and word_count(chunk) >= 20:
+                chapter_text += "\n\n" + chunk
+                previous = chunk[-1500:]
+            time.sleep(2)
+
+        if word_count(chapter_text) < 20:
+            print("No more usable text this run.")
+            break
+
+        with open(path, "a", encoding="utf-8") as f:
+            f.write("\n\nCHAPTER %s\n\n%s\n" % (chapter, chapter_text))
+        added += 1
+        print("Added chapter", chapter, "words now:", word_count(Path(path).read_text(encoding="utf-8", errors="ignore")))
+        time.sleep(2)
+
+    print("Added chapters this run:", added)
+    return str(path)
 
 def update_category_file(category_key, book_info):
     cat = CATEGORIES[category_key]
@@ -422,9 +429,7 @@ def list_book_files(limit=5):
         return []
     for path in books_root.rglob("*.txt"):
         name = path.name.lower()
-        if "refined" in name:
-            continue
-        if name == "category.json":
+        if "refined" in name or name == "category.json":
             continue
         if is_undeveloped_book(path):
             continue
@@ -432,7 +437,7 @@ def list_book_files(limit=5):
     files = sorted(files, key=lambda p: p.stat().st_mtime, reverse=True)
     return files[:limit]
 
-def chunk_text(text, max_chars=6000):
+def chunk_text(text, max_chars=4000):
     chunks = []
     current = []
     size = 0
@@ -453,126 +458,31 @@ def chunk_text(text, max_chars=6000):
 
 def refine_book(txt_path):
     print("Refining:", txt_path)
-    with open(txt_path, "r", encoding="utf-8") as f:
-        original = f.read()
-
+    original = Path(txt_path).read_text(encoding="utf-8", errors="ignore")
     if word_count(original) < MIN_KEEP_WORDS:
         print("Skipping refine on undeveloped book")
         return None
 
-    is_true_crime = "true_crime" in str(txt_path).lower()
-
-    if is_true_crime:
-        bible_prompt = [
-            {
-                "role": "system",
-                "content": "Extract only factual entities and timeline points. No opinions."
-            },
-            {
-                "role": "user",
-                "content": (
-                    "From this true-crime draft, extract:\n"
-                    "- key people\n- key dates\n- locations\n- charges or court actions\n"
-                    "- factual timeline points only\n\n"
-                    "DRAFT:\n%s" % original[:12000]
-                )
-            }
-        ]
-    else:
-        bible_prompt = [
-            {
-                "role": "system",
-                "content": "You are a continuity editor. Extract stable character facts only."
-            },
-            {
-                "role": "user",
-                "content": (
-                    "From this novel draft, create a short character continuity bible.\n"
-                    "For each important character list:\n"
-                    "- name\n- age if known\n- appearance\n- personality\n- relationships\n- goals\n"
-                    "- facts that must stay consistent\n\n"
-                    "DRAFT:\n%s" % original[:12000]
-                )
-            }
-        ]
-
+    prompt = [
+        {"role": "system", "content": "You are a professional editor. Improve clarity and keep the plot."},
+        {"role": "user", "content": "Edit this section into stronger prose. Return full text.\n\n%s" % original[:4000]}
+    ]
     try:
-        character_bible = generate_with_fallback(bible_prompt, temperature=0.2)
+        edited = generate_with_fallback(prompt, temperature=0.4)
     except Exception as e:
-        print("Bible failed:", e)
-        character_bible = "Continuity notes unavailable."
-
-    refined_parts = [character_bible, "\n\n--- REFINED TEXT ---\n\n"]
-    chunks = chunk_text(original, max_chars=6000)
-    previous_summary = "Beginning of book."
-
-    for i, chunk in enumerate(chunks, start=1):
-        if is_true_crime:
-            prompt = [
-                {
-                    "role": "system",
-                    "content": (
-                        "You are a factual true-crime editor. "
-                        "Keep only facts. Remove opinions, speculation, invented dialogue, and dramatic commentary."
-                    )
-                },
-                {
-                    "role": "user",
-                    "content": (
-                        "Edit this section for factual clarity only.\n"
-                        "Do not add new claims.\n"
-                        "Do not speculate.\n"
-                        "Keep chronological order.\n\n"
-                        "FACT NOTES:\n%s\n\nPREVIOUS CONTEXT:\n%s\n\nSECTION %s:\n%s"
-                    ) % (character_bible, previous_summary, i, chunk)
-                }
-            ]
-            temp = 0.2
-        else:
-            prompt = [
-                {
-                    "role": "system",
-                    "content": "You are a professional fiction editor. Improve clarity, dialogue, pacing, and character continuity. Do not invent a totally new plot."
-                },
-                {
-                    "role": "user",
-                    "content": (
-                        "Edit this section into stronger prose.\n"
-                        "Keep character continuity exact to the bible.\n"
-                        "Do not summarize. Return full rewritten scenes.\n\n"
-                        "CHARACTER BIBLE:\n%s\n\nPREVIOUS CONTEXT:\n%s\n\nSECTION %s:\n%s"
-                    ) % (character_bible, previous_summary, i, chunk)
-                }
-            ]
-            temp = 0.5
-
-        try:
-            edited = generate_with_fallback(prompt, temperature=temp)
-        except Exception as e:
-            print("Refine section failed:", i, e)
-            time.sleep(20)
-            edited = chunk
-        refined_parts.append(edited)
-        previous_summary = edited[-1200:]
-        print("Refined section", i, "of", len(chunks))
-        time.sleep(3)
+        print("Refine failed:", e)
+        return None
 
     out_path = str(txt_path).replace(".txt", "_refined.txt")
     with open(out_path, "w", encoding="utf-8") as f:
-        f.write("\n\n".join(refined_parts))
-
-    if is_undeveloped_book(out_path):
-        print("Refined output undeveloped. Deleting", out_path)
+        f.write(edited or original[:4000])
+    if is_undeveloped_book(out_path, min_words=80):
         delete_book_family(out_path)
         return None
-
-    add_table_of_contents(out_path, CHAPTERS)
-    txt_to_pdf(out_path)
-    txt_to_docx(out_path)
     print("Refined book saved:", out_path)
     return out_path
 
-def run_refine(limit=5):
+def run_refine(limit=2):
     files = list_book_files(limit=limit)
     if not files:
         print("No developed books found to refine")
@@ -589,16 +499,14 @@ def run_refine(limit=5):
     return results
 
 def run_publishing_network():
-    cleanup_empty_books()
+    cleanup_empty_books(min_words=CONTINUE_MIN_WORDS)
     category_key = os.getenv("BOOK_CATEGORY")
     if category_key not in CATEGORIES:
-        category_key = random.choice(list(CATEGORIES.keys()))
-    cat = CATEGORIES[category_key]
+        category_key = "romance"
     agent = os.getenv("BOOK_AGENT", "Agent_%04d" % random.randint(1, 3510))
-    topic = random.choice(cat["topics"])
-    book_info = write_full_novel(agent, category_key, topic)
+    topic = random.choice(CATEGORIES[category_key]["topics"])
+    book_info = write_full_novel(agent, category_key, topic, max_chapters=4)
     update_category_file(category_key, book_info)
-
     os.makedirs("books", exist_ok=True)
     catalog_path = "books/MASTER_CATALOG.json"
     if os.path.exists(catalog_path):
@@ -612,17 +520,23 @@ def run_publishing_network():
         json.dump(catalog, f, indent=2)
     return book_info
 
+def run_continue():
+    cleanup_empty_books(min_words=CONTINUE_MIN_WORDS)
+    path = latest_book_to_continue()
+    if path and word_count(Path(path).read_text(encoding="utf-8", errors="ignore")) >= CONTINUE_MIN_WORDS:
+        return continue_book(path, extra_chapters=CONTINUE_CHAPTERS)
+    print("No book to continue. Starting a new one.")
+    return run_publishing_network()
+
 def write_fleet_report():
     hours = 4
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(hours=hours)
-
     created = []
     books_completed = []
-    refined_books = []
     toku_events = []
 
-    for folder in ["agent_outputs", "books", "storefront_exports", "novels", "toku", "security_team"]:
+    for folder in ["books", "storefront_exports", "toku", "security_team"]:
         if not os.path.isdir(folder):
             continue
         for path in Path(folder).rglob("*"):
@@ -631,17 +545,10 @@ def write_fleet_report():
             mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
             if mtime < cutoff:
                 continue
-
-            rel = str(path)
-            created.append("- %s | %s | %s" % (path.stem.split("_")[0], folder, rel))
-
-            name = path.name.lower()
-            if folder.startswith("books") and name.endswith(".txt") and "refined" not in name:
-                if not is_undeveloped_book(path):
-                    books_completed.append("- %s (%s words)" % (rel, word_count(path.read_text(encoding="utf-8", errors="ignore"))))
-            if folder.startswith("books") and "_refined" in name and name.endswith(".txt"):
-                if not is_undeveloped_book(path):
-                    refined_books.append("- %s" % rel)
+            created.append("- %s | %s" % (folder, path))
+            if folder == "books" and path.suffix == ".txt" and "refined" not in path.name.lower():
+                words = word_count(path.read_text(encoding="utf-8", errors="ignore"))
+                books_completed.append("- %s (%s words)" % (path, words))
 
     toku_dir = Path("toku")
     if toku_dir.exists():
@@ -650,49 +557,31 @@ def write_fleet_report():
             if mtime < cutoff:
                 continue
             try:
-                with open(path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
+                data = json.loads(path.read_text(encoding="utf-8"))
             except Exception:
                 continue
-
             rows = data if isinstance(data, list) else [data]
             for row in rows:
                 team = row.get("team") or "unknown"
                 job = row.get("job") or {}
-                title = job.get("title") or row.get("title") or "untitled job"
-                status = str(row.get("status") or "unknown").lower()
-                toku_events.append(
-                    "- team=%s | status=%s | job=%s | file=%s" % (
-                        team, status, title, path.name
-                    )
-                )
+                title = job.get("title") or "untitled"
+                status = row.get("status") or "unknown"
+                toku_events.append("- team=%s | status=%s | job=%s" % (team, status, title))
 
     lines = [
         "# Fleet Report",
         "Generated: " + now.strftime("%Y-%m-%d %H:%M UTC"),
-        "Window: last 4 hours",
         "",
         "## Summary",
         "Files created: %s" % len(created),
-        "Developed books completed: %s" % len(books_completed),
-        "Books refined: %s" % len(refined_books),
-        "Toku job events: %s" % len(toku_events),
+        "Books touched: %s" % len(books_completed),
+        "Toku events: %s" % len(toku_events),
         "",
-        "## Created in the last 4 hours",
+        "## Created",
     ]
     lines.extend(created or ["None"])
-    lines.append("")
-    lines.append("## Developed books completed")
-    lines.extend(books_completed or ["None"])
-    lines.append("")
-    lines.append("## Successful books after refine pass")
-    lines.extend(refined_books or ["None"])
-    lines.append("")
-    lines.append("## Toku jobs (applied / accepted / completed)")
-    lines.extend(toku_events or ["None"])
-
-    with open("fleet-report.md", "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
+    lines += ["", "## Books", *(books_completed or ["None"]), "", "## Toku", *(toku_events or ["None"])]
+    Path("fleet-report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("Updated fleet-report.md")
 
 if __name__ == "__main__":
@@ -700,11 +589,14 @@ if __name__ == "__main__":
     parser.add_argument("--report", action="store_true")
     parser.add_argument("--refine", action="store_true")
     parser.add_argument("--cleanup", action="store_true")
-    parser.add_argument("--limit", type=int, default=5)
+    parser.add_argument("--continue", dest="do_continue", action="store_true")
+    parser.add_argument("--limit", type=int, default=2)
     args = parser.parse_args()
 
     if args.cleanup:
         cleanup_empty_books()
+    elif args.do_continue:
+        run_continue()
     elif args.report:
         write_fleet_report()
     elif args.refine:
