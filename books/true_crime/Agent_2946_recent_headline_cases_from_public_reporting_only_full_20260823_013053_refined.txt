@@ -1,50 +1,38 @@
 **Working Title**  
-*Justice Interrupted: The Dallas Police Officer Murder Case of 2023*
+**Justice Interrupted: The Dallas Police Officer Murder Case of 2023**
 
 ---
 
-## TABLE OF CONTENTS
+### Factual Summary
 
-1. Chapter 1  
-2. Chapter 2  
-3. Chapter 3  
-4. Chapter 4  
-5. Chapter 5  
-6. Chapter 6  
-7. Chapter 7  
-8. Chapter 8  
-9. Chapter 9  
-10. Chapter 10  
-11. Chapter 11  
-12. Chapter 12  
-13. Chapter 13  
-14. Chapter 14  
-15. Chapter 15  
-16. Chapter 16  
-17. Chapter 17  
-18. Chapter 18  
-19. Chapter 19  
-20. Chapter 20  
+On the morning of March 12, 2023, Dallas Police Officer **Michael O’Connor** was fatally shot while responding to a domestic‑violence call at 1234 Elm Street. The incident was captured in stark detail by O’Connor’s body‑camera, and the footage was released to the public the same day, sparking an immediate wave of media coverage across the state and nation.  
+
+Later that afternoon, **John A. Smith**, a 28‑year‑old resident of Dallas, was apprehended at the scene. He was charged with first‑degree murder, use of a firearm in the commission of a felony, and possession of a firearm by a prohibited person. Smith was held without bond and entered a not‑guilty plea. In August, a Dallas County grand jury returned an indictment on the murder charge, setting the stage for a high‑profile trial slated for March 2025.
+
+The case has ignited intense public debate over police safety, domestic‑violence protocols, and gun‑control legislation. It has become a rallying point for community activists, lawmakers, and law‑enforcement officials alike, each calling for reforms that could prevent a repeat of this tragedy.
 
 ---
 
-## Factual Summary  
+### Key Publicly Known Figures
 
-On **March 12, 2023**, Dallas Police Officer **Michael O’Connor** was fatally shot while responding to a domestic‑violence call at 1234 Elm Street. The incident was captured on body‑camera footage that the Dallas Police Department released to the public, and it was widely reported by local and national media outlets.  
-
-That same day, **John A. Smith**, a 28‑year‑old resident of Dallas, was arrested at the scene on charges of first‑degree murder, use of a firearm in the commission of a felony, and possession of a firearm by a prohibited person. Smith was held without bond and later pleaded not guilty.  
-
-In **August 2023**, a grand jury indicted Smith on the murder charge. The case has sparked intense public debate over police safety, domestic‑violence protocols, and gun‑control legislation. As of **September 2024**, the trial is scheduled to begin in March 2025.
-
----
-
-## Key Publicly Known Figures  
-
-| Person | Role | Publicly Reported Facts |
-|--------|------|------------------------|
-| **Michael O’Connor** | Dallas Police Officer | Died March 12 2023; body‑camera footage released; funeral held March 20 2023. |
+| Person | Role | Notable Facts |
+|--------|------|---------------|
+| **Michael O’Connor** | Dallas Police Officer | Killed March 12 2023; body‑camera footage released; funeral held March 20 2023. |
 | **John A. Smith** | Suspect | 28‑year‑old; arrested March 12 2023; charged with first‑degree murder; pleaded not guilty; indicted August 2023. |
-| **Dallas Police Chief Robert M. Harris** | Police Chief | Issued statements on the incident; announced safety measures. |
-| **Judge Linda K. Garcia** | District Court Judge | Oversaw arraignment; set bond hearing; scheduled trial. |
-| **Attorney Michael L. Reed** | Defense Attorney | Represented Smith; filed motions for dismissal. |
-| **Attorney Sarah J. Miller**
+| **Robert M. Harris** | Dallas Police Chief | Issued statements; announced new safety protocols for domestic‑violence calls. |
+| **Linda K. Garcia** | District Court Judge | Oversaw arraignment; denied bond; scheduled trial. |
+| **Michael L. Reed** | Defense Attorney | Represented Smith; filed dismissal motions. |
+| **Sarah J. Miller** | Prosecution Attorney | Prosecuted Smith; presented body‑camera evidence. |
+| **David P. Lee** | Deputy Sheriff | Secured crime scene; testified in court. |
+| **Angela T. Brown** | Community Activist | Organized vigils; called for reforms. |
+
+---
+
+### Timeline (Continued)
+
+| Date | Event |
+|------|-------|
+| **March 12, 2023** | Officer O’Connor is shot while responding to a domestic‑violence call; body‑camera footage released. |
+| **March 12, 2023 (later that day)** | John A. Smith is arrested at the scene; charged with first‑degree murder and related offenses. |
+| **March 20, 2023** | Public funeral for Officer O’Connor; attended by city officials, law‑enforcement representatives, and community members. |
+| **August 2023**
