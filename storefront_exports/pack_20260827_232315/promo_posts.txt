@@ -1,0 +1,125 @@
+<think>
+Here's a thinking process:
+
+1.  **Analyze User Input:**
+   - **Platform:** X (Twitter)
+   - **Format:** Short promotional posts
+   - **Constraints:** No hashtag spam, natural voice, mix of hooks, quotes, questions, and soft sells
+   - **Category:** Romance
+   - **Price:** $6.99
+   - **Source Material:** Provided draft excerpt (Chapter 1)
+   - **Key Elements from Draft:**
+     - Setting: Rainy old town, boutique hotel lounge, jazz piano, amber glow, moody atmosphere
+     - Characters: Emma (artist, left town 5 years ago, wears navy wool coat, chestnut hair) & Lucas (taller now, silver at temples, scar on cheek, deep voice, left 5 years ago out of fear)
+     - Themes: Reunion after 5 years, unresolved past, second chances, art/colors metaphor, rain/moody atmosphere, tension, regret, longing
+     - Tone: Atmospheric, emotional, romantic, slightly melancholic but hopeful
+     - Status: Draft in progress, title TBD, but I need to write promo posts anyway based on the provided excerpt.
+
+2.  **Determine Requirements for Each Post:**
+   - 12 posts total
+   - Mix of: hooks, quotes, questions, soft sells
+   - Natural, conversational tone (no corporate/overly salesy language)
+   - No hashtag spam (maybe 1 relevant hashtag max, or none)
+   - Include price ($6.99) naturally
+   - Fit X's character limit (ideally under 280, but can be slightly longer if broken up; I'll keep them concise)
+   - Reflect the mood/themes of the provided excerpt
+
+3.  **Brainstorming Angles/Posts (12 total):**
+   I'll aim for a strategic mix:
+   - 1-2: Atmospheric hooks (rain, hotel, jazz, reunion)
+   - 1-2: Quote-focused (pull dialogue/metaphor from text)
+   - 2-3: Question-based (engage readers about second chances/past love)
+   - 2-3: Soft sell/value-focused (price, what they get, why read now)
+   - 2-3: Character/emotion-focused (Emma & Lucas, tension, 5 years apart)
+   - Ensure variety in structure and tone
+
+   Let's draft them one by one, refining as I go.
+
+   *Post 1 (Hook/Atmosphere)*
+   The rain was falling. The jazz was playing. And after five years of pretending he didn’t exist, he walked through the door. 
+   Sometimes the past doesn’t stay buried. It just waits for the right moment to catch up.
+   Available now for $6.99.
+
+   *Post 2 (Quote/Metaphor)*
+   “I still love the way colors bleed into each other, like… like us, maybe.”
+   Some love stories don’t end. They just pause. Ready to resume the moment the light hits right.
+   Grab your copy for $6.99 and see where they go from here.
+
+   *Post 3 (Question/Engagement)*
+   What would you do if the person you tried to forget walked back into your life exactly when you thought you were over them?
+   Emma and Lucas are about to find out.
+   A slow-burn reunion romance, now $6.99.
+
+   *Post 4 (Soft Sell/Value)*
+   If you’re in the mood for:
+   - Rain-soaked streets & dimly lit hotel lounges
+   - A five-year gap that still aches
+   - Slow-burn tension that actually earns the payoff
+   This one’s for you. $6.99. Link in bio.
+
+   *Post 5 (Hook/Character)*
+   Five years. A scar on his cheek. A brush in her hand. And a conversation neither of them knew how to finish.
+   Second chances don’t come wrapped in neat bows. They come with rain on your coat and a heart that remembers.
+   Read it now for $6.99.
+
+   *Post 6 (Quote/Tension)*
+   “I’m sorry for how I left. I was scared. I thought I was protecting you.”
+   Some apologies take years to reach your ears. But when they finally do, everything shifts.
+   Available for $6.99. Let us know if you’re team “forgive” or team “make him explain.”
+
+   *Post 7 (Question/Relatable)*
+   Have you ever run into someone from your past and realized five years isn’t long enough to actually move on?
+   Emma definitely has. Lucas is about to prove it.
+   A grounded, atmospheric romance. $6.99.
+
+   *Post 8 (Soft Sell/Mood)*
+   Cozy up with a story that moves like a slow jazz record: quiet at first, then impossible to look away from.
+   Rain, regret, and the kind of tension that makes you read with your phone face-down across the room.
+   Yours for $6.99.
+
+   *Post 9 (Hook/Structure)*
+   He left without saying goodbye.
+   She left without looking back.
+   Now they’re stuck in the same room, five years later, watching the rain erase the space between them.
+   Grab the ebook for $6.99 before the storm clears.
+
+   *Post 10 (Quote/Theme)*
+   “I tried to forget… everything.”
+   Trouble is, the heart doesn’t keep a filing cabinet. It just waits.
+   A second-chance romance that trades grand gestures for quiet moments, heavy silences, and the kind of chemistry that takes five years to boil over.
+   $6.99. Link below.
+
+   *Post 11 (Question/Interactive)*
+   Quick poll in your head: when two people fall out of touch for five years, is it easier to start over or pick up where they left off?
+   Emma and Lucas are about to test both.
+   Read the whole story for $6.99.
+
+   *Post 12 (Soft Sell/Closing)*
+   Not every reunion begins with fireworks. Some start with a chandelier’s glow, a familiar scarf, and a voice that still catches in your throat.
+   If you love romance that feels real, stays in your chest, and doesn’t rush the good parts—this is your next read.
+   $6.99. All mine if you follow the link.
+
+4.  **Review & Refine (Self-Correction/Check against constraints):**
+   - *12 posts?* Yes.
+   - *Platform:* X-appropriate length, pacing, tone.
+   - *No hashtag spam?* Checked. Zero hashtags used per instruction "No hashtag spam." I'll keep it clean.
+   - *Natural voice?* Conversational, not corporate. Uses contractions, relatable phrasing, avoids "Buy now!" urgency.
+   - *Mix of hooks, quotes, questions, soft sells?* Yes, clearly varied across the 12.
+   - *Category:* Romance (second-chance, atmospheric, slow-burn)
+   - *Price:* $6.99 included naturally in each.
+   - *Based on draft?* Directly pulls imagery, quotes, themes, and character dynamics from the provided text.
+   - *Tone check:* Matches the moody, literary-romance vibe of the excerpt. No overpromising since it's a draft, but positions it as a complete/readable experience (standard for promo). I'll make sure the language doesn't assume a title since it's TBD.
+
+   Minor adjustments during review:
+   - Post 4: Bullet format works well on X.
+   - Post 6: "team forgive/explain" is a bit tropey but fits romance Twitter well. I'll tweak to sound more natural: "Let us know if you’d forgive him in five pages or make him earn it."
+   - Post 12: "All mine if you follow the link" is a bit awkward. Change to "Grab it here: [link]" or just end cleanly with the price and a gentle nudge.
+   - Ensure consistent tone: literary but accessible, emotional but not melodramatic.
+   - Check character counts: All well under 280.
+   - Price is naturally integrated.
+   - No hashtags used (as requested: "No hashtag spam" - I'll strictly avoid them to be safe).
+
+   Let's finalize them. I'll present them clearly numbered 1-12, ready to copy-paste. I'll ensure they read as a cohesive campaign but stand alone. All constraints met. Output matches response.✅
+   Structure of output: Just the 12 posts, clearly labeled, ready for use. I'll add a brief note if needed, but keep it tight.
+   Self-Correction/Refinement during thought:
+   - I should make sure the price doesn't feel repetitive in a jarring way. It's fine for promo, but I'll vary the phrasing slightly ($6.99, just $6.99, yours for $6.99,
