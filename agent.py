@@ -31,11 +31,15 @@ CATEGORIES = {
     "true_crime": {
         "folder": "books/true_crime",
         "age": "adult",
-        "style": "strictly factual, timeline-based, public-record only, no opinions",
+        "style": "factual high-stakes public cases, chronological courtroom and investigation detail from public reporting only",
         "topics": [
-            "Julio Foolio case public timeline",
+            "a recent nationally covered homicide trial with public court filings",
+            "a viral true-crime case that dominated headlines in the last 24 months",
+            "a high-profile celebrity or influencer-adjacent criminal case with public charges",
+            "a multi-state manhunt case covered by major news outlets",
+            "a courtroom case with unusual public evidence and heavy media coverage",
+            "Julio Foolio case public timeline and court coverage",
             "McKenzie Shirilla case public court coverage",
-            "recent headline cases from public reporting only"
         ],
     },
     "thriller": {
@@ -70,8 +74,6 @@ CATEGORIES = {
     }
 }
 
-CHAPTERS = 20
-TARGET_WORDS = 90000
 MIN_KEEP_WORDS = 800
 CONTINUE_MIN_WORDS = 80
 CONTINUE_CHAPTERS = 3
@@ -144,9 +146,6 @@ def is_undeveloped_book(path, min_words=MIN_KEEP_WORDS):
         text = p.read_text(encoding="utf-8", errors="ignore").strip()
         if not text:
             return True
-        low = text.lower()
-        if "draft in progress" in low and word_count(text) < min_words:
-            return True
         if word_count(text) < min_words:
             return True
         return False
@@ -184,9 +183,11 @@ def cleanup_empty_books(min_words=MIN_KEEP_WORDS):
 
 def true_crime_system_prompt(agent_name):
     return (
-        "You are %s, a factual true-crime chronicler. "
-        "Write only verified public facts. No opinions. No speculation. "
-        "No invented dialogue. If something is unconfirmed, omit it."
+        "You are %s, a factual true-crime narrator. "
+        "Write the story behind ONE public case using only verified public reporting and public records. "
+        "Write it as a readable narrative: what happened, in order. "
+        "No invented dialogue. No invented inner thoughts. No speculation about motive. "
+        "If a detail is not public, omit it."
     ) % agent_name
 
 def normal_system_prompt(agent_name):
@@ -200,9 +201,19 @@ def build_outline_prompt(agent_name, category_key, topic, cat):
         return [
             {"role": "system", "content": true_crime_system_prompt(agent_name)},
             {"role": "user", "content": (
-                "Create a factual true-crime book plan about: %s. "
-                "Include a working title, factual summary, key public figures, "
-                "and a short chronological outline. Facts only."
+                "Pick ONE specific, highly publicized criminal case that matches this assignment: %s\n\n"
+                "Choose the most widely covered public case you can identify from major news and public records.\n"
+                "Then create a full book plan for THAT one case only.\n\n"
+                "Include:\n"
+                "1. Exact case name and location\n"
+                "2. Working title\n"
+                "3. Why the case drew heavy public attention, using only public facts\n"
+                "4. Key publicly named people and their public roles\n"
+                "5. A chronological chapter outline from first public report through latest court action\n\n"
+                "Rules:\n"
+                "- One case only. Do not list unrelated cases.\n"
+                "- Facts only. No invented dialogue. No speculation.\n"
+                "- If a detail is not public, omit it."
             ) % topic}
         ]
     return [
@@ -218,9 +229,15 @@ def build_chapter_prompt(agent_name, category_key, topic, cat, chapter, previous
         return [
             {"role": "system", "content": true_crime_system_prompt(agent_name)},
             {"role": "user", "content": (
-                "Write the next factual section for Chapter %s about: %s. "
-                "Facts only. Timeline style. No invented dialogue.\nContinue from:\n%s"
-            ) % (chapter, topic, previous)}
+                "Continue the true-crime book on the single chosen case.\n"
+                "Assignment: %s\n"
+                "This is Chapter %s.\n"
+                "Write the story behind the case as a readable true-crime narrative: "
+                "what happened, in order, with public facts only.\n"
+                "Cover dates, locations, charges, arrests, hearings, and publicly reported evidence.\n"
+                "No invented conversations or inner thoughts. Do not switch cases.\n"
+                "Continue from:\n%s"
+            ) % (topic, chapter, previous)}
         ]
     user = (
         "Write the next section of Chapter %s.\n"
@@ -348,7 +365,7 @@ def continue_book(path, extra_chapters=CONTINUE_CHAPTERS):
             try:
                 chunk = generate_with_fallback(
                     build_chapter_prompt(agent_name, category_key, topic, cat, chapter, previous),
-                    temperature=0.8
+                    temperature=0.2 if category_key == "true_crime" else 0.8
                 )
             except Exception as e:
                 print("Continue generation failed:", e)
@@ -462,6 +479,74 @@ def run_continue():
     print("No book to continue. Starting a new one.")
     return run_publishing_network()
 
+def book_status_row(path):
+    text = Path(path).read_text(encoding="utf-8", errors="ignore")
+    words = word_count(text)
+    last = next_chapter_number(text) - 1
+    low = text.lower()
+    has_ending = any(x in low[-2500:] for x in [
+        "the end", "verdict", "sentenced", "sentencing",
+        "epilogue", "years later", "fin."
+    ])
+    if words < 800:
+        state = "empty"
+    elif words < 15000:
+        state = "incomplete"
+    elif last >= 12 or has_ending:
+        state = "complete_enough"
+    else:
+        state = "short_unfinished"
+    return {
+        "file": str(path),
+        "words": words,
+        "last_chapter": max(0, last),
+        "state": state,
+    }
+
+def write_book_status():
+    root = Path("books")
+    rows = []
+    if root.exists():
+        for path in sorted(root.rglob("*.txt")):
+            name = path.name.lower()
+            if name in ("category.json", "master_catalog.json"):
+                continue
+            if "refined" in name:
+                continue
+            rows.append(book_status_row(path))
+
+    lines = [
+        "# Book Status",
+        "Generated: " + datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+        "",
+        "empty = under 800 words",
+        "incomplete = under 15,000 words",
+        "short_unfinished = 15,000+ but no clear ending",
+        "complete_enough = 15,000+ and ending or 12+ chapters",
+        "",
+    ]
+    if not rows:
+        lines.append("No books found.")
+    else:
+        for row in rows:
+            lines.append(
+                "- %s | %s words | last chapter %s | %s" % (
+                    row["file"], row["words"], row["last_chapter"], row["state"]
+                )
+            )
+        lines.append("")
+        counts = {}
+        for row in rows:
+            counts[row["state"]] = counts.get(row["state"], 0) + 1
+        lines.append("## Counts")
+        for k, v in counts.items():
+            lines.append("- %s: %s" % (k, v))
+
+    Path("book-status.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print("Wrote book-status.md")
+    for row in rows:
+        print(row["file"], row["words"], row["state"])
+
 def write_fleet_report():
     hours = 4
     now = datetime.now(timezone.utc)
@@ -515,7 +600,7 @@ def write_fleet_report():
                 line = "- team=%s | status=%s | code=%s | job=%s" % (team, status, code, title)
                 if status == "applied":
                     toku_applied.append(line)
-                elif status == "apply_failed":
+                elif status in ("apply_failed", "already_bid"):
                     toku_failed.append(line)
 
     lines = [
@@ -543,12 +628,15 @@ if __name__ == "__main__":
     parser.add_argument("--report", action="store_true")
     parser.add_argument("--refine", action="store_true")
     parser.add_argument("--cleanup", action="store_true")
+    parser.add_argument("--status", action="store_true")
     parser.add_argument("--continue", dest="do_continue", action="store_true")
     parser.add_argument("--limit", type=int, default=2)
     args = parser.parse_args()
 
     if args.cleanup:
         cleanup_empty_books()
+    elif args.status:
+        write_book_status()
     elif args.do_continue:
         run_continue()
     elif args.report:
