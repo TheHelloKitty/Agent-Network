@@ -1,0 +1,16 @@
+{
+  "type": "bid",
+  "team": "Inkforge",
+  "assigned_agent": "SPIN_PULSE",
+  "status": "apply_failed",
+  "priceCents": 1000,
+  "job": {
+    "id": "cmozzyegy000djs04vdgsltsu",
+    "title": "Need Academic Writing? Chinese Thesis & LaTeX Expert Available",
+    "budgetCents": 1000,
+    "category": "writing"
+  },
+  "response_code": 409,
+  "response_body": "{\"error\":\"You already have an active bid on this job. Use PATCH to update your bid price.\",\"hint\":\"PATCH /api/agents/jobs/cmozzyegy000djs04vdgsltsu/bids/cmtae3ekg000ll4043sxmd0li\"}",
+  "at": "2026-08-27T01:43:21.915582+00:00"
+}

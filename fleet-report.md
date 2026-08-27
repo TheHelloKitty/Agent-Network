@@ -1,10 +1,10 @@
 # Fleet Report
-Generated: 2026-08-27 00:44 UTC
+Generated: 2026-08-27 01:51 UTC
 
 ## Summary
-Files created: 403
+Files created: 415
 Books touched: 30
-Toku events: 256
+Toku events: 266
 
 ## Created
 - books | books/offer_pack.py
@@ -260,6 +260,12 @@ Toku events: 256
 - storefront_exports | storefront_exports/pack_20260826_174905/payhip_page_copy.txt
 - storefront_exports | storefront_exports/pack_20260826_174905/titles.txt
 - storefront_exports | storefront_exports/pack_20260826_174905/promo_posts.txt
+- storefront_exports | storefront_exports/pack_20260827_014805/meta.json
+- storefront_exports | storefront_exports/pack_20260827_014805/bundle_ideas.txt
+- storefront_exports | storefront_exports/pack_20260827_014805/blurb.txt
+- storefront_exports | storefront_exports/pack_20260827_014805/payhip_page_copy.txt
+- storefront_exports | storefront_exports/pack_20260827_014805/titles.txt
+- storefront_exports | storefront_exports/pack_20260827_014805/promo_posts.txt
 - storefront_exports | storefront_exports/pack_20260825_205850/meta.json
 - storefront_exports | storefront_exports/pack_20260825_205850/bundle_ideas.txt
 - storefront_exports | storefront_exports/pack_20260825_205850/blurb.txt
@@ -288,6 +294,7 @@ Toku events: 256
 - toku | toku/setup_20260826_173535.json
 - toku | toku/event_20260826_193820_015126.json
 - toku | toku/event_20260826_171326_311318.json
+- toku | toku/setup_20260827_014318.json
 - toku | toku/event_20260826_193758_264914.json
 - toku | toku/event_20260827_000642_931077.json
 - toku | toku/event_20260827_003735_128653.json
@@ -328,6 +335,7 @@ Toku events: 256
 - toku | toku/event_20260827_003732_279264.json
 - toku | toku/event_20260826_193745_009503.json
 - toku | toku/event_20260826_173538_280670.json
+- toku | toku/event_20260827_014325_930337.json
 - toku | toku/event_20260826_183930_909407.json
 - toku | toku/event_20260826_204552_303117.json
 - toku | toku/event_20260826_193821_995565.json
@@ -335,6 +343,7 @@ Toku events: 256
 - toku | toku/hire_summary_20260826_204633.json
 - toku | toku/event_20260826_175033_670751.json
 - toku | toku/event_20260826_171330_533745.json
+- toku | toku/event_20260827_014319_684060.json
 - toku | toku/event_20260826_204559_126544.json
 - toku | toku/setup_20260826_172322.json
 - toku | toku/event_20260826_183928_900259.json
@@ -345,6 +354,7 @@ Toku events: 256
 - toku | toku/setup_20260826_204550.json
 - toku | toku/event_20260826_175022_728904.json
 - toku | toku/setup_20260826_175001.json
+- toku | toku/event_20260827_014323_955093.json
 - toku | toku/event_20260827_003742_011759.json
 - toku | toku/event_20260826_183920_565083.json
 - toku | toku/event_20260826_193800_207578.json
@@ -357,6 +367,7 @@ Toku events: 256
 - toku | toku/event_20260826_175017_241372.json
 - toku | toku/event_20260827_000648_900181.json
 - toku | toku/event_20260826_193802_292494.json
+- toku | toku/hire_summary_20260827_014327.json
 - toku | toku/event_20260826_193749_991250.json
 - toku | toku/event_20260826_172333_957014.json
 - toku | toku/event_20260826_204618_395433.json
@@ -382,6 +393,7 @@ Toku events: 256
 - toku | toku/event_20260826_172328_697288.json
 - toku | toku/event_20260827_000654_832142.json
 - toku | toku/event_20260827_000652_876228.json
+- toku | toku/event_20260827_014321_915659.json
 - toku | toku/event_20260827_000701_698983.json
 - toku | toku/event_20260826_175020_519741.json
 - toku | toku/event_20260826_173540_844962.json
@@ -424,7 +436,7 @@ Toku events: 256
 - books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt (91680 words)
 - books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.txt (11210 words)
 - books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt (31726 words)
-- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (15458 words)
+- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (17333 words)
 - books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt (15022 words)
 - books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt (9892 words)
 - books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.txt (13290 words)
@@ -452,6 +464,11 @@ Toku events: 256
 - team=Brief | status=unknown | job=untitled
 - team=Brief | status=apply_failed | job=INSTANT: AI Agent Marketplace Analysis 2026 — Full Report, Immediate Delivery ($15)
 - team=Signal | status=applied | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Hire | status=unknown | job=untitled
+- team=Inkforge | status=unknown | job=untitled
+- team=Polish | status=unknown | job=untitled
+- team=Signal | status=unknown | job=untitled
+- team=Brief | status=unknown | job=untitled
 - team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
 - team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
 - team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
@@ -504,6 +521,7 @@ Toku events: 256
 - team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
 - team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
 - team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
+- team=Inkforge | status=apply_failed | job=Promote https://www.openpersist.ai
 - team=Signal | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
 - team=Polish | status=apply_failed | job=ARC/v0: earn Base USDC and open a branch for another agent
 - team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
@@ -525,6 +543,7 @@ Toku events: 256
 - team=Brief | status=apply_failed | job=FREE: Smart Contract Security Review
 - team=Inkforge | status=applied | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
 - team=Brief | status=applied | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
+- team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw AI Agent Setup & Feishu Integration Expert
 - team=Signal | status=apply_failed | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
 - team=Hire | status=unknown | job=untitled
 - team=Inkforge | status=unknown | job=untitled
@@ -547,6 +566,7 @@ Toku events: 256
 - team=Polish | status=unknown | job=untitled
 - team=Signal | status=unknown | job=untitled
 - team=Brief | status=unknown | job=untitled
+- team=Inkforge | status=apply_failed | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
 - team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
 - team=Signal | status=apply_failed | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
 - team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
@@ -559,6 +579,7 @@ Toku events: 256
 - team=Signal | status=applied | job=Mona: Python Automation, AI Fine-Tuning & Web Scraping — Bilingual FR/EN
 - team=Signal | status=apply_failed | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
 - team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=unknown | status=unknown | job=untitled
 - team=Inkforge | status=apply_failed | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
 - team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
 - team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
@@ -619,6 +640,7 @@ Toku events: 256
 - team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
 - team=Brief | status=apply_failed | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
 - team=Polish | status=apply_failed | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
+- team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
 - team=Inkforge | status=apply_failed | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
 - team=Signal | status=apply_failed | job=FIRST JOB FREE: Python Automation, Web3 Scripts, Telegram Bots, Web Scraping
 - team=Inkforge | status=applied | job=🔥 ZOD IA BR — Technical Writing, SEO & Content Strategy. FIRST JOB FREE! 🚀
