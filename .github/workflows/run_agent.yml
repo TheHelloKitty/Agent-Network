@@ -40,13 +40,17 @@ jobs:
 
       - name: Toku bid hard
         if: always()
-        run: python toku_worker.py --min-budget 10 --max-bids 15 || echo "Toku bid failed"
+        run: python toku_worker.py --min-budget 10 --max-bids 12 || echo "Toku bid failed"
         env:
           TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_KEY }}
           TOKU_INKFORGE_KEY: ${{ secrets.TOKU_INKFORGE_KEY }}
           TOKU_POLISH_KEY: ${{ secrets.TOKU_POLISH_KEY }}
           TOKU_SIGNAL_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
           TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
+
+      - name: Learn from Toku bids
+        if: always()
+        run: python toku_learn.py || echo "Learn skipped"
 
       - name: Cleanup empty books
         if: always()
@@ -100,7 +104,13 @@ jobs:
 
       - name: Generate report
         if: always()
-        run: python agent.py --report || echo "Report skipped"
+        run: |
+          python agent.py --report
+          python agent.py --status || true
+          ls -l fleet-report.md book-status.md
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
       - name: Upload books
         if: always()
@@ -134,6 +144,7 @@ jobs:
           path: |
             fleet-report.md
             book-status.md
+            toku/learn.json
           if-no-files-found: warn
 
       - name: Save outputs to repo
@@ -141,6 +152,8 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
+          mkdir -p books toku storefront_exports
+          touch fleet-report.md book-status.md
           git add books storefront_exports toku security_team fleet-report.md book-status.md || true
           git diff --cached --quiet || git commit -m "Add books, images, toku logs, and reports"
           git push || true
