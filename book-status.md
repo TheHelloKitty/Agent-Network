@@ -1,5 +1,5 @@
 # Book Status
-Generated: 2026-08-27 23:22 UTC
+Generated: 2026-08-28 00:12 UTC
 
 empty = under 800 words
 incomplete = under 15,000 words
@@ -35,7 +35,7 @@ complete_enough = 15,000+ and ending or 12+ chapters
 - books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.txt | 11210 words | last chapter 20 | incomplete
 - books/true_crime/Agent_2878_recent_headline_cases_from_public_reporting_only_full_20260823_161934.txt | 11344 words | last chapter 20 | incomplete
 - books/true_crime/Agent_2946_recent_headline_cases_from_public_reporting_only_full_20260823_013053.txt | 11708 words | last chapter 20 | incomplete
-- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt | 23016 words | last chapter 38 | complete_enough
+- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt | 24411 words | last chapter 41 | complete_enough
 
 ## Counts
 - incomplete: 23
