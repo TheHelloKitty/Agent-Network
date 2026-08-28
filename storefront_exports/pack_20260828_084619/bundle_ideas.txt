@@ -1,0 +1,35 @@
+Below are **five ready‑to‑sell bundle concepts** that you can upload to Payhip alongside the romance e‑book you’re building.  
+Each bundle pairs the core story with complementary digital goodies that deepen the reader’s experience, boost perceived value, and drive higher average order value. Prices are set to be attractive on a pay‑what‑you‑like‑or‑pay‑a‑fixed‑price platform while still reflecting the added content.
+
+| # | Bundle Name | What’s Inside | Suggested Price | Why it sells |
+|---|--------------|---------------|-----------------|--------------|
+| 1 | **“Rekindle‑the‑Heart” Basic Bundle** | • e‑book (PDF/EPUB) <br>• 5 “Bonus Scenes” (extra chapters set 3‑4 months after the main timeline) <br>• 2 downloadable “Love Notes” (hand‑written letter templates in PDF) | **$6.99** | Keeps the core story but gives readers a taste of what comes next. The extra scenes create a “future‑teaser” feel that’s perfect for new readers wanting more. |
+| 2 | **“Audio Romance” Bundle** | • e‑book (PDF/EPUB) <br>• Full‑length audiobook (MP3, 3 hrs 30 min) narrated by a professional voice actor <br>• 1 “Behind‑the‑Scenes” interview with the author (MP3, 15 min) | **$12.99** | Audio is hot on Payhip. The narrator adds a new dimension to the story; the interview gives fans an inside look, increasing the perceived value. |
+| 3 | **“Art & Affection” Bundle** | • e‑book (PDF/EPUB) <br>• 4 high‑resolution digital character portraits (JPG, 300 dpi) <br>• 2 “Scene‑Illustrations” (full‑page art for the opening and closing scenes) | **$11.99** | Visuals turn an ordinary romance into a mini‑gallery. Fans love owning the art that inspired their favorite moments. |
+| 4 | **“Heartfelt Extras” Bundle** | • e‑book (PDF/EPUB) <br>• 3 “Love Letter Templates” (customizable, ready for print) <br>• 1 “Romance‑Playlist” (Spotify embed + downloadable lyric sheet) | **$9.99** | This bundle turns the story into a lifestyle kit—perfect for gifting or for readers who enjoy personalizing their romance experience. |
+| 5 | **“Ultimate Romance Experience” Bundle** | • e‑book (PDF/EPUB) <br>• Full‑length audiobook (MP3) <br>• 4 high‑resolution character portraits <br>• 5 Bonus Scenes <br>• 2 Love Letter Templates <br>• 1 “Author’s Diary” PDF (behind‑the‑scenes notes, character sketches, timeline) | **$24.99** | The all‑in‑one package offers every possible add‑on. Ideal for die‑hard fans and collectors, and it’s priced to reflect the comprehensive experience. |
+
+---
+
+### How to Set Up on Payhip
+
+1. **Create a product page** for each bundle, using the same title and description format you’ll use for the e‑book.  
+2. Upload all files (PDF, MP3, JPG) in a single zip folder per bundle.  
+3. Enable **“Digital download”** and set the price as above.  
+4. Add a short, enticing description that highlights the bundle perks—e.g., “Unlock the full love story plus exclusive audio and art.”  
+5. Optionally, offer a **limited‑time discount** (e.g., 10‑15% off for the first 48 h) to jump‑start sales.  
+6. Use Payhip’s **coupon codes** for future promotions (e.g., “LOVE10” for 10 % off on the next purchase).
+
+---
+
+### Quick Tips for Success
+
+| Tip | Why it matters |
+|-----|----------------|
+| **Use eye‑catching cover art** for each bundle. | Visuals drive clicks, especially on Payhip’s product grid. |
+| **Add a short teaser video** (30‑60 s) of the audiobook or character portraits. | Video boosts conversion rates by showing value upfront. |
+| **Leverage email lists** – send a “bundle launch” email to your subscribers. | Existing fans are your fastest sales channel. |
+| **Encourage reviews** – add a “Leave a review” link after checkout. | Trust signals help future buyers. |
+| **Bundle cross‑promotion** – offer a discount if buyers purchase the base e‑book + one bundle. | Increases basket size. |
+
+Enjoy rolling out these bundles on Payhip and turning your romance e‑book into a multi‑product ecosystem that keeps readers coming back for more!
