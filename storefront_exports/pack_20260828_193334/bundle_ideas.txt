@@ -1,0 +1,20 @@
+Below are five ready‑to‑sell bundle concepts that you can upload to **Payhip**.  
+Each bundle builds on the core romance e‑book you’re publishing (the draft you posted) and adds extra value that keeps buyers engaged and willing to pay a little more.  
+
+| # | Bundle Name | What’s Inside | Why It Sells | Suggested Price |
+|---|--------------|--------------|--------------|-----------------|
+| 1 | **“Romantic Essentials”** | • The full e‑book (PDF & ePub) <br>• A printable “Character Sketch Sheet” (one‑page character profile template) <br>• Three “Love‑Letter Starter” templates (ready‑to‑print) | Gives readers tools to write their own romance scenes or keep a romance journal—great for writers & fans alike. | **$9.99** |
+| 2 | **“Audio Romance Collection”** | • The e‑book <br>• A 60‑minute narrated audiobook (female voice, 1.25 x speed) <br>• A short background music loop for “study / meditation” | Audio content is a big upsell; the music adds a cozy feel. | **$14.99** |
+| 3 | **“Ultimate Fan Pack”** | • The e‑book <br>• Two exclusive short‑stories (Pre‑quel & Post‑quel) <br>• A high‑resolution digital art print (PDF) of the hotel lounge scene | Extra stories deepen the world; the art print turns the book into a collectible. | **$19.99** |
+| 4 | **“Interactive Romance Experience”** | • The e‑book <br>• An interactive PDF with “Choose‑Your‑Own‑Ending” pop‑ups (2 alternate endings) <br>• A romance‑writing worksheet (tips & prompts) | Engages readers who want a “game‑like” experience and writers who want prompts. | **$12.99** |
+| 5 | **“Collector’s Edition”** | • The e‑book (PDF & ePub) <br>• A high‑resolution PDF of the original manuscript pages (hand‑written notes, margin doodles) <br>• A 2‑minute author‑interview video (hosted on Vimeo or YouTube) <br>• A signed digital certificate of authenticity (PDF) | Appeals to collectors and superfans; the signed certificate gives a premium feel. | **$24.99** |
+
+### How to Set Them Up on Payhip
+
+1. **Create a product page** for each bundle.  
+2. Upload the files in ZIP format (e.g., “RomanticEssentials.zip”).  
+3. Set the price as above.  
+4. Use Payhip’s “Bundling” feature (or simply add multiple downloadable files to a single product).  
+5. Add a short, enticing description for each bundle – highlight the extra content and why it matters to romance readers.
+
+Feel free to tweak the contents or pricing to fit your audience’s preferences or your marketing strategy. Happy selling!
