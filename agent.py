@@ -128,7 +128,7 @@ def category_from_path(path):
     for key, cat in CATEGORIES.items():
         if cat["folder"] in text:
             return key
-    if "/childrens/" in text or text.endswith("/childrens") or "books/childrens" in text:
+    if "books/childrens" in text:
         return "childrens_chapter"
     return "romance"
 
@@ -299,8 +299,8 @@ def build_chapter_prompt(agent_name, category_key, topic, cat, chapter, previous
             {"role": "system", "content": normal_system_prompt(agent_name, category_key)},
             {"role": "user", "content": (
                 "Write Chapter %s of a %s book about %s.\nStyle: %s\n"
-                "Keep writing the story. Do not stop just because it is getting long enough. "
-                "If the middle problem is not resolved, keep going.\nContinue from:\n%s"
+                "Keep writing the story. Do not stop just because it is getting long enough.\n"
+                "Continue from:\n%s"
             ) % (chapter, cat["age"], topic, cat["style"], previous)}
         ]
     return [
@@ -319,9 +319,7 @@ def build_ending_prompt(agent_name, category_key, topic, previous):
             "Resolve the problem. Give a clear ending. End with The End.\nContinue from:\n%s"
         ) % (cat.get("age", "children"), topic, previous)
     elif category_key == "true_crime":
-        ask = (
-            "Write the FINAL chapter using only public facts. Cover the latest public outcome.\nContinue from:\n%s"
-        ) % previous
+        ask = "Write the FINAL chapter using only public facts. Cover the latest public outcome.\nContinue from:\n%s" % previous
     else:
         ask = (
             "Write the FINAL chapter of this %s book about %s. "
@@ -411,12 +409,11 @@ def latest_book_to_continue():
         if "refined" in path.name.lower():
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
-        words = word_count(text)
-        if words < 30:
+        if word_count(text) < 30:
             continue
         if is_complete_novel(path):
             continue
-        files.append((words, path))
+        files.append((word_count(text), path))
     if not files:
         return None
     return sorted(files, key=lambda x: x[0], reverse=True)[0][1]
@@ -604,7 +601,6 @@ def write_book_status():
         "complete = minimum words for that age AND beginning + middle + ending",
         "Children's minimums: baby 80, picture 500, early 2500, chapter 8000, middle grade 20000",
         "Adult complete = 80000 + beginning/middle/ending",
-        "They keep writing past the minimum until the story is finished.",
         "",
     ]
     if not rows:
@@ -654,6 +650,7 @@ def write_fleet_report():
     books_completed = []
     toku_applied = []
     toku_failed = []
+
     for folder in ["books", "storefront_exports", "toku", "security_team"]:
         if not os.path.isdir(folder):
             continue
@@ -667,6 +664,7 @@ def write_fleet_report():
             if folder == "books" and path.suffix == ".txt" and "refined" not in path.name.lower():
                 words = word_count(path.read_text(encoding="utf-8", errors="ignore"))
                 books_completed.append("- %s (%s words)" % (path, words))
+
     toku_dir = Path("toku")
     if toku_dir.exists():
         for path in toku_dir.rglob("*.json"):
@@ -677,29 +675,46 @@ def write_fleet_report():
                 data = json.loads(path.read_text(encoding="utf-8"))
             except Exception:
                 continue
-            rows = data if isinstance(data, list) else (data.get("results") if isinstance(data, dict) and isinstance(data.get("results"), list) else ([data] if isinstance(data, dict) else []))
+            if isinstance(data, list):
+                rows = data
+            elif isinstance(data, dict) and isinstance(data.get("results"), list):
+                rows = data.get("results")
+            elif isinstance(data, dict):
+                rows = [data]
+            else:
+                continue
             for row in rows:
+                if not isinstance(row, dict):
+                    continue
                 if row.get("type") and row.get("type") != "bid":
                     continue
-                job = row.get("job") or {}
+                job = row.get("job") if isinstance(row.get("job"), dict) else {}
                 title = job.get("title") or row.get("title")
                 if not title or title == "untitled":
                     continue
                 status = str(row.get("status") or "").lower()
-                line = "- team=%s | status=%s | code=%s | job=%s" % (row.get("team") or "unknown", status, row.get("response_code"), title)
+                line = "- team=%s | status=%s | code=%s | job=%s" % (
+                    row.get("team") or "unknown",
+                    status,
+                    row.get("response_code"),
+                    title
+                )
                 if status == "applied":
                     toku_applied.append(line)
                 elif status in ("apply_failed", "already_bid"):
                     toku_failed.append(line)
+
     lines = [
         "# Fleet Report",
         "Generated: " + now.strftime("%Y-%m-%d %H:%M UTC"),
-        "", "## Summary",
+        "",
+        "## Summary",
         "Files created: %s" % len(created),
         "Books touched: %s" % len(books_completed),
         "Toku applied: %s" % len(toku_applied),
         "Toku failed: %s" % len(toku_failed),
-        "", "## Books",
+        "",
+        "## Books",
     ]
     lines.extend(books_completed or ["None"])
     lines += ["", "## Toku applied"]
