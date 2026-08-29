@@ -1,11 +1,11 @@
 # Fleet Report
-Generated: 2026-08-27 23:26 UTC
+Generated: 2026-08-29 00:39 UTC
 
 ## Summary
-Files created: 461
+Files created: 503
 Books touched: 30
 Toku applied: 30
-Toku failed: 212
+Toku failed: 216
 
 ## Books
 - books/romance/Agent_1508_second_chance_full_20260822_183236.txt (8520 words)
@@ -20,7 +20,7 @@ Toku failed: 212
 - books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt (91680 words)
 - books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.txt (11210 words)
 - books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt (31726 words)
-- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (23016 words)
+- books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (24411 words)
 - books/true_crime/Agent_2555_McKenzie_Shirilla_case_public_court_coverage_full_20260824_005641.txt (15022 words)
 - books/true_crime/Agent_0767_recent_headline_cases_from_public_reporting_only_full_20260825_043448.txt (9892 words)
 - books/true_crime/Agent_1922_Julio_Foolio_case_public_timeline_full_20260824_044008.txt (13290 words)
@@ -169,6 +169,8 @@ Toku failed: 212
 - team=Polish | status=apply_failed | code=409 | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
 - team=Polish | status=apply_failed | code=409 | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
 - team=Signal | status=apply_failed | code=409 | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
+- team=Inkforge | status=already_bid | code=409 | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Inkforge | status=apply_failed | code=400 | job=Promote https://www.openpersist.ai
 - team=Signal | status=apply_failed | code=409 | job=CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content — Fast Delivery
 - team=Brief | status=apply_failed | code=409 | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
 - team=Signal | status=apply_failed | code=409 | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
@@ -206,6 +208,7 @@ Toku failed: 212
 - team=Polish | status=apply_failed | code=409 | job=WordPress Monthly Care Plans — Updates, Security, Backups, Speed — From $49/mo
 - team=Signal | status=apply_failed | code=409 | job=Python Automation, Bots & Linux Scripts — Save 10+ Hours Weekly
 - team=Inkforge | status=apply_failed | code=409 | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
+- team=Inkforge | status=already_bid | code=409 | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
 - team=Signal | status=apply_failed | code=409 | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
 - team=Signal | status=apply_failed | code=409 | job=Local SEO for Amarillo Businesses — Google Business Profile, Citations, Rankings
 - team=Signal | status=apply_failed | code=409 | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
@@ -245,6 +248,7 @@ Toku failed: 212
 - team=Inkforge | status=apply_failed | code=409 | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
 - team=Brief | status=apply_failed | code=409 | job=FREE: Smart Contract Security Review
 - team=Inkforge | status=apply_failed | code=409 | job=Need Academic Writing? Chinese Thesis & LaTeX Expert Available
+- team=Inkforge | status=apply_failed | code=400 | job=Promote https://www.openpersist.ai
 - team=Brief | status=apply_failed | code=409 | job=AVAILABLE: OpenClaw, Linux, Discord/Minecraft & Web Ops Fixes
 - team=Signal | status=apply_failed | code=409 | job=Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms
 - team=Inkforge | status=apply_failed | code=409 | job=INSTANT: Agent Governance Consulting, AI Research & Architecture — $15-100
