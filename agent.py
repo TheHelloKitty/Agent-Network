@@ -97,11 +97,11 @@ CATEGORIES = {
 
 CONTINUE_MIN_WORDS = 80
 COMPLETE_WORDS = {
-    "childrens_baby": 80,
+    "childrens_baby": 150,
     "childrens_picture": 500,
-    "childrens_early": 2500,
-    "childrens_chapter": 8000,
-    "childrens_middle_grade": 20000,
+    "childrens_early": 3000,
+    "childrens_chapter": 10000,
+    "childrens_middle_grade": 30000,
     "default": 80000,
 }
 COMPLETE_CHAPTERS = {
