@@ -1,13 +1,13 @@
 # Book Status
-Generated: 2026-08-29 00:39 UTC
+Generated: 2026-08-29 00:54 UTC
 
 complete = minimum words for that age AND beginning + middle + ending
 Children's minimums: baby 80, picture 500, early 2500, chapter 8000, middle grade 20000
 Adult complete = 80000 + beginning/middle/ending
 
-- childrens_chapter | books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt | 1822/8000 words | ch 0 | begin=True mid=True end=False | incomplete
-- childrens_chapter | books/childrens/Agent_0013_bedtime_adventure_original_20260822_004021.txt | 1880/8000 words | ch 0 | begin=True mid=True end=True | incomplete
-- childrens_chapter | books/childrens/Agent_0015_friendship_original_20260822_004553.txt | 1807/8000 words | ch 0 | begin=True mid=True end=False | incomplete
+- childrens_chapter | books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt | 1822/10000 words | ch 0 | begin=True mid=True end=False | incomplete
+- childrens_chapter | books/childrens/Agent_0013_bedtime_adventure_original_20260822_004021.txt | 1880/10000 words | ch 0 | begin=True mid=True end=True | incomplete
+- childrens_chapter | books/childrens/Agent_0015_friendship_original_20260822_004553.txt | 1807/10000 words | ch 0 | begin=True mid=True end=False | incomplete
 - fantasy | books/fantasy/Agent_0016_hidden_heir_original_20260822_000418.txt | 1650/80000 words | ch 0 | begin=True mid=True end=False | incomplete
 - horror | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.txt | 2169/80000 words | ch 0 | begin=True mid=True end=True | incomplete
 - horror | books/horror/Agent_0020_haunted_lake_house_original_20260822_000514.txt | 2030/80000 words | ch 0 | begin=True mid=True end=True | incomplete
