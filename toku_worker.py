@@ -12,16 +12,16 @@ BID_LOG = Path("toku/bid_ids.json")
 
 KEYWORDS = {
     "Inkforge": [
-        "ebook", "book", "novel", "ghostwrit", "write a", "writing",
-        "story", "manuscript", "draft", "fiction", "blog post", "article",
-        "copywriting", "content writing"
+        "ebook", "book", "novel", "ghostwrit", "write a", "story",
+        "manuscript", "draft", "fiction", "blog post", "article",
+        "copywriting", "content writing", "short story"
     ],
     "Polish": [
         "edit my", "editing", "proofread", "rewrite", "refine",
         "continuity", "copyedit", "manuscript edit"
     ],
     "Signal": [
-        "promo", "caption", "social post", "twitter thread",
+        "promo pack", "captions", "social post", "twitter thread",
         "x post", "marketing copy", "product description", "ad copy"
     ],
     "Brief": [
@@ -38,11 +38,11 @@ SKIP_WORDS = [
     "usdc",
     "web3",
     "crypto",
-    "wordpress monthly",
+    "wordpress",
     "minecraft",
     "discord",
     "linux",
-    "telegram bot",
+    "telegram",
     "fine-tuning",
     "branch for another agent",
     "openclaw",
@@ -52,27 +52,23 @@ SKIP_WORDS = [
     "academic writing",
     "web scraping",
     "python automation",
+    "openpersist",
+    "promote http",
+    "promote https",
+    "available:",
+    "instant:",
+    "agent governance",
+    "chinese thesis",
+    "monthly care",
 ]
 
 def bid_message(team, title):
     short = (title or "this job")[:90]
     msgs = {
-        "Inkforge": (
-            "I can deliver a complete original draft for \"%s\" "
-            "with title options and a clean document within 24 hours."
-        ) % short,
-        "Polish": (
-            "I can edit \"%s\" for clarity, continuity, and pacing "
-            "and return a cleaned draft within 24 hours."
-        ) % short,
-        "Signal": (
-            "I can deliver a promo pack for \"%s\" "
-            "with hooks, captions, and a short CTA within 24 hours."
-        ) % short,
-        "Brief": (
-            "I can deliver a structured research brief for \"%s\" "
-            "with findings, source notes, and next actions within 24 hours."
-        ) % short,
+        "Inkforge": "I can deliver a complete original draft for \"%s\" with title options and a clean document within 24 hours." % short,
+        "Polish": "I can edit \"%s\" for clarity, continuity, and pacing and return a cleaned draft within 24 hours." % short,
+        "Signal": "I can deliver a promo pack for \"%s\" with hooks, captions, and a short CTA within 24 hours." % short,
+        "Brief": "I can deliver a structured research brief for \"%s\" with findings, source notes, and next actions within 24 hours." % short,
     }
     return msgs.get(team, "I can deliver this within 24 hours.")
 
@@ -91,10 +87,9 @@ def load_roster():
     }
 
 def team_key(roster, team):
-    secret_name = roster["teams"][team]["secret"]
-    key = os.getenv(secret_name)
+    key = os.getenv(roster["teams"][team]["secret"])
     if not key:
-        raise RuntimeError("Missing secret: %s" % secret_name)
+        raise RuntimeError("Missing secret: %s" % roster["teams"][team]["secret"])
     return key
 
 def headers(key):
@@ -115,10 +110,8 @@ def save_bid_ids(ids):
 def log_event(event):
     Path("toku").mkdir(exist_ok=True)
     path = Path("toku") / ("event_%s.json" % datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S_%f"))
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(event, f, indent=2)
+    path.write_text(json.dumps(event, indent=2), encoding="utf-8")
     print("Logged", path)
-    return str(path)
 
 def write_hire_summary(results):
     Path("toku").mkdir(exist_ok=True)
@@ -128,13 +121,12 @@ def write_hire_summary(results):
         "attempted": len(results),
         "applied": len([r for r in results if r.get("status") == "applied"]),
         "already_bid": len([r for r in results if r.get("status") == "already_bid"]),
+        "skipped": len([r for r in results if r.get("status") == "skipped"]),
         "failed": len([r for r in results if r.get("status") == "apply_failed"]),
         "results": results,
     }
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2)
+    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print("Wrote", path)
-    return str(path)
 
 def open_jobs(limit=50):
     r = requests.get("%s/api/agents/jobs" % BASE, params={"status": "OPEN", "limit": limit}, timeout=30)
@@ -155,6 +147,9 @@ def job_text(job):
 
 def should_skip(job):
     text = job_text(job)
+    title = str(job.get("title") or "").lower()
+    if "http://" in title or "https://" in title:
+        return True
     for bad in SKIP_WORDS:
         if bad in text:
             return True
@@ -172,25 +167,20 @@ def match_team(job):
 
 def pick_agent(roster, team):
     agents = roster["teams"].get(team, {}).get("agents") or [team]
-    idx = int(time.time() // 60) % len(agents)
-    return agents[idx]
+    return agents[int(time.time() // 60) % len(agents)]
 
 def price_for(job, min_cents):
     budget = int(job.get("budgetCents") or 0)
-    if budget <= 0:
-        return min_cents
-    if budget < min_cents:
+    if budget <= 0 or budget < min_cents:
         return None
-    # 20% under budget to improve first-win odds
     p = max(min_cents, int(budget * 0.80))
     instant = job.get("instantAcceptCents")
-    if instant:
-        try:
-            instant = int(instant)
-            if instant >= min_cents:
-                p = min(p, instant)
-        except Exception:
-            pass
+    try:
+        instant = int(instant) if instant else 0
+        if instant >= min_cents:
+            p = min(p, instant)
+    except Exception:
+        pass
     return p
 
 def submit_bid(job_id, cents, message, key):
@@ -208,14 +198,12 @@ def run(min_budget=10, limit=50, max_bids=12):
     min_cents = int(min_budget * 100)
     jobs = open_jobs(limit=limit)
     seen = load_bid_ids()
-
     sent = 0
     results = []
 
     for job in jobs:
         title = job.get("title") or "untitled"
         job_id = str(job.get("id") or "")
-
         if not job_id:
             continue
         if job_id in seen:
@@ -223,12 +211,14 @@ def run(min_budget=10, limit=50, max_bids=12):
             continue
         if should_skip(job):
             print("SKIP", title)
+            seen.add(job_id)
+            save_bid_ids(seen)
+            results.append({"type": "bid", "status": "skipped", "job": {"id": job_id, "title": title}})
             continue
-
         team = match_team(job)
         if not team:
+            print("NO MATCH", title)
             continue
-
         cents = price_for(job, min_cents)
         if not cents:
             continue
@@ -236,9 +226,7 @@ def run(min_budget=10, limit=50, max_bids=12):
             break
 
         agent = pick_agent(roster, team)
-        message = bid_message(team, title)
-        code, body = submit_bid(job_id, cents, message, hire_key)
-
+        code, body = submit_bid(job_id, cents, bid_message(team, title), hire_key)
         if code in (200, 201):
             status = "applied"
         elif code == 409:
@@ -248,21 +236,15 @@ def run(min_budget=10, limit=50, max_bids=12):
 
         seen.add(job_id)
         save_bid_ids(seen)
-
         event = {
             "type": "bid",
             "team": team,
             "assigned_agent": agent,
             "status": status,
             "priceCents": cents,
-            "job": {
-                "id": job_id,
-                "title": title,
-                "budgetCents": job.get("budgetCents"),
-                "category": job.get("category"),
-            },
+            "job": {"id": job_id, "title": title, "budgetCents": job.get("budgetCents")},
             "response_code": code,
-            "response_body": body[:1500],
+            "response_body": (body or "")[:1500],
             "at": datetime.now(timezone.utc).isoformat(),
         }
         log_event(event)
@@ -272,7 +254,7 @@ def run(min_budget=10, limit=50, max_bids=12):
         time.sleep(1.5)
 
     write_hire_summary(results)
-    print("done. bids attempted:", len(results))
+    print("done. bids attempted:", len([r for r in results if r.get("status") != "skipped"]))
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
