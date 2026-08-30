@@ -1,12 +1,13 @@
 # Book Status
-Generated: 2026-08-30 13:49 UTC
+Generated: 2026-08-30 23:36 UTC
 
 complete = minimum words for that age AND beginning + middle + ending
-Children's range 150 to 30000. Adult 80000.
 
 - childrens_chapter | books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt | 1822/10000 words | ch 0 | begin=True mid=True end=False | incomplete
 - childrens_chapter | books/childrens/Agent_0013_bedtime_adventure_original_20260822_004021.txt | 1880/10000 words | ch 0 | begin=True mid=True end=True | incomplete
 - childrens_chapter | books/childrens/Agent_0015_friendship_original_20260822_004553.txt | 1807/10000 words | ch 0 | begin=True mid=True end=False | incomplete
+- childrens_early | books/childrens/early/The_Midnight_Bakery_Mice_full_20260830.txt | 1537/3000 words | ch 7 | begin=True mid=True end=True | incomplete
+- childrens_picture | books/childrens/picture/The_Midnight_Bakery_Mice_full.txt | 1525/500 words | ch 7 | begin=True mid=True end=True | complete
 - fantasy | books/fantasy/Agent_0016_hidden_heir_original_20260822_000418.txt | 1650/80000 words | ch 0 | begin=True mid=True end=False | incomplete
 - horror | books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.txt | 2169/80000 words | ch 0 | begin=True mid=True end=True | incomplete
 - horror | books/horror/Agent_0020_haunted_lake_house_original_20260822_000514.txt | 2030/80000 words | ch 0 | begin=True mid=True end=True | incomplete
@@ -36,4 +37,5 @@ Children's range 150 to 30000. Adult 80000.
 - true_crime | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt | 24411/80000 words | ch 41 | begin=True mid=True end=True | incomplete
 
 ## Counts
-- incomplete: 30
+- incomplete: 31
+- complete: 1
