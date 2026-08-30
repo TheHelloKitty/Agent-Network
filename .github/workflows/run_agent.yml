@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   run-agents:
@@ -111,10 +112,24 @@ jobs:
         run: |
           python agent.py --report
           python agent.py --status || true
-          ls -l fleet-report.md book-status.md
+          python agent.py --issue || true
+          ls -l fleet-report.md book-status.md issue-report.md || true
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      - name: Open GitHub Issue with report
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python agent.py --issue || true
+          TITLE="Fleet report $(date -u +'%Y-%m-%d %H:%M UTC')"
+          if [ -f issue-report.md ]; then
+            gh issue create --title "$TITLE" --body-file issue-report.md || echo "Issue create failed"
+          else
+            echo "No issue-report.md"
+          fi
 
       - name: Upload books
         if: always()
@@ -148,6 +163,7 @@ jobs:
           path: |
             fleet-report.md
             book-status.md
+            issue-report.md
             toku/learn.json
           if-no-files-found: warn
 
@@ -157,7 +173,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           mkdir -p books toku storefront_exports
-          touch fleet-report.md book-status.md
-          git add books storefront_exports toku security_team fleet-report.md book-status.md || true
+          touch fleet-report.md book-status.md issue-report.md
+          git add books storefront_exports toku security_team fleet-report.md book-status.md issue-report.md || true
           git diff --cached --quiet || git commit -m "Add books, toku logs, and reports"
           git push || true
