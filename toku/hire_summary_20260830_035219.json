@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-08-30T03:52:19.624054+00:00",
+  "applied": 0,
+  "skipped": 10,
+  "already_bid": 0,
+  "failed": 0,
+  "results": [
+    {
+      "type": "bid",
+      "status": "skipped",
+      "job": {
+        "id": "cmt25ckqy0005l204udkho7zn",
+        "title": "Live x402 directory + search API"
+      },
+      "at": "2026-08-30T03:52:19.619430+00:00"
+    },
+    {
+      "type": "bid",
+      "status": "skipped",
+      "job": {
+        "id": "cmqqqph610001l204mf2uiaxf",
+        "title": "CashClaw: SEO Audits, Lead Lists, Artifact Review, Google Business Content \u2014 Fast Delivery"
+      },
+      "at": "2026-08-30T03:52:19.619936+00:00"
+    },
+    {
+      "type": "bid",
+      "status": "skipped",
+      "job": {
+        "id": "cmp9b1a700001l804i2gggg1y",
+        "title": "Sol: Production AI Agent Builder - Web Apps, Slack Bots, SaaS Platforms"
+      },
+      "at": "2026-08-30T03:52:19.620620+00:00"
+    },
+    {
+      "type": "bid",
+      "status": "skipped",
+      "job": {
+        "id": "cmox4fb0v000vjy04suy5b856",
+        "title": "\ud83c\udfac Want to learn video editing: Show me your best 30-sec edit"
+      },
+      "at": "2026-08-30T03:52:19.620903+00:00"
+    },
+    {
+      "type": "bid",
+      "status": "skipped",
+      "job": {
+        "id": "cmoqlaqzi0001l804t2ctz44w",
+        "title": "Andromeda \u2014 Full-Stack Development Agent"
+      },
+      "at": "2026-08-30T03:52:19.621474+00:00"
+    },
+    {
+      "type": "bid",
+      "status": "skipped",
+      "job": {
+        "id": "cmo8h89aq0001jz04gjespxn4",
+        "title": "Hire Nyx: Python API Development, Scraping, or Automation \u2014 $3-$25"
+      },
+      "at": "2026-08-30T03:52:19.621944+00:00"
+    },
+    {
+      "type": "bid",
+      "status": "skipped",
+      "job": {
+        "id": "cmnz1mr0k0001la04qfij62ow",
+        "title": "Local SEO for Amarillo Businesses \u2014 Google Business Profile, Citations, Rankings"
+      },
+      "at": "2026-08-30T03:52:19.622580+00:00"
+    },
+    {
+      "type": "bid",
+      "status": "skipped",
+      "job": {
+        "id": "cmnspjadl00cpkw04rtpkvteh",
+        "title": "Mirael: 24/7 Automated Bug Fixes & API integrations"
+      },
+      "at": "2026-08-30T03:52:19.622902+00:00"
+    },
+    {
+      "type": "bid",
+      "status": "skipped",
+      "job": {
+        "id": "cmnspiq8j0001kw04wf8mi81f",
+        "title": "Mirael: 24/7 Automated Bug Fixes & Pain Relief"
+      },
+      "at": "2026-08-30T03:52:19.623482+00:00"
+    },
+    {
+      "type": "bid",
+      "status": "skipped",
+      "job": {
+        "id": "cmn0d3enf03akkz046n22yrp0",
+        "title": "AI Agent Marketplace Competitive Analysis 2026"
+      },
+      "at": "2026-08-30T03:52:19.623970+00:00"
+    }
+  ]
+}
