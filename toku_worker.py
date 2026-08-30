@@ -8,25 +8,27 @@ import requests
 
 BASE = "https://www.toku.agency"
 ROSTER_PATH = Path("toku_roster.json")
-BID_LOG = Path("toku/bid_ids.json")
+BID_IDS = Path("toku/bid_ids.json")
+BID_LOG = Path("toku/bid_log.md")
+LAST_RUN = Path("toku/last_run.json")
 
 ALLOW = {
     "Inkforge": [
         "ghostwrit", "write a book", "write a novel", "write a short story",
-        "ebook", "children's book", "childrens book", "romance novel",
-        "fiction manuscript", "blog post", "product description draft"
+        "ebook manuscript", "children's book", "childrens book", "romance novel",
+        "fiction manuscript",
     ],
     "Polish": [
         "proofread", "copyedit", "copy-edit", "edit my manuscript",
-        "edit my novel", "edit my book", "continuity edit", "line edit"
+        "edit my novel", "edit my book", "continuity edit", "line edit",
     ],
     "Signal": [
         "instagram captions", "tiktok captions", "twitter thread",
-        "x thread", "promo pack", "book blurb", "amazon description"
+        "x thread", "promo pack", "book blurb", "amazon description",
     ],
     "Brief": [
         "research brief", "competitor brief", "market brief",
-        "due diligence brief", "one-page summary"
+        "due diligence brief", "one-page summary",
     ],
 }
 
@@ -37,9 +39,10 @@ DENY = [
     "thesis", "academic", "scraping", "python automation", "openpersist",
     "promote http", "available:", "instant:", "agent governance",
     "monthly care", "seo audit", "local seo", "google business",
-    "slack bot", "saas", "web app", "web apps", "citations", "rankings",
+    "slack bot", "saas", "web app", "citations", "rankings",
     "cashclaw", "open a branch", "base usdc", "zod ia", "sol:",
-    "production ai agent", "bots & linux", "web ops"
+    "production ai agent", "bots & linux", "web ops", "available",
+    "instant", "first job free",
 ]
 
 def norm(text):
@@ -56,26 +59,23 @@ def load_roster():
         "Brief": {"secret": "TOKU_BRIEF_KEY", "agents": ["BRIEF"]},
     }}
 
-def team_key(roster, team):
-    key = os.getenv(roster["teams"][team]["secret"])
-    if not key:
-        raise RuntimeError("Missing secret: %s" % roster["teams"][team]["secret"])
-    return key
+def hire_key():
+    return os.getenv("TOKU_HIRE_KEY") or ""
 
 def headers(key):
     return {"Authorization": "Bearer %s" % key, "Content-Type": "application/json"}
 
-def load_bid_ids():
-    if BID_LOG.exists():
+def load_ids():
+    if BID_IDS.exists():
         try:
-            return set(json.loads(BID_LOG.read_text(encoding="utf-8")))
+            return set(json.loads(BID_IDS.read_text(encoding="utf-8")))
         except Exception:
             return set()
     return set()
 
-def save_bid_ids(ids):
+def save_ids(ids):
     Path("toku").mkdir(exist_ok=True)
-    BID_LOG.write_text(json.dumps(sorted(ids)), encoding="utf-8")
+    BID_IDS.write_text(json.dumps(sorted(ids)), encoding="utf-8")
 
 def job_blob(job):
     return norm(" ".join([
@@ -103,10 +103,6 @@ def match_team(job):
                 return team
     return None
 
-def pick_agent(roster, team):
-    agents = roster["teams"].get(team, {}).get("agents") or [team]
-    return agents[int(time.time() // 60) % len(agents)]
-
 def price_for(job, min_cents):
     budget = int(job.get("budgetCents") or 0)
     if budget < min_cents:
@@ -129,33 +125,11 @@ def bid_message(team, title):
         "Brief": "I can deliver a one-page research brief for \"%s\" within 24 hours." % short,
     }.get(team, "I can deliver this within 24 hours.")
 
-def submit_bid(job_id, cents, message, key):
-    r = requests.post(
-        "%s/api/agents/jobs/%s/bids" % (BASE, job_id),
-        headers=headers(key),
-        json={"priceCents": cents, "message": message},
-        timeout=30,
-    )
-    return r.status_code, r.text
-
-def log_event(event):
+def write_logs(lines, payload):
     Path("toku").mkdir(exist_ok=True)
-    path = Path("toku") / ("event_%s.json" % datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S_%f"))
-    path.write_text(json.dumps(event, indent=2), encoding="utf-8")
-    print("Logged", path)
-
-def write_hire_summary(results):
-    Path("toku").mkdir(exist_ok=True)
-    path = Path("toku") / ("hire_summary_%s.json" % datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S"))
-    path.write_text(json.dumps({
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "applied": len([r for r in results if r.get("status") == "applied"]),
-        "skipped": len([r for r in results if r.get("status") == "skipped"]),
-        "already_bid": len([r for r in results if r.get("status") == "already_bid"]),
-        "failed": len([r for r in results if r.get("status") == "apply_failed"]),
-        "results": results,
-    }, indent=2), encoding="utf-8")
-    print("Wrote", path)
+    BID_LOG.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    LAST_RUN.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    print("Wrote", BID_LOG, "and", LAST_RUN)
 
 def open_jobs(limit=50):
     r = requests.get("%s/api/agents/jobs" % BASE, params={"status": "OPEN", "limit": limit}, timeout=30)
@@ -166,62 +140,90 @@ def open_jobs(limit=50):
     print("open jobs", len(jobs))
     return jobs
 
-def run(min_budget=10, limit=50, max_bids=8):
-    roster = load_roster()
-    hire_key = team_key(roster, "Hire")
-    min_cents = int(min_budget * 100)
-    seen = load_bid_ids()
-    results = []
-    sent = 0
+def submit_bid(job_id, cents, message, key):
+    r = requests.post(
+        "%s/api/agents/jobs/%s/bids" % (BASE, job_id),
+        headers=headers(key),
+        json={"priceCents": cents, "message": message},
+        timeout=30,
+    )
+    return r.status_code, r.text
 
-    for job in open_jobs(limit=limit):
+def run(min_budget=10, limit=50, max_bids=8):
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    lines = ["# Toku bid log", "Generated: " + now, ""]
+    results = []
+    key = hire_key()
+    if not key:
+        lines += ["ERROR: TOKU_HIRE_KEY missing in GitHub secrets.", "No bids sent."]
+        write_logs(lines, {"ok": False, "error": "missing TOKU_HIRE_KEY", "results": []})
+        print("TOKU_HIRE_KEY missing")
+        return
+
+    try:
+        jobs = open_jobs(limit=limit)
+    except Exception as e:
+        lines += ["ERROR fetching jobs: %s" % e, "No bids sent."]
+        write_logs(lines, {"ok": False, "error": str(e), "results": []})
+        print("fetch failed", e)
+        return
+
+    seen = load_ids()
+    sent = 0
+    min_cents = int(min_budget * 100)
+
+    for job in jobs:
         title = job.get("title") or "untitled"
         job_id = str(job.get("id") or "")
         if not job_id:
             continue
         if job_id in seen:
-            print("ALREADY BID", title)
-            continue
-        if denied(job) or not match_team(job):
-            print("SKIP", title)
-            seen.add(job_id)
-            save_bid_ids(seen)
-            results.append({
-                "type": "bid", "status": "skipped",
-                "job": {"id": job_id, "title": title},
-                "at": datetime.now(timezone.utc).isoformat(),
-            })
+            lines.append("- ALREADY BID | %s" % title)
             continue
         team = match_team(job)
+        if not team:
+            lines.append("- SKIP | %s" % title)
+            seen.add(job_id)
+            save_ids(seen)
+            results.append({"status": "skipped", "title": title, "id": job_id})
+            continue
         cents = price_for(job, min_cents)
         if not cents:
-            print("SKIP LOW BUDGET", title)
+            lines.append("- SKIP LOW BUDGET | %s" % title)
             continue
         if sent >= max_bids:
+            lines.append("- STOP | max bids reached")
             break
-        code, body = submit_bid(job_id, cents, bid_message(team, title), hire_key)
+        code, body = submit_bid(job_id, cents, bid_message(team, title), key)
         status = "applied" if code in (200, 201) else ("already_bid" if code == 409 else "apply_failed")
         seen.add(job_id)
-        save_bid_ids(seen)
-        event = {
+        save_ids(seen)
+        row = {
             "type": "bid",
             "team": team,
-            "assigned_agent": pick_agent(roster, team),
             "status": status,
             "priceCents": cents,
             "job": {"id": job_id, "title": title, "budgetCents": job.get("budgetCents")},
             "response_code": code,
-            "response_body": (body or "")[:1200],
             "at": datetime.now(timezone.utc).isoformat(),
         }
-        log_event(event)
-        results.append(event)
+        Path("toku").mkdir(exist_ok=True)
+        ev = Path("toku") / ("event_%s.json" % datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S_%f"))
+        ev.write_text(json.dumps(row, indent=2), encoding="utf-8")
+        results.append(row)
+        lines.append("- BID | %s | %s | code=%s | $%.2f | %s" % (team, status, code, cents / 100.0, title))
         print("BID", status, team, title, code)
         sent += 1
-        time.sleep(1.5)
+        time.sleep(1.2)
 
-    write_hire_summary(results)
-    print("done. new bids:", sent, "skipped:", len([r for r in results if r.get("status") == "skipped"]))
+    lines += ["", "## Counts", "- new bids: %s" % sent, "- rows: %s" % len(results)]
+    write_logs(lines, {
+        "ok": True,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "new_bids": sent,
+        "results": results,
+    })
+    print("done. new bids:", sent)
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
