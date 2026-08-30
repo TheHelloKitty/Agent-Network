@@ -114,10 +114,10 @@ jobs:
           python agent.py --status || true
           python agent.py --issue || true
           ls -l fleet-report.md book-status.md issue-report.md || true
-        env:
+                env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       - name: Open GitHub Issue with report
         if: always()
         env:
