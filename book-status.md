@@ -1,9 +1,8 @@
 # Book Status
-Generated: 2026-08-30 04:16 UTC
+Generated: 2026-08-30 04:40 UTC
 
 complete = minimum words for that age AND beginning + middle + ending
-Children's minimums: baby 80, picture 500, early 2500, chapter 8000, middle grade 20000
-Adult complete = 80000 + beginning/middle/ending
+Children's range 150 to 30000. Adult 80000.
 
 - childrens_chapter | books/childrens/Agent_0003_talking_animals_original_20260822_000317.txt | 1822/10000 words | ch 0 | begin=True mid=True end=False | incomplete
 - childrens_chapter | books/childrens/Agent_0013_bedtime_adventure_original_20260822_004021.txt | 1880/10000 words | ch 0 | begin=True mid=True end=True | incomplete
@@ -19,7 +18,7 @@ Adult complete = 80000 + beginning/middle/ending
 - sci_fi | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.txt | 1533/80000 words | ch 0 | begin=True mid=True end=False | incomplete
 - sci_fi | books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt | 849/80000 words | ch 0 | begin=True mid=True end=True | incomplete
 - sci_fi | books/sci_fi/Agent_1794_AI_uprising_full_20260822_042558.txt | 67868/80000 words | ch 12 | begin=True mid=True end=False | incomplete
-- spicy_romance | books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt | 91680/80000 words | ch 17 | begin=True mid=True end=True | complete
+- spicy_romance | books/spicy_romance/Crimson_Vows_Luca_Dante_full_20260830.txt | 2179/80000 words | ch 3 | begin=True mid=True end=False | incomplete
 - thriller | books/thriller/Agent_0007_witness_protection_original_20260822_004716.txt | 1291/80000 words | ch 0 | begin=True mid=True end=False | incomplete
 - true_crime | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt | 31726/80000 words | ch 20 | begin=True mid=True end=True | incomplete
 - true_crime | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.txt | 11725/80000 words | ch 20 | begin=True mid=True end=False | incomplete
@@ -37,5 +36,4 @@ Adult complete = 80000 + beginning/middle/ending
 - true_crime | books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt | 24411/80000 words | ch 41 | begin=True mid=True end=True | incomplete
 
 ## Counts
-- incomplete: 29
-- complete: 1
+- incomplete: 30

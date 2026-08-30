@@ -1,8 +1,8 @@
 # Fleet Report
-Generated: 2026-08-30 04:16 UTC
+Generated: 2026-08-30 04:40 UTC
 
 ## Summary
-Files created: 535
+Files created: 541
 Books touched: 30
 Toku applied: 30
 Toku failed: 216
@@ -17,7 +17,7 @@ Toku failed: 216
 - books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.txt (2169 words)
 - books/thriller/Agent_0007_witness_protection_original_20260822_004716.txt (1291 words)
 - books/fantasy/Agent_0016_hidden_heir_original_20260822_000418.txt (1650 words)
-- books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt (91680 words)
+- books/spicy_romance/Crimson_Vows_Luca_Dante_full_20260830.txt (2179 words)
 - books/true_crime/Agent_2558_Julio_Foolio_case_public_timeline_full_20260823_043214.txt (11210 words)
 - books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt (31726 words)
 - books/true_crime/Agent_3203_Julio_Foolio_case_public_timeline_full_20260825_163122.txt (24411 words)
