@@ -7,39 +7,32 @@ GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
 OPENROUTER_MODELS = [
-    "meta-llama/llama-3.1-8b-instruct:free",
-    "google/gemma-2-9b-it:free",
-    "mistralai/mistral-7b-instruct:free",
+    "meta-llama/llama-3.1-8b-instruct",
+    "google/gemma-2-9b-it",
+    "mistralai/mistral-7b-instruct",
 ]
 GROQ_MODELS = [
     "llama-3.1-8b-instant",
-    "llama-3.3-70b-versatile",
+    "llama-3.1-70b-versatile",
+    "gemma2-9b-it",
 ]
 GEMINI_MODELS = [
     "gemini-2.0-flash",
     "gemini-2.5-flash",
     "gemini-flash-latest",
+    "gemini-1.5-flash",
 ]
 
 def _openai_chat(url, key, model, messages, temperature, max_tokens):
     r = requests.post(
         url,
-        headers={
-            "Authorization": "Bearer %s" % key,
-            "Content-Type": "application/json",
-        },
-        json={
-            "model": model,
-            "messages": messages,
-            "temperature": temperature,
-            "max_tokens": max_tokens,
-        },
+        headers={"Authorization": "Bearer %s" % key, "Content-Type": "application/json"},
+        json={"model": model, "messages": messages, "temperature": temperature, "max_tokens": max_tokens},
         timeout=60,
     )
     if r.status_code >= 400:
-        raise RuntimeError("%s %s %s" % (url, r.status_code, r.text[:300]))
-    data = r.json()
-    return data["choices"][0]["message"]["content"]
+        raise RuntimeError("%s %s %s" % (model, r.status_code, r.text[:240]))
+    return r.json()["choices"][0]["message"]["content"]
 
 def _messages_to_gemini(messages):
     system_parts = []
@@ -62,50 +55,32 @@ def _messages_to_gemini(messages):
 
 def _gemini_chat(key, model, messages, temperature, max_tokens):
     payload = _messages_to_gemini(messages)
-    payload["generationConfig"] = {
-        "temperature": temperature,
-        "maxOutputTokens": max_tokens,
-    }
-    url = GEMINI_URL.format(model=model)
+    payload["generationConfig"] = {"temperature": temperature, "maxOutputTokens": max_tokens}
     r = requests.post(
-        url,
-        headers={
-            "x-goog-api-key": key,
-            "Content-Type": "application/json",
-        },
+        GEMINI_URL.format(model=model),
+        headers={"x-goog-api-key": key, "Content-Type": "application/json"},
         json=payload,
         timeout=60,
     )
     if r.status_code >= 400:
-        raise RuntimeError("gemini %s %s %s" % (model, r.status_code, r.text[:300]))
-    data = r.json()
-    cands = data.get("candidates") or []
-    parts = (((cands[0] or {}).get("content") or {}).get("parts") or [])
+        raise RuntimeError("gemini %s %s %s" % (model, r.status_code, r.text[:240]))
+    parts = ((((r.json().get("candidates") or [{}])[0].get("content") or {}).get("parts")) or [])
     text = "".join(p.get("text") or "" for p in parts)
     if not text.strip():
-        raise RuntimeError("gemini empty response")
+        raise RuntimeError("gemini empty")
     return text
 
 def generate_with_failover(messages, temperature=0.8, max_tokens=800):
     errors = []
     or_key = os.getenv("OPENROUTER_API_KEY")
-    groq_key = os.getenv("GROQ_API_KEY")
     gemini_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    groq_key = os.getenv("GROQ_API_KEY")
 
     if or_key:
         for model in OPENROUTER_MODELS:
             try:
                 print("try openrouter", model)
                 return _openai_chat(OPENROUTER_URL, or_key, model, messages, temperature, max_tokens)
-            except Exception as e:
-                errors.append(str(e))
-                time.sleep(1)
-
-    if groq_key:
-        for model in GROQ_MODELS:
-            try:
-                print("try groq", model)
-                return _openai_chat(GROQ_URL, groq_key, model, messages, temperature, max_tokens)
             except Exception as e:
                 errors.append(str(e))
                 time.sleep(1)
@@ -118,5 +93,16 @@ def generate_with_failover(messages, temperature=0.8, max_tokens=800):
             except Exception as e:
                 errors.append(str(e))
                 time.sleep(1)
+    else:
+        print("gemini skipped: no GEMINI_API_KEY in env")
 
-    raise RuntimeError("All providers failed: " + " | ".join(errors[:6]))
+    if groq_key:
+        for model in GROQ_MODELS:
+            try:
+                print("try groq", model)
+                return _openai_chat(GROQ_URL, groq_key, model, messages, temperature, max_tokens)
+            except Exception as e:
+                errors.append(str(e))
+                time.sleep(1)
+
+    raise RuntimeError("All providers failed: " + " | ".join(errors[:8]))
