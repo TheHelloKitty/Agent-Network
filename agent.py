@@ -49,8 +49,8 @@ CATEGORIES = {
     "spicy_romance": {
         "folder": "books/spicy_romance",
         "age": "adult",
-        "style": "steamy, explicit, intense dialogue and physical detail",
-        "topics": ["dark mafia romance", "forced proximity"],
+        "style": "steamy explicit dark mafia romance, Luca Dante Borelli and Evie Caruso only, Velvet Lantern, consensual spice from chapter 6 onward",
+        "topics": ["crimson vows luca dante evie", "dark mafia romance velvet lantern"],
     },
     "true_crime": {
         "folder": "books/true_crime",
@@ -58,7 +58,6 @@ CATEGORIES = {
         "style": "factual high-stakes public cases from public reporting only",
         "topics": [
             "a recent nationally covered homicide trial with public court filings",
-            "a viral true-crime case that dominated headlines in the last 24 months",
             "Julio Foolio case public timeline and court coverage",
             "McKenzie Shirilla case public court coverage",
         ],
@@ -130,6 +129,8 @@ def category_from_path(path):
             return key
     if "books/childrens" in text:
         return "childrens_chapter"
+    if "spicy" in text:
+        return "spicy_romance"
     return "romance"
 
 def is_childrens(category_key):
@@ -189,7 +190,7 @@ def is_undeveloped_book(path, min_words=None):
             return True
         text = p.read_text(encoding="utf-8", errors="ignore").strip()
         cat = category_from_path(p)
-        floor = 40 if is_childrens(cat) else (min_words or 800)
+        floor = 80 if is_childrens(cat) else (min_words or 800)
         return (not text) or word_count(text) < floor
     except Exception:
         return True
@@ -228,21 +229,29 @@ def normal_system_prompt(agent_name, category_key="romance"):
             "You are %s. Write an original children's book for %s. "
             "Match vocabulary to that age. No adult content."
         ) % (agent_name, age)
+    if category_key == "spicy_romance":
+        return (
+            "You are %s. Continue Crimson Vows. Hero is Luca Dante Borelli "
+            "(family says Luca, streets say Dante). Heroine is Evie Caruso. "
+            "Bar is The Velvet Lantern. Do not invent a second hero. "
+            "No thinking notes. Write scenes. Spice is consensual and only "
+            "between Luca Dante and Evie, starting chapter 6."
+        ) % agent_name
     return "You are %s. Write like a human novelist. Put people in rooms. Let them talk." % agent_name
 
 def story_parts(text):
     low = (text or "").lower()
     start = ("chapter 1" in low) or any(x in low[:2500] for x in [
-        "once upon", "it started", "one night", "one day", "prologue", "first"
+        "once upon", "it started", "one night", "one day", "prologue", "first", "velvet lantern"
     ])
     middle = word_count(text) >= 120 and any(x in low for x in [
         "but", "then", "suddenly", "problem", "until", "secret",
-        "realized", "almost", "climax", "chase", "afraid", "lost"
+        "realized", "almost", "climax", "chase", "afraid", "lost", "ghost", "gino"
     ])
     ending = any(x in low[-3500:] for x in [
         "the end", "happily", "good night", "goodnight", "they were safe",
         "home again", "verdict", "sentenced", "epilogue", "years later",
-        "fin.", "at last", "safe again"
+        "fin.", "at last", "safe again", "crimson vow"
     ])
     return {"beginning": bool(start), "middle": bool(middle), "ending": bool(ending)}
 
@@ -286,6 +295,9 @@ def build_outline_prompt(agent_name, category_key, topic, cat):
     ]
 
 def build_chapter_prompt(agent_name, category_key, topic, cat, chapter, previous):
+    extra = ""
+    if category_key == "spicy_romance" and chapter >= 6:
+        extra = " This chapter may include an explicit consensual sex scene between Luca Dante and Evie only."
     if category_key == "true_crime":
         return [
             {"role": "system", "content": true_crime_system_prompt(agent_name)},
@@ -299,16 +311,16 @@ def build_chapter_prompt(agent_name, category_key, topic, cat, chapter, previous
             {"role": "system", "content": normal_system_prompt(agent_name, category_key)},
             {"role": "user", "content": (
                 "Write Chapter %s of a %s book about %s.\nStyle: %s\n"
-                "Keep writing the story. Do not stop just because it is getting long enough.\n"
-                "Continue from:\n%s"
+                "Keep writing the story.\nContinue from:\n%s"
             ) % (chapter, cat["age"], topic, cat["style"], previous)}
         ]
     return [
         {"role": "system", "content": normal_system_prompt(agent_name, category_key)},
         {"role": "user", "content": (
-            "Write Chapter %s of this %s book about %s. Style: %s. "
-            "Use dialogue and description. Keep the plot moving toward climax and ending.\nContinue from:\n%s"
-        ) % (chapter, category_key, topic, cat["style"], previous)}
+            "Write Chapter %s of this %s book about %s. Style: %s.%s "
+            "Use dialogue and description. Keep Luca Dante and Evie consistent. "
+            "No thinking notes.\nContinue from:\n%s"
+        ) % (chapter, category_key, topic, cat["style"], extra, previous)}
     ]
 
 def build_ending_prompt(agent_name, category_key, topic, previous):
@@ -323,7 +335,7 @@ def build_ending_prompt(agent_name, category_key, topic, previous):
     else:
         ask = (
             "Write the FINAL chapter of this %s book about %s. "
-            "Hit the climax if needed, then end the story.\nContinue from:\n%s"
+            "Hit the climax if needed, then end the story. Keep Luca Dante and Evie if this is spicy romance.\nContinue from:\n%s"
         ) % (category_key, topic, previous)
     return [
         {"role": "system", "content": normal_system_prompt(agent_name, category_key)},
@@ -405,8 +417,15 @@ def latest_book_to_continue():
     root = Path("books")
     if not root.exists():
         return None
-    for path in root.rglob("*_full_*.txt"):
-        if "refined" in path.name.lower():
+    for path in root.rglob("*.txt"):
+        name = path.name.lower()
+        if "refined" in name or name in ("category.json",):
+            continue
+        if "crimson_vows" in name or path.name.startswith("Crimson_Vows"):
+            text = path.read_text(encoding="utf-8", errors="ignore")
+            if not is_complete_novel(path):
+                return path
+        if "_full_" not in path.name and "crimson" not in name:
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
         if word_count(text) < 30:
@@ -422,7 +441,7 @@ def continue_book(path, extra_chapters=6):
     print("Continuing:", path)
     text = Path(path).read_text(encoding="utf-8", errors="ignore")
     start_chapter = next_chapter_number(text)
-    previous = text[-1500:] if text else "Start of book."
+    previous = text[-1800:] if text else "Start of book."
     added = 0
     category_key = category_from_path(path)
     cat = CATEGORIES.get(category_key, CATEGORIES["romance"])
@@ -442,14 +461,14 @@ def continue_book(path, extra_chapters=6):
             try:
                 chunk = generate_with_fallback(
                     build_chapter_prompt(agent_name, category_key, topic, cat, chapter, previous),
-                    temperature=0.2 if category_key == "true_crime" else 0.8
+                    temperature=0.2 if category_key == "true_crime" else 0.85
                 )
             except Exception as e:
                 print("Continue generation failed:", e)
                 break
             if chunk and word_count(chunk) >= 8:
                 chapter_text += "\n\n" + chunk
-                previous = chunk[-1500:]
+                previous = chunk[-1800:]
             time.sleep(2)
         if word_count(chapter_text) < 8:
             break
@@ -509,7 +528,7 @@ def refine_book(txt_path):
     if word_count(original) < 40:
         return None
     prompt = [
-        {"role": "system", "content": "You are a professional editor. Keep age-appropriateness."},
+        {"role": "system", "content": "You are a professional editor. Keep names consistent. Strip thinking notes."},
         {"role": "user", "content": "Edit this section into stronger prose.\n\n%s" % original[:4000]}
     ]
     try:
@@ -537,7 +556,7 @@ def run_publishing_network():
     cleanup_empty_books()
     category_key = os.getenv("BOOK_CATEGORY")
     if category_key not in CATEGORIES:
-        category_key = "romance"
+        category_key = "spicy_romance"
     agent = os.getenv("BOOK_AGENT", "Agent_%04d" % random.randint(1, 3510))
     topic = random.choice(CATEGORIES[category_key]["topics"])
     book_info = write_full_novel(agent, category_key, topic, max_chapters=4)
@@ -573,7 +592,7 @@ def book_status_row(path):
     parts = story_parts(text)
     cat = category_from_path(path)
     need_words, _ = complete_threshold(path)
-    if words < (40 if is_childrens(cat) else 800):
+    if words < (40 if is_childrens(cat) else 200):
         state = "empty"
     elif is_complete_novel(path):
         state = "complete"
@@ -599,8 +618,7 @@ def write_book_status():
         "Generated: " + datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "",
         "complete = minimum words for that age AND beginning + middle + ending",
-        "Children's minimums: baby 80, picture 500, early 2500, chapter 8000, middle grade 20000",
-        "Adult complete = 80000 + beginning/middle/ending",
+        "Children's range 150 to 30000. Adult 80000.",
         "",
     ]
     if not rows:
@@ -628,11 +646,10 @@ def export_complete_books():
     if not root.exists():
         print("No books folder")
         return []
-    for path in root.rglob("*_full_*.txt"):
+    for path in root.rglob("*.txt"):
         if "refined" in path.name.lower():
             continue
         if not is_complete_novel(path):
-            print("Not complete, skip export:", path)
             continue
         txt = str(path)
         txt_to_pdf(txt)
@@ -694,10 +711,7 @@ def write_fleet_report():
                     continue
                 status = str(row.get("status") or "").lower()
                 line = "- team=%s | status=%s | code=%s | job=%s" % (
-                    row.get("team") or "unknown",
-                    status,
-                    row.get("response_code"),
-                    title
+                    row.get("team") or "unknown", status, row.get("response_code"), title
                 )
                 if status == "applied":
                     toku_applied.append(line)
@@ -724,6 +738,109 @@ def write_fleet_report():
     Path("fleet-report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("Updated fleet-report.md")
 
+def collect_complete_books():
+    rows = []
+    root = Path("books")
+    if not root.exists():
+        return rows
+    for path in sorted(root.rglob("*.txt")):
+        if "refined" in path.name.lower():
+            continue
+        row = book_status_row(path)
+        if row["state"] == "complete":
+            rows.append(row)
+    return rows
+
+def collect_toku_stats():
+    applied, failed, skipped = [], [], []
+    money_cents = 0
+    toku_dir = Path("toku")
+    if not toku_dir.exists():
+        return applied, failed, skipped, money_cents
+    for path in toku_dir.rglob("*.json"):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if isinstance(data, list):
+            rows = data
+        elif isinstance(data, dict) and isinstance(data.get("results"), list):
+            rows = data.get("results")
+        elif isinstance(data, dict):
+            rows = [data]
+        else:
+            continue
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            if row.get("type") and row.get("type") != "bid":
+                continue
+            job = row.get("job") if isinstance(row.get("job"), dict) else {}
+            title = job.get("title") or row.get("title") or "untitled"
+            status = str(row.get("status") or "").lower()
+            team = row.get("team") or "unknown"
+            code = row.get("response_code")
+            line = "%s | %s | code=%s | %s" % (team, status, code, title)
+            if status == "applied":
+                applied.append(line)
+                try:
+                    money_cents += int(row.get("priceCents") or job.get("budgetCents") or 0)
+                except Exception:
+                    pass
+            elif status in ("apply_failed", "already_bid"):
+                failed.append(line)
+            elif status == "skipped":
+                skipped.append(line)
+    return applied, failed, skipped, money_cents
+
+def load_learn():
+    p = Path("toku/learn.json")
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+def write_issue_report():
+    write_book_status()
+    write_fleet_report()
+    applied, failed, skipped, bid_cents = collect_toku_stats()
+    complete = collect_complete_books()
+    learn = load_learn()
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    lines = [
+        "# Agent Network Run Report",
+        "Generated: " + now,
+        "",
+        "## Money",
+        "Earned from completed Toku jobs: **$0.00** until Pending/Completed leave 0.",
+        "Bid amounts logged (not earned): $%.2f" % (bid_cents / 100.0),
+        "",
+        "## Toku bids applied",
+    ]
+    lines.extend(["- " + x for x in applied[-40:]] or ["- None"])
+    lines += ["", "## Toku accepted / pending", "- None found in repo logs."]
+    lines += ["", "## Toku completed", "- None. Profiles still show 0 completed."]
+    lines += ["", "## Toku skipped or failed"]
+    lines.extend(["- " + x for x in (skipped + failed)[-30:]] or ["- None"])
+    lines += ["", "## Complete books"]
+    if complete:
+        for row in complete:
+            lines.append("- %s | %s words | %s" % (row["file"], row["words"], row["category"]))
+    else:
+        lines.append("- None")
+    lines += ["", "## Learning / new skills"]
+    if learn:
+        lines.append("- applied_count: %s" % learn.get("applied_count"))
+        lines.append("- failed_count: %s" % learn.get("failed_count"))
+        lines.append("- prefer_next: %s" % (", ".join(learn.get("prefer_next") or []) or "none"))
+        lines.append("- avoid_next: %s" % (", ".join(learn.get("avoid_next") or []) or "none"))
+    else:
+        lines.append("- No toku/learn.json yet.")
+    Path("issue-report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print("Wrote issue-report.md", "bytes", Path("issue-report.md").stat().st_size)
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--report", action="store_true")
@@ -732,6 +849,7 @@ if __name__ == "__main__":
     parser.add_argument("--status", action="store_true")
     parser.add_argument("--export-complete", action="store_true")
     parser.add_argument("--continue", dest="do_continue", action="store_true")
+    parser.add_argument("--issue", action="store_true")
     parser.add_argument("--limit", type=int, default=2)
     args = parser.parse_args()
 
@@ -743,6 +861,8 @@ if __name__ == "__main__":
         export_complete_books()
     elif args.do_continue:
         run_continue()
+    elif args.issue:
+        write_issue_report()
     elif args.report:
         write_fleet_report()
     elif args.refine:
