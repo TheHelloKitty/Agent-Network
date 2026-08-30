@@ -37,6 +37,10 @@ jobs:
         if: always()
         run: python seed_crimson.py || echo "Seed skipped"
 
+      - name: Seed talking animals book
+        if: always()
+        run: python seed_talking_animals.py
+        
       - name: Toku setup services
         if: always()
         env:
