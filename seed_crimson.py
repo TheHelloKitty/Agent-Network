@@ -1,0 +1,268 @@
+import os
+from pathlib import Path
+
+FOLDER = Path("books/spicy_romance")
+KEEP_PREFIX = "Crimson_Vows_Luca_Dante_"
+OLD_PREFIX = "Agent_0451_dark_mafia_romance"
+
+CHAPTERS = r'''CRIMSON VOWS
+Luca "Dante" Borelli and Evelyn "Evie" Caruso
+
+CONTINUITY RULES FOR EVERY LATER CHAPTER
+- Hero name: Luca Dante Borelli. Family says Luca. Streets say Dante. Never invent a second hero.
+- Heroine: Evie Caruso. Bar: The Velvet Lantern.
+- Brother: Marco Borelli. Mother: Nadia, murdered. Right hand: Sal Rossi. Sal's wife: Marta.
+- Rival: Gino "The Ghost" Santoro. Detective: Mara Quinn. Sister: Elena Caruso. Ex: Gianni Moretti.
+- Do not paste thinking, outlines, or "as an AI" notes into the book.
+- Do not jump to the ending in early chapters.
+- Spice: slow burn through Chapter 5. First explicit scene is Chapter 6 after the ambush/kiss. Later explicit scenes in 10, 14, 17. Consensual, in-character, same two leads.
+- Keep writing beginning, middle, climax, ending. Do not stop because the file is long.
+
+CHAPTER 1
+The Last Pint
+
+The Velvet Lantern kept its own weather.
+
+Rain hammered the alley, but inside the bar the air was warm, sour-sweet with spilled whiskey and lemon oil. Neon from the sign leaked through the front glass in a wet pink smear. Evie Caruso wiped the same circle on the mahogany until the wood shone, because if she stopped moving she would hear the men at table three breathing like they owned the room.
+
+They did not own the room.
+
+They thought they did.
+
+"Last call was twenty minutes ago," she said, without looking up.
+
+A chair scraped. Heavy soles on old boards. Three of Marco Borelli's boys, all dark coats and cheaper cologne than the family they worked for. The middle one set a thick envelope on the bar like it was a kindness.
+
+"Not last call for you, sweetheart. Don Marco wants the deed. Fair price. You sign, you keep your hands. You don't, this place turns into a story people tell about a girl who didn't listen."
+
+Evie set the rag down. She was twenty-eight, five-seven in boots, hair pinned up off her neck because the kitchen ran hot. The shop had been her father's before the hospital bills ate the last of him. It was the only clean light on a block the Borellis treated like a hallway.
+
+"You can't buy this place with a bullet," she said.
+
+The middle one smiled without his eyes. "Who said bullet?"
+
+From the back booth, a man who had not ordered in an hour finally moved.
+
+Evie had noticed him the way you notice a storm behind glass. Black shirt, no tie, a scar hooked along his jaw like someone had tried to write a warning on his face and given up halfway. He drank like a man killing time, not celebrating it. When he stood, the three at the bar went quieter than the rain.
+
+"Enough."
+
+One word. Not loud. The kind of voice rooms rearranged themselves around.
+
+The middle one swallowed. "Dante. We were just—"
+
+"You were just leaving."
+
+Dante. That was the name the street used for the youngest Borelli son. Evie had heard the other name too, in the market, from old women who still remembered his mother.
+
+Luca.
+
+Luca Dante Borelli crossed the floor like the boards belonged to him and were considering an apology. Up close he was worse. Dark eyes. A mouth that looked like it had forgotten how to do anything but give orders. Rain still clung to his shoulders. He smelled like cold air and smoke.
+
+He picked up the envelope, weighed it, and dropped it back on the bar.
+
+"My brother sent you to scare a bartender," he said. "Tell Marco I was here. Tell him the Lantern stays."
+
+The middle one flushed. "He said—"
+
+"I heard what he said. Leave."
+
+They left. The bell over the door sounded too cheerful for what had just happened.
+
+Evie did not thank him. "I didn't ask for a Borelli to play hero in my bar."
+
+His mouth almost moved. Almost a smile. "I'm not a hero. I'm the reason they didn't put that envelope through your window."
+
+"And I'm the reason this place is still mine. There's a difference."
+
+He looked at her then, really looked, and Evie felt it like a hand at the back of her neck. Not gentle. Not quite cruel. Interested in the way a match is interested in dry wood.
+
+"Evelyn Caruso," he said. "You told Marco's treasurer no last month. You told his driver no last week. Now you told his collectors no in front of me. That is either brave or stupid."
+
+"It's a bar, not a shrine. I serve drinks. I don't sell my name."
+
+"Names sell whether you like it or not." He glanced at the neon, at the baseball bat under the register. "They call me Dante out there. My mother called me Luca. You can pick which one you want to be angry at."
+
+"I'm not angry at a first name."
+
+"No. You're angry because you know this block is already ours, and you're the last door that still slams."
+
+Evie poured two fingers of bourbon she had not been asked for and set the glass in front of him anyway. Her hands were steady. That mattered.
+
+"Drink and go, Luca. Or Dante. Whichever one pays for the whiskey."
+
+He didn't sit. He wrapped his fingers around the glass and didn't drink.
+
+"Marco wants the deed because the port deal needs a clean front on this corner," he said. "If he doesn't get it, he sends louder men. I can keep them off you tonight. I cannot keep them off you forever if you stay this proud."
+
+"Then I stay proud."
+
+Outside, a car door shut too softly. Luca's gaze flicked to the alley window, then back to her mouth.
+
+"You're the one who says no," he said, quieter. "Maybe you're the one we need."
+
+"Need for what."
+
+"To remind this family it can still be refused. And because I watched you work for an hour and you didn't flinch once. That is rarer than loyalty."
+
+Evie laughed once, sharp. "Don't romance a woman you just used as a chess piece."
+
+"I'm not romancing you." He finally drank. Set the glass down empty. "I'm warning you. Tomorrow Marco will send a better offer or a worse one. If you want to keep the Lantern, you call me before you call the police. Quinn already has her teeth in us. You bring her in, this place burns as evidence."
+
+"Detective Quinn drinks here on Thursdays. I didn't invite her either."
+
+He took a card from his pocket. No logo. A number. On the back, in a hard slanted hand: Luca.
+
+"If they come back, you use this. You don't be brave at two in the morning with a baseball bat."
+
+She didn't take the card until he laid it on the wood. Their fingers did not touch. The almost-touch was worse.
+
+"And if I use it," she said, "what do I owe the Borellis?"
+
+Luca Dante Borelli looked at her like the rain had followed him inside and chosen a side.
+
+"That," he said, "is the part that should scare you."
+
+He left. The bell sang. The neon flickered, once, as a gunshot cracked in the alley behind the building and then became only rain again.
+
+Evie locked the door with both bolts. She picked up the card, almost tore it, and slid it into the register beside the bat instead.
+
+Outside, a black car idled just long enough to make a point.
+
+Inside, The Velvet Lantern kept its weather, and Evie Caruso wiped the bar until the circle shone, because the night was not done with her, and neither was the man with two names.
+
+CHAPTER 2
+Blood on the Counter
+
+Evie did not sleep.
+
+She locked the alley door, checked the walk-in, and sat on the prep table with the baseball bat across her knees until the sky went the color of dirty nickels. The card that said Luca stayed in the register. She told herself that meant she was still in charge.
+
+At noon her sister Elena texted: You alive?
+Evie sent back a photo of a full ice bin and no explanation.
+
+The Lantern opened at four. Regulars drifted in like weather. Marta Rossi worked the far end of the bar because Evie had called her at dawn and said she needed a body who knew how to smile at danger. Marta's husband Sal worked for the Borellis. Evie hated that she needed that kind of insurance. She needed it anyway.
+
+At 7:12 the bell rang and Luca Dante Borelli came back in like the night had given him a second shift.
+
+No coat this time. Black shirt rolled to the forearms. The jaw scar looked paler under neon. He took the stool directly in front of her.
+
+"Bourbon," he said.
+
+"You drank it last night and left."
+
+"Then you already know how I take it."
+
+She poured. Their fingers missed again. The miss was becoming a habit with a pulse.
+
+"Marco sent a better offer," Luca said. "Forty above market. You still say no, he stops pretending this is business."
+
+"I still say no."
+
+He turned the glass once. "Then we do this the other way. Private booth. Five minutes. You hear the settlement from me, not from men who think an envelope is a personality."
+
+"I don't go in booths with men who have two names."
+
+"Then I talk here, and everyone on the block hears that Evie Caruso is in a conversation with Dante Borelli. That is worse for you than five minutes of wood and bad lighting."
+
+"Five minutes," she said. "If your hand leaves the table, I break it."
+
+The corner booth smelled like lemon oil and old secrets. Luca sat with his back to the wall. Evie sat opposite and kept the aisle at her left.
+
+"My mother died in a kitchen," he said, without preface. "Not a shootout. A kitchen. Someone wanted the family soft. Marco got louder after that. I got quieter. Quiet is not kind. It is a different knife."
+
+Evie kept her face still. "I didn't ask for your tragedy."
+
+"You asked why I was in your bar for an hour last night. That is why. I was seeing if you flinched. You didn't. Marco's port deal needs a clean storefront. He will burn this place to get the corner. I would rather own the refusal than own the ashes."
+
+"Own."
+
+"Poor word. Partner is worse. Let's say I keep Marco's boys off your door, and you keep this light on so the block doesn't go all the way black. You don't join. You don't kneel. You stay the woman who says no, and I use that no like a shield."
+
+Evie's pulse was an idiot. It hammered anyway.
+
+"And when your brother decides your shield is in the way?"
+
+"Then I stand in the way first."
+
+"That's a vow from a man I met last night."
+
+Luca leaned in. Not enough to touch. Enough that she could see the darker ring around his iris.
+
+"You're the one who says no," he said. "Maybe you're the one we need. Need is not love. Need is the thing that keeps a city from eating itself for one more week."
+
+From the bar, a glass shattered.
+
+"Evie," Marta said.
+
+A man Evie did not know had his palm flat on the mahogany, blood welling around a split knuckle. A thin line of red ran from the counter's edge to the floor drain. A knife pinned a coaster.
+
+SELL.
+OR THE NEXT STAIN IS HERS.
+
+Luca was beside Evie before she finished reading. He did not touch her.
+
+"Who sent you?"
+
+The man spat. "Tell Dante the Ghost says hello."
+
+Gino Santoro. Rival crew.
+
+Luca's voice dropped. "You walk out. You tell Gino if he writes on this counter again, I write on him."
+
+What he did under the bar lip nobody else saw. The man left holding his own fingers like they had become strangers.
+
+Blood stayed on the mahogany.
+
+Evie grabbed the rag. Luca caught the edge of it.
+
+"Don't. Not yet. Let the cameras remember it. Then we clean."
+
+"This is my bar."
+
+"And that is your blood they promised next." His thumb was close to hers on the rag. Heat without contact. "You still want the five-minute settlement to be a no?"
+
+Evie looked at the stain. At Marta. At the hidden card.
+
+"I want my counter clean. And I want Gino Santoro to learn this door has teeth."
+
+Luca's mouth did that almost-smile again.
+
+"Then we are no longer in a five-minute booth. We are in a war that found your wood first."
+
+He released the rag.
+
+Evie wiped the blood until the mahogany shone, because if she stopped she would feel his almost-touch like a second pulse, and she was not ready to name that either.
+
+Outside, rain started again, thin as wire.
+
+Inside, The Velvet Lantern kept its weather, and the stain came out of the grain slower than it should have, as if the bar itself had decided to remember.
+
+CHAPTER 3
+'''
+
+def delete_old_copies():
+    FOLDER.mkdir(parents=True, exist_ok=True)
+    removed = []
+    for path in FOLDER.glob("*"):
+        name = path.name
+        if name.startswith(OLD_PREFIX) or (
+            name.startswith("Agent_0451") and "mafia" in name.lower()
+        ):
+            path.unlink(missing_ok=True)
+            removed.append(str(path))
+    print("Deleted old copies:", len(removed))
+    for r in removed:
+        print(" -", r)
+    return removed
+
+def write_seed():
+    out = FOLDER / "Crimson_Vows_Luca_Dante_full_20260830.txt"
+    out.write_text(CHAPTERS, encoding="utf-8")
+    print("Wrote seed:", out)
+    print("Words:", len(CHAPTERS.split()))
+    return str(out)
+
+if __name__ == "__main__":
+    delete_old_copies()
+    write_seed()
