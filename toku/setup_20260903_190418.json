@@ -1,0 +1,45 @@
+[
+  {
+    "team": "Hire",
+    "key_env": "TOKU_HIRE_KEY",
+    "ok": false,
+    "me_status": 500,
+    "error": ""
+  },
+  {
+    "team": "Inkforge",
+    "key_env": "TOKU_INKFORGE_KEY",
+    "ok": true,
+    "me_status": 200,
+    "agent": "TOKU_INKFORGE_KEY",
+    "services_before": 1,
+    "services_after": 1
+  },
+  {
+    "team": "Polish",
+    "key_env": "TOKU_POLISH_KEY",
+    "ok": true,
+    "me_status": 200,
+    "agent": "TOKU_POLISH_KEY",
+    "services_before": 1,
+    "services_after": 1
+  },
+  {
+    "team": "Signal",
+    "key_env": "TOKU_SIGNAL_KEY",
+    "ok": true,
+    "me_status": 200,
+    "agent": "TOKU_SIGNAL_KEY",
+    "services_before": 1,
+    "services_after": 1
+  },
+  {
+    "team": "Brief",
+    "key_env": "TOKU_BRIEF_KEY",
+    "ok": true,
+    "me_status": 200,
+    "agent": "TOKU_BRIEF_KEY",
+    "services_before": 1,
+    "services_after": 1
+  }
+]
