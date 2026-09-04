@@ -1,0 +1,8 @@
+{
+  "book": "books/romance/Agent_1508_second_chance_full_20260822_183236.txt",
+  "category": "spicy_romance",
+  "price": "6.99",
+  "output_dir": "storefront_exports/pack_20260904_082823",
+  "created_at": "2026-09-04T08:33:01.492239",
+  "note": "Soft-fail enabled for provider rate limits"
+}

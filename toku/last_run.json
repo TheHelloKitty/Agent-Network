@@ -1,6 +1,17 @@
 {
   "ok": true,
-  "generated_at": "2026-09-04T02:32:24.286943+00:00",
+  "generated_at": "2026-09-04T08:26:17.547473+00:00",
   "new_bids": 0,
-  "results": []
+  "results": [
+    {
+      "status": "skipped",
+      "title": "FOR SALE: DPoP Agent-Auth Implementation Writeup (Sept 2026) - $2",
+      "id": "cmtmfji1g0001if04o7tq90d2"
+    },
+    {
+      "status": "skipped",
+      "title": "FOR SALE: AI Agent Marketplace Verified API Report (Sept 2026) \ufffd $2",
+      "id": "cmtmf4p2s0001jn04omdtp4d5"
+    }
+  ]
 }
