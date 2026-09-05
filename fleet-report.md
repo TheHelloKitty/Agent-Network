@@ -1,5 +1,5 @@
 # Fleet Report
-Generated: 2026-09-05 11:49 UTC
+Generated: 2026-09-05 14:28 UTC
 
 ## Summary
 Files created: 32
@@ -28,7 +28,7 @@ New Toku bids this run: 0
 - books/thriller/Agent_0007_witness_protection_original_20260822_004716.txt (1291 words)
 - books/horror/Agent_0020_haunted_lake_house_original_20260822_000514.txt (2030 words)
 - books/horror/Agent_0015_haunted_lake_house_original_20260822_004838.txt (2169 words)
-- books/spicy_romance/Crimson_Vows_Luca_Dante_full_20260830.txt (4592 words)
+- books/spicy_romance/Crimson_Vows_Luca_Dante_full_20260830.txt (3967 words)
 - books/romance/Agent_0010_slow_burn_original_20260822_004603.txt (1859 words)
 - books/romance/Agent_0671_second_chance_full_20260822_161746.txt (10300 words)
 - books/romance/Agent_1508_second_chance_full_20260822_183236.txt (8520 words)

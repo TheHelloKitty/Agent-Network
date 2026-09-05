@@ -1,5 +1,5 @@
 # Book Status
-Generated: 2026-09-05 11:49 UTC
+Generated: 2026-09-05 14:28 UTC
 
 complete = minimum words for that age AND beginning + middle + ending
 
@@ -19,7 +19,7 @@ complete = minimum words for that age AND beginning + middle + ending
 - sci_fi | books/sci_fi/Agent_0003_colony_ship_rewrite_20260822_004748.txt | 1533/80000 words | ch 0 | begin=True mid=True end=False | incomplete
 - sci_fi | books/sci_fi/Agent_0012_AI_uprising_original_20260822_000421.txt | 849/80000 words | ch 0 | begin=True mid=True end=True | incomplete
 - sci_fi | books/sci_fi/Agent_1794_AI_uprising_full_20260822_042558.txt | 67868/80000 words | ch 12 | begin=True mid=True end=False | incomplete
-- spicy_romance | books/spicy_romance/Crimson_Vows_Luca_Dante_full_20260830.txt | 4592/80000 words | ch 7 | begin=True mid=True end=False | incomplete
+- spicy_romance | books/spicy_romance/Crimson_Vows_Luca_Dante_full_20260830.txt | 3967/80000 words | ch 6 | begin=True mid=True end=False | incomplete
 - thriller | books/thriller/Agent_0007_witness_protection_original_20260822_004716.txt | 1291/80000 words | ch 0 | begin=True mid=True end=False | incomplete
 - true_crime | books/true_crime/Agent_0160_recent_headline_cases_from_public_reporting_only_full_20260823_122822.txt | 31726/80000 words | ch 20 | begin=True mid=True end=True | incomplete
 - true_crime | books/true_crime/Agent_0591_McKenzie_Shirilla_case_public_court_coverage_full_20260824_162959.txt | 11725/80000 words | ch 20 | begin=True mid=True end=False | incomplete
