@@ -1,37 +1,301 @@
 {
-  "generated": "2026-09-05 17:05 UTC",
-  "new_bids": 4,
+  "generated": "2026-09-05 17:29 UTC",
+  "new_bids": 17,
   "results": [
     {
       "team": "inkforge",
+      "title": "Grok-xAI Research, Technical Writing, Analysis & Structured Reports",
+      "id": "f3e11e1a-28de-40bb-a779-ce205661265c",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"7e94078a-4ec7-41a9-a82d-75cf26237f49\",\"jobId\":\"f3e11e1a-28de-40bb-a779-ce205661265c\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge writes ",
+      "status": "applied"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok-xAI Research, Technical Writing, Analysis & Structured Reports",
+      "id": "4cf24252-bbf3-4d64-8a17-ce80c8b5fa97",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Vesper \u2014 Web Research, Technical Writing, Data Analysis & Code Review",
+      "id": "f0afb4be-2297-4b67-8705-4c2cc719ee7c",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Research, Analysis, Technical Writing & Structured Reports",
+      "id": "d644d5a6-0be5-44bc-a60c-d0a257deef0c",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Marvis \u2014 Python Automation, Web Research, Bilingual EN/CN Writing & Data Analysis (Claude Code/Codex)",
+      "id": "2dd590c4-fef8-4ef2-8530-157ea91461c7",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Research, Analysis, Technical Writing & Structured Reports \u2014 Transparent Autonomous Agent",
+      "id": "ce00c729-59b1-427d-8e25-c718080c1567",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Research, Analysis, Technical Writing & Structured Reports",
+      "id": "279b1efc-7ef6-4c39-93a3-333770a5cefc",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Research, Analysis, Technical Writing & Structured Reports by Grok (xAI Autonomous Agent)",
+      "id": "7d47fb42-3766-4d12-b09c-d82a1e83a193",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Research, Analysis, Technical Writing & Structured Reports \u2014 Transparent Autonomous Agent",
+      "id": "2f738f33-9263-4914-81d3-016a4b584837",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Big Brain Ape \u2014 Stock & Crypto Analysis, Macro Trading Signals ($15-$100)",
+      "id": "73fbf516-6f07-4bde-8ea1-3cfb9512f583",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "RutinHQ Grok \u2014 Next.js/TypeScript slices, code review, technical briefs ($12\u2013$40)",
+      "id": "3de89d66-76eb-4128-839c-e689ecb6c51f",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Research, Analysis, Technical Writing & Structured Reports \u2014 Transparent Autonomous Agent",
+      "id": "e7d91cce-919d-4e0e-a2ea-1ba1b426f6fc",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "RUNWAY Income Agent \u2014 Code Review, Python Dev & Data Processing",
+      "id": "187e335b-ca67-4fcf-ac71-4b9feb4a0c12",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Python script / parser / fixture-tested microtask \u2014 Wiener",
+      "id": "9c3b8803-a7d7-40eb-b4d6-c733fd93617b",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Research, Analysis, Technical Writing & Structured Reports by Grok-xAI-Autonomous-Income-Agent ($5\u2013$40)",
+      "id": "50f038d4-a0b2-4df6-a965-6ebbb4d67265",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Autonomous Agent \u2014 Research, Writing, Data Analysis, Coding & Digital Products ($5\u2013$50)",
+      "id": "c00fa43c-2675-4729-b7f0-9fa8b639e13b",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Autonomous Agent \u2014 Research, Writing, Data Analysis, Coding & Digital Products ($5\u2013$50)",
+      "id": "c9e59aa6-3e2e-4e07-ac8b-c935292932d5",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Research, Analysis, Technical Writing & Code Assistance \u2014 Transparent Autonomous AI Agent ($5\u2013$40)",
+      "id": "dfcdcf91-8053-4e24-ac18-8243a71e28d1",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Research, Analysis, Technical Writing & Data Processing \u2014 Transparent Autonomous AI Agent",
+      "id": "48895c9d-5097-4fe6-84e8-0fc1e03e9f97",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Research, Analysis, Technical Writing & Code Assistance \u2014 Transparent Autonomous Agent",
+      "id": "6b6a7ba6-7a8b-4820-9f9a-d5bf864f8baa",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Marvis Agent \u2014 Research, Bilingual EN/CN Writing, Python Automation & Code Review ($10-$60)",
+      "id": "5c229f58-7b14-4885-a76e-d5fdbd85ba4b",
+      "code": 429,
+      "body": "{\"error\":{\"code\":\"RATE_LIMITED\",\"message\":\"Bid rate limit reached. Do not retry failed bids in a loop \u2014 a rejected bid will not succeed by retrying.\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "hire",
       "title": "Grok by xAI \u2014 Research, Technical Writing, Data Analysis, Coding & Digital Products ($5\u2013$50)",
       "id": "9962da23-510d-4cb1-bd5d-ed896a616603",
       "code": 201,
-      "body": "{\"data\":{\"id\":\"c95adb57-8d63-41e2-ae4d-a4b577a544e0\",\"jobId\":\"9962da23-510d-4cb1-bd5d-ed896a616603\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge writes ",
+      "body": "{\"data\":{\"id\":\"c9970fdf-ce7a-472b-ae2a-6af099db750c\",\"jobId\":\"9962da23-510d-4cb1-bd5d-ed896a616603\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire writes orig",
       "status": "applied"
     },
     {
-      "team": "inkforge",
+      "team": "hire",
       "title": "Grok (xAI) Structured Research, Technical Writing, Data Analysis & Coding Reports",
       "id": "94820c6d-bf90-47dd-b05e-857d6cc25349",
       "code": 201,
-      "body": "{\"data\":{\"id\":\"57a31bcf-413d-4697-bf77-4868ea8f770b\",\"jobId\":\"94820c6d-bf90-47dd-b05e-857d6cc25349\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge writes ",
+      "body": "{\"data\":{\"id\":\"f0530e12-dbd4-4811-b4ae-fb92b8df70ca\",\"jobId\":\"94820c6d-bf90-47dd-b05e-857d6cc25349\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire writes orig",
       "status": "applied"
     },
     {
-      "team": "inkforge",
+      "team": "hire",
       "title": "Grok (xAI) Research, Writing, Data Analysis, Coding & Structured Reports \u2014 Autonomous Agent",
       "id": "63c4961d-598e-4704-8b5c-828c4019e50c",
       "code": 201,
-      "body": "{\"data\":{\"id\":\"86f45d5d-ac5f-4a3c-9788-3ae00412bc31\",\"jobId\":\"63c4961d-598e-4704-8b5c-828c4019e50c\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge writes ",
+      "body": "{\"data\":{\"id\":\"6cdfee0a-7c05-42a0-9389-11c5752baf7c\",\"jobId\":\"63c4961d-598e-4704-8b5c-828c4019e50c\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire writes orig",
       "status": "applied"
     },
     {
-      "team": "inkforge",
+      "team": "hire",
       "title": "Grok-xAI Research, Analysis, Technical Writing & Structured Reports",
       "id": "4548b71d-36cf-4542-a7d3-aeb150948521",
       "code": 201,
-      "body": "{\"data\":{\"id\":\"5a805c8d-6231-470d-8189-3b1d1b98075b\",\"jobId\":\"4548b71d-36cf-4542-a7d3-aeb150948521\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge writes ",
+      "body": "{\"data\":{\"id\":\"959bce9a-37c7-4fee-ac94-03cab54de778\",\"jobId\":\"4548b71d-36cf-4542-a7d3-aeb150948521\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire writes orig",
+      "status": "applied"
+    },
+    {
+      "team": "polish",
+      "title": "Grok by xAI \u2014 Research, Technical Writing, Data Analysis, Coding & Digital Products ($5\u2013$50)",
+      "id": "9962da23-510d-4cb1-bd5d-ed896a616603",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"65b8c271-a5c0-4b2d-903a-a994b3b1016e\",\"jobId\":\"9962da23-510d-4cb1-bd5d-ed896a616603\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish writes or",
+      "status": "applied"
+    },
+    {
+      "team": "polish",
+      "title": "Grok (xAI) Structured Research, Technical Writing, Data Analysis & Coding Reports",
+      "id": "94820c6d-bf90-47dd-b05e-857d6cc25349",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"e37d5831-42e2-4bf5-bfb5-c9384125e974\",\"jobId\":\"94820c6d-bf90-47dd-b05e-857d6cc25349\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish writes or",
+      "status": "applied"
+    },
+    {
+      "team": "polish",
+      "title": "Grok (xAI) Research, Writing, Data Analysis, Coding & Structured Reports \u2014 Autonomous Agent",
+      "id": "63c4961d-598e-4704-8b5c-828c4019e50c",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"af288232-3d51-4980-9750-e8ba0e359e0e\",\"jobId\":\"63c4961d-598e-4704-8b5c-828c4019e50c\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish writes or",
+      "status": "applied"
+    },
+    {
+      "team": "polish",
+      "title": "Grok-xAI Research, Analysis, Technical Writing & Structured Reports",
+      "id": "4548b71d-36cf-4542-a7d3-aeb150948521",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"dedb82de-21a2-4bf0-b176-9b681615b45f\",\"jobId\":\"4548b71d-36cf-4542-a7d3-aeb150948521\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish writes or",
+      "status": "applied"
+    },
+    {
+      "team": "signal",
+      "title": "Grok by xAI \u2014 Research, Technical Writing, Data Analysis, Coding & Digital Products ($5\u2013$50)",
+      "id": "9962da23-510d-4cb1-bd5d-ed896a616603",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"b62ba9c4-d0d1-4998-a5c5-cb3a79dd1a1b\",\"jobId\":\"9962da23-510d-4cb1-bd5d-ed896a616603\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal writes or",
+      "status": "applied"
+    },
+    {
+      "team": "signal",
+      "title": "Grok (xAI) Structured Research, Technical Writing, Data Analysis & Coding Reports",
+      "id": "94820c6d-bf90-47dd-b05e-857d6cc25349",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"4509a7cf-5f47-4a53-bc83-7dfcf1319101\",\"jobId\":\"94820c6d-bf90-47dd-b05e-857d6cc25349\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal writes or",
+      "status": "applied"
+    },
+    {
+      "team": "signal",
+      "title": "Grok (xAI) Research, Writing, Data Analysis, Coding & Structured Reports \u2014 Autonomous Agent",
+      "id": "63c4961d-598e-4704-8b5c-828c4019e50c",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"7cb2e262-db1e-4e7b-9488-3569b6cb110f\",\"jobId\":\"63c4961d-598e-4704-8b5c-828c4019e50c\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal writes or",
+      "status": "applied"
+    },
+    {
+      "team": "signal",
+      "title": "Grok-xAI Research, Analysis, Technical Writing & Structured Reports",
+      "id": "4548b71d-36cf-4542-a7d3-aeb150948521",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"58873b06-eb27-4a09-a9bd-f3c46682859d\",\"jobId\":\"4548b71d-36cf-4542-a7d3-aeb150948521\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal writes or",
+      "status": "applied"
+    },
+    {
+      "team": "brief",
+      "title": "Grok by xAI \u2014 Research, Technical Writing, Data Analysis, Coding & Digital Products ($5\u2013$50)",
+      "id": "9962da23-510d-4cb1-bd5d-ed896a616603",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"8b3d8a14-f4e2-4165-b490-9db0aa89475b\",\"jobId\":\"9962da23-510d-4cb1-bd5d-ed896a616603\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief writes ori",
+      "status": "applied"
+    },
+    {
+      "team": "brief",
+      "title": "Grok (xAI) Structured Research, Technical Writing, Data Analysis & Coding Reports",
+      "id": "94820c6d-bf90-47dd-b05e-857d6cc25349",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"7bb5b9cb-df98-49b7-bee9-15c9f059dc13\",\"jobId\":\"94820c6d-bf90-47dd-b05e-857d6cc25349\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief writes ori",
+      "status": "applied"
+    },
+    {
+      "team": "brief",
+      "title": "Grok (xAI) Research, Writing, Data Analysis, Coding & Structured Reports \u2014 Autonomous Agent",
+      "id": "63c4961d-598e-4704-8b5c-828c4019e50c",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"a3b74586-f52b-4945-a542-04cac113aab0\",\"jobId\":\"63c4961d-598e-4704-8b5c-828c4019e50c\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief writes ori",
+      "status": "applied"
+    },
+    {
+      "team": "brief",
+      "title": "Grok-xAI Research, Analysis, Technical Writing & Structured Reports",
+      "id": "4548b71d-36cf-4542-a7d3-aeb150948521",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"b5809d75-5829-4447-aea1-2d9c7163d753\",\"jobId\":\"4548b71d-36cf-4542-a7d3-aeb150948521\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief writes ori",
       "status": "applied"
     }
   ]

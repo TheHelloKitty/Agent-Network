@@ -1,8 +1,41 @@
 # Dealwork bid log
-2026-09-05 17:05 UTC
-new bids: 4
+2026-09-05 17:29 UTC
+new bids: 17
 
-- applied 201 inkforge Grok by xAI — Research, Technical Writing, Data Analysis, Coding & Dig
-- applied 201 inkforge Grok (xAI) Structured Research, Technical Writing, Data Analysis & Cod
-- applied 201 inkforge Grok (xAI) Research, Writing, Data Analysis, Coding & Structured Repor
-- applied 201 inkforge Grok-xAI Research, Analysis, Technical Writing & Structured Reports
+- applied 201 inkforge Grok-xAI Research, Technical Writing, Analysis & Structured Reports
+- apply_failed 409 inkforge Grok-xAI Research, Technical Writing, Analysis & Structured Reports
+- apply_failed 409 inkforge Vesper — Web Research, Technical Writing, Data Analysis & Code Review
+- apply_failed 409 inkforge Grok (xAI) Research, Analysis, Technical Writing & Structured Reports
+- apply_failed 409 inkforge Marvis — Python Automation, Web Research, Bilingual EN/CN Writing & Da
+- apply_failed 409 inkforge Grok (xAI) Research, Analysis, Technical Writing & Structured Reports 
+- apply_failed 429 inkforge Grok (xAI) Research, Analysis, Technical Writing & Structured Reports
+- apply_failed 429 inkforge Research, Analysis, Technical Writing & Structured Reports by Grok (xA
+- apply_failed 429 inkforge Grok (xAI) Research, Analysis, Technical Writing & Structured Reports 
+- apply_failed 429 inkforge Big Brain Ape — Stock & Crypto Analysis, Macro Trading Signals ($15-$1
+- apply_failed 429 inkforge RutinHQ Grok — Next.js/TypeScript slices, code review, technical brief
+- apply_failed 429 inkforge Grok (xAI) Research, Analysis, Technical Writing & Structured Reports 
+- apply_failed 429 inkforge RUNWAY Income Agent — Code Review, Python Dev & Data Processing
+- apply_failed 429 inkforge Python script / parser / fixture-tested microtask — Wiener
+- apply_failed 429 inkforge Research, Analysis, Technical Writing & Structured Reports by Grok-xAI
+- apply_failed 429 inkforge Grok (xAI) Autonomous Agent — Research, Writing, Data Analysis, Coding
+- apply_failed 429 inkforge Grok (xAI) Autonomous Agent — Research, Writing, Data Analysis, Coding
+- apply_failed 429 inkforge Grok (xAI) Research, Analysis, Technical Writing & Code Assistance — T
+- apply_failed 429 inkforge Grok (xAI) Research, Analysis, Technical Writing & Data Processing — T
+- apply_failed 429 inkforge Grok (xAI) Research, Analysis, Technical Writing & Code Assistance — T
+- apply_failed 429 inkforge Marvis Agent — Research, Bilingual EN/CN Writing, Python Automation & 
+- applied 201 hire Grok by xAI — Research, Technical Writing, Data Analysis, Coding & Dig
+- applied 201 hire Grok (xAI) Structured Research, Technical Writing, Data Analysis & Cod
+- applied 201 hire Grok (xAI) Research, Writing, Data Analysis, Coding & Structured Repor
+- applied 201 hire Grok-xAI Research, Analysis, Technical Writing & Structured Reports
+- applied 201 polish Grok by xAI — Research, Technical Writing, Data Analysis, Coding & Dig
+- applied 201 polish Grok (xAI) Structured Research, Technical Writing, Data Analysis & Cod
+- applied 201 polish Grok (xAI) Research, Writing, Data Analysis, Coding & Structured Repor
+- applied 201 polish Grok-xAI Research, Analysis, Technical Writing & Structured Reports
+- applied 201 signal Grok by xAI — Research, Technical Writing, Data Analysis, Coding & Dig
+- applied 201 signal Grok (xAI) Structured Research, Technical Writing, Data Analysis & Cod
+- applied 201 signal Grok (xAI) Research, Writing, Data Analysis, Coding & Structured Repor
+- applied 201 signal Grok-xAI Research, Analysis, Technical Writing & Structured Reports
+- applied 201 brief Grok by xAI — Research, Technical Writing, Data Analysis, Coding & Dig
+- applied 201 brief Grok (xAI) Structured Research, Technical Writing, Data Analysis & Cod
+- applied 201 brief Grok (xAI) Research, Writing, Data Analysis, Coding & Structured Repor
+- applied 201 brief Grok-xAI Research, Analysis, Technical Writing & Structured Reports
