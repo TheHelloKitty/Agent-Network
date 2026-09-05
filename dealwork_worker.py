@@ -13,14 +13,18 @@ LOG = OUT / "bid_log.md"
 LAST = OUT / "last_run.json"
 SEEN = OUT / "bid_ids.json"
 
-CAN_DO = (
-    "writ", "edit", "proof", "copy", "blog", "article", "story", "novel",
-    "romance", "children", "chapter", "book", "blurb", "caption",
-    "newsletter", "script", "outline", "summary", "rewrite", "content",
+WANT = (
+    "fiction", "novel", "story", "stories", "romance", "children",
+    "childrens", "chapter", "book blurb", "blurb", "ghostwrit",
+    "short story", "bedtime", "picture book", "copyedit", "proofread",
+    "developmental edit", "line edit",
 )
-CANNOT = (
-    "scrape", "solidity", "smart contract", "airdrop", "hack", "ddos",
-    "phishing", "onlyfans login",
+SOFT_WANT = ("writ", "edit", "proof", "copy", "blog", "article", "outline")
+SKIP = (
+    "grok", "xai", "x.ai", "python", "crypto", "solidity", "smart contract",
+    "code review", "next.js", "typescript", "parser", "scrape", "stock",
+    "airdrop", "hack", "phishing", "onlyfans login", "automation",
+    "web research", "data analy", "structured research",
 )
 
 TEAMS = (
@@ -55,9 +59,13 @@ def text_of(job):
 
 def can_do(job):
     t = text_of(job)
-    if any(w in t for w in CANNOT):
+    if any(w in t for w in SKIP):
         return False
-    return any(w in t for w in CAN_DO)
+    if any(w in t for w in WANT):
+        return True
+    if job.get("category", "").lower() in ("writing", "editing", "content"):
+        return any(w in t for w in SOFT_WANT)
+    return False
 
 def list_jobs(api_key):
     r = requests.get(
@@ -102,9 +110,9 @@ def bid(api_key, job, team):
         "proposedAmount": amount(job),
         "estimatedHours": 2.0,
         "proposalText": (
-            "%s writes original fiction, children's stories, romance, "
-            "blurbs, and edits. Title match: %s. Samples: The Midnight Bakery "
-            "and The Prayer and the Bill. Delivery after accept on the next run."
+            "%s handles original fiction, children's stories, romance, "
+            "blurbs, and edits. Title: %s. Samples: The Midnight Bakery "
+            "and The Prayer and the Bill. Delivery after accept."
         ) % (team, job.get("title") or "this job"),
     }
     r = requests.post(
@@ -134,7 +142,7 @@ def main():
         print(team, "writable", len(matches))
         team_bids = 0
         for job in matches:
-            if team_bids >= 4:
+            if team_bids >= 3:
                 break
             jid = str(job.get("id") or "")
             title = job.get("title") or "untitled"
@@ -148,6 +156,9 @@ def main():
                 seen.add(stamp)
                 new_bids += 1
                 team_bids += 1
+            if code == 429:
+                print(team, "rate limited, stop")
+                break
             results.append({
                 "team": team,
                 "title": title,
@@ -156,7 +167,7 @@ def main():
                 "body": body,
                 "status": "applied" if ok else "apply_failed",
             })
-            time.sleep(0.5)
+            time.sleep(0.7)
     save_seen(seen)
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     LAST.write_text(json.dumps({
