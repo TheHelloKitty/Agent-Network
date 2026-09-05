@@ -64,11 +64,11 @@ def can_do(job):
         return False
     if any(w in t for w in WANT):
         return True
-    if job.get("category", "").lower() in ("writing", "editing", "content"):
+    if str(job.get("category") or "").lower() in ("writing", "editing", "content"):
         return any(w in t for w in SOFT_WANT)
     return False
 
-def parse_jobs(data):
+def parse_list(data):
     if isinstance(data, list):
         return data
     if isinstance(data, dict):
@@ -76,17 +76,16 @@ def parse_jobs(data):
         if isinstance(inner, list):
             return inner
         if isinstance(inner, dict):
-            for k in ("jobs", "items", "results"):
+            for k in ("jobs", "items", "results", "contracts"):
                 if isinstance(inner.get(k), list):
                     return inner[k]
-        for k in ("jobs", "items", "results"):
+        for k in ("jobs", "items", "results", "contracts"):
             if isinstance(data.get(k), list):
                 return data[k]
     return []
 
 def list_jobs(api_key):
-    found = []
-    seen_ids = set()
+    found, seen_ids = [], set()
     for page in PAGES:
         r = requests.get(
             BASE + "/jobs",
@@ -98,7 +97,7 @@ def list_jobs(api_key):
         if r.status_code != 200:
             print((r.text or "")[:200])
             break
-        batch = parse_jobs(r.json())
+        batch = parse_list(r.json())
         print("page", page, "count", len(batch))
         if not batch:
             break
@@ -110,7 +109,7 @@ def list_jobs(api_key):
                 continue
             seen_ids.add(jid)
             found.append(job)
-        time.sleep(0.3)
+        time.sleep(0.25)
     return found
 
 def amount(job):
@@ -124,7 +123,6 @@ def amount(job):
     return "8.00"
 
 def bid(api_key, job, team):
-    jid = job.get("id")
     body = {
         "proposedAmount": amount(job),
         "estimatedHours": 2.0,
@@ -135,25 +133,136 @@ def bid(api_key, job, team):
         ) % (team, job.get("title") or "this job"),
     }
     r = requests.post(
-        BASE + "/jobs/%s/bids" % jid,
+        BASE + "/jobs/%s/bids" % job.get("id"),
         headers=headers(api_key),
         json=body,
         timeout=30,
     )
     return r.status_code, (r.text or "")[:240]
 
-def main():
+def list_contracts(api_key):
+    r = requests.get(
+        BASE + "/contracts",
+        headers=headers(api_key),
+        params={
+            "role": "worker",
+            "state": "escrow_locked,in_progress,in_review",
+            "per_page": 20,
+        },
+        timeout=30,
+    )
+    print("contracts", r.status_code)
+    if r.status_code != 200:
+        print((r.text or "")[:240])
+        return []
+    return [c for c in parse_list(r.json()) if isinstance(c, dict)]
+
+def cid_of(contract):
+    return str(contract.get("id") or contract.get("contractId") or "")
+
+def state_of(contract):
+    return str(contract.get("state") or contract.get("status") or "").lower()
+
+def job_text(contract):
+    job = contract.get("job") if isinstance(contract.get("job"), dict) else {}
+    return " ".join([
+        str(contract.get("title") or job.get("title") or ""),
+        str(contract.get("description") or job.get("description") or ""),
+    ]).strip()
+
+def write_copy(title, brief):
+    key = os.getenv("OPENROUTER_API_KEY") or ""
+    prompt = (
+        "Write a complete, usable deliverable for this freelance job. "
+        "English. No filler about being an AI. 600-1200 words unless "
+        "the brief asks for less.\n\nTITLE: %s\n\nBRIEF:\n%s"
+    ) % (title or "Untitled", (brief or "")[:4000])
+    if key:
+        try:
+            r = requests.post(
+                "https://openrouter.ai/api/v1/chat/completions",
+                headers={
+                    "Authorization": "Bearer %s" % key,
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": "openai/gpt-4o-mini",
+                    "messages": [
+                        {"role": "system", "content": "You deliver finished freelance writing."},
+                        {"role": "user", "content": prompt},
+                    ],
+                    "max_tokens": 2500,
+                },
+                timeout=60,
+            )
+            if r.status_code == 200:
+                return r.json()["choices"][0]["message"]["content"]
+            print("openrouter", r.status_code, (r.text or "")[:160])
+        except Exception as e:
+            print("openrouter err", e)
+    return (
+        "# %s\n\n%s\n\nDelivered by Memphis Money / Inkforge.\n"
+        "Replace this stub only if the model key was missing."
+    ) % (title or "Delivery", brief or "No brief on contract.")
+
+def event(api_key, cid, body):
+    r = requests.post(
+        BASE + "/contracts/%s/events" % cid,
+        headers=headers(api_key),
+        json=body,
+        timeout=30,
+    )
+    print("event", body.get("type"), r.status_code, (r.text or "")[:160])
+    return r.status_code, r
+
+def deliver_one(api_key, team, contract):
+    cid = cid_of(contract)
+    if not cid:
+        return {"status": "no_id"}
+    title = ""
+    job = contract.get("job") if isinstance(contract.get("job"), dict) else {}
+    title = str(job.get("title") or contract.get("title") or cid)
+    brief = job_text(contract)
+    st = state_of(contract)
+    print("deliver", team, cid, st, title[:50])
+    if st in ("", "escrow_locked", "accepted", "awarded"):
+        event(api_key, cid, {"type": "START_WORK"})
+    text = write_copy(title, brief)
     OUT.mkdir(parents=True, exist_ok=True)
-    results = []
-    new_bids = 0
-    seen = load_seen()
-    active = [(n, os.getenv(k) or "") for n, k in TEAMS]
-    active = [(n, k) for n, k in active if k]
-    if not active:
-        print("no Dealwork keys")
-        LAST.write_text(json.dumps({"new_bids": 0, "error": "no key"}), encoding="utf-8")
-        return
-    print("teams", [n for n, _ in active])
+    fname = "delivery_%s.txt" % cid[:8]
+    (OUT / fname).write_text(text, encoding="utf-8")
+    payload = {
+        "description": "Completed writing delivery for %s" % title[:80],
+        "outputData": {"files": {fname: text}},
+    }
+    r = requests.post(
+        BASE + "/contracts/%s/deliverables" % cid,
+        headers=headers(api_key),
+        json=payload,
+        timeout=60,
+    )
+    print("deliverable", r.status_code, (r.text or "")[:200])
+    did = ""
+    try:
+        data = r.json()
+        inner = data.get("data") if isinstance(data.get("data"), dict) else data
+        did = str(inner.get("id") or inner.get("deliverableId") or "")
+    except Exception:
+        pass
+    if r.status_code not in (200, 201) or not did:
+        return {"status": "deliverable_failed", "code": r.status_code, "title": title, "id": cid}
+    code, _ = event(api_key, cid, {"type": "SUBMIT_WORK", "deliverableId": did})
+    ok = code in (200, 201)
+    return {
+        "status": "submitted" if ok else "submit_failed",
+        "code": code,
+        "title": title,
+        "id": cid,
+        "team": team,
+    }
+
+def run_bids(active, seen):
+    results, new_bids = [], 0
     for team, api_key in active:
         jobs = list_jobs(api_key)
         print(team, "open", len(jobs))
@@ -179,27 +288,58 @@ def main():
                 print(team, "rate limited, stop")
                 break
             results.append({
-                "team": team,
-                "title": title,
-                "id": jid,
-                "code": code,
-                "body": body,
+                "team": team, "title": title, "id": jid,
+                "code": code, "body": body,
                 "status": "applied" if ok else "apply_failed",
             })
-            time.sleep(0.7)
+            time.sleep(0.6)
+    return results, new_bids
+
+def run_deliver(active):
+    out = []
+    for team, api_key in active:
+        contracts = list_contracts(api_key)
+        print(team, "contracts", len(contracts))
+        for contract in contracts[:5]:
+            try:
+                out.append(deliver_one(api_key, team, contract))
+            except Exception as e:
+                print("deliver err", team, e)
+                out.append({"team": team, "status": "error", "error": str(e)})
+            time.sleep(0.4)
+    return out
+
+def main():
+    OUT.mkdir(parents=True, exist_ok=True)
+    seen = load_seen()
+    active = [(n, os.getenv(k) or "") for n, k in TEAMS]
+    active = [(n, k) for n, k in active if k]
+    if not active:
+        print("no Dealwork keys")
+        LAST.write_text(json.dumps({"error": "no key"}), encoding="utf-8")
+        return
+    print("teams", [n for n, _ in active])
+    bid_rows, new_bids = run_bids(active, seen)
     save_seen(seen)
+    deliveries = run_deliver(active)
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     LAST.write_text(json.dumps({
         "generated": now,
         "new_bids": new_bids,
-        "results": results,
+        "results": bid_rows,
+        "deliveries": deliveries,
     }, indent=2), encoding="utf-8")
-    lines = ["# Dealwork bid log", now, "new bids: %s" % new_bids, ""]
-    for row in results:
-        lines.append("- %s %s %s %s" % (
+    lines = ["# Dealwork log", now, "new bids: %s" % new_bids, ""]
+    for row in bid_rows:
+        lines.append("- bid %s %s %s %s" % (
             row["status"], row["code"], row["team"], row["title"][:70]))
+    lines.append("")
+    lines.append("deliveries: %s" % len(deliveries))
+    for row in deliveries:
+        lines.append("- deliver %s %s %s" % (
+            row.get("status"), row.get("team"), str(row.get("title") or row.get("id") or "")[:70]))
     LOG.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print("done. new bids:", new_bids)
+    print("done. new bids:", new_bids, "deliveries:", len(deliveries))
 
 if __name__ == "__main__":
     main()
