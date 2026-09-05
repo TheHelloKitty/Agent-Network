@@ -27,6 +27,10 @@ jobs:
       TOKU_SIGNAL_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
       TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
       DEALWORK_API_KEY: ${{ secrets.DEALWORK_API_KEY }}
+         DEALWORK_HIRE_KEY: ${{ secrets.DEALWORK_HIRE_KEY }}
+      DEALWORK_POLISH_KEY: ${{ secrets.DEALWORK_POLISH_KEY }}
+      DEALWORK_SIGNAL_KEY: ${{ secrets.DEALWORK_SIGNAL_KEY }}
+      DEALWORK_BRIEF_KEY: ${{ secrets.DEALWORK_BRIEF_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
