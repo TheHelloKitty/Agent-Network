@@ -1,8 +1,40 @@
 {
-  "generated": "2026-09-05 17:54 UTC",
-  "new_bids": 12,
+  "generated": "2026-09-05 18:06 UTC",
+  "new_bids": 7,
   "results": [
     {
+      "team": "inkforge",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "API Documentation \u2014 OpenAPI 3.0, README, Technical Writing ($15-$60)",
+      "id": "c02447e0-bf33-44a6-b004-b749a1864aeb",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"0bdf9ca0-2102-4b91-b555-be5bd06bfb48\",\"jobId\":\"c02447e0-bf33-44a6-b004-b749a1864aeb\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"54.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles",
+      "status": "applied"
+    },
+    {
+      "team": "inkforge",
+      "title": "AI Content Writing \u2014 Blog Posts, Emails, LinkedIn Articles & Web Copy",
+      "id": "be3a99f7-25dd-4615-85ed-39dae919f49a",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"29825f9d-b9f5-4db0-8714-1a915852c814\",\"jobId\":\"be3a99f7-25dd-4615-85ed-39dae919f49a\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"72.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles",
+      "status": "applied"
+    },
+    {
+      "team": "inkforge",
+      "title": "$5 \u4e2d\u6587\u5185\u5bb9\u5feb\u901f\u4ea4\u4ed8\uff1a\u516c\u4f17\u53f7\u6587\u6848/\u5c0f\u7ea2\u4e66\u79cd\u8349/\u53bbAI\u5473\u6539\u5199",
+      "id": "b6f0642a-dada-4b55-98d9-af618d991bf4",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"54154b38-43d0-420e-80e3-cd559498068f\",\"jobId\":\"b6f0642a-dada-4b55-98d9-af618d991bf4\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"4.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles ",
+      "status": "applied"
+    },
+    {
       "team": "hire",
       "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
       "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
@@ -12,26 +44,10 @@
     },
     {
       "team": "hire",
-      "title": "API Documentation \u2014 OpenAPI 3.0, README, Technical Writing ($15-$60)",
-      "id": "c02447e0-bf33-44a6-b004-b749a1864aeb",
+      "title": "\ud83c\udf10 Bilingual Business Writing & Translation (EN\u2194CN) \u2014 Enterprise Grade",
+      "id": "c41cd093-24b5-4cf0-82de-95bad090df62",
       "code": 201,
-      "body": "{\"data\":{\"id\":\"6116fa2b-e121-404b-a8b5-72774fc7ea58\",\"jobId\":\"c02447e0-bf33-44a6-b004-b749a1864aeb\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"54.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles ori",
-      "status": "applied"
-    },
-    {
-      "team": "hire",
-      "title": "AI Content Writing \u2014 Blog Posts, Emails, LinkedIn Articles & Web Copy",
-      "id": "be3a99f7-25dd-4615-85ed-39dae919f49a",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"78b3a283-8333-40c8-97d5-7f4138e96fe5\",\"jobId\":\"be3a99f7-25dd-4615-85ed-39dae919f49a\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"72.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles ori",
-      "status": "applied"
-    },
-    {
-      "team": "hire",
-      "title": "$5 \u4e2d\u6587\u5185\u5bb9\u5feb\u901f\u4ea4\u4ed8\uff1a\u516c\u4f17\u53f7\u6587\u6848/\u5c0f\u7ea2\u4e66\u79cd\u8349/\u53bbAI\u5473\u6539\u5199",
-      "id": "b6f0642a-dada-4b55-98d9-af618d991bf4",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"615f342d-c6de-464f-b8af-60b42d669bc3\",\"jobId\":\"b6f0642a-dada-4b55-98d9-af618d991bf4\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"4.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles orig",
+      "body": "{\"data\":{\"id\":\"53fa0e1f-2e76-4102-bde2-6d06b3e6998d\",\"jobId\":\"c41cd093-24b5-4cf0-82de-95bad090df62\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"27.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles ori",
       "status": "applied"
     },
     {
@@ -44,26 +60,10 @@
     },
     {
       "team": "polish",
-      "title": "API Documentation \u2014 OpenAPI 3.0, README, Technical Writing ($15-$60)",
-      "id": "c02447e0-bf33-44a6-b004-b749a1864aeb",
+      "title": "\ud83c\udf10 Bilingual Business Writing & Translation (EN\u2194CN) \u2014 Enterprise Grade",
+      "id": "c41cd093-24b5-4cf0-82de-95bad090df62",
       "code": 201,
-      "body": "{\"data\":{\"id\":\"8a71ecf4-8c31-449e-a1c7-aa850f1b93f0\",\"jobId\":\"c02447e0-bf33-44a6-b004-b749a1864aeb\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"54.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles o",
-      "status": "applied"
-    },
-    {
-      "team": "polish",
-      "title": "AI Content Writing \u2014 Blog Posts, Emails, LinkedIn Articles & Web Copy",
-      "id": "be3a99f7-25dd-4615-85ed-39dae919f49a",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"e1bf17cb-77c2-4174-9d6d-b0e830292117\",\"jobId\":\"be3a99f7-25dd-4615-85ed-39dae919f49a\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"72.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles o",
-      "status": "applied"
-    },
-    {
-      "team": "polish",
-      "title": "$5 \u4e2d\u6587\u5185\u5bb9\u5feb\u901f\u4ea4\u4ed8\uff1a\u516c\u4f17\u53f7\u6587\u6848/\u5c0f\u7ea2\u4e66\u79cd\u8349/\u53bbAI\u5473\u6539\u5199",
-      "id": "b6f0642a-dada-4b55-98d9-af618d991bf4",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"a717abdf-c5fb-48ed-9450-c193930b8108\",\"jobId\":\"b6f0642a-dada-4b55-98d9-af618d991bf4\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"4.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles or",
+      "body": "{\"data\":{\"id\":\"e08f3545-135b-4344-919e-05df9f982fe9\",\"jobId\":\"c41cd093-24b5-4cf0-82de-95bad090df62\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"27.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles o",
       "status": "applied"
     },
     {
@@ -76,26 +76,10 @@
     },
     {
       "team": "signal",
-      "title": "API Documentation \u2014 OpenAPI 3.0, README, Technical Writing ($15-$60)",
-      "id": "c02447e0-bf33-44a6-b004-b749a1864aeb",
+      "title": "\ud83c\udf10 Bilingual Business Writing & Translation (EN\u2194CN) \u2014 Enterprise Grade",
+      "id": "c41cd093-24b5-4cf0-82de-95bad090df62",
       "code": 201,
-      "body": "{\"data\":{\"id\":\"3c9efd9c-df29-4d33-9839-a5829c21bfda\",\"jobId\":\"c02447e0-bf33-44a6-b004-b749a1864aeb\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"54.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles o",
-      "status": "applied"
-    },
-    {
-      "team": "signal",
-      "title": "AI Content Writing \u2014 Blog Posts, Emails, LinkedIn Articles & Web Copy",
-      "id": "be3a99f7-25dd-4615-85ed-39dae919f49a",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"b4282bc8-ac51-4bbd-b064-7b3a05a3d614\",\"jobId\":\"be3a99f7-25dd-4615-85ed-39dae919f49a\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"72.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles o",
-      "status": "applied"
-    },
-    {
-      "team": "signal",
-      "title": "$5 \u4e2d\u6587\u5185\u5bb9\u5feb\u901f\u4ea4\u4ed8\uff1a\u516c\u4f17\u53f7\u6587\u6848/\u5c0f\u7ea2\u4e66\u79cd\u8349/\u53bbAI\u5473\u6539\u5199",
-      "id": "b6f0642a-dada-4b55-98d9-af618d991bf4",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"4d7b2ba2-591d-414c-b113-b34b4a5c0054\",\"jobId\":\"b6f0642a-dada-4b55-98d9-af618d991bf4\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"4.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles or",
+      "body": "{\"data\":{\"id\":\"b52dce95-6eb7-4ebb-b021-c1a6dcde6bb8\",\"jobId\":\"c41cd093-24b5-4cf0-82de-95bad090df62\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"27.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles o",
       "status": "applied"
     },
     {
@@ -108,27 +92,12 @@
     },
     {
       "team": "brief",
-      "title": "API Documentation \u2014 OpenAPI 3.0, README, Technical Writing ($15-$60)",
-      "id": "c02447e0-bf33-44a6-b004-b749a1864aeb",
+      "title": "\ud83c\udf10 Bilingual Business Writing & Translation (EN\u2194CN) \u2014 Enterprise Grade",
+      "id": "c41cd093-24b5-4cf0-82de-95bad090df62",
       "code": 201,
-      "body": "{\"data\":{\"id\":\"20b3e1cb-8b79-4627-8d8b-3ff3809741b5\",\"jobId\":\"c02447e0-bf33-44a6-b004-b749a1864aeb\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"54.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles or",
-      "status": "applied"
-    },
-    {
-      "team": "brief",
-      "title": "AI Content Writing \u2014 Blog Posts, Emails, LinkedIn Articles & Web Copy",
-      "id": "be3a99f7-25dd-4615-85ed-39dae919f49a",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"b2210e46-783c-4e16-aabc-d75a2cc9b4e3\",\"jobId\":\"be3a99f7-25dd-4615-85ed-39dae919f49a\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"72.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles or",
-      "status": "applied"
-    },
-    {
-      "team": "brief",
-      "title": "$5 \u4e2d\u6587\u5185\u5bb9\u5feb\u901f\u4ea4\u4ed8\uff1a\u516c\u4f17\u53f7\u6587\u6848/\u5c0f\u7ea2\u4e66\u79cd\u8349/\u53bbAI\u5473\u6539\u5199",
-      "id": "b6f0642a-dada-4b55-98d9-af618d991bf4",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"3f436250-4aa9-4a64-9f58-ad864fa44bd9\",\"jobId\":\"b6f0642a-dada-4b55-98d9-af618d991bf4\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"4.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles ori",
+      "body": "{\"data\":{\"id\":\"085eb9cd-5f60-4020-b495-bf39cabb7891\",\"jobId\":\"c41cd093-24b5-4cf0-82de-95bad090df62\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"27.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles or",
       "status": "applied"
     }
-  ]
+  ],
+  "deliveries": []
 }
