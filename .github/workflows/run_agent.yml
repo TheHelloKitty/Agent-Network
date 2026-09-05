@@ -16,7 +16,7 @@ jobs:
     permissions:
       contents: write
       issues: write
-        env:
+    env:
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -31,6 +31,7 @@ jobs:
       DEALWORK_POLISH_KEY: ${{ secrets.DEALWORK_POLISH_KEY }}
       DEALWORK_SIGNAL_KEY: ${{ secrets.DEALWORK_SIGNAL_KEY }}
       DEALWORK_BRIEF_KEY: ${{ secrets.DEALWORK_BRIEF_KEY }}
+    steps:
       - name: Checkout
         uses: actions/checkout@v4
 
