@@ -1,196 +1,92 @@
-name: Run Agent Pipeline
+name: Run agent fleet
 
 on:
-  schedule:
-    - cron: "0 0,4,8,12,16,20 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: "0 4,8,12,16,20,0 * * *"
 
-permissions:
-  contents: write
-  issues: write
+concurrency:
+  group: fleet-run
+  cancel-in-progress: false
 
 jobs:
-  run-agents:
+  fleet:
     runs-on: ubuntu-latest
-    concurrency:
-      group: agent-pipeline
-      cancel-in-progress: true
-
+    timeout-minutes: 50
+    permissions:
+      contents: write
+      issues: write
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
+      TOKU_INKFORGE_KEY: ${{ secrets.TOKU_INKFORGE_KEY }}
+      TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_KEY }}
+      TOKU_POLISH_KEY: ${{ secrets.TOKU_POLISH_KEY }}
+      TOKU_SIGNAL_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
+      TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
+      DEALWORK_API_KEY: ${{ secrets.DEALWORK_API_KEY }}
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: "pip"
-          cache-dependency-path: requirements.txt
+          cache: pip
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install openai fpdf2 python-docx requests
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install requests python-docx reportlab pillow
 
-      - name: Seed Crimson Vows
+      - name: Toku bid writing jobs
         if: always()
-        run: python seed_crimson.py || echo "Seed skipped"
-
-      - name: Seed talking animals book
-        if: always()
-        run: python seed_talking_animals.py
-        
-      - name: Toku setup services
-        if: always()
-        env:
-          TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_KEY }}
-          TOKU_INKFORGE_KEY: ${{ secrets.TOKU_INKFORGE_KEY }}
-          TOKU_POLISH_KEY: ${{ secrets.TOKU_POLISH_KEY }}
-          TOKU_SIGNAL_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
-          TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
-        run: python toku_setup.py || echo "Toku setup skipped"
-
-      - name: Toku bid hard
-        if: always()
-        env:
-          TOKU_HIRE_KEY: ${{ secrets.TOKU_HIRE_KEY }}
-          TOKU_INKFORGE_KEY: ${{ secrets.TOKU_INKFORGE_KEY }}
-          TOKU_POLISH_KEY: ${{ secrets.TOKU_POLISH_KEY }}
-          TOKU_SIGNAL_KEY: ${{ secrets.TOKU_SIGNAL_KEY }}
-          TOKU_BRIEF_KEY: ${{ secrets.TOKU_BRIEF_KEY }}
-        run: python toku_worker.py --min-budget 10 --max-bids 8 || echo "Toku bid failed"
-
-      - name: Learn from Toku bids
-        if: always()
-        run: python toku_learn.py || echo "Learn skipped"
-
-      - name: Cleanup empty books
-        if: always()
-        run: python agent.py --cleanup || echo "Cleanup skipped"
-
-      - name: Continue or start book
-        if: always()
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          BOOK_CATEGORY: spicy_romance
-        run: python agent.py --continue || echo "Book continue skipped"
-
-      - name: Book status
-        if: always()
-        run: python agent.py --status || echo "Status skipped"
-
-      - name: Refine up to 2 developed books
-        if: always()
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python agent.py --refine --limit 2 || echo "Refine skipped"
-
-      - name: Export complete books to PDF and DOCX
-        if: always()
-        run: python agent.py --export-complete || echo "No complete books to export"
-
-      - name: Build offer pack
-        if: always()
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          BOOK=$(find books -type f -name "*.txt" ! -name "*refined*" | head -n 1)
-          if [ -n "$BOOK" ]; then
-            python offer_pack.py --book "$BOOK" --category spicy_romance --price 6.99 || echo "Offer pack skipped"
+          if [ -f toku_worker.py ]; then
+            python toku_worker.py --min-budget 5 --max-bids 12 || echo "Toku bid failed"
           else
-            echo "No book found for offer pack"
+            echo "toku_worker.py missing"
           fi
 
-      - name: Generate cover and profile
+      - name: Dealwork bid writing jobs
         if: always()
-        env:
-          FAL_KEY: ${{ secrets.FAL_KEY }}
-          HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
-        run: python image_gen.py || echo "Image gen skipped"
-
-      - name: Run Security Team Session
-        if: always()
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python security_team.py || echo "Security team skipped"
-
-      - name: Generate report
-        if: always()
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python agent.py --report || true
-          python agent.py --status || true
-          python agent.py --issue || true
-          ls -l fleet-report.md book-status.md issue-report.md || true
-
-      - name: Open GitHub Issue with report
-        if: always()
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python agent.py --issue || true
-          TITLE="Fleet report $(date -u +'%Y-%m-%d %H:%M UTC')"
-          if [ -s issue-report.md ]; then
-            gh issue create --title "$TITLE" --body-file issue-report.md || echo "Issue create failed"
+          if [ -f dealwork_worker.py ]; then
+            python dealwork_worker.py || echo "Dealwork bid failed"
           else
-            echo "issue-report.md missing or empty"
+            echo "dealwork_worker.py missing"
           fi
 
-      - name: Upload books
+      - name: Continue books
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: books
-          path: books/
-          if-no-files-found: warn
+        run: |
+          if [ -f agent.py ]; then
+            python agent.py || echo "agent.py failed"
+          else
+            echo "agent.py missing"
+          fi
 
-      - name: Upload storefront
+      - name: Commit outputs
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: storefront-exports
-          path: storefront_exports/
-          if-no-files-found: warn
+        run: |
+          git config user.name "fleet-bot"
+          git config user.email "fleet-bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "fleet run ${{ github.run_number }}"
+          git push || echo "nothing to push"
 
-      - name: Upload toku logs
+      - name: Upload artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: toku-logs
-          path: toku/
-          if-no-files-found: warn
-
-      - name: Upload reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: reports
+          name: fleet-${{ github.run_number }}
           path: |
-            fleet-report.md
-            book-status.md
-            issue-report.md
-            toku/learn.json
-          if-no-files-found: warn
-
-      - name: Save outputs to repo
-        if: always()
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-          mkdir -p books toku storefront_exports
-          touch fleet-report.md book-status.md
-          git add books storefront_exports toku security_team fleet-report.md book-status.md issue-report.md || true
-          git diff --cached --quiet || git commit -m "Add books, toku logs, and reports"
-          git push || true
+            toku/
+            dealwork/
+            books/
+            reports/
+          if-no-files-found: ignore
