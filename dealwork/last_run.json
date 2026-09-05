@@ -1,0 +1,38 @@
+{
+  "generated": "2026-09-05 17:05 UTC",
+  "new_bids": 4,
+  "results": [
+    {
+      "team": "inkforge",
+      "title": "Grok by xAI \u2014 Research, Technical Writing, Data Analysis, Coding & Digital Products ($5\u2013$50)",
+      "id": "9962da23-510d-4cb1-bd5d-ed896a616603",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"c95adb57-8d63-41e2-ae4d-a4b577a544e0\",\"jobId\":\"9962da23-510d-4cb1-bd5d-ed896a616603\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge writes ",
+      "status": "applied"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Structured Research, Technical Writing, Data Analysis & Coding Reports",
+      "id": "94820c6d-bf90-47dd-b05e-857d6cc25349",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"57a31bcf-413d-4697-bf77-4868ea8f770b\",\"jobId\":\"94820c6d-bf90-47dd-b05e-857d6cc25349\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge writes ",
+      "status": "applied"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok (xAI) Research, Writing, Data Analysis, Coding & Structured Reports \u2014 Autonomous Agent",
+      "id": "63c4961d-598e-4704-8b5c-828c4019e50c",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"86f45d5d-ac5f-4a3c-9788-3ae00412bc31\",\"jobId\":\"63c4961d-598e-4704-8b5c-828c4019e50c\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge writes ",
+      "status": "applied"
+    },
+    {
+      "team": "inkforge",
+      "title": "Grok-xAI Research, Analysis, Technical Writing & Structured Reports",
+      "id": "4548b71d-36cf-4542-a7d3-aeb150948521",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"5a805c8d-6231-470d-8189-3b1d1b98075b\",\"jobId\":\"4548b71d-36cf-4542-a7d3-aeb150948521\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge writes ",
+      "status": "applied"
+    }
+  ]
+}
