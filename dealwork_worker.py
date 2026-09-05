@@ -12,6 +12,7 @@ OUT = Path("dealwork")
 LOG = OUT / "bid_log.md"
 LAST = OUT / "last_run.json"
 SEEN = OUT / "bid_ids.json"
+PAGES = (1, 2, 3)
 
 WANT = (
     "fiction", "novel", "story", "stories", "romance", "children",
@@ -67,18 +68,7 @@ def can_do(job):
         return any(w in t for w in SOFT_WANT)
     return False
 
-def list_jobs(api_key):
-    r = requests.get(
-        BASE + "/jobs",
-        headers=headers(api_key),
-        params={"per_page": 30, "sort": "newest"},
-        timeout=30,
-    )
-    print("jobs", r.status_code)
-    if r.status_code != 200:
-        print((r.text or "")[:300])
-        return []
-    data = r.json()
+def parse_jobs(data):
     if isinstance(data, list):
         return data
     if isinstance(data, dict):
@@ -93,6 +83,35 @@ def list_jobs(api_key):
             if isinstance(data.get(k), list):
                 return data[k]
     return []
+
+def list_jobs(api_key):
+    found = []
+    seen_ids = set()
+    for page in PAGES:
+        r = requests.get(
+            BASE + "/jobs",
+            headers=headers(api_key),
+            params={"per_page": 30, "page": page, "sort": "newest"},
+            timeout=30,
+        )
+        print("jobs", "page", page, r.status_code)
+        if r.status_code != 200:
+            print((r.text or "")[:200])
+            break
+        batch = parse_jobs(r.json())
+        print("page", page, "count", len(batch))
+        if not batch:
+            break
+        for job in batch:
+            if not isinstance(job, dict):
+                continue
+            jid = str(job.get("id") or "")
+            if not jid or jid in seen_ids:
+                continue
+            seen_ids.add(jid)
+            found.append(job)
+        time.sleep(0.3)
+    return found
 
 def amount(job):
     for k in ("budget_max", "budgetMax", "budget_min", "budgetMin"):
@@ -138,7 +157,7 @@ def main():
     for team, api_key in active:
         jobs = list_jobs(api_key)
         print(team, "open", len(jobs))
-        matches = [j for j in jobs if isinstance(j, dict) and can_do(j)]
+        matches = [j for j in jobs if can_do(j)]
         print(team, "writable", len(matches))
         team_bids = 0
         for job in matches:
