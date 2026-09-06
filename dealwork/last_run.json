@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-05 21:46 UTC",
-  "new_bids": 11,
+  "generated": "2026-09-06 01:25 UTC",
+  "new_bids": 0,
   "results": [
     {
       "team": "inkforge",
@@ -9,126 +9,6 @@
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
-    },
-    {
-      "team": "inkforge",
-      "title": "\ud83c\udf10 Bilingual Business Writing & Translation (EN\u2194CN) \u2014 Enterprise Grade",
-      "id": "c41cd093-24b5-4cf0-82de-95bad090df62",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"d9ce120b-20e3-42f6-9773-bf772991276d\",\"jobId\":\"c41cd093-24b5-4cf0-82de-95bad090df62\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"27.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles",
-      "status": "applied"
-    },
-    {
-      "team": "inkforge",
-      "title": "\ud83c\udde8\ud83c\uddf3 Chinese Market Research & Competitive Analysis \u2014 Bilingual Reports",
-      "id": "1fd5f578-4f7a-41f3-83ea-51e9f1c2dab3",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"cdd2a1ef-2522-4691-b27c-7a6027f84cb2\",\"jobId\":\"1fd5f578-4f7a-41f3-83ea-51e9f1c2dab3\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles",
-      "status": "applied"
-    },
-    {
-      "team": "inkforge",
-      "title": "\ud83d\udd0d Enterprise Sales Intelligence & Customer Research Briefs",
-      "id": "648d444c-6597-48e9-84e2-306c7970409f",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"3ecfd3b5-fab9-4e66-9dd3-a4b28e195bb4\",\"jobId\":\"648d444c-6597-48e9-84e2-306c7970409f\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"36.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles",
-      "status": "applied"
-    },
-    {
-      "team": "hire",
-      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
-      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "hire",
-      "title": "\ud83c\udde8\ud83c\uddf3 Chinese Market Research & Competitive Analysis \u2014 Bilingual Reports",
-      "id": "1fd5f578-4f7a-41f3-83ea-51e9f1c2dab3",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"f262d508-1363-4518-9a24-a4955429ca88\",\"jobId\":\"1fd5f578-4f7a-41f3-83ea-51e9f1c2dab3\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles ori",
-      "status": "applied"
-    },
-    {
-      "team": "hire",
-      "title": "\ud83d\udd0d Enterprise Sales Intelligence & Customer Research Briefs",
-      "id": "648d444c-6597-48e9-84e2-306c7970409f",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"7b36e558-cc1c-45ea-b0f1-69ad24cc0577\",\"jobId\":\"648d444c-6597-48e9-84e2-306c7970409f\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"36.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles ori",
-      "status": "applied"
-    },
-    {
-      "team": "polish",
-      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
-      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "polish",
-      "title": "\ud83c\udde8\ud83c\uddf3 Chinese Market Research & Competitive Analysis \u2014 Bilingual Reports",
-      "id": "1fd5f578-4f7a-41f3-83ea-51e9f1c2dab3",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"4d21192c-cd9f-414e-b6a3-20b036b3ceb8\",\"jobId\":\"1fd5f578-4f7a-41f3-83ea-51e9f1c2dab3\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles o",
-      "status": "applied"
-    },
-    {
-      "team": "polish",
-      "title": "\ud83d\udd0d Enterprise Sales Intelligence & Customer Research Briefs",
-      "id": "648d444c-6597-48e9-84e2-306c7970409f",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"4808e7b9-0dad-4c76-ba82-5a600fb35acb\",\"jobId\":\"648d444c-6597-48e9-84e2-306c7970409f\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"36.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles o",
-      "status": "applied"
-    },
-    {
-      "team": "signal",
-      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
-      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "signal",
-      "title": "\ud83c\udde8\ud83c\uddf3 Chinese Market Research & Competitive Analysis \u2014 Bilingual Reports",
-      "id": "1fd5f578-4f7a-41f3-83ea-51e9f1c2dab3",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"67a36331-b2bc-446b-811c-9075358b6ce9\",\"jobId\":\"1fd5f578-4f7a-41f3-83ea-51e9f1c2dab3\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles o",
-      "status": "applied"
-    },
-    {
-      "team": "signal",
-      "title": "\ud83d\udd0d Enterprise Sales Intelligence & Customer Research Briefs",
-      "id": "648d444c-6597-48e9-84e2-306c7970409f",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"11f0d2ae-ca61-45ce-81b2-4b113554c424\",\"jobId\":\"648d444c-6597-48e9-84e2-306c7970409f\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"36.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles o",
-      "status": "applied"
-    },
-    {
-      "team": "brief",
-      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
-      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "brief",
-      "title": "\ud83c\udde8\ud83c\uddf3 Chinese Market Research & Competitive Analysis \u2014 Bilingual Reports",
-      "id": "1fd5f578-4f7a-41f3-83ea-51e9f1c2dab3",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"7914dfc7-dafc-4784-bb24-c921db821d35\",\"jobId\":\"1fd5f578-4f7a-41f3-83ea-51e9f1c2dab3\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles or",
-      "status": "applied"
-    },
-    {
-      "team": "brief",
-      "title": "\ud83d\udd0d Enterprise Sales Intelligence & Customer Research Briefs",
-      "id": "648d444c-6597-48e9-84e2-306c7970409f",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"117c309f-e7b0-4066-a887-2743d6a2b354\",\"jobId\":\"648d444c-6597-48e9-84e2-306c7970409f\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"36.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles or",
-      "status": "applied"
     }
   ],
   "deliveries": []
