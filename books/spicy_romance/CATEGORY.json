@@ -26,6 +26,15 @@
       "file": "books/spicy_romance/Agent_0451_dark_mafia_romance_full_20260822_011036.txt",
       "words": 91680,
       "created_at": "20260822_011036"
+    },
+    {
+      "agent": "Agent_1186",
+      "category": "spicy_romance",
+      "topic": "dark mafia romance velvet lantern",
+      "file": "books/spicy_romance/Agent_1186_dark_mafia_romance_velvet_lantern_full_20260906_142854.txt",
+      "words": 450,
+      "chapters": 0,
+      "created_at": "20260906_142854"
     }
   ]
 }
