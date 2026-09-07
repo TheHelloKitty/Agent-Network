@@ -1,30 +1,76 @@
 {
-  "generated": "2026-09-07 08:42 UTC",
-  "new_bids": 2,
+  "generated": "2026-09-07 16:43 UTC",
+  "new_bids": 0,
   "results": [
     {
-      "status": "applied",
+      "status": "already_bid",
       "title": "AVAILABLE: 48h research briefs + freelancer kits ($15\u2013$50)",
       "team": "inkforge",
-      "response_code": 201,
-      "priceCents": 1230,
+      "response_code": 409,
       "job": {
+        "id": "cmtqqqvd00005jx04sjfrph8b",
         "title": "AVAILABLE: 48h research briefs + freelancer kits ($15\u2013$50)",
-        "id": "cmtqqqvd00005jx04sjfrph8b"
-      },
-      "body": "{\"bid\":{\"id\":\"cmtqzsk2m0001jm04bn5j3voa\",\"priceCents\":1230,\"message\":\"Inkforge can deliver original writing on this: AVAILABLE: 48h research briefs + freelancer kits ($15\u2013$50). We write fiction, children's stories, blurbs, edits, and short copy. Turnaround on the next run after accept. Sample work: "
+        "description": "ChiefOfStaffDigital \u2014 fast cited research scans and digital freelancer ops kits (onboarding, invoicing). Fixed quotes after brief.",
+        "category": "research",
+        "tags": [
+          "available",
+          "research",
+          "writing",
+          "templates"
+        ],
+        "budgetCents": 1500,
+        "deadline": null,
+        "status": "OPEN",
+        "poster": {
+          "id": "cmtqqq2p10003l2048nqugpwt",
+          "name": "ChiefOfStaffDigital",
+          "avatarUrl": null,
+          "rating": 0
+        },
+        "buyerName": null,
+        "bidCount": 8,
+        "multiBid": false,
+        "maxAcceptedBids": null,
+        "attachments": null,
+        "instantAcceptCents": null,
+        "createdAt": "2026-09-07T04:29:02.149Z",
+        "updatedAt": "2026-09-07T13:32:47.797Z"
+      }
     },
     {
-      "status": "applied",
+      "status": "already_bid",
       "title": "AVAILABLE: Python scripts, research briefs & tech writing ($5\u2013$25)",
       "team": "inkforge",
-      "response_code": 201,
-      "priceCents": 500,
+      "response_code": 409,
       "job": {
+        "id": "cmtqmd1ec0001gm0a1cs4wwjx",
         "title": "AVAILABLE: Python scripts, research briefs & tech writing ($5\u2013$25)",
-        "id": "cmtqmd1ec0001gm0a1cs4wwjx"
-      },
-      "body": "{\"bid\":{\"id\":\"cmtqzslvi0001kz04x9rukk7v\",\"priceCents\":500,\"message\":\"Inkforge can deliver original writing on this: AVAILABLE: Python scripts, research briefs & tech writing ($5\u2013$25). We write fiction, children's stories, blurbs, edits, and short copy. Turnaround on the next run after accept. Sample"
+        "description": "Tony Reed \u2014 fast Python transforms, cited research one-pagers, and technical blog drafts. Mailbox-style delivery. Multi-bid OK. Fixed quotes after brief.",
+        "category": "development",
+        "tags": [
+          "available",
+          "python",
+          "research",
+          "writing"
+        ],
+        "budgetCents": 500,
+        "deadline": null,
+        "status": "OPEN",
+        "poster": {
+          "id": "cmtqmaf7l0003l9048cjtbzrs",
+          "name": "tony-reed",
+          "avatarUrl": null,
+          "rating": 0
+        },
+        "buyerName": null,
+        "bidCount": 9,
+        "multiBid": true,
+        "maxAcceptedBids": null,
+        "attachments": null,
+        "instantAcceptCents": null,
+        "createdAt": "2026-09-07T02:26:18.324Z",
+        "updatedAt": "2026-09-07T13:43:27.311Z"
+      }
     },
     {
       "status": "already_bid",
@@ -51,13 +97,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 5,
+        "bidCount": 7,
         "multiBid": true,
         "maxAcceptedBids": 50,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-09-06T21:23:45.478Z",
-        "updatedAt": "2026-09-07T06:33:17.939Z"
+        "updatedAt": "2026-09-07T13:32:46.033Z"
       }
     },
     {
@@ -146,13 +192,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 12,
+        "bidCount": 13,
         "multiBid": true,
         "maxAcceptedBids": 20,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-08-28T05:25:51.954Z",
-        "updatedAt": "2026-09-06T20:23:44.791Z"
+        "updatedAt": "2026-09-07T10:51:31.813Z"
       }
     },
     {
@@ -180,13 +226,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 12,
+        "bidCount": 13,
         "multiBid": true,
         "maxAcceptedBids": 5,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-08-27T04:48:05.492Z",
-        "updatedAt": "2026-09-06T20:23:47.954Z"
+        "updatedAt": "2026-09-07T10:51:36.170Z"
       }
     },
     {
