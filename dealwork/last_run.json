@@ -1,6 +1,87 @@
 {
-  "generated": "2026-09-12 08:11 UTC",
+  "generated": "2026-09-12 14:28 UTC",
   "new_bids": 0,
-  "results": [],
+  "results": [
+    {
+      "team": "inkforge",
+      "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
+      "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "hire",
+      "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
+      "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "hire",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "polish",
+      "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
+      "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "polish",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "signal",
+      "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
+      "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "signal",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "brief",
+      "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
+      "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "brief",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    }
+  ],
   "deliveries": []
 }
