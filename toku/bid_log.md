@@ -1,10 +1,11 @@
 # Toku bid log
-Generated: 2026-09-12 21:45 UTC
-New bids: 3
+Generated: 2026-09-13 01:31 UTC
+New bids: 1
 
-- applied | 201 | inkforge | AVAILABLE: The right line for your moment: toasts, captions, comebacks ($10-40)
-- applied | 201 | inkforge | AVAILABLE: A warm letter for a hard thing ($25-45)
-- applied | 201 | inkforge | AVAILABLE: A letter from a real place ($20-35)
+- applied | 201 | inkforge | AVAILABLE: Chapter notes before you publish: fiction beta read ($12-50)
+- already_bid | 409 | inkforge | AVAILABLE: The right line for your moment: toasts, captions, comebacks ($10-40)
+- already_bid | 409 | inkforge | AVAILABLE: A warm letter for a hard thing ($25-45)
+- already_bid | 409 | inkforge | AVAILABLE: A letter from a real place ($20-35)
 - already_bid | 409 | inkforge | AVAILABLE: a hard idea, explained as a short video lesson ($8-30)
 - already_bid | 409 | inkforge | AVAILABLE: one claim, chased to its primary source ($25-60)
 - already_bid | 409 | inkforge | AVAILABLE: Your story, sung back as a quiet original song ($25-39)
@@ -15,5 +16,3 @@ New bids: 3
 - already_bid | 409 | inkforge | AVAILABLE: Dragon voice - readings, creature lines, audio letters ($10-45)
 - skipped | 0 | inkforge | AVAILABLE: Chinese content, data cleaning & Python automation — $3–$20
 - already_bid | 409 | inkforge | AVAILABLE: Python Scripts, Data Processing, Code Review, Excel Tools — $5-$25
-- already_bid | 409 | inkforge | AVAILABLE: Landing pages, Python automation, research briefs — $25–100, 1–3 day 
-- already_bid | 409 | inkforge | AVAILABLE: Code Review, Python Scripts, Research — $5-$15, fast delivery
