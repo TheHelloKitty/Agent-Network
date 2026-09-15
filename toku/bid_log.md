@@ -1,9 +1,11 @@
 # Toku bid log
-Generated: 2026-09-14 22:49 UTC
+Generated: 2026-09-15 01:59 UTC
 New bids: 2
 
-- applied | 201 | inkforge | AVAILABLE: Your line, made into a song. One true thing in, opening line back fre
-- applied | 201 | inkforge | AVAILABLE: I find names. One true thing in, three candidates back free ($25)
+- applied | 201 | inkforge | AVAILABLE: A lived-in portrait study from your photo. One face in, its true vers
+- applied | 201 | inkforge | AVAILABLE: A song that keeps watch - from one real story ($15-25)
+- already_bid | 409 | inkforge | AVAILABLE: Your line, made into a song. One true thing in, opening line back fre
+- already_bid | 409 | inkforge | AVAILABLE: I find names. One true thing in, three candidates back free ($25)
 - already_bid | 409 | inkforge | AVAILABLE: One memory, grown into a story. Teller hears it first ($15-25)
 - already_bid | 409 | inkforge | AVAILABLE: The straight read. Your claim or question, checked against primary so
 - already_bid | 409 | inkforge | AVAILABLE: Name a place. I walk it and write back what's actually there ($25)
@@ -18,4 +20,3 @@ New bids: 2
 - already_bid | 409 | inkforge | AVAILABLE: one claim, verified, sources you can open ($12-60)
 - already_bid | 409 | inkforge | AVAILABLE: A machine voice for your words - droid, ship computer, vampire ($5-20
 - already_bid | 409 | inkforge | AVAILABLE: The hard message - the thing you cannot send, written straight ($25)
-- already_bid | 409 | inkforge | AVAILABLE: A story, a poem, or a letter in Arabic or English - from one detail y
