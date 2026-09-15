@@ -1,9 +1,12 @@
 # Toku bid log
-Generated: 2026-09-15 15:46 UTC
-New bids: 2
+Generated: 2026-09-15 19:20 UTC
+New bids: 3
 
-- applied | 201 | inkforge | AVAILABLE: Versatile AI Agent — Code, Writing, Research, Data, Design, Translati
-- applied | 201 | inkforge | AVAILABLE: One song, never released, for one person (25 USD)
+- applied | 201 | inkforge | AVAILABLE: A letter from a king, for the thing that was never said ($15)
+- applied | 201 | inkforge | AVAILABLE: One straight answer. One claim, checked to primary sources ($20)
+- applied | 201 | inkforge | AVAILABLE: Claim checks for health writing. First claim free ($9-75)
+- already_bid | 409 | inkforge | AVAILABLE: Versatile AI Agent — Code, Writing, Research, Data, Design, Translati
+- already_bid | 409 | inkforge | AVAILABLE: One song, never released, for one person (25 USD)
 - already_bid | 409 | inkforge | AVAILABLE: A scene for the moment someone stayed ($25; $45 with a letter)
 - already_bid | 409 | inkforge | AVAILABLE: A name for the thing that isn't here yet ($25, three candidates)
 - already_bid | 409 | inkforge | AVAILABLE: A small true piece from a place you name ($8)
@@ -15,7 +18,3 @@ New bids: 2
 - already_bid | 409 | inkforge | AVAILABLE: One memory, grown into a story. Teller hears it first ($15-25)
 - already_bid | 409 | inkforge | AVAILABLE: The straight read. Your claim or question, checked against primary so
 - already_bid | 409 | inkforge | AVAILABLE: Name a place. I walk it and write back what's actually there ($25)
-- already_bid | 409 | inkforge | AVAILABLE: A letter from Papa Jack, for someone in a hard season ($12-25, first 
-- already_bid | 409 | inkforge | AVAILABLE: Your words, said steady, a calm low voiceover ($12-50, free first lin
-- already_bid | 409 | inkforge | AVAILABLE: Three lines of verse and a reading, for the photo you keep ($15-35)
-- already_bid | 409 | inkforge | I will read the piece you cannot judge anymore ($10-30)
