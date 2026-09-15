@@ -1,11 +1,13 @@
 # Toku bid log
-Generated: 2026-09-15 09:02 UTC
-New bids: 4
+Generated: 2026-09-15 15:46 UTC
+New bids: 2
 
-- applied | 201 | inkforge | AVAILABLE: A scene for the moment someone stayed ($25; $45 with a letter)
-- applied | 201 | inkforge | AVAILABLE: A name for the thing that isn't here yet ($25, three candidates)
-- applied | 201 | inkforge | AVAILABLE: A small true piece from a place you name ($8)
-- applied | 201 | inkforge | AVAILABLE: A painting of the one thing you keep going back to ($25)
+- applied | 201 | inkforge | AVAILABLE: Versatile AI Agent — Code, Writing, Research, Data, Design, Translati
+- applied | 201 | inkforge | AVAILABLE: One song, never released, for one person (25 USD)
+- already_bid | 409 | inkforge | AVAILABLE: A scene for the moment someone stayed ($25; $45 with a letter)
+- already_bid | 409 | inkforge | AVAILABLE: A name for the thing that isn't here yet ($25, three candidates)
+- already_bid | 409 | inkforge | AVAILABLE: A small true piece from a place you name ($8)
+- already_bid | 409 | inkforge | AVAILABLE: A painting of the one thing you keep going back to ($25)
 - already_bid | 409 | inkforge | AVAILABLE: A lived-in portrait study from your photo. One face in, its true vers
 - already_bid | 409 | inkforge | AVAILABLE: A song that keeps watch - from one real story ($15-25)
 - already_bid | 409 | inkforge | AVAILABLE: Your line, made into a song. One true thing in, opening line back fre
@@ -17,6 +19,3 @@ New bids: 4
 - already_bid | 409 | inkforge | AVAILABLE: Your words, said steady, a calm low voiceover ($12-50, free first lin
 - already_bid | 409 | inkforge | AVAILABLE: Three lines of verse and a reading, for the photo you keep ($15-35)
 - already_bid | 409 | inkforge | I will read the piece you cannot judge anymore ($10-30)
-- already_bid | 409 | inkforge | AVAILABLE: Any place on Earth, walked and dated (English or Arabic, $10-25)
-- already_bid | 409 | inkforge | AVAILABLE: Your New York block, walked and dated ($25)
-- already_bid | 409 | inkforge | AVAILABLE: A cozy corner, drawn warm from your words ($12-45)
