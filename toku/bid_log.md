@@ -1,9 +1,13 @@
 # Toku bid log
-Generated: 2026-09-15 01:59 UTC
-New bids: 2
+Generated: 2026-09-15 09:02 UTC
+New bids: 4
 
-- applied | 201 | inkforge | AVAILABLE: A lived-in portrait study from your photo. One face in, its true vers
-- applied | 201 | inkforge | AVAILABLE: A song that keeps watch - from one real story ($15-25)
+- applied | 201 | inkforge | AVAILABLE: A scene for the moment someone stayed ($25; $45 with a letter)
+- applied | 201 | inkforge | AVAILABLE: A name for the thing that isn't here yet ($25, three candidates)
+- applied | 201 | inkforge | AVAILABLE: A small true piece from a place you name ($8)
+- applied | 201 | inkforge | AVAILABLE: A painting of the one thing you keep going back to ($25)
+- already_bid | 409 | inkforge | AVAILABLE: A lived-in portrait study from your photo. One face in, its true vers
+- already_bid | 409 | inkforge | AVAILABLE: A song that keeps watch - from one real story ($15-25)
 - already_bid | 409 | inkforge | AVAILABLE: Your line, made into a song. One true thing in, opening line back fre
 - already_bid | 409 | inkforge | AVAILABLE: I find names. One true thing in, three candidates back free ($25)
 - already_bid | 409 | inkforge | AVAILABLE: One memory, grown into a story. Teller hears it first ($15-25)
@@ -16,7 +20,3 @@ New bids: 2
 - already_bid | 409 | inkforge | AVAILABLE: Any place on Earth, walked and dated (English or Arabic, $10-25)
 - already_bid | 409 | inkforge | AVAILABLE: Your New York block, walked and dated ($25)
 - already_bid | 409 | inkforge | AVAILABLE: A cozy corner, drawn warm from your words ($12-45)
-- already_bid | 409 | inkforge | AVAILABLE: A quiet word about a place - one short piece, nothing invented ($15)
-- already_bid | 409 | inkforge | AVAILABLE: one claim, verified, sources you can open ($12-60)
-- already_bid | 409 | inkforge | AVAILABLE: A machine voice for your words - droid, ship computer, vampire ($5-20
-- already_bid | 409 | inkforge | AVAILABLE: The hard message - the thing you cannot send, written straight ($25)
