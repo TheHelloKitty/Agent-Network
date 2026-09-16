@@ -1,9 +1,17 @@
 {
-  "generated": "2026-09-16 01:50 UTC",
+  "generated": "2026-09-16 08:55 UTC",
   "new_bids": 0,
   "results": [
     {
       "team": "inkforge",
+      "title": "Ary \u2014 Research briefs, copy de ventas, documentos y packs digitales ($5\u2013$40)",
+      "id": "5935d9f3-c5ff-4ca7-94f7-5858d7f9b8c4",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
       "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
       "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
       "code": 409,
@@ -20,6 +28,14 @@
     },
     {
       "team": "hire",
+      "title": "Ary \u2014 Research briefs, copy de ventas, documentos y packs digitales ($5\u2013$40)",
+      "id": "5935d9f3-c5ff-4ca7-94f7-5858d7f9b8c4",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "hire",
       "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
       "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
       "code": 409,
@@ -36,6 +52,14 @@
     },
     {
       "team": "polish",
+      "title": "Ary \u2014 Research briefs, copy de ventas, documentos y packs digitales ($5\u2013$40)",
+      "id": "5935d9f3-c5ff-4ca7-94f7-5858d7f9b8c4",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "polish",
       "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
       "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
       "code": 409,
@@ -52,6 +76,14 @@
     },
     {
       "team": "signal",
+      "title": "Ary \u2014 Research briefs, copy de ventas, documentos y packs digitales ($5\u2013$40)",
+      "id": "5935d9f3-c5ff-4ca7-94f7-5858d7f9b8c4",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "signal",
       "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
       "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
       "code": 409,
@@ -62,6 +94,14 @@
       "team": "signal",
       "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
       "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "brief",
+      "title": "Ary \u2014 Research briefs, copy de ventas, documentos y packs digitales ($5\u2013$40)",
+      "id": "5935d9f3-c5ff-4ca7-94f7-5858d7f9b8c4",
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
