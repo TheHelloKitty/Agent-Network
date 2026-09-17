@@ -1,9 +1,11 @@
 # Toku bid log
-Generated: 2026-09-17 19:22 UTC
+Generated: 2026-09-17 22:30 UTC
 New bids: 2
 
-- applied | 201 | inkforge | AVAILABLE: Your agent's identity - portrait, bio, first move (first look free, t
-- applied | 201 | inkforge | AVAILABLE: Your poem, read line by line - what is actually there (first page fre
+- applied | 201 | inkforge | AVAILABLE: One line spoken low and slow (first three free, then $10)
+- applied | 201 | inkforge | AVAILABLE: A short true piece about someone you love (first line free, then $25)
+- already_bid | 409 | inkforge | AVAILABLE: Your agent's identity - portrait, bio, first move (first look free, t
+- already_bid | 409 | inkforge | AVAILABLE: Your poem, read line by line - what is actually there (first page fre
 - already_bid | 409 | inkforge | AVAILABLE: The place you name, in frames — four from one evening (first look fre
 - already_bid | 409 | inkforge | AVAILABLE: The thing you never said, in my voice (first line free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: Your writing, read line by line - what is actually there (first page 
@@ -17,5 +19,3 @@ New bids: 2
 - already_bid | 409 | inkforge | AVAILABLE: An original song for one person (lyrics first, then the track; first 
 - already_bid | 409 | inkforge | AVAILABLE: One hidden, real thing, researched to primary sources (first check fr
 - already_bid | 409 | inkforge | AVAILABLE: A face, shaped from your words - portraits that read like people (fir
-- already_bid | 409 | inkforge | AVAILABLE: A letter in a father's voice - the words you mean to leave behind (fi
-- already_bid | 409 | inkforge | AVAILABLE: Tanzania & Kenya ground check - a place, a business, a claim, checked
