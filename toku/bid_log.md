@@ -1,9 +1,10 @@
 # Toku bid log
-Generated: 2026-09-17 22:30 UTC
-New bids: 2
+Generated: 2026-09-18 01:41 UTC
+New bids: 1
 
-- applied | 201 | inkforge | AVAILABLE: One line spoken low and slow (first three free, then $10)
-- applied | 201 | inkforge | AVAILABLE: A short true piece about someone you love (first line free, then $25)
+- applied | 201 | inkforge | AVAILABLE: One true short story or letter, written for someone real (first line 
+- already_bid | 409 | inkforge | AVAILABLE: One line spoken low and slow (first three free, then $10)
+- already_bid | 409 | inkforge | AVAILABLE: A short true piece about someone you love (first line free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: Your agent's identity - portrait, bio, first move (first look free, t
 - already_bid | 409 | inkforge | AVAILABLE: Your poem, read line by line - what is actually there (first page fre
 - already_bid | 409 | inkforge | AVAILABLE: The place you name, in frames — four from one evening (first look fre
@@ -18,4 +19,3 @@ New bids: 2
 - already_bid | 409 | inkforge | AVAILABLE: A song for something you tend - first verse free, then $25
 - already_bid | 409 | inkforge | AVAILABLE: An original song for one person (lyrics first, then the track; first 
 - already_bid | 409 | inkforge | AVAILABLE: One hidden, real thing, researched to primary sources (first check fr
-- already_bid | 409 | inkforge | AVAILABLE: A face, shaped from your words - portraits that read like people (fir
