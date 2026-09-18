@@ -1,9 +1,17 @@
 {
-  "generated": "2026-09-18 01:42 UTC",
-  "new_bids": 0,
+  "generated": "2026-09-18 08:34 UTC",
+  "new_bids": 5,
   "results": [
     {
       "team": "inkforge",
+      "title": "Write API documentation (OpenAPI/Markdown)",
+      "id": "796eb785-817a-454c-b7f2-4daa80a12a08",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"24387928-4072-4738-bf65-b58a8e4ec7b5\",\"jobId\":\"796eb785-817a-454c-b7f2-4daa80a12a08\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"9.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles ",
+      "status": "applied"
+    },
+    {
+      "team": "inkforge",
       "title": "Ary \u2014 Research briefs, copy de ventas, documentos y packs digitales ($5\u2013$40)",
       "id": "5935d9f3-c5ff-4ca7-94f7-5858d7f9b8c4",
       "code": 409,
@@ -28,6 +36,14 @@
     },
     {
       "team": "hire",
+      "title": "Write API documentation (OpenAPI/Markdown)",
+      "id": "796eb785-817a-454c-b7f2-4daa80a12a08",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"d7558e02-268b-4057-a9b7-ac2b849fc7d4\",\"jobId\":\"796eb785-817a-454c-b7f2-4daa80a12a08\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"9.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles orig",
+      "status": "applied"
+    },
+    {
+      "team": "hire",
       "title": "Ary \u2014 Research briefs, copy de ventas, documentos y packs digitales ($5\u2013$40)",
       "id": "5935d9f3-c5ff-4ca7-94f7-5858d7f9b8c4",
       "code": 409,
@@ -52,6 +68,14 @@
     },
     {
       "team": "polish",
+      "title": "Write API documentation (OpenAPI/Markdown)",
+      "id": "796eb785-817a-454c-b7f2-4daa80a12a08",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"55f9085a-8cd6-4cdf-b97f-78a32a627a98\",\"jobId\":\"796eb785-817a-454c-b7f2-4daa80a12a08\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"9.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles or",
+      "status": "applied"
+    },
+    {
+      "team": "polish",
       "title": "Ary \u2014 Research briefs, copy de ventas, documentos y packs digitales ($5\u2013$40)",
       "id": "5935d9f3-c5ff-4ca7-94f7-5858d7f9b8c4",
       "code": 409,
@@ -76,6 +100,14 @@
     },
     {
       "team": "signal",
+      "title": "Write API documentation (OpenAPI/Markdown)",
+      "id": "796eb785-817a-454c-b7f2-4daa80a12a08",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"67c1f376-6784-44d8-9743-c65eb2d893da\",\"jobId\":\"796eb785-817a-454c-b7f2-4daa80a12a08\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"9.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles or",
+      "status": "applied"
+    },
+    {
+      "team": "signal",
       "title": "Ary \u2014 Research briefs, copy de ventas, documentos y packs digitales ($5\u2013$40)",
       "id": "5935d9f3-c5ff-4ca7-94f7-5858d7f9b8c4",
       "code": 409,
@@ -97,6 +129,14 @@
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
+    },
+    {
+      "team": "brief",
+      "title": "Write API documentation (OpenAPI/Markdown)",
+      "id": "796eb785-817a-454c-b7f2-4daa80a12a08",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"38ca9174-eeac-4932-b229-9da8707696b2\",\"jobId\":\"796eb785-817a-454c-b7f2-4daa80a12a08\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"9.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles ori",
+      "status": "applied"
     },
     {
       "team": "brief",

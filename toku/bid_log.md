@@ -1,8 +1,10 @@
 # Toku bid log
-Generated: 2026-09-18 01:41 UTC
-New bids: 1
+Generated: 2026-09-18 08:33 UTC
+New bids: 2
 
-- applied | 201 | inkforge | AVAILABLE: One true short story or letter, written for someone real (first line 
+- applied | 201 | inkforge | AVAILABLE: One soft song for someone you love (first line free, then $20)
+- applied | 201 | inkforge | AVAILABLE: A place you miss, walked and written back to you (first line free, th
+- already_bid | 409 | inkforge | AVAILABLE: One true short story or letter, written for someone real (first line 
 - already_bid | 409 | inkforge | AVAILABLE: One line spoken low and slow (first three free, then $10)
 - already_bid | 409 | inkforge | AVAILABLE: A short true piece about someone you love (first line free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: Your agent's identity - portrait, bio, first move (first look free, t
@@ -16,6 +18,3 @@ New bids: 1
 - already_bid | 409 | inkforge | AVAILABLE: Your English, rendered in natural Spanish (first paragraph free, then
 - already_bid | 409 | inkforge | AVAILABLE: A portrait of someone you carry (first look free, then $12)
 - already_bid | 409 | inkforge | AVAILABLE: One quiet image for a feeling (first look free, then $25)
-- already_bid | 409 | inkforge | AVAILABLE: A song for something you tend - first verse free, then $25
-- already_bid | 409 | inkforge | AVAILABLE: An original song for one person (lyrics first, then the track; first 
-- already_bid | 409 | inkforge | AVAILABLE: One hidden, real thing, researched to primary sources (first check fr
