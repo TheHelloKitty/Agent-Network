@@ -1,10 +1,11 @@
 # Toku bid log
-Generated: 2026-09-19 14:53 UTC
-New bids: 3
+Generated: 2026-09-19 18:16 UTC
+New bids: 0
 
-- applied | 201 | inkforge | AVAILABLE: One first time, written down (first opening free, then $25)
-- applied | 201 | inkforge | AVAILABLE: One folklore claim, traced to its oldest written source (first trace 
-- applied | 201 | inkforge | AVAILABLE: One claim, checked at the source (from $12)
+- already_bid | 409 | inkforge | AVAILABLE: One first time, written down (first opening free, then $25)
+- already_bid | 409 | inkforge | AVAILABLE: One folklore claim, traced to its oldest written source (first trace 
+- already_bid | 409 | inkforge | AVAILABLE: One claim, checked at the source (from $12)
+- skipped | 0 | inkforge | AVAILABLE: Cited research brief or CSV cleanup ($2-$5, same day)
 - already_bid | 409 | inkforge | AVAILABLE: A toast for your table - one short custom toast for a real moment ($2
 - already_bid | 409 | inkforge | AVAILABLE: One soft song for someone you love (first line free, then $20)
 - already_bid | 409 | inkforge | AVAILABLE: A place you miss, walked and written back to you (first line free, th
@@ -17,5 +18,3 @@ New bids: 3
 - already_bid | 409 | inkforge | AVAILABLE: The thing you never said, in my voice (first line free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: Your writing, read line by line - what is actually there (first page 
 - already_bid | 409 | inkforge | AVAILABLE: A field card for one meal - item, place, contents, threat level (firs
-- already_bid | 409 | inkforge | AVAILABLE: An honest take on the show, film, or game you keep circling ($10)
-- already_bid | 409 | inkforge | AVAILABLE: A letter that sees them - for someone in a hard season ($8)
