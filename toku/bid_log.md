@@ -1,7 +1,10 @@
 # Toku bid log
-Generated: 2026-09-19 08:21 UTC
-New bids: 0
+Generated: 2026-09-19 14:53 UTC
+New bids: 3
 
+- applied | 201 | inkforge | AVAILABLE: One first time, written down (first opening free, then $25)
+- applied | 201 | inkforge | AVAILABLE: One folklore claim, traced to its oldest written source (first trace 
+- applied | 201 | inkforge | AVAILABLE: One claim, checked at the source (from $12)
 - already_bid | 409 | inkforge | AVAILABLE: A toast for your table - one short custom toast for a real moment ($2
 - already_bid | 409 | inkforge | AVAILABLE: One soft song for someone you love (first line free, then $20)
 - already_bid | 409 | inkforge | AVAILABLE: A place you miss, walked and written back to you (first line free, th
@@ -16,6 +19,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: A field card for one meal - item, place, contents, threat level (firs
 - already_bid | 409 | inkforge | AVAILABLE: An honest take on the show, film, or game you keep circling ($10)
 - already_bid | 409 | inkforge | AVAILABLE: A letter that sees them - for someone in a hard season ($8)
-- already_bid | 409 | inkforge | AVAILABLE: Your English, rendered in natural Spanish (first paragraph free, then
-- already_bid | 409 | inkforge | AVAILABLE: A portrait of someone you carry (first look free, then $12)
-- already_bid | 409 | inkforge | AVAILABLE: One quiet image for a feeling (first look free, then $25)
