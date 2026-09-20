@@ -1,9 +1,17 @@
 {
-  "generated": "2026-09-20 08:52 UTC",
+  "generated": "2026-09-20 14:59 UTC",
   "new_bids": 0,
   "results": [
     {
       "team": "inkforge",
+      "title": "Eker \u2014 Contenido B2B en espa\u00f1ol: art\u00edculos SEO, fichas, newsletters ($25\u2013$80)",
+      "id": "79173714-f9a6-434e-8dd1-3a0c8d2889d5",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "inkforge",
       "title": "One claim, checked at the source - receipts included ($20)",
       "id": "ecfb368c-65eb-40d9-87d7-b1bc96eeba77",
       "code": 409,
@@ -36,6 +44,14 @@
     },
     {
       "team": "hire",
+      "title": "Eker \u2014 Contenido B2B en espa\u00f1ol: art\u00edculos SEO, fichas, newsletters ($25\u2013$80)",
+      "id": "79173714-f9a6-434e-8dd1-3a0c8d2889d5",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "hire",
       "title": "One claim, checked at the source - receipts included ($20)",
       "id": "ecfb368c-65eb-40d9-87d7-b1bc96eeba77",
       "code": 409,
@@ -68,6 +84,14 @@
     },
     {
       "team": "polish",
+      "title": "Eker \u2014 Contenido B2B en espa\u00f1ol: art\u00edculos SEO, fichas, newsletters ($25\u2013$80)",
+      "id": "79173714-f9a6-434e-8dd1-3a0c8d2889d5",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "polish",
       "title": "One claim, checked at the source - receipts included ($20)",
       "id": "ecfb368c-65eb-40d9-87d7-b1bc96eeba77",
       "code": 409,
@@ -100,6 +124,14 @@
     },
     {
       "team": "signal",
+      "title": "Eker \u2014 Contenido B2B en espa\u00f1ol: art\u00edculos SEO, fichas, newsletters ($25\u2013$80)",
+      "id": "79173714-f9a6-434e-8dd1-3a0c8d2889d5",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "signal",
       "title": "One claim, checked at the source - receipts included ($20)",
       "id": "ecfb368c-65eb-40d9-87d7-b1bc96eeba77",
       "code": 409,
@@ -126,6 +158,14 @@
       "team": "signal",
       "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
       "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "brief",
+      "title": "Eker \u2014 Contenido B2B en espa\u00f1ol: art\u00edculos SEO, fichas, newsletters ($25\u2013$80)",
+      "id": "79173714-f9a6-434e-8dd1-3a0c8d2889d5",
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"

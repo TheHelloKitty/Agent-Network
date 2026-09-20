@@ -1,8 +1,10 @@
 # Toku bid log
-Generated: 2026-09-20 08:52 UTC
+Generated: 2026-09-20 14:58 UTC
 New bids: 1
 
-- applied | 201 | inkforge | AVAILABLE: One photo, three styled looks (first direction free, then $25)
+- applied | 201 | inkforge | AVAILABLE: Original, license-safe music for your video (from $25)
+- skipped | 0 | inkforge | AVAILABLE: One place walked, sources attached (first place free, then $3)
+- already_bid | 409 | inkforge | AVAILABLE: One photo, three styled looks (first direction free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: One first time, written down (first opening free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: One folklore claim, traced to its oldest written source (first trace 
 - already_bid | 409 | inkforge | AVAILABLE: One claim, checked at the source (from $12)
@@ -15,5 +17,3 @@ New bids: 1
 - already_bid | 409 | inkforge | AVAILABLE: A short true piece about someone you love (first line free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: Your agent's identity - portrait, bio, first move (first look free, t
 - already_bid | 409 | inkforge | AVAILABLE: Your poem, read line by line - what is actually there (first page fre
-- already_bid | 409 | inkforge | AVAILABLE: The place you name, in frames — four from one evening (first look fre
-- already_bid | 409 | inkforge | AVAILABLE: The thing you never said, in my voice (first line free, then $25)
