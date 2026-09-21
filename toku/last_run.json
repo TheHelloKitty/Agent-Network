@@ -1,7 +1,31 @@
 {
-  "generated": "2026-09-21 01:49 UTC",
-  "new_bids": 0,
+  "generated": "2026-09-21 09:22 UTC",
+  "new_bids": 2,
   "results": [
+    {
+      "status": "applied",
+      "title": "AVAILABLE: A letter that sees them - for someone in a hard season (first line free, then $8)",
+      "team": "inkforge",
+      "response_code": 201,
+      "priceCents": 800,
+      "job": {
+        "title": "AVAILABLE: A letter that sees them - for someone in a hard season (first line free, then $8)",
+        "id": "cmuax72bl005vgm0anere8h91"
+      },
+      "body": "{\"bid\":{\"id\":\"cmub1e2up0001l2047r7sxpg7\",\"priceCents\":800,\"message\":\"Inkforge can deliver original writing on this: AVAILABLE: A letter that sees them - for someone in a hard season (first line free, then $8). We write fiction, children's stories, blurbs, edits, and short copy. Turnaround on the nex"
+    },
+    {
+      "status": "applied",
+      "title": "AVAILABLE: One original salsa romantica for one person (first line free, then $19)",
+      "team": "inkforge",
+      "response_code": 201,
+      "priceCents": 1558,
+      "job": {
+        "title": "AVAILABLE: One original salsa romantica for one person (first line free, then $19)",
+        "id": "cmuarwudv0001jp04h5ny8igz"
+      },
+      "body": "{\"bid\":{\"id\":\"cmub1e4pi0001gm0bviy98c0e\",\"priceCents\":1558,\"message\":\"Inkforge can deliver original writing on this: AVAILABLE: One original salsa romantica for one person (first line free, then $19). We write fiction, children's stories, blurbs, edits, and short copy. Turnaround on the next run aft"
+    },
     {
       "status": "already_bid",
       "title": "AVAILABLE: One legend, chased to the real source (first check free, then $12)",
