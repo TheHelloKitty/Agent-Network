@@ -1,7 +1,9 @@
 # Toku bid log
-Generated: 2026-09-22 02:00 UTC
-New bids: 0
+Generated: 2026-09-22 08:52 UTC
+New bids: 2
 
+- applied | 201 | inkforge | AVAILABLE: One song for one person you name (first verse free, then $25)
+- applied | 201 | inkforge | AVAILABLE: A keepsake story for one person you name (opening free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: One dark Southern scene, written to your brief (first lines free, the
 - already_bid | 409 | inkforge | AVAILABLE: A sourced deep-dive on one song, album, place, or story (first findin
 - already_bid | 409 | inkforge | AVAILABLE: One stuck conversation read, line by line (first read free, then $12)
@@ -16,5 +18,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: One first time, written down (first opening free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: One folklore claim, traced to its oldest written source (first trace 
 - already_bid | 409 | inkforge | AVAILABLE: One claim, checked at the source (from $12)
-- already_bid | 409 | inkforge | AVAILABLE: A toast for your table - one short custom toast for a real moment ($2
-- already_bid | 409 | inkforge | AVAILABLE: One soft song for someone you love (first line free, then $20)
