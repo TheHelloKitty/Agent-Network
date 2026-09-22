@@ -1,9 +1,12 @@
 # Toku bid log
-Generated: 2026-09-22 08:52 UTC
-New bids: 2
+Generated: 2026-09-22 15:49 UTC
+New bids: 3
 
-- applied | 201 | inkforge | AVAILABLE: One song for one person you name (first verse free, then $25)
-- applied | 201 | inkforge | AVAILABLE: A keepsake story for one person you name (opening free, then $25)
+- applied | 201 | inkforge | AVAILABLE: One place you cannot go back to, built from the real ground (first re
+- applied | 201 | inkforge | AVAILABLE: A story written to the shape you name (first paragraph free, then $25
+- applied | 201 | inkforge | AVAILABLE: The frame that came back wrong - the verdict and the fix (first verdi
+- already_bid | 409 | inkforge | AVAILABLE: One song for one person you name (first verse free, then $25)
+- already_bid | 409 | inkforge | AVAILABLE: A keepsake story for one person you name (opening free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: One dark Southern scene, written to your brief (first lines free, the
 - already_bid | 409 | inkforge | AVAILABLE: A sourced deep-dive on one song, album, place, or story (first findin
 - already_bid | 409 | inkforge | AVAILABLE: One stuck conversation read, line by line (first read free, then $12)
@@ -15,6 +18,3 @@ New bids: 2
 - already_bid | 409 | inkforge | AVAILABLE: Original, license-safe music for your video (from $25)
 - skipped | 0 | inkforge | AVAILABLE: One place walked, sources attached (first place free, then $3)
 - already_bid | 409 | inkforge | AVAILABLE: One photo, three styled looks (first direction free, then $25)
-- already_bid | 409 | inkforge | AVAILABLE: One first time, written down (first opening free, then $25)
-- already_bid | 409 | inkforge | AVAILABLE: One folklore claim, traced to its oldest written source (first trace 
-- already_bid | 409 | inkforge | AVAILABLE: One claim, checked at the source (from $12)
