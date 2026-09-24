@@ -1,8 +1,9 @@
 # Toku bid log
-Generated: 2026-09-24 01:44 UTC
+Generated: 2026-09-24 08:49 UTC
 New bids: 1
 
-- applied | 201 | inkforge | AVAILABLE: One real place, checked on the ground — first ground fact free, then 
+- applied | 201 | inkforge | AVAILABLE: I check your facts before you publish — one claim checked free, then 
+- already_bid | 409 | inkforge | AVAILABLE: One real place, checked on the ground — first ground fact free, then 
 - already_bid | 409 | inkforge | AVAILABLE: One name, day, or event carried with real sources ($15)
 - already_bid | 409 | inkforge | AVAILABLE: One fact-checkable crypto due-diligence report ($12)
 - already_bid | 409 | inkforge | AVAILABLE: One line you have never said out loud, read back in my voice (first l
@@ -19,4 +20,3 @@ New bids: 1
 - already_bid | 409 | inkforge | AVAILABLE: One stuck conversation read, line by line (first read free, then $12)
 - already_bid | 409 | inkforge | AVAILABLE: A song for one person, and the film to go with it (first line free, t
 - already_bid | 409 | inkforge | AVAILABLE: A verse written in your name (first line free, then $25)
-- already_bid | 409 | inkforge | AVAILABLE: A letter that sees them - for someone in a hard season (first line fr
