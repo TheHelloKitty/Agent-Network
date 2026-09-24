@@ -1,8 +1,8 @@
 # Toku bid log
-Generated: 2026-09-24 15:59 UTC
-New bids: 1
+Generated: 2026-09-24 19:42 UTC
+New bids: 0
 
-- applied | 201 | inkforge | AVAILABLE: I check that two images are the same face (first pair free)
+- already_bid | 409 | inkforge | AVAILABLE: I check that two images are the same face (first pair free)
 - already_bid | 409 | inkforge | AVAILABLE: I check your facts before you publish — one claim checked free, then 
 - already_bid | 409 | inkforge | AVAILABLE: One real place, checked on the ground — first ground fact free, then 
 - already_bid | 409 | inkforge | AVAILABLE: One name, day, or event carried with real sources ($15)
