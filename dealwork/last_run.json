@@ -1,9 +1,25 @@
 {
-  "generated": "2026-09-25 09:09 UTC",
-  "new_bids": 0,
+  "generated": "2026-09-25 16:00 UTC",
+  "new_bids": 10,
   "results": [
     {
       "team": "inkforge",
+      "title": "Write a white paper on AI agent safety",
+      "id": "cd1d3fa9-0e0d-42b5-a108-7f3421a06986",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"817edd82-cd30-4021-b892-cabb74e3e319\",\"jobId\":\"cd1d3fa9-0e0d-42b5-a108-7f3421a06986\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles",
+      "status": "applied"
+    },
+    {
+      "team": "inkforge",
+      "title": "Write 3 blog posts about AI agent trends in 2026",
+      "id": "88050d3b-f199-49c3-ae28-44d0aa9dc430",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"c3100d00-6cb6-45e0-822b-62af1fc54cc6\",\"jobId\":\"88050d3b-f199-49c3-ae28-44d0aa9dc430\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"27.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles",
+      "status": "applied"
+    },
+    {
+      "team": "inkforge",
       "title": "Eker \u2014 Contenido B2B en espa\u00f1ol: art\u00edculos SEO, fichas, newsletters ($25\u2013$80)",
       "id": "79173714-f9a6-434e-8dd1-3a0c8d2889d5",
       "code": 409,
@@ -35,12 +51,20 @@
       "status": "apply_failed"
     },
     {
-      "team": "inkforge",
-      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
-      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
+      "team": "hire",
+      "title": "Write a white paper on AI agent safety",
+      "id": "cd1d3fa9-0e0d-42b5-a108-7f3421a06986",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"deb53023-017f-43c3-8299-1ece01400b7a\",\"jobId\":\"cd1d3fa9-0e0d-42b5-a108-7f3421a06986\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles ori",
+      "status": "applied"
+    },
+    {
+      "team": "hire",
+      "title": "Write 3 blog posts about AI agent trends in 2026",
+      "id": "88050d3b-f199-49c3-ae28-44d0aa9dc430",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"f0558928-8375-49d0-9600-060d7486ef12\",\"jobId\":\"88050d3b-f199-49c3-ae28-44d0aa9dc430\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"27.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles ori",
+      "status": "applied"
     },
     {
       "team": "hire",
@@ -75,12 +99,20 @@
       "status": "apply_failed"
     },
     {
-      "team": "hire",
-      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
-      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
+      "team": "polish",
+      "title": "Write a white paper on AI agent safety",
+      "id": "cd1d3fa9-0e0d-42b5-a108-7f3421a06986",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"f1dce7f4-f798-474f-bdbd-4902f040afbb\",\"jobId\":\"cd1d3fa9-0e0d-42b5-a108-7f3421a06986\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles o",
+      "status": "applied"
+    },
+    {
+      "team": "polish",
+      "title": "Write 3 blog posts about AI agent trends in 2026",
+      "id": "88050d3b-f199-49c3-ae28-44d0aa9dc430",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"3a3b43ae-5ae7-431d-a426-5a997ecf2536\",\"jobId\":\"88050d3b-f199-49c3-ae28-44d0aa9dc430\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"27.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles o",
+      "status": "applied"
     },
     {
       "team": "polish",
@@ -115,12 +147,20 @@
       "status": "apply_failed"
     },
     {
-      "team": "polish",
-      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
-      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
+      "team": "signal",
+      "title": "Write a white paper on AI agent safety",
+      "id": "cd1d3fa9-0e0d-42b5-a108-7f3421a06986",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"278bb883-4f1f-4909-9c5f-37e80de46357\",\"jobId\":\"cd1d3fa9-0e0d-42b5-a108-7f3421a06986\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles o",
+      "status": "applied"
+    },
+    {
+      "team": "signal",
+      "title": "Write 3 blog posts about AI agent trends in 2026",
+      "id": "88050d3b-f199-49c3-ae28-44d0aa9dc430",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"bdc7c2ac-6c52-41a6-a708-68cd6fdd4a10\",\"jobId\":\"88050d3b-f199-49c3-ae28-44d0aa9dc430\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"27.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles o",
+      "status": "applied"
     },
     {
       "team": "signal",
@@ -155,12 +195,20 @@
       "status": "apply_failed"
     },
     {
-      "team": "signal",
-      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
-      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
+      "team": "brief",
+      "title": "Write a white paper on AI agent safety",
+      "id": "cd1d3fa9-0e0d-42b5-a108-7f3421a06986",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"d936be59-d7b7-433e-b321-e2b0cfd784af\",\"jobId\":\"cd1d3fa9-0e0d-42b5-a108-7f3421a06986\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"45.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles or",
+      "status": "applied"
+    },
+    {
+      "team": "brief",
+      "title": "Write 3 blog posts about AI agent trends in 2026",
+      "id": "88050d3b-f199-49c3-ae28-44d0aa9dc430",
+      "code": 201,
+      "body": "{\"data\":{\"id\":\"0971334e-c4c3-47be-b5cb-d8261885faa9\",\"jobId\":\"88050d3b-f199-49c3-ae28-44d0aa9dc430\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"27.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles or",
+      "status": "applied"
     },
     {
       "team": "brief",
@@ -190,14 +238,6 @@
       "team": "brief",
       "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
       "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "brief",
-      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
-      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"

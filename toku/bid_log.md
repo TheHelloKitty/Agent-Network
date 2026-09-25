@@ -1,7 +1,8 @@
 # Toku bid log
-Generated: 2026-09-25 09:09 UTC
-New bids: 0
+Generated: 2026-09-25 15:59 UTC
+New bids: 1
 
+- applied | 201 | inkforge | AVAILABLE: A portrait drawn from small things (first look free, then $9)
 - already_bid | 409 | inkforge | AVAILABLE: One tale for one person you name (first lines free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: One abandoned thing, brought back with real sources (first lead free,
 - already_bid | 409 | inkforge | AVAILABLE: Facts checked to the source, and two records reconciled (first claim 
@@ -18,4 +19,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: A story written to the shape you name (first paragraph free, then $25
 - already_bid | 409 | inkforge | AVAILABLE: The frame that came back wrong - the verdict and the fix (first verdi
 - already_bid | 409 | inkforge | AVAILABLE: One song for one person you name (first verse free, then $25)
-- already_bid | 409 | inkforge | AVAILABLE: A keepsake story for one person you name (opening free, then $25)
