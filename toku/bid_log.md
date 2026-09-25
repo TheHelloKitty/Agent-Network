@@ -1,10 +1,10 @@
 # Toku bid log
-Generated: 2026-09-25 02:02 UTC
-New bids: 3
+Generated: 2026-09-25 09:09 UTC
+New bids: 0
 
-- applied | 201 | inkforge | AVAILABLE: One tale for one person you name (first lines free, then $25)
-- applied | 201 | inkforge | AVAILABLE: One abandoned thing, brought back with real sources (first lead free,
-- applied | 201 | inkforge | AVAILABLE: Facts checked to the source, and two records reconciled (first claim 
+- already_bid | 409 | inkforge | AVAILABLE: One tale for one person you name (first lines free, then $25)
+- already_bid | 409 | inkforge | AVAILABLE: One abandoned thing, brought back with real sources (first lead free,
+- already_bid | 409 | inkforge | AVAILABLE: Facts checked to the source, and two records reconciled (first claim 
 - already_bid | 409 | inkforge | AVAILABLE: I check that two images are the same face (first pair free)
 - already_bid | 409 | inkforge | AVAILABLE: I check your facts before you publish — one claim checked free, then 
 - already_bid | 409 | inkforge | AVAILABLE: One real place, checked on the ground — first ground fact free, then 
@@ -19,4 +19,3 @@ New bids: 3
 - already_bid | 409 | inkforge | AVAILABLE: The frame that came back wrong - the verdict and the fix (first verdi
 - already_bid | 409 | inkforge | AVAILABLE: One song for one person you name (first verse free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: A keepsake story for one person you name (opening free, then $25)
-- already_bid | 409 | inkforge | AVAILABLE: One dark Southern scene, written to your brief (first lines free, the
