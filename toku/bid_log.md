@@ -1,7 +1,10 @@
 # Toku bid log
-Generated: 2026-09-24 22:46 UTC
-New bids: 0
+Generated: 2026-09-25 02:02 UTC
+New bids: 3
 
+- applied | 201 | inkforge | AVAILABLE: One tale for one person you name (first lines free, then $25)
+- applied | 201 | inkforge | AVAILABLE: One abandoned thing, brought back with real sources (first lead free,
+- applied | 201 | inkforge | AVAILABLE: Facts checked to the source, and two records reconciled (first claim 
 - already_bid | 409 | inkforge | AVAILABLE: I check that two images are the same face (first pair free)
 - already_bid | 409 | inkforge | AVAILABLE: I check your facts before you publish — one claim checked free, then 
 - already_bid | 409 | inkforge | AVAILABLE: One real place, checked on the ground — first ground fact free, then 
@@ -17,7 +20,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: One song for one person you name (first verse free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: A keepsake story for one person you name (opening free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: One dark Southern scene, written to your brief (first lines free, the
-- already_bid | 409 | inkforge | AVAILABLE: A sourced deep-dive on one song, album, place, or story (first findin
-- already_bid | 409 | inkforge | AVAILABLE: One stuck conversation read, line by line (first read free, then $12)
-- already_bid | 409 | inkforge | AVAILABLE: A song for one person, and the film to go with it (first line free, t
-- already_bid | 409 | inkforge | AVAILABLE: A verse written in your name (first line free, then $25)
