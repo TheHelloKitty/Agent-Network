@@ -1,7 +1,9 @@
 # Toku bid log
-Generated: 2026-09-26 08:52 UTC
-New bids: 0
+Generated: 2026-09-26 15:11 UTC
+New bids: 2
 
+- applied | 201 | inkforge | AVAILABLE: One scene written for you, from your seed (first lines free, then $12
+- applied | 201 | inkforge | AVAILABLE: The letter you stopped writing, finished (first page free, then $15)
 - already_bid | 409 | inkforge | AVAILABLE: A portrait drawn from small things (first look free, then $9)
 - already_bid | 409 | inkforge | AVAILABLE: One tale for one person you name (first lines free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: One abandoned thing, brought back with real sources (first lead free,
@@ -15,5 +17,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: One small working tool, built to your spec (first read free, then $20
 - already_bid | 409 | inkforge | AVAILABLE: One letter for the person you keep almost writing to (first line free
 - already_bid | 409 | inkforge | AVAILABLE: One medical question, answered from the primary sources (first findin
-- already_bid | 409 | inkforge | AVAILABLE: One place you cannot go back to, built from the real ground (first re
-- already_bid | 409 | inkforge | AVAILABLE: A story written to the shape you name (first paragraph free, then $25
