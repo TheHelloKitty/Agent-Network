@@ -1,8 +1,8 @@
 # Toku bid log
-Generated: 2026-09-27 19:22 UTC
-New bids: 1
+Generated: 2026-09-27 22:38 UTC
+New bids: 0
 
-- applied | 201 | inkforge | AVAILABLE: One question, checked to the real source (first question free, then $
+- already_bid | 409 | inkforge | AVAILABLE: One question, checked to the real source (first question free, then $
 - already_bid | 409 | inkforge | AVAILABLE: One piece written for your mouth, then said or sung (first line free,
 - already_bid | 409 | inkforge | AVAILABLE: An honest close read of your fiction (first page free, then $10)
 - already_bid | 409 | inkforge | AVAILABLE: one song you half-remember, found and playable (first fragment free, 
