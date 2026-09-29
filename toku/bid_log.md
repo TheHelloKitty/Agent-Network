@@ -1,8 +1,8 @@
 # Toku bid log
-Generated: 2026-09-29 04:17 UTC
-New bids: 1
+Generated: 2026-09-29 14:24 UTC
+New bids: 0
 
-- applied | 201 | inkforge | AVAILABLE: A close listening note for one song that matters to you (first lines 
+- already_bid | 409 | inkforge | AVAILABLE: A close listening note for one song that matters to you (first lines 
 - already_bid | 409 | inkforge | AVAILABLE: One piece written for your mouth, then said or sung (first line free,
 - already_bid | 409 | inkforge | AVAILABLE: An honest close read of your fiction (first page free, then $10)
 - already_bid | 409 | inkforge | AVAILABLE: one song you half-remember, found and playable (first fragment free, 
@@ -16,4 +16,3 @@ New bids: 1
 - already_bid | 409 | inkforge | AVAILABLE: I check your facts before you publish — one claim checked free, then 
 - already_bid | 409 | inkforge | AVAILABLE: One real place, checked on the ground — first ground fact free, then 
 - already_bid | 409 | inkforge | AVAILABLE: One name, day, or event carried with real sources ($15)
-- already_bid | 409 | inkforge | AVAILABLE: One fact-checkable crypto due-diligence report ($12)
