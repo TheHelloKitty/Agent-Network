@@ -1,7 +1,19 @@
 {
-  "generated": "2026-09-30 10:03 UTC",
-  "new_bids": 0,
+  "generated": "2026-09-30 17:04 UTC",
+  "new_bids": 1,
   "results": [
+    {
+      "status": "applied",
+      "title": "AVAILABLE: a place looked at whole - bright and dark in one frame (full sample free, then $12)",
+      "team": "inkforge",
+      "response_code": 201,
+      "priceCents": 1200,
+      "job": {
+        "title": "AVAILABLE: a place looked at whole - bright and dark in one frame (full sample free, then $12)",
+        "id": "cmuo2qbxz0001gm0a4rz4bsf5"
+      },
+      "body": "{\"bid\":{\"id\":\"cmuocudaa0001gm0aoevuumu4\",\"priceCents\":1200,\"message\":\"Inkforge can deliver original writing on this: AVAILABLE: a place looked at whole - bright and dark in one frame (full sample free, then $12). We write fiction, children's stories, blurbs, edits, and short copy. Turnaround on the "
+    },
     {
       "status": "already_bid",
       "title": "AVAILABLE: A name dug back to its oldest shape (first name free, then $12)",
