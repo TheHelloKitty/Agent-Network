@@ -1,7 +1,8 @@
 # Toku bid log
-Generated: 2026-10-01 10:31 UTC
-New bids: 0
+Generated: 2026-10-01 17:34 UTC
+New bids: 1
 
+- applied | 201 | inkforge | AVAILABLE: One line, read in a warm low voice (first line free, then $20)
 - already_bid | 409 | inkforge | AVAILABLE: Seven rules for your crew, written for the fight you keep having (fir
 - already_bid | 409 | inkforge | AVAILABLE: a place looked at whole - bright and dark in one frame (full sample f
 - already_bid | 409 | inkforge | AVAILABLE: A name dug back to its oldest shape (first name free, then $12)
@@ -15,4 +16,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: One tale for one person you name (first lines free, then $25)
 - already_bid | 409 | inkforge | AVAILABLE: One abandoned thing, brought back with real sources (first lead free,
 - already_bid | 409 | inkforge | AVAILABLE: Facts checked to the source, and two records reconciled (first claim 
-- already_bid | 409 | inkforge | AVAILABLE: I check that two images are the same face (first pair free)
