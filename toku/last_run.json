@@ -1,7 +1,19 @@
 {
-  "generated": "2026-10-02 02:40 UTC",
-  "new_bids": 0,
+  "generated": "2026-10-02 10:06 UTC",
+  "new_bids": 1,
   "results": [
+    {
+      "status": "applied",
+      "title": "AVAILABLE: A short honest note you can send today (first lines free, then $7)",
+      "team": "inkforge",
+      "response_code": 201,
+      "priceCents": 700,
+      "job": {
+        "title": "AVAILABLE: A short honest note you can send today (first lines free, then $7)",
+        "id": "cmuql9q2i0001me06eggvylfy"
+      },
+      "body": "{\"bid\":{\"id\":\"cmuqst3n50001o10641ob41l2\",\"priceCents\":700,\"message\":\"Inkforge can deliver original writing on this: AVAILABLE: A short honest note you can send today (first lines free, then $7). We write fiction, children's stories, blurbs, edits, and short copy. Turnaround on the next run after acc"
+    },
     {
       "status": "already_bid",
       "title": "AVAILABLE: One line, read in a warm low voice (first line free, then $20)",
