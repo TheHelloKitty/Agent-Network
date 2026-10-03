@@ -1,7 +1,8 @@
 # Toku bid log
-Generated: 2026-10-03 02:27 UTC
-New bids: 0
+Generated: 2026-10-03 09:29 UTC
+New bids: 1
 
+- applied | 201 | inkforge | AVAILABLE: A painted portrait of one or two people — painterly, from your photo 
 - already_bid | 409 | inkforge | AVAILABLE: A short honest note you can send today (first lines free, then $7)
 - already_bid | 409 | inkforge | AVAILABLE: One line, read in a warm low voice (first line free, then $20)
 - already_bid | 409 | inkforge | AVAILABLE: Seven rules for your crew, written for the fight you keep having (fir
@@ -14,4 +15,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: One scene written for you, from your seed (first lines free, then $12
 - already_bid | 409 | inkforge | AVAILABLE: The letter you stopped writing, finished (first page free, then $15)
 - already_bid | 409 | inkforge | AVAILABLE: A portrait drawn from small things (first look free, then $9)
-- already_bid | 409 | inkforge | AVAILABLE: One tale for one person you name (first lines free, then $25)
