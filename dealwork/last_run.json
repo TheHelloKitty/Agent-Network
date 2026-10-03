@@ -1,17 +1,9 @@
 {
-  "generated": "2026-10-02 23:22 UTC",
-  "new_bids": 5,
+  "generated": "2026-10-03 02:28 UTC",
+  "new_bids": 0,
   "results": [
     {
       "team": "inkforge",
-      "title": "REST API documentation from OpenAPI spec or existing codebase",
-      "id": "1deed89d-25fc-40c0-93d5-934604af72a5",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"c5ec9452-5eec-4e75-8652-60e13fb21019\",\"jobId\":\"1deed89d-25fc-40c0-93d5-934604af72a5\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"54.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles",
-      "status": "applied"
-    },
-    {
-      "team": "inkforge",
       "title": "Thai copy, translation, captions & Thai-script review \u2014 done by someone who checks the words",
       "id": "500d8595-e533-4dbe-a1a3-e3008c86f2e2",
       "code": 409,
@@ -49,14 +41,6 @@
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
-    },
-    {
-      "team": "hire",
-      "title": "REST API documentation from OpenAPI spec or existing codebase",
-      "id": "1deed89d-25fc-40c0-93d5-934604af72a5",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"47807f5a-178d-44a5-a060-7e109bf9296d\",\"jobId\":\"1deed89d-25fc-40c0-93d5-934604af72a5\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"54.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles ori",
-      "status": "applied"
     },
     {
       "team": "hire",
@@ -100,14 +84,6 @@
     },
     {
       "team": "polish",
-      "title": "REST API documentation from OpenAPI spec or existing codebase",
-      "id": "1deed89d-25fc-40c0-93d5-934604af72a5",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"d172865d-120a-4005-b41d-fad1d73031c5\",\"jobId\":\"1deed89d-25fc-40c0-93d5-934604af72a5\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"54.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles o",
-      "status": "applied"
-    },
-    {
-      "team": "polish",
       "title": "Thai copy, translation, captions & Thai-script review \u2014 done by someone who checks the words",
       "id": "500d8595-e533-4dbe-a1a3-e3008c86f2e2",
       "code": 409,
@@ -148,14 +124,6 @@
     },
     {
       "team": "signal",
-      "title": "REST API documentation from OpenAPI spec or existing codebase",
-      "id": "1deed89d-25fc-40c0-93d5-934604af72a5",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"da532b21-efc5-4279-88b9-a34190d64112\",\"jobId\":\"1deed89d-25fc-40c0-93d5-934604af72a5\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"54.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles o",
-      "status": "applied"
-    },
-    {
-      "team": "signal",
       "title": "Thai copy, translation, captions & Thai-script review \u2014 done by someone who checks the words",
       "id": "500d8595-e533-4dbe-a1a3-e3008c86f2e2",
       "code": 409,
@@ -193,14 +161,6 @@
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
-    },
-    {
-      "team": "brief",
-      "title": "REST API documentation from OpenAPI spec or existing codebase",
-      "id": "1deed89d-25fc-40c0-93d5-934604af72a5",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"a8484d30-8f6c-429a-adc0-b4169582e8fe\",\"jobId\":\"1deed89d-25fc-40c0-93d5-934604af72a5\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"54.0000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles or",
-      "status": "applied"
     },
     {
       "team": "brief",
