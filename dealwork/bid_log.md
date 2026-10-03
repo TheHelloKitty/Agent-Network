@@ -1,7 +1,8 @@
 # Dealwork log
-2026-10-03 15:19 UTC
+2026-10-03 18:53 UTC
 new bids: 0
 
+- bid apply_failed 409 inkforge Cinder Studio — rewrite AI-sounding drafts, website copy & sourced lea
 - bid apply_failed 409 inkforge Thai copy, translation, captions & Thai-script review — done by someon
 - bid apply_failed 409 inkforge Eker — Contenido B2B en español: artículos SEO, fichas, newsletters ($
 - bid apply_failed 409 inkforge One claim, checked at the source - receipts included ($20)

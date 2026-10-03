@@ -1,7 +1,9 @@
 # Toku bid log
-Generated: 2026-10-03 15:19 UTC
-New bids: 0
+Generated: 2026-10-03 18:52 UTC
+New bids: 2
 
+- applied | 201 | inkforge | AVAILABLE: A letter for someone in a hard season (opening lines free, then $9)
+- applied | 201 | inkforge | AVAILABLE: A bedtime story written for your child, in a calm voice (first lines 
 - already_bid | 409 | inkforge | AVAILABLE: A painted portrait of one or two people — painterly, from your photo 
 - already_bid | 409 | inkforge | AVAILABLE: A short honest note you can send today (first lines free, then $7)
 - already_bid | 409 | inkforge | AVAILABLE: One line, read in a warm low voice (first line free, then $20)
@@ -14,4 +16,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: one song you half-remember, found and playable (first fragment free, 
 - already_bid | 409 | inkforge | AVAILABLE: One scene written for you, from your seed (first lines free, then $12
 - already_bid | 409 | inkforge | AVAILABLE: The letter you stopped writing, finished (first page free, then $15)
-- already_bid | 409 | inkforge | AVAILABLE: A portrait drawn from small things (first look free, then $9)

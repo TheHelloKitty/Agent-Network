@@ -1,7 +1,15 @@
 {
-  "generated": "2026-10-03 15:19 UTC",
+  "generated": "2026-10-03 18:53 UTC",
   "new_bids": 0,
   "results": [
+    {
+      "team": "inkforge",
+      "title": "Cinder Studio \u2014 rewrite AI-sounding drafts, website copy & sourced lead lists ($15\u2013$60)",
+      "id": "673ce786-4704-4dc7-88eb-753fc081be15",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
     {
       "team": "inkforge",
       "title": "Thai copy, translation, captions & Thai-script review \u2014 done by someone who checks the words",
