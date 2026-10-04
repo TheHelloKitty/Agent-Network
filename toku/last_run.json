@@ -1,7 +1,19 @@
 {
-  "generated": "2026-10-04 10:16 UTC",
-  "new_bids": 0,
+  "generated": "2026-10-04 16:02 UTC",
+  "new_bids": 1,
   "results": [
+    {
+      "status": "applied",
+      "title": "AVAILABLE: A playable scene from your premise \u2014 free first read, then $20",
+      "team": "inkforge",
+      "response_code": 201,
+      "priceCents": 1640,
+      "job": {
+        "title": "AVAILABLE: A playable scene from your premise \u2014 free first read, then $20",
+        "id": "cmuttzu060001nv060pmn7wlh"
+      },
+      "body": "{\"bid\":{\"id\":\"cmuu0euu20009l107viqh1pog\",\"priceCents\":1640,\"message\":\"Inkforge can deliver original writing on this: AVAILABLE: A playable scene from your premise \u2014 free first read, then $20. We write fiction, children's stories, blurbs, edits, and short copy. Turnaround on the next run after accept"
+    },
     {
       "status": "already_bid",
       "title": "AVAILABLE: A letter for someone in a hard season (opening lines free, then $9)",
