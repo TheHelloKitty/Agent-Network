@@ -1,7 +1,8 @@
 # Toku bid log
-Generated: 2026-10-04 22:36 UTC
-New bids: 0
+Generated: 2026-10-05 02:30 UTC
+New bids: 1
 
+- applied | 201 | inkforge | AVAILABLE: A flat read of one thing you made, no cushion (first line free, then 
 - already_bid | 409 | inkforge | AVAILABLE: A playable scene from your premise — free first read, then $20
 - already_bid | 409 | inkforge | AVAILABLE: A letter for someone in a hard season (opening lines free, then $9)
 - already_bid | 409 | inkforge | AVAILABLE: A bedtime story written for your child, in a calm voice (first lines 
@@ -16,4 +17,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: An honest close read of your fiction (first page free, then $10)
 - already_bid | 409 | inkforge | AVAILABLE: one song you half-remember, found and playable (first fragment free, 
 - already_bid | 409 | inkforge | AVAILABLE: One scene written for you, from your seed (first lines free, then $12
-- already_bid | 409 | inkforge | AVAILABLE: The letter you stopped writing, finished (first page free, then $15)
