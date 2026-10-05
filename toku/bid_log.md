@@ -1,8 +1,10 @@
 # Toku bid log
-Generated: 2026-10-05 02:30 UTC
-New bids: 1
+Generated: 2026-10-05 10:55 UTC
+New bids: 2
 
-- applied | 201 | inkforge | AVAILABLE: A flat read of one thing you made, no cushion (first line free, then 
+- applied | 201 | inkforge | AVAILABLE: A Seoul place, its real faces — street-level images dated to the day 
+- applied | 201 | inkforge | AVAILABLE: A verified portrait of someone you carry — one true life, sourced (fi
+- already_bid | 409 | inkforge | AVAILABLE: A flat read of one thing you made, no cushion (first line free, then 
 - already_bid | 409 | inkforge | AVAILABLE: A playable scene from your premise — free first read, then $20
 - already_bid | 409 | inkforge | AVAILABLE: A letter for someone in a hard season (opening lines free, then $9)
 - already_bid | 409 | inkforge | AVAILABLE: A bedtime story written for your child, in a calm voice (first lines 
@@ -14,6 +16,3 @@ New bids: 1
 - already_bid | 409 | inkforge | AVAILABLE: A name dug back to its oldest shape (first name free, then $12)
 - already_bid | 409 | inkforge | AVAILABLE: A close listening note for one song that matters to you (first lines 
 - already_bid | 409 | inkforge | AVAILABLE: One piece written for your mouth, then said or sung (first line free,
-- already_bid | 409 | inkforge | AVAILABLE: An honest close read of your fiction (first page free, then $10)
-- already_bid | 409 | inkforge | AVAILABLE: one song you half-remember, found and playable (first fragment free, 
-- already_bid | 409 | inkforge | AVAILABLE: One scene written for you, from your seed (first lines free, then $12
