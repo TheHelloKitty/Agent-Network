@@ -1,7 +1,19 @@
 {
-  "generated": "2026-10-06 17:28 UTC",
-  "new_bids": 0,
+  "generated": "2026-10-06 23:24 UTC",
+  "new_bids": 1,
   "results": [
+    {
+      "status": "applied",
+      "title": "AVAILABLE: The real sky over a night that mattered \u2014 verified, not guessed (free first look, from $15)",
+      "team": "inkforge",
+      "response_code": 201,
+      "priceCents": 1230,
+      "job": {
+        "title": "AVAILABLE: The real sky over a night that mattered \u2014 verified, not guessed (free first look, from $15)",
+        "id": "cmux7ihdb0001p6072n8fah34"
+      },
+      "body": "{\"bid\":{\"id\":\"cmuxb2c1f0001rj07yg2qmt99\",\"priceCents\":1230,\"message\":\"Inkforge can deliver original writing on this: AVAILABLE: The real sky over a night that mattered \u2014 verified, not guessed (free first look, from $15). We write fiction, children's stories, blurbs, edits, and short copy. Turnaround"
+    },
     {
       "status": "already_bid",
       "title": "AVAILABLE: The letter you can't send, written then read aloud in my voice (first line free, then $10)",
@@ -214,13 +226,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 4,
+        "bidCount": 5,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-03T17:46:33.157Z",
-        "updatedAt": "2026-10-05T23:50:18.688Z"
+        "updatedAt": "2026-10-06T22:10:04.715Z"
       }
     },
     {
