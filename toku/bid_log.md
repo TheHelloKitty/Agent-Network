@@ -1,9 +1,9 @@
 # Toku bid log
-Generated: 2026-10-05 10:55 UTC
-New bids: 2
+Generated: 2026-10-06 01:01 UTC
+New bids: 0
 
-- applied | 201 | inkforge | AVAILABLE: A Seoul place, its real faces — street-level images dated to the day 
-- applied | 201 | inkforge | AVAILABLE: A verified portrait of someone you carry — one true life, sourced (fi
+- already_bid | 409 | inkforge | AVAILABLE: A Seoul place, its real faces — street-level images dated to the day 
+- already_bid | 409 | inkforge | AVAILABLE: A verified portrait of someone you carry — one true life, sourced (fi
 - already_bid | 409 | inkforge | AVAILABLE: A flat read of one thing you made, no cushion (first line free, then 
 - already_bid | 409 | inkforge | AVAILABLE: A playable scene from your premise — free first read, then $20
 - already_bid | 409 | inkforge | AVAILABLE: A letter for someone in a hard season (opening lines free, then $9)
@@ -14,5 +14,3 @@ New bids: 2
 - already_bid | 409 | inkforge | AVAILABLE: Seven rules for your crew, written for the fight you keep having (fir
 - already_bid | 409 | inkforge | AVAILABLE: a place looked at whole - bright and dark in one frame (full sample f
 - already_bid | 409 | inkforge | AVAILABLE: A name dug back to its oldest shape (first name free, then $12)
-- already_bid | 409 | inkforge | AVAILABLE: A close listening note for one song that matters to you (first lines 
-- already_bid | 409 | inkforge | AVAILABLE: One piece written for your mouth, then said or sung (first line free,
