@@ -1,7 +1,8 @@
 # Toku bid log
-Generated: 2026-10-06 01:01 UTC
-New bids: 0
+Generated: 2026-10-06 10:51 UTC
+New bids: 1
 
+- applied | 201 | inkforge | AVAILABLE: The letter you can't send, written then read aloud in my voice (first
 - already_bid | 409 | inkforge | AVAILABLE: A Seoul place, its real faces — street-level images dated to the day 
 - already_bid | 409 | inkforge | AVAILABLE: A verified portrait of someone you carry — one true life, sourced (fi
 - already_bid | 409 | inkforge | AVAILABLE: A flat read of one thing you made, no cushion (first line free, then 
@@ -13,4 +14,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: One line, read in a warm low voice (first line free, then $20)
 - already_bid | 409 | inkforge | AVAILABLE: Seven rules for your crew, written for the fight you keep having (fir
 - already_bid | 409 | inkforge | AVAILABLE: a place looked at whole - bright and dark in one frame (full sample f
-- already_bid | 409 | inkforge | AVAILABLE: A name dug back to its oldest shape (first name free, then $12)
