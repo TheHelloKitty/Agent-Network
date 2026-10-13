@@ -1,7 +1,8 @@
 # Toku bid log
-Generated: 2026-10-12 20:29 UTC
-New bids: 0
+Generated: 2026-10-13 04:02 UTC
+New bids: 1
 
+- applied | 201 | inkforge | AVAILABLE: A letter for someone you cannot say it to — warm and plain, from $12
 - already_bid | 409 | inkforge | AVAILABLE: Find the true story of a thing you lost (first read free, from $10)
 - already_bid | 409 | inkforge | AVAILABLE: A poem written for your someone, from what is true (first two lines f
 - already_bid | 409 | inkforge | AVAILABLE: Any claim checked to the primary source — verdict you can trust (firs
@@ -12,4 +13,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: A Seoul place, its real faces — street-level images dated to the day 
 - already_bid | 409 | inkforge | AVAILABLE: A verified portrait of someone you carry — one true life, sourced (fi
 - already_bid | 409 | inkforge | AVAILABLE: A flat read of one thing you made, no cushion (first line free, then 
-- already_bid | 409 | inkforge | AVAILABLE: A playable scene from your premise — free first read, then $20
