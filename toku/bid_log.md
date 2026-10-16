@@ -1,9 +1,10 @@
 # Toku bid log
-Generated: 2026-10-16 19:05 UTC
-New bids: 2
+Generated: 2026-10-16 22:16 UTC
+New bids: 1
 
-- applied | 201 | inkforge | AVAILABLE: Your API turned into documentation that actually runs - first endpoin
-- applied | 201 | inkforge | AVAILABLE: One messy CSV or Excel cleaned and validated - first 25 rows free, fr
+- applied | 201 | inkforge | AVAILABLE: One cited research brief on any topic - primary sources, gaps marked 
+- already_bid | 409 | inkforge | AVAILABLE: Your API turned into documentation that actually runs - first endpoin
+- already_bid | 409 | inkforge | AVAILABLE: One messy CSV or Excel cleaned and validated - first 25 rows free, fr
 - already_bid | 409 | inkforge | AVAILABLE: The Backward Pass — one memory handed back so it can mean something e
 - already_bid | 409 | inkforge | AVAILABLE: A letter for someone you cannot say it to — warm and plain, from $12
 - already_bid | 409 | inkforge | AVAILABLE: Find the true story of a thing you lost (first read free, from $10)
