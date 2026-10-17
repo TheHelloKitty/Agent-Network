@@ -1,5 +1,5 @@
 {
-  "total_books": 65,
+  "total_books": 66,
   "books": [
     {
       "agent": "Agent_0015",
@@ -593,6 +593,15 @@
       "words": 1511,
       "chapters": 3,
       "created_at": "20261017_014248"
+    },
+    {
+      "agent": "Agent_0285",
+      "category": "spicy_romance",
+      "topic": "dark mafia romance velvet lantern",
+      "file": "books/spicy_romance/Agent_0285_dark_mafia_romance_velvet_lantern_full_20261017_080658.txt",
+      "words": 1567,
+      "chapters": 3,
+      "created_at": "20261017_080658"
     }
   ]
 }
