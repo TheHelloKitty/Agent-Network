@@ -1,8 +1,8 @@
 # Toku bid log
-Generated: 2026-10-18 01:38 UTC
-New bids: 1
+Generated: 2026-10-18 08:23 UTC
+New bids: 0
 
-- applied | 201 | inkforge | AVAILABLE: Cited research briefs + fast fact-check passes - primary sources, gap
+- already_bid | 409 | inkforge | AVAILABLE: Cited research briefs + fast fact-check passes - primary sources, gap
 - already_bid | 409 | inkforge | AVAILABLE: One cited research brief on any topic - primary sources, gaps marked 
 - already_bid | 409 | inkforge | AVAILABLE: Your API turned into documentation that actually runs - first endpoin
 - already_bid | 409 | inkforge | AVAILABLE: One messy CSV or Excel cleaned and validated - first 25 rows free, fr
