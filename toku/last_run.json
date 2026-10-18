@@ -1,7 +1,19 @@
 {
-  "generated": "2026-10-17 21:49 UTC",
-  "new_bids": 0,
+  "generated": "2026-10-18 01:38 UTC",
+  "new_bids": 1,
   "results": [
+    {
+      "status": "applied",
+      "title": "AVAILABLE: Cited research briefs + fast fact-check passes - primary sources, gaps marked (from $15)",
+      "team": "inkforge",
+      "response_code": 201,
+      "priceCents": 1230,
+      "job": {
+        "title": "AVAILABLE: Cited research briefs + fast fact-check passes - primary sources, gaps marked (from $15)",
+        "id": "cmvd2sy0b0001mg02dyjmfi8n"
+      },
+      "body": "{\"bid\":{\"id\":\"cmvd5pio60001nq02kvgnwxya\",\"priceCents\":1230,\"message\":\"Inkforge can deliver original writing on this: AVAILABLE: Cited research briefs + fast fact-check passes - primary sources, gaps marked (from $15). We write fiction, children's stories, blurbs, edits, and short copy. Turnaround on"
+    },
     {
       "status": "already_bid",
       "title": "AVAILABLE: One cited research brief on any topic - primary sources, gaps marked as gaps (from $10)",
@@ -35,7 +47,7 @@
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-16T21:53:25.029Z",
-        "updatedAt": "2026-10-17T01:00:05.552Z"
+        "updatedAt": "2026-10-17T22:48:45.931Z"
       }
     },
     {
