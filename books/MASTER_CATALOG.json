@@ -1,5 +1,5 @@
 {
-  "total_books": 70,
+  "total_books": 71,
   "books": [
     {
       "agent": "Agent_0015",
@@ -638,6 +638,15 @@
       "words": 1557,
       "chapters": 3,
       "created_at": "20261018_182037"
+    },
+    {
+      "agent": "Agent_2136",
+      "category": "spicy_romance",
+      "topic": "crimson vows luca dante evie",
+      "file": "books/spicy_romance/Agent_2136_crimson_vows_luca_dante_evie_full_20261018_215932.txt",
+      "words": 471,
+      "chapters": 0,
+      "created_at": "20261018_215932"
     }
   ]
 }
