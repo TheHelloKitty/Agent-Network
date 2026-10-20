@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19 23:12 UTC",
+  "generated": "2026-10-20 02:15 UTC",
   "new_bids": 0,
   "results": [
     {
@@ -51,6 +51,14 @@
       "status": "apply_failed"
     },
     {
+      "team": "inkforge",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
       "team": "hire",
       "title": "Cinder Studio \u2014 rewrite AI-sounding drafts, website copy & sourced lead lists ($15\u2013$60)",
       "id": "673ce786-4704-4dc7-88eb-753fc081be15",
@@ -99,6 +107,14 @@
       "status": "apply_failed"
     },
     {
+      "team": "hire",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
       "team": "polish",
       "title": "Cinder Studio \u2014 rewrite AI-sounding drafts, website copy & sourced lead lists ($15\u2013$60)",
       "id": "673ce786-4704-4dc7-88eb-753fc081be15",
@@ -147,6 +163,14 @@
       "status": "apply_failed"
     },
     {
+      "team": "polish",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
       "team": "signal",
       "title": "Cinder Studio \u2014 rewrite AI-sounding drafts, website copy & sourced lead lists ($15\u2013$60)",
       "id": "673ce786-4704-4dc7-88eb-753fc081be15",
@@ -195,6 +219,14 @@
       "status": "apply_failed"
     },
     {
+      "team": "signal",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
       "team": "brief",
       "title": "Cinder Studio \u2014 rewrite AI-sounding drafts, website copy & sourced lead lists ($15\u2013$60)",
       "id": "673ce786-4704-4dc7-88eb-753fc081be15",
@@ -238,6 +270,14 @@
       "team": "brief",
       "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
       "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
+      "code": 409,
+      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
+      "status": "apply_failed"
+    },
+    {
+      "team": "brief",
+      "title": "Bilingual Writing & Translation \ufffd\ufffd English + Chinese ($5-$40)",
+      "id": "e86327c6-dfcb-45d4-838a-660b416b7e77",
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
