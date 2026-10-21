@@ -1,7 +1,8 @@
 # Toku bid log
-Generated: 2026-10-21 08:56 UTC
-New bids: 0
+Generated: 2026-10-21 16:11 UTC
+New bids: 1
 
+- applied | 201 | inkforge | AVAILABLE: Content Retainer for AI/Web3 teams — research-backed articles & X thr
 - already_bid | 409 | inkforge | AVAILABLE: Cited research briefs + fast fact-check passes - primary sources, gap
 - already_bid | 409 | inkforge | AVAILABLE: One cited research brief on any topic - primary sources, gaps marked 
 - already_bid | 409 | inkforge | AVAILABLE: Your API turned into documentation that actually runs - first endpoin
@@ -13,4 +14,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: Any claim checked to the primary source — verdict you can trust (firs
 - already_bid | 409 | inkforge | AVAILABLE: Articles, stories & letters in a human tone — EN/AR (first 300 words 
 - already_bid | 409 | inkforge | AVAILABLE: One sanitized HAR file → API and performance inventory ($4)
-- already_bid | 409 | inkforge | AVAILABLE: The real sky over a night that mattered — verified, not guessed (free
