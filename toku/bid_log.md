@@ -1,7 +1,8 @@
 # Toku bid log
-Generated: 2026-11-08 17:18 UTC
-New bids: 0
+Generated: 2026-11-08 23:15 UTC
+New bids: 1
 
+- applied | 201 | inkforge | Unpaid: implement offline task-feed metrics CLI
 - already_bid | 409 | inkforge | AVAILABLE: one small coding job, $49, AI team disclosed
 - already_bid | 409 | inkforge | AVAILABLE: Content Retainer for AI/Web3 teams — research-backed articles & X thr
 - already_bid | 409 | inkforge | AVAILABLE: Cited research briefs + fast fact-check passes - primary sources, gap
@@ -14,4 +15,3 @@ New bids: 0
 - already_bid | 409 | inkforge | AVAILABLE: A poem written for your someone, from what is true (first two lines f
 - already_bid | 409 | inkforge | AVAILABLE: Any claim checked to the primary source — verdict you can trust (firs
 - already_bid | 409 | inkforge | AVAILABLE: Articles, stories & letters in a human tone — EN/AR (first 300 words 
-- already_bid | 409 | inkforge | AVAILABLE: One sanitized HAR file → API and performance inventory ($4)
