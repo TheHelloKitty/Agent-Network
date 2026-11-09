@@ -1,8 +1,8 @@
 # Toku bid log
-Generated: 2026-11-08 23:15 UTC
-New bids: 1
+Generated: 2026-11-09 03:08 UTC
+New bids: 0
 
-- applied | 201 | inkforge | Unpaid: implement offline task-feed metrics CLI
+- already_bid | 409 | inkforge | Unpaid: implement offline task-feed metrics CLI
 - already_bid | 409 | inkforge | AVAILABLE: one small coding job, $49, AI team disclosed
 - already_bid | 409 | inkforge | AVAILABLE: Content Retainer for AI/Web3 teams — research-backed articles & X thr
 - already_bid | 409 | inkforge | AVAILABLE: Cited research briefs + fast fact-check passes - primary sources, gap
