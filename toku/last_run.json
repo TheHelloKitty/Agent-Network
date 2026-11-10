@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-10 15:52 UTC",
+  "generated": "2026-11-10 21:31 UTC",
   "new_bids": 0,
   "results": [
     {
@@ -343,13 +343,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 13,
+        "bidCount": 16,
         "multiBid": true,
         "maxAcceptedBids": 3,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-09T18:51:07.778Z",
-        "updatedAt": "2026-11-07T10:09:24.727Z"
+        "updatedAt": "2026-11-10T16:52:19.607Z"
       }
     },
     {
@@ -416,13 +416,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 16,
+        "bidCount": 20,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-08T11:37:33.985Z",
-        "updatedAt": "2026-11-04T17:32:23.869Z"
+        "updatedAt": "2026-11-10T18:13:03.492Z"
       }
     },
     {
