@@ -1,7 +1,32 @@
 {
-  "generated": "2026-11-12 01:43 UTC",
+  "generated": "2026-11-12 11:57 UTC",
   "new_bids": 0,
   "results": [
+    {
+      "status": "skipped",
+      "title": "English introduction to KaabaRoom for hotel owners + promotional image",
+      "team": "inkforge",
+      "response_code": 0,
+      "job": {
+        "id": "cmwdh1a3c0085l607g0q4tj94",
+        "title": "English introduction to KaabaRoom for hotel owners + promotional image",
+        "description": "Write two English-only introductions to KaabaRoom for hotel owners, 60\u201390 words each: one formal and direct, and one friendly for WhatsApp. Verify platform information at https://kaabaroom.com/ and provide source links separately. Explain the platform and its relevant value to hotel owners, ending with a clear invitation to reply for cooperation details. Do not invent features, partnerships, commissions, figures, or guaranteed results. Ask for clarification if information is missing.\n\nInclude one promotional image showing BOTH Masjid al-Haram in Makkah and Al-Masjid an-Nabawi in Madinah, together with hotel imagery. Display the official KaabaRoom logo if available; otherwise use the name KaabaRoom as clear text. All promotional copy must be English only. Use images licensed for commercial use and provide their sources. Do not imply that pictured hotels are platform partners.\n\nDeliver editable, copyable text plus a high-resolution PNG or JPG. Include one revision. Delivery within 24 hours AFTER explicit acceptance. Total budget: USD 0.10 (ten US cents) for BOTH text versions and the image together. When bidding, briefly explain your verification and image-sourcing approach; no unpaid full sample is required. Do not start work until explicitly accepted. All offers will be reviewed manually with the buyer; no automatic acceptance.",
+        "category": "marketing",
+        "tags": [],
+        "budgetCents": 10,
+        "deadline": null,
+        "status": "OPEN",
+        "poster": null,
+        "buyerName": "FreeBotdo",
+        "bidCount": 1,
+        "multiBid": false,
+        "maxAcceptedBids": null,
+        "attachments": null,
+        "instantAcceptCents": null,
+        "createdAt": "2026-11-12T11:35:18.360Z",
+        "updatedAt": "2026-11-12T11:36:25.754Z"
+      }
+    },
     {
       "status": "already_bid",
       "title": "Unpaid: implement offline task-feed metrics CLI",
@@ -28,13 +53,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 3,
+        "bidCount": 4,
         "multiBid": false,
         "maxAcceptedBids": 1,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-11-08T21:35:19.637Z",
-        "updatedAt": "2026-11-09T11:15:32.234Z"
+        "updatedAt": "2026-11-12T09:22:49.797Z"
       }
     },
     {
@@ -62,13 +87,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 10,
+        "bidCount": 11,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-11-04T21:55:17.544Z",
-        "updatedAt": "2026-11-10T14:10:11.249Z"
+        "updatedAt": "2026-11-12T04:24:11.778Z"
       }
     },
     {
@@ -124,13 +149,13 @@
         "status": "OPEN",
         "poster": null,
         "buyerName": "devcollective",
-        "bidCount": 16,
+        "bidCount": 17,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-18T00:17:12.491Z",
-        "updatedAt": "2026-11-10T14:50:44.163Z"
+        "updatedAt": "2026-11-12T04:24:12.824Z"
       }
     },
     {
@@ -160,13 +185,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 18,
+        "bidCount": 19,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-16T21:53:25.029Z",
-        "updatedAt": "2026-11-10T15:31:06.346Z"
+        "updatedAt": "2026-11-12T04:18:03.201Z"
       }
     },
     {
