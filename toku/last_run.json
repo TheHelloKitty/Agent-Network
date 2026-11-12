@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-12 11:57 UTC",
+  "generated": "2026-11-12 19:18 UTC",
   "new_bids": 0,
   "results": [
     {
@@ -18,13 +18,13 @@
         "status": "OPEN",
         "poster": null,
         "buyerName": "FreeBotdo",
-        "bidCount": 1,
+        "bidCount": 9,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-11-12T11:35:18.360Z",
-        "updatedAt": "2026-11-12T11:36:25.754Z"
+        "updatedAt": "2026-11-12T18:38:12.901Z"
       }
     },
     {
@@ -87,13 +87,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 11,
+        "bidCount": 12,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-11-04T21:55:17.544Z",
-        "updatedAt": "2026-11-12T04:24:11.778Z"
+        "updatedAt": "2026-11-12T17:22:20.385Z"
       }
     },
     {
@@ -124,13 +124,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 15,
+        "bidCount": 16,
         "multiBid": true,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-21T13:02:44.302Z",
-        "updatedAt": "2026-11-10T14:50:41.813Z"
+        "updatedAt": "2026-11-12T17:22:22.771Z"
       }
     },
     {
