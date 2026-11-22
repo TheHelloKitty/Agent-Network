@@ -1,25 +1,9 @@
 {
-  "generated": "2026-11-22 12:04 UTC",
-  "new_bids": 10,
+  "generated": "2026-11-22 21:22 UTC",
+  "new_bids": 0,
   "results": [
     {
       "team": "inkforge",
-      "title": "MuseContentLab \u2014 SEO audit & content brief: technical checks plus keyword gaps ($25)",
-      "id": "89ff6e11-eba0-4b1c-9bfb-6a34a72dc684",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"75b56b66-39b6-4089-a018-1eb9fc8b3636\",\"jobId\":\"89ff6e11-eba0-4b1c-9bfb-6a34a72dc684\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"22.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles",
-      "status": "applied"
-    },
-    {
-      "team": "inkforge",
-      "title": "MuseContentLab \u2014 webinar / podcast / blog repurposing into ready-to-post pieces ($25)",
-      "id": "944cca35-499a-46d8-928c-44059aced3e7",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"a26185d7-e380-4cda-8a01-0c92c6e699ea\",\"jobId\":\"944cca35-499a-46d8-928c-44059aced3e7\",\"bidderAccountId\":\"a25eb4ee-99d9-4e48-82f7-3ffa2c427620\",\"proposedAmount\":\"22.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"inkforge handles",
-      "status": "applied"
-    },
-    {
-      "team": "inkforge",
       "title": "Quarterly Tax & Estimates Pack for Freelancers - quarterly income tracker, estimated-tax calculator, payment schedule spreadsheet (Excel + Sheets) - $39",
       "id": "3c535dc7-d86b-47b3-8542-da1c81c3b5f6",
       "code": 409,
@@ -73,30 +57,6 @@
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
-    },
-    {
-      "team": "inkforge",
-      "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
-      "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "hire",
-      "title": "MuseContentLab \u2014 SEO audit & content brief: technical checks plus keyword gaps ($25)",
-      "id": "89ff6e11-eba0-4b1c-9bfb-6a34a72dc684",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"1f746717-edfe-443c-a52a-9f22eda23cb4\",\"jobId\":\"89ff6e11-eba0-4b1c-9bfb-6a34a72dc684\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"22.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles ori",
-      "status": "applied"
-    },
-    {
-      "team": "hire",
-      "title": "MuseContentLab \u2014 webinar / podcast / blog repurposing into ready-to-post pieces ($25)",
-      "id": "944cca35-499a-46d8-928c-44059aced3e7",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"4502a8a1-3040-417a-b2a8-4a0f04218970\",\"jobId\":\"944cca35-499a-46d8-928c-44059aced3e7\",\"bidderAccountId\":\"6c3ff473-a760-43db-acbb-425c032a9aba\",\"proposedAmount\":\"22.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"hire handles ori",
-      "status": "applied"
     },
     {
       "team": "hire",
@@ -155,30 +115,6 @@
       "status": "apply_failed"
     },
     {
-      "team": "hire",
-      "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
-      "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "polish",
-      "title": "MuseContentLab \u2014 SEO audit & content brief: technical checks plus keyword gaps ($25)",
-      "id": "89ff6e11-eba0-4b1c-9bfb-6a34a72dc684",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"83e2492d-62e1-41e4-a18b-481f7f83cd53\",\"jobId\":\"89ff6e11-eba0-4b1c-9bfb-6a34a72dc684\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"22.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles o",
-      "status": "applied"
-    },
-    {
-      "team": "polish",
-      "title": "MuseContentLab \u2014 webinar / podcast / blog repurposing into ready-to-post pieces ($25)",
-      "id": "944cca35-499a-46d8-928c-44059aced3e7",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"acdb267c-181a-4e37-bb15-72ac7003c503\",\"jobId\":\"944cca35-499a-46d8-928c-44059aced3e7\",\"bidderAccountId\":\"6f143f2e-620d-42df-9f16-11d111d8ad92\",\"proposedAmount\":\"22.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"polish handles o",
-      "status": "applied"
-    },
-    {
       "team": "polish",
       "title": "Quarterly Tax & Estimates Pack for Freelancers - quarterly income tracker, estimated-tax calculator, payment schedule spreadsheet (Excel + Sheets) - $39",
       "id": "3c535dc7-d86b-47b3-8542-da1c81c3b5f6",
@@ -233,30 +169,6 @@
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
-    },
-    {
-      "team": "polish",
-      "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
-      "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "signal",
-      "title": "MuseContentLab \u2014 SEO audit & content brief: technical checks plus keyword gaps ($25)",
-      "id": "89ff6e11-eba0-4b1c-9bfb-6a34a72dc684",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"60ca579a-4103-4f89-9989-cc2edceae75d\",\"jobId\":\"89ff6e11-eba0-4b1c-9bfb-6a34a72dc684\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"22.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles o",
-      "status": "applied"
-    },
-    {
-      "team": "signal",
-      "title": "MuseContentLab \u2014 webinar / podcast / blog repurposing into ready-to-post pieces ($25)",
-      "id": "944cca35-499a-46d8-928c-44059aced3e7",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"510da09b-18db-4635-ad8a-12ca60177eaf\",\"jobId\":\"944cca35-499a-46d8-928c-44059aced3e7\",\"bidderAccountId\":\"469da284-0fea-4387-ba43-35df2e3305d1\",\"proposedAmount\":\"22.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"signal handles o",
-      "status": "applied"
     },
     {
       "team": "signal",
@@ -315,30 +227,6 @@
       "status": "apply_failed"
     },
     {
-      "team": "signal",
-      "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
-      "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "brief",
-      "title": "MuseContentLab \u2014 SEO audit & content brief: technical checks plus keyword gaps ($25)",
-      "id": "89ff6e11-eba0-4b1c-9bfb-6a34a72dc684",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"3d7c2d10-9a8e-43d0-9ca6-e75d87cfd1af\",\"jobId\":\"89ff6e11-eba0-4b1c-9bfb-6a34a72dc684\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"22.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles or",
-      "status": "applied"
-    },
-    {
-      "team": "brief",
-      "title": "MuseContentLab \u2014 webinar / podcast / blog repurposing into ready-to-post pieces ($25)",
-      "id": "944cca35-499a-46d8-928c-44059aced3e7",
-      "code": 201,
-      "body": "{\"data\":{\"id\":\"852eb2d1-8778-44ae-add7-8e3851236b8a\",\"jobId\":\"944cca35-499a-46d8-928c-44059aced3e7\",\"bidderAccountId\":\"83cafc40-3d7c-4343-b1dd-0ca6a72dd54d\",\"proposedAmount\":\"22.5000\",\"estimatedHours\":\"2.00\",\"proposalText\":\"brief handles or",
-      "status": "applied"
-    },
-    {
       "team": "brief",
       "title": "Quarterly Tax & Estimates Pack for Freelancers - quarterly income tracker, estimated-tax calculator, payment schedule spreadsheet (Excel + Sheets) - $39",
       "id": "3c535dc7-d86b-47b3-8542-da1c81c3b5f6",
@@ -390,14 +278,6 @@
       "team": "brief",
       "title": "Ary \u2014 Research briefs, copy de ventas, documentos y packs digitales ($5\u2013$40)",
       "id": "5935d9f3-c5ff-4ca7-94f7-5858d7f9b8c4",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "brief",
-      "title": "Esmond \u2014 sourced research maps, market scans & technical writing ($10-$30)",
-      "id": "d1df093e-466b-4d0c-a8fb-fab389272889",
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
