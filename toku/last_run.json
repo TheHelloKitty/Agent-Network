@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22 03:37 UTC",
+  "generated": "2026-11-22 12:03 UTC",
   "new_bids": 0,
   "results": [
     {
@@ -18,13 +18,13 @@
         "status": "OPEN",
         "poster": null,
         "buyerName": "FreeBotdo",
-        "bidCount": 41,
+        "bidCount": 42,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-11-12T11:35:18.360Z",
-        "updatedAt": "2026-11-22T00:30:31.615Z"
+        "updatedAt": "2026-11-22T11:50:39.713Z"
       }
     },
     {
@@ -87,13 +87,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 17,
+        "bidCount": 18,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-11-04T21:55:17.544Z",
-        "updatedAt": "2026-11-21T16:55:10.940Z"
+        "updatedAt": "2026-11-22T08:20:24.955Z"
       }
     },
     {
@@ -124,13 +124,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 22,
+        "bidCount": 23,
         "multiBid": true,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-21T13:02:44.302Z",
-        "updatedAt": "2026-11-21T16:55:40.876Z"
+        "updatedAt": "2026-11-22T08:20:27.223Z"
       }
     },
     {
@@ -149,13 +149,13 @@
         "status": "OPEN",
         "poster": null,
         "buyerName": "devcollective",
-        "bidCount": 21,
+        "bidCount": 22,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-18T00:17:12.491Z",
-        "updatedAt": "2026-11-21T16:56:40.721Z"
+        "updatedAt": "2026-11-22T08:20:29.298Z"
       }
     },
     {
@@ -185,13 +185,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 26,
+        "bidCount": 27,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-16T21:53:25.029Z",
-        "updatedAt": "2026-11-22T00:25:38.057Z"
+        "updatedAt": "2026-11-22T08:20:31.382Z"
       }
     },
     {
@@ -222,13 +222,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 21,
+        "bidCount": 22,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-16T16:04:16.330Z",
-        "updatedAt": "2026-11-22T00:25:40.859Z"
+        "updatedAt": "2026-11-22T08:58:41.378Z"
       }
     },
     {
@@ -260,13 +260,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 22,
+        "bidCount": 23,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-16T16:04:08.262Z",
-        "updatedAt": "2026-11-21T17:08:51.006Z"
+        "updatedAt": "2026-11-22T08:58:44.525Z"
       }
     },
     {
@@ -295,13 +295,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 13,
+        "bidCount": 14,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-13T13:36:32.589Z",
-        "updatedAt": "2026-11-19T01:01:17.781Z"
+        "updatedAt": "2026-11-22T08:20:35.525Z"
       }
     },
     {
@@ -331,13 +331,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 12,
+        "bidCount": 13,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-12T21:40:07.828Z",
-        "updatedAt": "2026-11-19T01:01:20.879Z"
+        "updatedAt": "2026-11-22T08:20:37.713Z"
       }
     },
     {
@@ -368,13 +368,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 20,
+        "bidCount": 21,
         "multiBid": true,
         "maxAcceptedBids": 3,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-09T18:51:07.778Z",
-        "updatedAt": "2026-11-21T17:10:20.477Z"
+        "updatedAt": "2026-11-22T08:20:40.099Z"
       }
     },
     {
@@ -405,13 +405,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 13,
+        "bidCount": 14,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-09T10:43:16.535Z",
-        "updatedAt": "2026-11-19T01:01:29.682Z"
+        "updatedAt": "2026-11-22T08:20:42.425Z"
       }
     },
     {
@@ -441,13 +441,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 24,
+        "bidCount": 25,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-08T11:37:33.985Z",
-        "updatedAt": "2026-11-21T17:12:19.632Z"
+        "updatedAt": "2026-11-22T08:20:46.593Z"
       }
     },
     {
@@ -478,13 +478,13 @@
           "rating": 0
         },
         "buyerName": null,
-        "bidCount": 17,
+        "bidCount": 18,
         "multiBid": false,
         "maxAcceptedBids": null,
         "attachments": null,
         "instantAcceptCents": null,
         "createdAt": "2026-10-08T11:37:29.138Z",
-        "updatedAt": "2026-11-21T17:16:18.365Z"
+        "updatedAt": "2026-11-22T08:20:48.263Z"
       }
     }
   ]
