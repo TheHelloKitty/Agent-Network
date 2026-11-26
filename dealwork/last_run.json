@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25 23:51 UTC",
+  "generated": "2026-11-26 05:35 UTC",
   "new_bids": 0,
   "results": [
     {
@@ -19,22 +19,6 @@
       "status": "apply_failed"
     },
     {
-      "team": "inkforge",
-      "title": "Quarterly Tax & Estimates Pack for Freelancers - quarterly income tracker, estimated-tax calculator, payment schedule spreadsheet (Excel + Sheets) - $39",
-      "id": "3c535dc7-d86b-47b3-8542-da1c81c3b5f6",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "inkforge",
-      "title": "Freelancer Finance System - client, invoice & expense tracker spreadsheet (Excel + Sheets), live dashboard - $49",
-      "id": "8868d72a-0c28-42b8-9d21-7da5606d2d6f",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
       "team": "hire",
       "title": "8-K event digest \u2014 latest material events for any company or item code, CSV + summary in 24h \u2014 $39 fixed",
       "id": "166e8959-a6ed-44b3-b992-62523e90aca3",
@@ -46,22 +30,6 @@
       "team": "hire",
       "title": "SEC filings pull \u2014 latest 10-K, 10-Q and 8-K for any US company, structured summary in 24h \u2014 $29 fixed",
       "id": "6aa2caf6-79d4-4b0c-b941-5a342c052ad0",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "hire",
-      "title": "Quarterly Tax & Estimates Pack for Freelancers - quarterly income tracker, estimated-tax calculator, payment schedule spreadsheet (Excel + Sheets) - $39",
-      "id": "3c535dc7-d86b-47b3-8542-da1c81c3b5f6",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "hire",
-      "title": "Freelancer Finance System - client, invoice & expense tracker spreadsheet (Excel + Sheets), live dashboard - $49",
-      "id": "8868d72a-0c28-42b8-9d21-7da5606d2d6f",
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
@@ -83,22 +51,6 @@
       "status": "apply_failed"
     },
     {
-      "team": "polish",
-      "title": "Quarterly Tax & Estimates Pack for Freelancers - quarterly income tracker, estimated-tax calculator, payment schedule spreadsheet (Excel + Sheets) - $39",
-      "id": "3c535dc7-d86b-47b3-8542-da1c81c3b5f6",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "polish",
-      "title": "Freelancer Finance System - client, invoice & expense tracker spreadsheet (Excel + Sheets), live dashboard - $49",
-      "id": "8868d72a-0c28-42b8-9d21-7da5606d2d6f",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
       "team": "signal",
       "title": "8-K event digest \u2014 latest material events for any company or item code, CSV + summary in 24h \u2014 $39 fixed",
       "id": "166e8959-a6ed-44b3-b992-62523e90aca3",
@@ -115,22 +67,6 @@
       "status": "apply_failed"
     },
     {
-      "team": "signal",
-      "title": "Quarterly Tax & Estimates Pack for Freelancers - quarterly income tracker, estimated-tax calculator, payment schedule spreadsheet (Excel + Sheets) - $39",
-      "id": "3c535dc7-d86b-47b3-8542-da1c81c3b5f6",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "signal",
-      "title": "Freelancer Finance System - client, invoice & expense tracker spreadsheet (Excel + Sheets), live dashboard - $49",
-      "id": "8868d72a-0c28-42b8-9d21-7da5606d2d6f",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
       "team": "brief",
       "title": "8-K event digest \u2014 latest material events for any company or item code, CSV + summary in 24h \u2014 $39 fixed",
       "id": "166e8959-a6ed-44b3-b992-62523e90aca3",
@@ -142,22 +78,6 @@
       "team": "brief",
       "title": "SEC filings pull \u2014 latest 10-K, 10-Q and 8-K for any US company, structured summary in 24h \u2014 $29 fixed",
       "id": "6aa2caf6-79d4-4b0c-b941-5a342c052ad0",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "brief",
-      "title": "Quarterly Tax & Estimates Pack for Freelancers - quarterly income tracker, estimated-tax calculator, payment schedule spreadsheet (Excel + Sheets) - $39",
-      "id": "3c535dc7-d86b-47b3-8542-da1c81c3b5f6",
-      "code": 409,
-      "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
-      "status": "apply_failed"
-    },
-    {
-      "team": "brief",
-      "title": "Freelancer Finance System - client, invoice & expense tracker spreadsheet (Excel + Sheets), live dashboard - $49",
-      "id": "8868d72a-0c28-42b8-9d21-7da5606d2d6f",
       "code": 409,
       "body": "{\"error\":{\"code\":\"CONFLICT\",\"message\":\"Job is not accepting bids in open mode; use claim endpoint\"}}",
       "status": "apply_failed"
